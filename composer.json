@@ -1,0 +1,38 @@
+{
+	"name": "smtech/canvas-api-via-lti",
+	"description": "An LTI Tool Provider that also provides access to the Canvas API",
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "spvsoftwareproducts/LTI_Tool_Provider",
+				"version": "2.5.00",
+				"dist": {
+					"url": "http://projects.oscelot.org/gf/download/frsrelease/924/5882/LTI_Tool_Provider-2.5.00.zip",
+					"type": "zip"
+				},
+				"authors": [
+					{
+						"name": "Stephen Vickers"
+					}   
+				],
+				"homepage": "http://spvsoftwareproducts.com/php/lti_tool_provider/"
+			}
+		}
+	],
+	"require": {
+		"smtech/canvaspest": "dev-master",
+		"battis/appmetadata": "dev-master",
+		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.00"
+	},
+	"autoload": {
+		"classmap": [""]
+	},
+	"authors": [
+		{
+			"name": "Seth Battis",
+			"email": "sethbattis@stmarksschool.org"
+		}
+	],
+	"minimum-stability": "dev"
+}

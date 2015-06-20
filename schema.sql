@@ -1,0 +1,5 @@
+/*
+	
+	This would contain any necessary SQL queries to set up tables specific to the application
+	
+*/
