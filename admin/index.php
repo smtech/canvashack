@@ -3,7 +3,7 @@
 require_once('../vendor/autoload.php');
 require_once('../common.inc.php');
 
-if (appIsInstalled()) {
+if ($ready) {
 	header('Location: consumers.php');
 } else {
 	header('Location: install.php');

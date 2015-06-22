@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "2ac5e25ac146bea33eb03930e4ba792e9b31512e"
+                "reference": "7a23ac4f5a9500a9aa4b91b8c50a910dc21ba36a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/2ac5e25ac146bea33eb03930e4ba792e9b31512e",
-                "reference": "2ac5e25ac146bea33eb03930e4ba792e9b31512e",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/7a23ac4f5a9500a9aa4b91b8c50a910dc21ba36a",
+                "reference": "7a23ac4f5a9500a9aa4b91b8c50a910dc21ba36a",
                 "shasum": ""
             },
             "type": "library",
@@ -34,7 +34,7 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-06-20 02:52:21"
+            "time": "2015-06-21 20:59:32"
         },
         {
             "name": "educoder/pest",

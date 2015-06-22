@@ -59,6 +59,8 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 /**
  * CanvasAPIviaLTI Exceptions
  **/
-class CanvasAPIviaLTI_Exception extends Exception {}
+class CanvasAPIviaLTI_Exception extends Exception {
+	const MISSING_SECRETS_FILE = 1;
+}
 
 ?>

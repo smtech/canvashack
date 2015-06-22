@@ -6,7 +6,6 @@ define('SECRETS_FILE', __DIR__ . '/secrets.xml');
 define('MYSQL_PREFIX', '');
 define('SCHEMA_FILE', __DIR__ . '/schema.sql');
 
-define('SECRETS_FILE_EXCEPTION_CODE', 1);
 define('SESSION_NAME', 'Canvas API via LTI');
 
 /**
@@ -16,9 +15,13 @@ define('SESSION_NAME', 'Canvas API via LTI');
  **/
 function initSecrets() {
 	if (file_exists(SECRETS_FILE)) {
-		return simplexml_load_file(SECRETS_FILE);
+		if ($secrets = simplexml_load_file(SECRETS_FILE)) {
+			return $secrets;
+		} else {
+			throw new CanvasAPIviaLTI_Exception(SECRETS_FILE . " could not be loaded.");
+		}
 	} else {
-		throw new CanvasAPIviaLTI_Exception(SECRETS_FILE . " could not be found.", SECRETS_FILE_EXCEPTION_CODE);
+		throw new CanvasAPIviaLTI_Exception(SECRETS_FILE . " could not be found.", CanvasAPIviaLTI_Exception::MISSING_SECRETS_FILE);
 	}
 }
 
@@ -40,19 +43,14 @@ function initMySql() {
 	return $sql;
 }
 
-/**
- * Test whether or not the application has been completely installed
- * @return boolean
- **/
-function appIsInstalled() {
-	global $sql;
-	return $sql instanceof mysqli;
+$ready = true;
+try {
+	/* initialize global variables */
+	$secrets = initSecrets();
+	$sql = initMySql();
+	$metadata = new AppMetadata($sql, $secrets->app->id);
+} catch (CanvasAPIviaLTI_Exception $e) {
+	$ready = false;
 }
-
-$secrets = initSecrets();
-$sql = initMySql();
-$data_connector = LTI_Data_Connector::getDataConnector(MYSQL_PREFIX, $sql);
-
-$metadata = new AppMetadata($sql, $secrets->app->id);
 
 ?>
