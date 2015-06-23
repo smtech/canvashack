@@ -92,5 +92,7 @@ if ($response = $sql->query("SELECT * FROM `" . LTI_Data_Connector::CONSUMER_TAB
 			<input type="submit" value="<?= (strlen($name) ? 'Update' : 'Add') ?> Consumer" />
 			<input type="button" value="Cancel" onclick="window.location.href='<?= $_SERVER['PHP_SELF'] ?>';" />
 		</form>
+		
+		<p>To install this LTI, users should choose configuration type <em>By URL</em> and provide their consumer key and secret above. They should point their installer at <code><?= $metadata['APP_URL'] ?>/config.xml</code>
 	</body>
 </html>

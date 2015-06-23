@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 require_once('vendor/autoload.php');
 
@@ -65,10 +65,19 @@ function initMySql() {
 
 $ready = true;
 try {
+
 	/* initialize global variables */
 	$secrets = initSecrets();
 	$sql = initMySql();
 	$metadata = new AppMetadata($sql, (string) $secrets->app->id);
+
+	/* set up a Tool Provider (TP) object to process the LTI request */
+	$toolProvider = new CanvasAPIviaLTI(LTI_Data_Connector::getDataConnector($sql));
+	$toolProvider->setParameterConstraint('oauth_consumer_key', TRUE, 50);
+	$toolProvider->setParameterConstraint('resource_link_id', TRUE, 50, array('basic-lti-launch-request'));
+	$toolProvider->setParameterConstraint('user_id', TRUE, 50, array('basic-lti-launch-request'));
+	$toolProvider->setParameterConstraint('roles', TRUE, NULL, array('basic-lti-launch-request'));
+
 } catch (CanvasAPIviaLTI_Exception $e) {
 	$ready = false;
 }

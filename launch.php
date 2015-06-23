@@ -8,9 +8,6 @@ session_start();
 $_SESSION = array();
 session_destroy();
 
-/* set up a Tool Provider (TP) object to process the LTI request */
-$toolProvider = new CanvasAPIviaLTI(LTI_Data_Connector::getDataConnector($sql));
-
 /* process the LTI request from the Tool Consumer (TC) */
 $toolProvider->handle_request();
 
