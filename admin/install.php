@@ -1,4 +1,4 @@
-<pre><?php
+<?php
 
 require_once('../vendor/autoload.php');
 require_once('../common.inc.php');
@@ -17,7 +17,7 @@ class CanvasAPIviaLTI_Installer {
 	 * @param string $message The message to append (HTML formatting is fine).
 	 **/
 	public static function appendMessage($message) {
-		echo "$message\n";
+		echo "<pre>$message</pre>";
 	}
 	
 	/**
@@ -31,33 +31,43 @@ class CanvasAPIviaLTI_Installer {
 			case self::SECRETS_NEEDED_STEP: {
 				// FIXME passwords in clear text? oy.
 				echo '
-					<html>
-					<body>
 					<form action="' . $_SERVER['PHP_SELF'] . '" method="post">
-						<label for="name">App Name <input type="text" name="name" id="name" value="Canvas API via LTI starter" /></label>
-						<label for="id">App ID <input type="text" name="id" id="id" value="canvas-lti-via-api-starter" /></label>
-						<label for="host">Host <input type="text" name="host" id="host" value="localhost" /></label>
-						<label for="username">Username <input type="text" name="username" id="username" /></label>
-						<label for="password">Password <input type="password" name="password" id="password" /></label>
-						<label for="database">Database <input type="text" name="database" id="database" /></label>
-						<label for="oauth_id">OAuth Client ID <input type="text" name="oauth_id" id="oauth_id" /></label>
-						<label for="oauth_key">OAuth Client Key <input type="text" name="oauth_key" id="oauth_key" /></label>
+						<section>
+							<h3>Application Information</h3>
+							<label for="name">App name <input type="text" name="name" id="name" /></label>
+							<label for="id">App ID <input type="text" name="id" id="id" /></label>
+							<label for="admin_username">App admin Username <input type="text" name="admin_username" id="admin_username" /></label>
+							<label for="admin_password">App admin Password <input type="text" name="admin_password" id="admin_password" /></label>
+						</section>
+						<section>
+							<h3>MySQL Connection</h3>
+							<label for="host">Host <input type="text" name="host" id="host" /></label>
+							<label for="username">Username <input type="text" name="username" id="username" /></label>
+							<label for="password">Password <input type="password" name="password" id="password" /></label>
+							<label for="database">Database <input type="text" name="database" id="database" /></label>
+						</section>
+						<section>
+							<h3>Canvas Developer Credentials</h3>
+							<label for="oauth_id">OAuth Client ID <input type="text" name="oauth_id" id="oauth_id" /></label>
+							<label for="oauth_key">OAuth Client Key <input type="text" name="oauth_key" id="oauth_key" /></label>
+						</section>
 						<input type="hidden" name="step" value="' . self::SECRETS_ENTERED_STEP . '" />
 						<input type="submit" value="Create Secrets File" />
 					</form>
-					</body>
-					</html>
 				';
 				exit;
 			}
 			
 			case self::SECRETS_ENTERED_STEP: {
-				if (isset($_REQUEST['name']) && isset($_REQUEST['id'])) {
+				if (isset($_REQUEST['name']) && isset($_REQUEST['id']) && isset($_REQUEST['admin_username']) && isset($_REQUEST['admin_password'])) {
 					if (isset($_REQUEST['host']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['database'])) {
 						$secrets = new SimpleXMLElement('<secrets />');
 						$app = $secrets->addChild('app');
 						$app->addChild('name', $_REQUEST['name']);
 						$app->addChild('id', $_REQUEST['id']);
+						$admin = $app->addChild('admin');
+						$admin->addChild('username', $_REQUEST['admin_username']);
+						$admin->addChild('password', $_REQUEST['admin_password']);
 						$mysql = $secrets->addChild('mysql');
 						$mysql->addChild('host', $_REQUEST['host']);
 						$mysql->addChild('username', $_REQUEST['username']);
@@ -70,6 +80,23 @@ class CanvasAPIviaLTI_Installer {
 								CanvasAPIviaLTI_Installer_Exception::SECRETS_FILE_CREATION
 							);
 						}
+						
+						$htpasswdFile = __DIR__ . '/.htpasswd';
+						shell_exec("htpasswd -bc $htpasswdFile {$_REQUEST['admin_username']} {$_REQUEST['admin_password']}");
+						if (!file_exists($htpasswdFile)) {
+							throw new CanvasAPIviaLTI_Installer_Exception(
+								"Failed to create $htpasswdFile",
+								CanvasAPIviaLTI_Installer_Exception::HTPASSWD_FILE
+							);
+						}
+						
+						$htaccessFile = __DIR__ . '/.htaccess';
+						if(!file_put_contents($htaccessFile, "AuthType Basic\nAuthName \"{$secrets->app->name} Admin\"\nAuthUserFile $htpasswdFile\nRequire valid-user\n")) {
+							throw new CanvasAPIviaLTI_Installer_Exception(
+								"Failed to create $htaccessFile",
+								CanvasAPIviaLTI_Installer_Exception::HTACCESS_FILE
+							);
+						}
 					} else {
 						throw new CanvasAPIviaLTI_Installer_Exception(
 							'Missing a required mysql credential (host, username, password and database all required).',
@@ -79,10 +106,14 @@ class CanvasAPIviaLTI_Installer {
 				self::appendMessage('Secrets file created.');
 				} else {
 					throw new CanvasAPIviaLTI_Installer_Exception(
-						'Missing a required app identity (name and id both required).',
+						'Missing a required app identity (name, id, admin username and admin password all required).',
 						CanvasAPIviaLTI_Installer_Exception::SECRETS_FILE_APP
 					);
 				}
+				
+				/* clear the processed step */
+				unset($_REQUEST['step']);
+
 				break;
 			}
 			
@@ -188,7 +219,7 @@ class CanvasAPIviaLTI_Installer {
 		
 		$metadata = new AppMetadata($sql, (string) $secrets->app->id);
 		$metadata['APP_PATH'] = preg_replace('/\/admin$/', '', __DIR__);
-		$metadata['APP_URL'] = 'https://' . $_SERVER['SERVER_NAME'] . preg_replace("|^{$_SERVER['DOCUMENT_ROOT']}(.*)$|", '$1', $metadata['APP_PATH']);
+		$metadata['APP_URL'] = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on' ? 'http://' : 'https://') . $_SERVER['SERVER_NAME'] . preg_replace("|^{$_SERVER['DOCUMENT_ROOT']}(.*)$|", '$1', $metadata['APP_PATH']);
 	
 		self::appendMessage('App metadata initialized.');
 		
@@ -245,6 +276,10 @@ class CanvasAPIviaLTI_Installer {
 						
 						self::appendMessage('Admin Canvas API token acquired.');
 					}
+					
+					/* clear the processed step */
+					unset($_REQUEST['step']);
+					
 					break;
 				} 
 				default: {
@@ -270,6 +305,8 @@ class CanvasAPIviaLTI_Installer_Exception extends CanvasAPIviaLTI_Exception {
 	const APP_CREATE_TABLE = 9;
 	const API_STEP_MISMATCH = 10;
 	const API_TOKEN = 11;
+	const HTPASSWD_FILE = 12;
+	const HTACCESS_FILE = 13;
 }
 
 /* test if we already have a working install... */
@@ -313,4 +350,4 @@ try {
 }
 CanvasAPIviaLTI_Installer::appendMessage('Installation complete.');
 	
-?></pre>
+?>

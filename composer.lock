@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "897dacee98853c71ea583828e1268d63",
+    "hash": "3cab61578568dc29fb1899ab0a30ad01",
     "packages": [
         {
             "name": "battis/appmetadata",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "6e6ccc1023b2255d8deba240dca977fa1a696db1"
+                "reference": "773e1ed3233fa8d3deaf181e5ce548251d1d2a66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/6e6ccc1023b2255d8deba240dca977fa1a696db1",
-                "reference": "6e6ccc1023b2255d8deba240dca977fa1a696db1",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/773e1ed3233fa8d3deaf181e5ce548251d1d2a66",
+                "reference": "773e1ed3233fa8d3deaf181e5ce548251d1d2a66",
                 "shasum": ""
             },
             "type": "library",
@@ -34,37 +34,7 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-06-23 01:43:16"
-        },
-        {
-            "name": "battis/simplecache",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/battis/simplecache.git",
-                "reference": "4b55778242e5d5c07b7b6dd17bec24289d60aba5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/battis/simplecache/zipball/4b55778242e5d5c07b7b6dd17bec24289d60aba5",
-                "reference": "4b55778242e5d5c07b7b6dd17bec24289d60aba5",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    ""
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Seth Battis",
-                    "email": "seth@battis.net"
-                }
-            ],
-            "description": "Manage a simple cache backed by a MySQL database",
-            "time": "2015-06-22 13:05:52"
+            "time": "2015-06-23 14:53:46"
         },
         {
             "name": "educoder/pest",
@@ -143,16 +113,16 @@
         },
         {
             "name": "smtech/oauth-negotiator",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/oauth-negotiator.git",
-                "reference": "d82f31ffb9384d87b578d7710a508f289c61fd53"
+                "reference": "c64150d7906d7b92859b6f8f69d85363fee9ef16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/d82f31ffb9384d87b578d7710a508f289c61fd53",
-                "reference": "d82f31ffb9384d87b578d7710a508f289c61fd53",
+                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/c64150d7906d7b92859b6f8f69d85363fee9ef16",
+                "reference": "c64150d7906d7b92859b6f8f69d85363fee9ef16",
                 "shasum": ""
             },
             "require": {
@@ -167,7 +137,7 @@
                 }
             ],
             "description": "Negotiate an OAuth 2 authentication or API token",
-            "time": "2015-06-23 01:52:51"
+            "time": "2015-06-23 17:10:38"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
@@ -191,10 +161,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "smtech/canvaspest": 20,
-        "smtech/oauth-negotiator": 20,
-        "battis/appmetadata": 20,
-        "battis/simplecache": 20
+        "smtech/canvaspest": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
