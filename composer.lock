@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d0fc97f31af7d65594d4e89633bb8346",
+    "hash": "897dacee98853c71ea583828e1268d63",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "7a23ac4f5a9500a9aa4b91b8c50a910dc21ba36a"
+                "reference": "6e6ccc1023b2255d8deba240dca977fa1a696db1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/7a23ac4f5a9500a9aa4b91b8c50a910dc21ba36a",
-                "reference": "7a23ac4f5a9500a9aa4b91b8c50a910dc21ba36a",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/6e6ccc1023b2255d8deba240dca977fa1a696db1",
+                "reference": "6e6ccc1023b2255d8deba240dca977fa1a696db1",
                 "shasum": ""
             },
             "type": "library",
@@ -34,7 +34,37 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-06-21 20:59:32"
+            "time": "2015-06-23 01:43:16"
+        },
+        {
+            "name": "battis/simplecache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/battis/simplecache.git",
+                "reference": "4b55778242e5d5c07b7b6dd17bec24289d60aba5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/battis/simplecache/zipball/4b55778242e5d5c07b7b6dd17bec24289d60aba5",
+                "reference": "4b55778242e5d5c07b7b6dd17bec24289d60aba5",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "seth@battis.net"
+                }
+            ],
+            "description": "Manage a simple cache backed by a MySQL database",
+            "time": "2015-06-22 13:05:52"
         },
         {
             "name": "educoder/pest",
@@ -84,12 +114,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "7b91165230d78ec991055659ca85b86f68451f00"
+                "reference": "a9cfa381d709c1bbea34db968ac65441dcb1ef10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/7b91165230d78ec991055659ca85b86f68451f00",
-                "reference": "7b91165230d78ec991055659ca85b86f68451f00",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/a9cfa381d709c1bbea34db968ac65441dcb1ef10",
+                "reference": "a9cfa381d709c1bbea34db968ac65441dcb1ef10",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +139,35 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2015-06-05 13:19:39"
+            "time": "2015-06-23 02:19:23"
+        },
+        {
+            "name": "smtech/oauth-negotiator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/oauth-negotiator.git",
+                "reference": "d82f31ffb9384d87b578d7710a508f289c61fd53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/d82f31ffb9384d87b578d7710a508f289c61fd53",
+                "reference": "d82f31ffb9384d87b578d7710a508f289c61fd53",
+                "shasum": ""
+            },
+            "require": {
+                "smtech/canvaspest": "dev-master"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Negotiate an OAuth 2 authentication or API token",
+            "time": "2015-06-23 01:52:51"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
@@ -134,7 +192,9 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "smtech/canvaspest": 20,
-        "battis/appmetadata": 20
+        "smtech/oauth-negotiator": 20,
+        "battis/appmetadata": 20,
+        "battis/simplecache": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -6,6 +6,8 @@ require_once('../common.inc.php');
 class CanvasAPIviaLTI_Installer {
 	const SECRETS_NEEDED_STEP = 0;
 	const SECRETS_ENTERED_STEP = 1;
+	const API_DECISION_NEEDED_STEP = 2;
+	const API_DECISION_ENTERED_STEP = 3;
 	
 	/**
 	 * Append another message to the output of the install script.
@@ -20,13 +22,13 @@ class CanvasAPIviaLTI_Installer {
 	
 	/**
 	 * Generate a SECRETS_FILE from user input.
-	 * @throws CanvasAPIviaLTI_Exception If form submission does not contain all required MySQL credentals (host, username, password and database)
-	 * @throws CanvasAPIviaLTI_Exception If SECRETS_FILE cannot be created
-	 * @throws CanvasAPIviaLTI_Exception If $step is not a pre-defined *_STEP constant
+	 * @throws CanvasAPIviaLTI_Installer_Exception If form submission does not contain all required MySQL credentals (host, username, password and database)
+	 * @throws CanvasAPIviaLTI_Installer_Exception If SECRETS_FILE cannot be created
+	 * @throws CanvasAPIviaLTI_Installer_Exception If $step is not a pre-defined *_STEP constant
 	 **/
-	public static function createSecretsFile($step = CanvasAPIviaLTI_Installer::SECRETS_NEEDED_STEP) {
+	public static function createSecretsFile($step = self::SECRETS_NEEDED_STEP) {
 		switch ($step) {
-			case CanvasAPIviaLTI_Installer::SECRETS_NEEDED_STEP: {
+			case self::SECRETS_NEEDED_STEP: {
 				// FIXME passwords in clear text? oy.
 				echo '
 					<html>
@@ -38,7 +40,9 @@ class CanvasAPIviaLTI_Installer {
 						<label for="username">Username <input type="text" name="username" id="username" /></label>
 						<label for="password">Password <input type="password" name="password" id="password" /></label>
 						<label for="database">Database <input type="text" name="database" id="database" /></label>
-						<input type="hidden" name="step" value="' . CanvasAPIviaLTI_Installer::SECRETS_ENTERED_STEP . '" />
+						<label for="oauth_id">OAuth Client ID <input type="text" name="oauth_id" id="oauth_id" /></label>
+						<label for="oauth_key">OAuth Client Key <input type="text" name="oauth_key" id="oauth_key" /></label>
+						<input type="hidden" name="step" value="' . self::SECRETS_ENTERED_STEP . '" />
 						<input type="submit" value="Create Secrets File" />
 					</form>
 					</body>
@@ -47,7 +51,7 @@ class CanvasAPIviaLTI_Installer {
 				exit;
 			}
 			
-			case CanvasAPIviaLTI_Installer::SECRETS_ENTERED_STEP: {
+			case self::SECRETS_ENTERED_STEP: {
 				if (isset($_REQUEST['name']) && isset($_REQUEST['id'])) {
 					if (isset($_REQUEST['host']) && isset($_REQUEST['username']) && isset($_REQUEST['password']) && isset($_REQUEST['database'])) {
 						$secrets = new SimpleXMLElement('<secrets />');
@@ -59,6 +63,7 @@ class CanvasAPIviaLTI_Installer {
 						$mysql->addChild('username', $_REQUEST['username']);
 						$mysql->addChild('password', $_REQUEST['password']);
 						$mysql->addChild('database', $_REQUEST['database']);
+						$oauth = $secrets->addChild('oauth');
 						if ($secrets->asXML(SECRETS_FILE) == false) {
 							throw new CanvasAPIviaLTI_Exception(
 								'Failed to create ' . SECRETS_FILE,
@@ -71,7 +76,7 @@ class CanvasAPIviaLTI_Installer {
 							CanvasAPIviaLTI_Installer_Exception::SECRETS_FILE_MYSQL
 						);
 					}
-				CanvasAPIviaLTI_Installer::appendMessage('Secrets file created.');
+				self::appendMessage('Secrets file created.');
 				} else {
 					throw new CanvasAPIviaLTI_Installer_Exception(
 						'Missing a required app identity (name and id both required).',
@@ -92,8 +97,8 @@ class CanvasAPIviaLTI_Installer {
 	
 	/**
 	 * Create database tables to back LTI_Tool_Provider
-	 * @throws CanvasAPIviaLTI_Exception If database schema not found in vendors directory
-	 * @throws CanvasAPIviaLTI_Excpetion If database tables are not created
+	 * @throws CanvasAPIviaLTI_Installer_Exception If database schema not found in vendors directory
+	 * @throws CanvasAPIviaLTI_Installer_Exception If database tables are not created
 	 **/
 	public static function createLTIDatabaseTables() {
 		global $sql;
@@ -101,7 +106,7 @@ class CanvasAPIviaLTI_Installer {
 		$ltiSchema = realpath(__DIR__ . '/../vendor/spvsoftwareproducts/LTI_Tool_Provider/lti-tables-mysql.sql');
 		
 		if ($sql->query("SHOW TABLES LIKE 'lti_%'")->num_rows >= 5) {
-			CanvasAPIviaLTI_Installer::appendMessage('LTI database tables already exist');
+			self::appendMessage('LTI database tables already exist');
 		} elseif (file_exists($ltiSchema)) {
 			$queries = explode(";", file_get_contents($ltiSchema));
 			$created = true;
@@ -116,7 +121,7 @@ class CanvasAPIviaLTI_Installer {
 				}
 			}
 			
-			CanvasAPIviaLTI_Installer::appendMessage('LTI database tables created.');
+			self::appendMessage('LTI database tables created.');
 		} else {
 			throw new CanvasAPIviaLTI_Exception("$ltiSchema not found.");
 		}
@@ -124,7 +129,7 @@ class CanvasAPIviaLTI_Installer {
 	
 	/**
 	 * Create database tables to back app
-	 * @throws CanvasAPIviaLTI_Exception If database tables are not created
+	 * @throws CanvasAPIviaLTI_Installer_Exception If database tables are not created
 	 **/
 	public static function createAppDatabaseTables() {
 		global $sql;
@@ -158,49 +163,98 @@ class CanvasAPIviaLTI_Installer {
 			}
 			
 			if ($created) {
-				CanvasAPIviaLTI_Installer::appendMessage('App database tables created.');
+				self::appendMessage('App database tables created.');
 			} else {
-				CanvasAPIviaLTI_Installer::appendMessage('App database tables already exist.');
+				self::appendMessage('App database tables already exist.');
 			}
 		}
 	}
 	
 	/**
 	 * Initialize the app metadata store, especially the APP_PATH and APP_URL
+	 *
+	 * @return AppMetadata
 	 **/
 	public static function initAppMetadata() {
 		global $secrets;
 		global $sql;
+		global $metadata;
 		
 		if (AppMetadata::prepareDatabase($sql)) {
-			CanvasAPIviaLTI_Installer::appendMessage('App metadata database tables created.');
+			self::appendMessage('App metadata database tables created.');
 		} else {
-			CanvasAPIviaLTI_Installer::appendMessage('App metadata database tables already exist.');
+			self::appendMessage('App metadata database tables already exist.');
 		}
 		
-		$metadata = new AppMetadata($sql, $secrets->app->id);
+		$metadata = new AppMetadata($sql, (string) $secrets->app->id);
 		$metadata['APP_PATH'] = preg_replace('/\/admin$/', '', __DIR__);
 		$metadata['APP_URL'] = 'https://' . $_SERVER['SERVER_NAME'] . preg_replace("|^{$_SERVER['DOCUMENT_ROOT']}(.*)$|", '$1', $metadata['APP_PATH']);
 	
-		CanvasAPIviaLTI_Installer::appendMessage('App metadata initialized.');
+		self::appendMessage('App metadata initialized.');
+		
+		return $metadata;
 	}
-}
-
-
-/* test if we already have a working install... */
-if ($ready) {
-	CanvasAPIviaLTI_Installer::appendMessage('App already installed.');
 	
-/* ...otherwise, let's start with the SECRETS_FILE */
-} else {
-	if(!file_exists(SECRETS_FILE)) {
-		if (isset($_REQUEST['step']) && $_REQUEST['step'] == CanvasAPIviaLTI_Installer::SECRETS_ENTERED_STEP) {
-			CanvasAPIviaLTI_Installer::createSecretsFile(CanvasAPIviaLTI_Installer::SECRETS_ENTERED_STEP);
+	/**
+	 * Obtain a Canvas API token, if needed.
+	 * @throws CanvasAPIviaLTI_Installer_Exception If $step is not a pre-defined *_STEP constant
+	 **/
+	public static function acquireAPIToken($step = self::API_DECISION_NEEDED_STEP, $skip = false) {
+		global $secrets;
+		global $metadata;
+		
+		if ($skip) {
+			if (isset($metadata['CANVAS_API_TOKEN']) || isset($metadata['CANVAS_API_USER'])) {
+				$api = new CanvasPest("{$metadata['CANVAS_INSTANCE_URL']}/login/oauth2", $metadata['CANVAS_API_TOKEN']);
+				$api->delete('token');
+				unset($metadata['CANVAS_API_TOKEN']);
+				unset($metadata['CANVAS_API_USER']);
+				self::appendMessage('Existing admin Canvas API token information expunged.');
+			} else {
+				self::appendMessage('No admin Canvas API token acquired.');
+			}
 		} else {
-			CanvasAPIviaLTI_Installer::createSecretsFile();
+			switch ($step) {
+				case self::API_DECISION_NEEDED_STEP: {
+					echo '
+						<html>
+						<body>
+						<form action="' . $metadata['APP_URL'] . '/admin/oauth.php" method="post">
+							<label for="url"> Canvas Instance URL <input type="text" name="url" id="url" placeholder="' . $metadata['CANVAS_INSTANCE_URL_PLACEHOLDER'] . '" value="' . $metadata['CANVAS_INSTANCE_URL'] . '" /></label>
+							<input type="hidden" name="skip" value="0" />
+							<input type="hidden" name="step" value="' . self::API_DECISION_ENTERED_STEP . '" />
+							<input type="submit" value="Request administrative token" />
+						</form>
+						or
+						<form action="' . $_SERVER['PHP_SELF'] . '" method="post">
+							<input type="hidden" name="skip" value="1" />
+							<input type="hidden" name="step" value="' . self::API_DECISION_ENTERED_STEP . '" />
+							<input type="submit" value="Require users to acquire individual tokens" />
+						</form>
+						</body>
+						</html>
+					';
+					exit;
+				}
+				case self::API_DECISION_ENTERED_STEP: {
+					$oauth = new OAuthNegotiator();
+					
+					if ($oauth->isAPIToken()) {
+						$metadata['CANVAS_API_TOKEN'] = $oauth->getToken();
+						$metadata['CANVAS_API_USER'] = $oauth->getUser();
+						
+						self::appendMessage('Admin Canvas API token acquired.');
+					}
+					break;
+				} 
+				default: {
+					throw new CanvasAPIviaLTI_Installer_Exception(
+						"Unknown step ($step) in obtaining API token.",
+						CanvasAPIviaLTI_Installer_Exception::API_STEP_MISMATCH
+					);
+				}
+			}
 		}
-	} else {
-		CanvasAPIviaLTI_Installer::appendMessage('Secrets file exists.');
 	}
 }
 
@@ -214,21 +268,45 @@ class CanvasAPIviaLTI_Installer_Exception extends CanvasAPIviaLTI_Exception {
 	const APP_SCHEMA = 7;
 	const APP_PREPARE_DATABASE = 8;
 	const APP_CREATE_TABLE = 9;
+	const API_STEP_MISMATCH = 10;
+	const API_TOKEN = 11;
 }
 
-try {
-	$secrets = initSecrets();
+/* test if we already have a working install... */
+if ($ready && (!isset($_REQUEST['step']))) {
+	CanvasAPIviaLTI_Installer::appendMessage('App already installed.');
 	
-	/* once we have the SECRETS_FILE, establish a database connection... */
-	$sql = initMySql();
-	CanvasAPIviaLTI_Installer::appendMessage('MySQL database connection established.');
-	
-	/* ...and load all of our various schema into the database... */
-	CanvasAPIviaLTI_Installer::createLTIDatabaseTables();
-	CanvasAPIviaLTI_Installer::createAppDatabaseTables();
-	
-	/* ...and initialize the app metadata */
-	CanvasAPIviaLTI_Installer::initAppMetadata();
+/* ...otherwise, let's start with the SECRETS_FILE */
+} else {
+	if(!file_exists(SECRETS_FILE)) {
+		if (isset($_REQUEST['step']) && $_REQUEST['step'] == CanvasAPIviaLTI_Installer::SECRETS_ENTERED_STEP) {
+			CanvasAPIviaLTI_Installer::createSecretsFile(CanvasAPIviaLTI_Installer::SECRETS_ENTERED_STEP);
+		} else {
+			CanvasAPIviaLTI_Installer::createSecretsFile();
+		}
+	}
+}
+
+/* establish our database connection */
+$secrets = initSecrets();
+$sql = initMySql();
+
+try {	
+	if (!isset($_REQUEST['step'])) {
+		/* load all of our various schema into the database... */
+		CanvasAPIviaLTI_Installer::createLTIDatabaseTables();
+		CanvasAPIviaLTI_Installer::createAppDatabaseTables();
+		
+		/* ...and initialize the app metadata... */
+		$metadata = CanvasAPIviaLTI_Installer::initAppMetadata();
+
+		/* ...optionally, acquire an API token for the app */
+		CanvasAPIviaLTI_Installer::acquireAPIToken(CanvasAPIviaLTI_Installer::API_DECISION_NEEDED_STEP);
+	} else {
+		$metadata = new AppMetadata($sql, $secrets->app->id);
+		$skip = (isset($_REQUEST['skip']) ? $_REQUEST['skip'] : false);
+		CanvasAPIviaLTI_Installer::acquireAPIToken($_REQUEST['step'], $skip);
+	}
 } catch (CanvasAPIviaLTI_Installer_Exception $e) {
 	CanvasAPIviaLTI_Installer::appendMessage($e->getMessage() . ' [Error ' . $e->getCode() . ']');
 	exit;

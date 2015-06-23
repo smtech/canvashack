@@ -22,7 +22,9 @@
 	],
 	"require": {
 		"smtech/canvaspest": "dev-master",
+		"smtech/oauth-negotiator": "dev-master",
 		"battis/appmetadata": "dev-master",
+		"battis/simplecache": "dev-master",
 		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.00"
 	},
 	"autoload": {

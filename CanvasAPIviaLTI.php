@@ -61,6 +61,8 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
  **/
 class CanvasAPIviaLTI_Exception extends Exception {
 	const MISSING_SECRETS_FILE = 1;
+	const INVALID_SECRETS_FILE = 2;
+	const MYSQL_CONNECTION = 3;
 }
 
 ?>
