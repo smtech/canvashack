@@ -124,6 +124,6 @@ if ($consumer) {
 		<?php endif; ?>
 		<input type="button" value="Cancel" onclick="window.location.href='<?= $_SERVER['PHP_SELF'] ?>';" />
 		
-		<p>To install this LTI, users should choose configuration type <em>By URL</em> and provide their consumer key and secret above. They should point their installer at <code><?= $metadata['APP_URL'] ?>/config.xml</code>
+		<p>To install this LTI, users should choose configuration type <em>By URL</em> and provide their consumer key and secret above. They should point their installer at <code><a href="<?= $metadata['APP_URL'] ?>/config.xml"><?= $metadata['APP_URL'] ?>/config.xml</a></code>
 	</body>
 </html>

@@ -1,12 +1,12 @@
-	<?php
+<?php
 
 require_once('vendor/autoload.php');
 
 define('SECRETS_FILE', __DIR__ . '/secrets.xml');
-define('MYSQL_PREFIX', '');
 define('SCHEMA_FILE', __DIR__ . '/schema.sql');
+define('MYSQL_PREFIX', '');
 
-define('SESSION_NAME', 'Canvas API via LTI');
+session_start();
 
 /**
  * Initialize a SimpleXMLElement from the SECRETS_FILE
@@ -37,6 +37,8 @@ function initSecrets() {
 
 /**
  * Initialize a mysqli connector using the credentials stored in SECRETS_FILE
+ *
+ * @uses initSecrets() If $secrets is not already initialized
  *
  * @return mysqli A valid mysqli connector to the database backing the CanvasAPIviaLTI instance
  *

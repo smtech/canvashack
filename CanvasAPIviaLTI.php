@@ -9,7 +9,8 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 	 **/
 	public function onLaunch() {
 		global $metadata;
-		
+		global $sql;
+				
 		/* check permissions  in some appropriate manner */
 		if ($this->user->isLearner() || $this->user->isStaff()) {
 			
@@ -19,10 +20,29 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 	        $_SESSION['user_consumer_key'] = $this->user->getResourceLink()->getConsumer()->getKey();
 	        $_SESSION['user_id'] = $this->user->getId();
 	        $_SESSION['isStudent'] = $this->user->isLearner();
-	        $_SESSION['isContentItem'] = FALSE;
-	        
-	        /* pass controll off to the app */
-	        $this->redirectURL = "{$metadata['APP_URL']}/app.php";
+	        $_SESSION['isContentItem'] = FALSE;	   
+			
+			$haveToken = true;
+			if (empty($metadata['CANVAS_API_TOKEN'])) {
+				$userToken = new UserAPIToken($_SESSION['user_consumer_key'], $_SESSION['user_id'], $sql);
+				if (empty($userToken->getToken())) {
+					$haveToken = false;
+					$this->redirectURL = "{$metadata['APP_URL']}/token_request.php?oauth=request";
+				} else {
+					$_SESSION['isUserToken'] = true;
+					$_SESSION['apiToken'] = $userToken->getToken();
+					$_SESSION['apiEndpoint'] = $userToken->getAPIEndpoint();
+				}
+			} else {
+				$_SESSION['isUserToken'] = false;
+				$_SESSION['apiToken'] = $metadata['CANVAS_API_TOKEN'];
+				$_SESSION['apiEndpoint'] = "{$metadata['CANVAS_INSTANCE_URL']}/api/v1";
+			}
+			
+	        /* pass control off to the app */
+	        if ($haveToken) {
+		        $this->redirectURL = "{$metadata['APP_URL']}/app.php";
+	        }
 
 		/* ...otherwise set an appropriate error message and fail */
 		} else {

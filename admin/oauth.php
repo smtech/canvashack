@@ -1,6 +1,5 @@
 <?php
 
-require_once('../vendor/autoload.php');
 require_once('../common.inc.php');
 
 if (isset($_REQUEST['url']) && !empty($_REQUEST['url'])) {

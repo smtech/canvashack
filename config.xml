@@ -1,9 +1,8 @@
 <?php
 
-header('Content-type: application/xml');
-
-require_once('vendor/autoload.php');
 require_once('common.inc.php');
+
+header('Content-type: application/xml');
 
 ?><?xml version="1.0" encoding="UTF-8"?>
 <cartridge_basiclti_link xmlns="http://www.imsglobal.org/xsd/imslticc_v1p0"

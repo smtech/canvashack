@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/773e1ed3233fa8d3deaf181e5ce548251d1d2a66",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/4c03d21bf50f7aff7d922328d5d23bd5eb3f5906",
                 "reference": "773e1ed3233fa8d3deaf181e5ce548251d1d2a66",
                 "shasum": ""
             },
@@ -84,12 +84,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "a9cfa381d709c1bbea34db968ac65441dcb1ef10"
+                "reference": "111fe228ba35292e90f790860ed93aa9a7c1a0b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/a9cfa381d709c1bbea34db968ac65441dcb1ef10",
-                "reference": "a9cfa381d709c1bbea34db968ac65441dcb1ef10",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/111fe228ba35292e90f790860ed93aa9a7c1a0b4",
+                "reference": "111fe228ba35292e90f790860ed93aa9a7c1a0b4",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +109,7 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2015-06-23 02:19:23"
+            "time": "2015-06-30 16:53:43"
         },
         {
             "name": "smtech/oauth-negotiator",
