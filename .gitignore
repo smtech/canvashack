@@ -1,3 +1,4 @@
 secrets.xml
 /vendor/
 .DS_*
+admin/.ht*
