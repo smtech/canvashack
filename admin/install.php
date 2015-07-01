@@ -4,10 +4,10 @@ require_once('../vendor/autoload.php');
 require_once('../common.inc.php');
 
 class CanvasAPIviaLTI_Installer {
-	const SECRETS_NEEDED_STEP = 0;
-	const SECRETS_ENTERED_STEP = 1;
-	const API_DECISION_NEEDED_STEP = 2;
-	const API_DECISION_ENTERED_STEP = 3;
+	const SECRETS_NEEDED_STEP = 1;
+	const SECRETS_ENTERED_STEP = 2;
+	const API_DECISION_NEEDED_STEP = 3;
+	const API_DECISION_ENTERED_STEP = 4;
 	
 	/**
 	 * Append another message to the output of the install script.
