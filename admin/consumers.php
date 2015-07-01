@@ -2,6 +2,11 @@
 	<head>
 		<title>LTI Consumers</title>
 	</head>
+	<style type="text/css">
+		.open-record {
+			color: #ddd;
+		}
+	</style>
 	<body>
 
 <?php
@@ -19,22 +24,22 @@ $enabled = true;
 if (isset($_REQUEST['name']) && isset($_REQUEST['key']) && isset($_REQUEST['secret'])) {
 	$valid = true;
 	$message = '<strong>Invalid consumer information.</strong> ';
-	if (strlen($name = trim($_REQUEST['name'])) == 0) {
+	if (empty($_name = trim($_REQUEST['name']))) {
 		$valid = false;
 		$message .= 'Consumer name must not be empty. ';
 	}
-	if (strlen($key = trim($_REQUEST['key'])) == 0) {
+	if (empty($_key = trim($_REQUEST['key']))) {
 		$valid = false;
 		$message .= 'Consumer key must not be empty. ';
 	}
-	if (strlen($secret = trim($_REQUEST['secret'])) == 0) {
+	if (empty(trim($_REQUEST['secret']))) { // secret may contain intentional whitespace -- leave untrimmed
 		$valid = false;
 		$message .= 'Shared secret must not be empty. ';
 	}
 	
 	if ($valid) {
-		$consumer = new LTI_Tool_Consumer($key, $data_connector);
-		$consumer->name = $name;
+		$consumer = new LTI_Tool_Consumer($_key, LTI_Data_Connector::getDataConnector($sql));
+		$consumer->name = $_name;
 		$consumer->secret = $_REQUEST['secret'];
 		$consumer->enabled = isset($_REQUEST['enabled']);
 		if (!$consumer->save()) {
@@ -49,17 +54,33 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['key']) && isset($_REQUEST['secr
 
 /* look up consumer to edit, if requested */
 } elseif (isset($_REQUEST['consumer_key'])) {
-	$consumer = new LTI_Tool_Consumer($_REQUEST['consumer_key'], $data_connector);
-	$name = $consumer->name;
-	$key = $consumer->getKey();
-	$secret = $consumer->secret;
-	$enabled = $consumer->enabled;
+	$consumer = new LTI_Tool_Consumer($_REQUEST['consumer_key'], LTI_Data_Connector::getDataConnector($sql));
+	if (isset($_REQUEST['action']))
+		switch ($_REQUEST['action']) {
+			case 'delete': {
+				$consumer->delete();
+				break;
+			}
+			case 'select': {
+				$name = $consumer->name;
+				$key = $consumer->getKey();
+				$secret = $consumer->secret;
+				$enabled = $consumer->enabled;
+				break;
+			}
+			case 'update':
+			case 'insert':
+			default: {
+				// leave default form values set
+			}
+		}
 }
 
 /* display a list of consumers */
-if ($response = $sql->query("SELECT * FROM `" . LTI_Data_Connector::CONSUMER_TABLE_NAME . "` ORDER BY `name` ASC, `consumer_key` ASC")) {
-	$consumer = $response->fetch_assoc();
+$response = $sql->query("SELECT * FROM `" . LTI_Data_Connector::CONSUMER_TABLE_NAME . "` ORDER BY `name` ASC, `consumer_key` ASC");
+$consumer = $response->fetch_assoc();
 	
+if ($consumer) {
 	echo '<table><tr>';
 	foreach (array_keys($consumer) as $field) {
 		echo "<th>$field</th>";
@@ -67,12 +88,14 @@ if ($response = $sql->query("SELECT * FROM `" . LTI_Data_Connector::CONSUMER_TAB
 	echo '</tr>';
 	
 	do {
-		echo '<tr>';
+		$closed = !isset($_REQUEST['consumer_key']) || (isset($_REQUEST['consumer_key']) && $_REQUEST['consumer_key'] != $consumer['consumer_key']);
+		echo '<tr' . ($closed ? '' : ' class="open-record"') . '>';
 		foreach ($consumer as $field) {
 			echo "<td>$field</td>";
 		}
-		if (!isset($_REQUEST['consumer_key']) || (isset($_REQUEST['consumer_key']) && $_REQUEST['consumer_key'] != $consumer['consumer_key'])) {
-			echo '<td><form action="' . $_SERVER['PHP_SELF'] . '" method="post"><input type="hidden" name="consumer_key" value="' . $consumer['consumer_key'] . '" /><input type="submit" value="Edit" /></form></td>';
+		if ($closed) {
+			echo '<td><form action="' . $_SERVER['PHP_SELF'] . '" method="post"><input type="hidden" name="consumer_key" value="' . $consumer['consumer_key'] . '" /><input type="hidden" name="action" value="select" /><input type="submit" value="Edit" /></form></td>';
+			echo '<td><form action="' . $_SERVER['PHP_SELF'] . '" method="post"><input type="hidden" name="consumer_key" value="' . $consumer['consumer_key'] . '" /><input type="hidden" name="action" value="delete" /><input type="submit" value="Delete" /></form></td>';
 		}
 		echo '</tr>';
 	} while ($consumer = $response->fetch_assoc());
@@ -89,9 +112,17 @@ if ($response = $sql->query("SELECT * FROM `" . LTI_Data_Connector::CONSUMER_TAB
 			<label for="key">Key <input type="text" name="key" id="key" value="<?= $key ?>" /></label>
 			<label for="secret">Secret <input type="text" name="secret" id="secret" value="<?= $secret ?>" /></label>
 			<label for="enabled">Enabled <input type="checkbox" name="enabled" id="enabled" value="1" <?= ($enabled ? 'checked' : '') ?> /></label>
-			<input type="submit" value="<?= (strlen($name) ? 'Update' : 'Add') ?> Consumer" />
-			<input type="button" value="Cancel" onclick="window.location.href='<?= $_SERVER['PHP_SELF'] ?>';" />
+			<input type="hidden" name="action" value="<?= (!empty($name) ? 'update' : 'insert') ?>" />
+			<input type="submit" value="<?= (!empty($name) ? 'Update' : 'Add') ?> Consumer" />
 		</form>
+		<?php if (!empty($name)): ?>
+		<form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+			<input type="hidden" name="consumer_key" value="<?= $key ?>" />
+			<input type="hidden" name="action" value="delete" />
+			<input type="submit" value="Delete" />
+		</form>
+		<?php endif; ?>
+		<input type="button" value="Cancel" onclick="window.location.href='<?= $_SERVER['PHP_SELF'] ?>';" />
 		
 		<p>To install this LTI, users should choose configuration type <em>By URL</em> and provide their consumer key and secret above. They should point their installer at <code><?= $metadata['APP_URL'] ?>/config.xml</code>
 	</body>
