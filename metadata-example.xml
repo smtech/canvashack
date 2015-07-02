@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!-- An example of what might be stored in the AppMetadata $metadata global, see config.xml for even more potential keys -->
+<resultset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" statement="select `key`,`value`,`validate` from `app_metadata` ORDER by `key` ASC">
+	<row>
+		<field name="key">ACCOUNT_NAVIGATION</field>
+		<field name="value">FALSE</field>
+		<field name="validate">/TRUE|FALSE/</field>
+	</row>
+	<row>
+		<field name="key">APP_DESCRIPTION</field>
+		<field name="value">A starter app for building an LTI that makes use of the Canvas APIs.</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">APP_DOMAIN</field>
+		<field name="value"/>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">APP_ICON_URL</field>
+		<field name="value">@APP_URL/icon.png</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">APP_ID</field>
+		<field name="value">canvas-api-via-lti-starter</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">APP_LAUNCH_URL</field>
+		<field name="value">@APP_URL/launch.php</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">APP_NAME</field>
+		<field name="value">Canvas API via LTI Starter</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">APP_PATH</field>
+		<field name="value">/var/www/area51.stmarksschool.org/canvas/canvas-api-via-lti</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">APP_PRIVACY_LEVEL</field>
+		<field name="value">public</field>
+		<field name="validate">/public|name_only|anonymous/</field>
+	</row>
+	<row>
+		<field name="key">APP_URL</field>
+		<field name="value">https://area51.stmarksschool.org/canvas/canvas-api-via-lti</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">CANVAS_INSTANCE_URL</field>
+		<field name="value">https://stmarksschool.test.instructure.com</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">CANVAS_INSTANCE_URL_PLACEHOLDER</field>
+		<field name="value">https://stmarksschool.instructure.com</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">COURSE_NAVIGATION</field>
+		<field name="value">TRUE</field>
+		<field name="validate">/TRUE|FALSE/</field>
+	</row>
+	<row>
+		<field name="key">COURSE_NAVIGATION_DEFAULT</field>
+		<field name="value">enabled</field>
+		<field name="validate">/enabled|disabled/</field>
+	</row>
+	<row>
+		<field name="key">COURSE_NAVIGATION_ENABLED</field>
+		<field name="value">true</field>
+		<field name="validate">/true|false/</field>
+	</row>
+	<row>
+		<field name="key">COURSE_NAVIGATION_ICON_URL</field>
+		<field name="value">@APP_ICON_URL</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">COURSE_NAVIGATION_LAUNCH_URL</field>
+		<field name="value">@APP_LAUNCH_URL</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">COURSE_NAVIGATION_LINK_TEXT</field>
+		<field name="value">@APP_NAME</field>
+		<field name="validate" xsi:nil="true"/>
+	</row>
+	<row>
+		<field name="key">COURSE_NAVIGATION_VISIBILITY</field>
+		<field name="value">public</field>
+		<field name="validate">/public|members|admins/</field>
+	</row>
+	<row>
+		<field name="key">CUSTOM_FIELDS</field>
+		<field name="value">TRUE</field>
+		<field name="validate">/TRUE|FALSE/</field>
+	</row>
+	<row>
+		<field name="key">CUSTOM_FIELD_debug</field>
+		<field name="value">true</field>
+		<field name="validate">/true|false/</field>
+	</row>
+	<row>
+		<field name="key">EDITOR_BUTTON</field>
+		<field name="value">FALSE</field>
+		<field name="validate">/TRUE|FALSE/</field>
+	</row>
+	<row>
+		<field name="key">HOMEWORK_SUBMISSION</field>
+		<field name="value">FALSE</field>
+		<field name="validate">/TRUE|FALSE/</field>
+	</row>
+	<row>
+		<field name="key">RESOURCE_SELECTION</field>
+		<field name="value">FALSE</field>
+		<field name="validate">/TRUE|FALSE/</field>
+	</row>
+	<row>
+		<field name="key">USER_NAVIGATION</field>
+		<field name="value">FALSE</field>
+		<field name="validate">/TRUE|FALSE/</field>
+	</row>
+</resultset>
