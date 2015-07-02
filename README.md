@@ -15,19 +15,11 @@ an API key. This seemed confusing, at best.)
 ### Usage
 
 1. Start by [forking this repository](https://help.github.com/articles/fork-a-repo/).
-2. Load your fork on to your favorite LAMP server (ideally including SSL-authentication -- Canvas plays nicer that way,
-  and it's just plain more secure).
+2. Load your fork on to your favorite LAMP server (ideally including SSL-authentication -- Canvas plays nicer that way, and it's just plain more secure).
 2. Be sure to run `composer install` ([Composer rocks](https://getcomposer.org/)). 
-3. Point your browser at https://<install-url>/admin/ and you will run the install script. You will need to have your MysQL
-4. credentials handy, as well as your Canvas developer credentials. Answer whatever questions it asks.
-  (This will generate a secrets.xml file for you, if you don't want to make one yourself, based on
-  [secrets-example.xml](https://github.com/smtech/starter-canvas-api-via-lti/blob/master/secrets-example.xml).)
-4. Modify the CanvasAPIviaLTI class as needed -- most of your app logic can just go into
-  [app.php](https://github.com/smtech/starter-canvas-api-via-lti/blob/master/app.php), which is loaded after a user has been
-  authenticated (via [launch.php](https://github.com/smtech/starter-canvas-api-via-lti/blob/master/launch.php)).
-5. Including [common.inc.php](https://github.com/smtech/starter-canvas-api-via-lti/blob/master/common.inc.php) will provide
-  access to several handy global variables:
+3. Point your browser at https://&lt;install-url&gt;/admin/ and you will run the install script. You will need to have your MysQL credentials handy, as well as your Canvas developer credentials. Answer whatever questions it asks. (This will generate a secrets.xml file for you, if you don't want to make one yourself, based on [secrets-example.xml](https://github.com/smtech/starter-canvas-api-via-lti/blob/master/secrets-example.xml).)
+4. Modify the CanvasAPIviaLTI class as needed -- most of your app logic can just go into [app.php](https://github.com/smtech/starter-canvas-api-via-lti/blob/master/app.php), which is loaded after a user has been authenticated (via [launch.php](https://github.com/smtech/starter-canvas-api-via-lti/blob/master/launch.php)).
+5. Including [common.inc.php](https://github.com/smtech/starter-canvas-api-via-lti/blob/master/common.inc.php) will provide access to several handy global variables (as well as populating the `$_SESSION` variable with relevant information):
   1. `SimpleXMLElement $secrets`, the secrets.xml file.
   2. `mysqli $sql`, a database connection to your MySQL server.
   3. `AppMetadata $metadata`, an associative array bound to the app_metadata table in your database.
-  4. `LTI_Tool_Provider $toolProvider`, representing the LTI information in your database.
