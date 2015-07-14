@@ -5,6 +5,7 @@ require_once('../common.inc.php');
 /* save the URL we were given for the OAuth endpoint */
 if (isset($_REQUEST['url']) && !empty($_REQUEST['url'])) {
 	$metadata['CANVAS_INSTANCE_URL'] = $_REQUEST['url'];
+	$metadata['CANVAS_API_URL'] = '@CANVAS_INSTANCE_URL/api/v1';
 }
 
 /* are we at the beginning of the process, so we need to give the OAuthNegotiator as much information as possible? */

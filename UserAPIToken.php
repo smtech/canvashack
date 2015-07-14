@@ -33,9 +33,9 @@ class UserAPIToken {
 	private $token = null;
 	
 	/**
-	 * @var string|null $endpoint The URL of the API endpoint for which this user's API token is valid, NULL if no token
+	 * @var string|null $apiUrl The URL of the API for which this user's token is valid, NULL if no token
 	 **/
-	private $endpoint = null;
+	private $apiUrl = null;
 
 	/**
 	 * Create a new UserAPIToken to either register a new user in the
@@ -81,7 +81,7 @@ class UserAPIToken {
 		$row = $result->fetch_assoc();
 		if ($row) {
 			$this->token = $row['token'];
-			$this->endpoint = $row['api_endpoint'];
+			$this->apiUrl = $row['api_url'];
 		} else {
 			if (!$this->sql->query("INSERT INTO `" . self::USER_TOKENS_TABLE . "` (`consumer_key`, `id`) VALUES ('{$this->consumerKey}', '{$this->id}')")) {
 				throw new UserAPIToken_Exception(
@@ -135,41 +135,41 @@ class UserAPIToken {
 	}
 	
 	/**
-	 * @return string|boolean The URL of the API endpoint for which the user's API token is valid, or FALSE if no token has been acquired
+	 * @return string|boolean The URL of the API for which the user's API token is valid, or FALSE if no token has been acquired
 	 **/
-	function getAPIEndpoint() {
-		if ($this->endpoint) {
-			return $this->endpoint;
+	function getAPIUrl() {
+		if ($this->apiUrl) {
+			return $this->apiUrl;
 		}
 		return false;
 	}
 	
 	/**
-	 * Stores a new URL for the API endpoint for which the user's API access token is valid in USER_TOKEN_TABLE
+	 * Stores a new URL for the API URL for which the user's API access token is valid in USER_TOKEN_TABLE
 	 *
-	 * @param string $endpoint The URL of the API endpoint
+	 * @param string $apiUrl The URL of the API
 	 *
-	 * @return boolean TRUE if the URL of the API endpoint is stored in USER_TOKEN_TABLE, FALSE otherwise
+	 * @return boolean TRUE if the URL of the API is stored in USER_TOKEN_TABLE, FALSE otherwise
 	 *
-	 * @throws UserAPITokenException ENDPOINT_REQUIRED If no endpoint is provided
+	 * @throws UserAPITokenException API_URL_REQUIRED If no URL is provided
 	 **/
-	public function setAPIEndpoint($endpoint) {
-		if (empty($endpoint)) {
+	public function setAPIUrl($apiUrl) {
+		if (empty($apiUrl)) {
 			throw new UserAPIToken_Exception(
-				'API endpoint is require',
-				UserAPIToken_Exception::ENDPOINT_REQUIRED
+				'API URL is required',
+				UserAPIToken_Exception::API_URL_REQUIRED
 			);
 		}
 		
 		if ($this->consumerKey && $this->id && $this->sql) {
-			$_endpoint = $this->sql->real_escape_string($endpoint);
-			if (!$this->sql->query("UPDATE `" . self::USER_TOKENS_TABLE . "` set `api_endpoint` = '$_endpoint' WHERE `consumer_key` = '{$this->consumerKey}' AND `id` = '{$this->id}'")) {
+			$_apiUrl = $this->sql->real_escape_string($apiUrl);
+			if (!$this->sql->query("UPDATE `" . self::USER_TOKENS_TABLE . "` set `api_url` = '$_apiUrl' WHERE `consumer_key` = '{$this->consumerKey}' AND `id` = '{$this->id}'")) {
 				throw new UserAPIToken_Exception(
-					"Error updating API endpoint for user token: {$this->sql->error}",
+					"Error updating API URL for user token: {$this->sql->error}",
 					UserAPIToken_Exception::MYSQLI_ERROR
 				);
 			}
-			$this->endpoint = $endpoint;
+			$this->apiUrl = $apiUrl;
 			return true;
 		}
 		return false;
@@ -187,7 +187,7 @@ class UserAPIToken_Exception extends CanvasAPIviaLTI_Exception {
 	const MYSQLI_REQUIRED = 3;
 	const MYSQLI_ERROR = 4;
 	const TOKEN_REQUIRED = 5;
-	const ENDPOINT_REQUIRED = 6;
+	const API_URL_REQUIRED = 6;
 }
 
 ?>

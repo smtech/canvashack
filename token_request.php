@@ -36,10 +36,10 @@ if (isset($_REQUEST['oauth'])) {
 		case 'complete': {
 			$user = new UserAPIToken($_SESSION['user_consumer_key'], $_SESSION['user_id'], $sql);
 			$user->setToken($oauth->getToken());
-			$user->setAPIEndpoint("{$metadata['CANVAS_INSTANCE_URL']}/api/v1");
+			$user->setAPIUrl("{$metadata['CANVAS_INSTANCE_URL']}/api/v1");
 			
 			$_SESSION['apiToken'] = $user->getToken();
-			$_SESSION['apiEndpoint'] = $user->getAPIEndpoint();
+			$_SESSION['apiUrl'] = $user->getAPIUrl();
 			$_SESSION['isUserToken'] = true;
 			
 			header("Location: {$metadata['APP_URL']}/app.php");

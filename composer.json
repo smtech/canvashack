@@ -22,9 +22,9 @@
 	],
 	"require": {
 		"smtech/canvaspest": "dev-master",
-		"smtech/oauth-negotiator": "1.0",
-		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.00"
+		"smtech/oauth-negotiator": "1.*",
 		"battis/appmetadata": "dev-master",
+		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.00"
 	},
 	"autoload": {
 		"classmap": [""]
