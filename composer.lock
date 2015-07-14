@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3cab61578568dc29fb1899ab0a30ad01",
+    "hash": "59f35f4ca0912291a2b1af038916d797",
     "packages": [
         {
             "name": "battis/appmetadata",
-            "version": "v1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "773e1ed3233fa8d3deaf181e5ce548251d1d2a66"
+                "reference": "0788378921d4c35fac8bd354537f34c4fb2c8087"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/4c03d21bf50f7aff7d922328d5d23bd5eb3f5906",
-                "reference": "773e1ed3233fa8d3deaf181e5ce548251d1d2a66",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/0788378921d4c35fac8bd354537f34c4fb2c8087",
+                "reference": "0788378921d4c35fac8bd354537f34c4fb2c8087",
                 "shasum": ""
             },
             "type": "library",
@@ -34,7 +34,7 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-06-23 14:53:46"
+            "time": "2015-07-01 01:04:01"
         },
         {
             "name": "educoder/pest",
@@ -78,6 +78,7 @@
             "homepage": "https://github.com/educoder/pest",
             "time": "2014-09-02 15:51:33"
         },
+        {
         {
             "name": "smtech/canvaspest",
             "version": "dev-master",
@@ -162,6 +163,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "smtech/canvaspest": 20
+        "battis/appmetadata": 20,
     },
     "prefer-stable": false,
     "prefer-lowest": false,

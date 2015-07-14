@@ -81,6 +81,8 @@ class CanvasAPIviaLTI_Installer {
 						$mysql->addChild('password', $_REQUEST['password']);
 						$mysql->addChild('database', $_REQUEST['database']);
 						$oauth = $secrets->addChild('oauth');
+						$oauth->addChild('id', $_REQUEST['oauth_id']);
+						$oauth->addChild('key', $_REQUEST['oauth_key']);
 						if ($secrets->asXML(SECRETS_FILE) == false) {
 							throw new CanvasAPIviaLTI_Exception(
 								'Failed to create ' . SECRETS_FILE,
