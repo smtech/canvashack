@@ -84,4 +84,6 @@ try {
 	$ready = false;
 }
 
+require_once('common-app.inc.php');
+
 ?>
