@@ -2,7 +2,8 @@
 .ht*
 secrets.xml
 
-# code libraries
+# dynamically-loaded and/or caches
+/logs/*.log
 /vendor/
 /smarty/cache/
 /smarty/templates_c/

@@ -1,5 +1,5 @@
 # hide files that we don't want folks browsing
-<FilesMatch "^(\.ht*|secrets\.xml|.*\.sql|.*\.inc\.php|vendor|smarty|classes)$">
+<FilesMatch "^(\.ht*|secrets\.xml|.*\.sql|.*\.inc\.php|logs|vendor|smarty|classes)$">
   Order allow,deny
   Deny from all
 </FilesMatch>

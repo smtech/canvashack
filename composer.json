@@ -25,7 +25,8 @@
 		"smtech/oauth-negotiator": "1.*",
 		"battis/appmetadata": "dev-master",
 		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.00",
-		"smarty/smarty": "~3.1"
+		"smarty/smarty": "~3.1",
+		"pear/log": "1.12.*"
 	},
 	"autoload": {
 		"classmap": [""]
