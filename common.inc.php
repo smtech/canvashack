@@ -109,6 +109,8 @@ try {
 	$ready = false;
 }
 
-require_once('common-app.inc.php');
+if ($ready) {
+	require_once('common-app.inc.php');
+}
 
 ?>

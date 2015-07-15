@@ -14,7 +14,7 @@ body, p, div {
 }
 
 #header #header-logo {
-	background: url('icon.png') no-repeat;
+	background: url('lti/icon.png') no-repeat;
 	background-size: 1.5em 1.5em;
 	background-position: 0.25em 0.25em;
 	height: 2em;
@@ -95,6 +95,21 @@ body, p, div {
 	max-width: 90%;
 }
 
+address {
+	font-style: normal;
+}
+
+#footer {
+	position: absolute;
+	text-align: right;
+	font-size: 8pt;
+	bottom: 0;
+	background: #eee;
+	color: #999;
+	padding: 0.5em;
+	width: 100%;
+}
+
 /* Forms formatting */
 label, input[type=file] {
 	display: block;
@@ -122,19 +137,4 @@ input[type=text] {
 
 input[type=radio], input[type=checkbox] {
 	display: inline;
-}
-
-address {
-	font-style: normal;
-}
-
-#footer {
-	position: absolute;
-	text-align: right;
-	font-size: 8pt;
-	bottom: 0;
-	background: #eee;
-	color: #999;
-	padding: 0.5em;
-	width: 100%;
 }
