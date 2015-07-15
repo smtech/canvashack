@@ -1,7 +1,5 @@
 <?php
 	
-require_once('common.inc.php');
-
 /**
  * Represents a user who either has or is in the process of acquiring an API
  * access token via OAuth

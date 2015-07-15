@@ -65,13 +65,26 @@ function initMySql() {
 	return $sql;
 }
 
+function initAppMetadata() {
+	global $secrets;
+	global $sql;
+	
+	$metadata = new AppMetadata($sql, (string) $secrets->app->id);
+	
+	return $metadata;
+}
+
 $ready = true;
+
+$smarty = new StMarksSmarty();
+
 try {
 
 	/* initialize global variables */
 	$secrets = initSecrets();
 	$sql = initMySql();
-	$metadata = new AppMetadata($sql, (string) $secrets->app->id);
+	$metadata = initAppMetadata();
+	$smarty->assign('metadata', $metadata);
 
 	/* set up a Tool Provider (TP) object to process the LTI request */
 	$toolProvider = new CanvasAPIviaLTI(LTI_Data_Connector::getDataConnector($sql));

@@ -24,7 +24,8 @@
 		"smtech/canvaspest": "dev-master",
 		"smtech/oauth-negotiator": "1.*",
 		"battis/appmetadata": "dev-master",
-		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.00"
+		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.00",
+		"smarty/smarty": "~3.1"
 	},
 	"autoload": {
 		"classmap": [""]

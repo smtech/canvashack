@@ -1,7 +1,5 @@
 <?php
 
-require_once('common.inc.php');
-
 /**
  * A Tool Provider that can handle LTI requests
  *
@@ -37,7 +35,7 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 					
 					/* ...if this user has no token, let's start by getting one */
 					$haveToken = false;
-					$this->redirectURL = "{$metadata['APP_URL']}/token_request.php?oauth=request";
+					$this->redirectURL = "{$metadata['APP_URL']}/lti/token_request.php?oauth=request";
 				} else {
 					
 					/* ...but if the user does have a token, rock on! */

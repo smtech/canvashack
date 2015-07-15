@@ -14,17 +14,6 @@ class CanvasAPIviaLTI_Installer {
 	const API_DECISION_ENTERED_STEP = 4;
 	
 	/**
-	 * Append another message to the output of the install script.
-	 *
-	 * TODO maybe some nicer HTML generation
-	 *
-	 * @param string $message The message to append (HTML formatting is fine).
-	 **/
-	public static function appendMessage($message) {
-		echo "<pre>$message</pre>";
-	}
-	
-	/**
 	 * Generate a SECRETS_FILE from user input.
 	 *
 	 * @param scalar $step optional Where are we in the SECRETS_FILE creation workflow? (defaults to SECRETS_NEEDED_STEP -- the beginning)
@@ -34,10 +23,12 @@ class CanvasAPIviaLTI_Installer {
 	 * @throws CanvasAPIviaLTI_Installer_Exception If $step is not a pre-defined *_STEP constant
 	 **/
 	public static function createSecretsFile($step = self::SECRETS_NEEDED_STEP) {
+		global $smarty;
+		
 		switch ($step) {
 			case self::SECRETS_NEEDED_STEP: {
 				// FIXME passwords in clear text? oy.
-				echo '
+				$smarty->assign('content', '
 					<form action="' . $_SERVER['PHP_SELF'] . '" method="post">
 						<section>
 							<h3>Application Information</h3>
@@ -61,7 +52,8 @@ class CanvasAPIviaLTI_Installer {
 						<input type="hidden" name="step" value="' . self::SECRETS_ENTERED_STEP . '" />
 						<input type="submit" value="Create Secrets File" />
 					</form>
-				';
+				');
+				$smarty->display();
 				exit;
 			}
 			
@@ -112,7 +104,7 @@ class CanvasAPIviaLTI_Installer {
 							CanvasAPIviaLTI_Installer_Exception::SECRETS_FILE_MYSQL
 						);
 					}
-				self::appendMessage('Secrets file created.');
+				NotificationMessage::addMessage('Secrets file created', "<code>secrets.xml</code> contains your authentication credentials and should be carefully protected. Be sure not to commit it to a public repository!");
 				} else {
 					throw new CanvasAPIviaLTI_Installer_Exception(
 						'Missing a required app identity (name, id, admin username and admin password all required).',
@@ -147,7 +139,7 @@ class CanvasAPIviaLTI_Installer {
 		$ltiSchema = realpath(__DIR__ . '/../vendor/spvsoftwareproducts/LTI_Tool_Provider/lti-tables-mysql.sql');
 		
 		if ($sql->query("SHOW TABLES LIKE 'lti_%'")->num_rows >= 5) {
-			self::appendMessage('LTI database tables already exist');
+			NotificationMessage::addMessage('LTI database tables exist', 'Database tables to support the LTI Tool Provider (TP) already exist and have not been re-created.');
 		} elseif (file_exists($ltiSchema)) {
 			$queries = explode(";", file_get_contents($ltiSchema));
 			$created = true;
@@ -162,7 +154,12 @@ class CanvasAPIviaLTI_Installer {
 				}
 			}
 			
-			self::appendMessage('LTI database tables created.');
+			NotificationMessage::addMessage(
+				'LTI database tables created',
+				'Database tables to support the LTI Tool Provider (TP) have been created in
+				 your MySQL database.',
+				'good'
+			);
 		} else {
 			throw new CanvasAPIviaLTI_Exception("$ltiSchema not found.");
 		}
@@ -205,9 +202,18 @@ class CanvasAPIviaLTI_Installer {
 			}
 			
 			if ($created) {
-				self::appendMessage('App database tables created.');
+				NotificationMessage::addMessage(
+					'App database tables created',
+					'Database tables to support the application have been created in your
+					 MySQL database.',
+					'good'
+				);
 			} else {
-				self::appendMessage('App database tables already exist.');
+				NotificationMessage::addMessage(
+					'App database tables exist',
+					'Database tables to support the application already exist and have not
+					 been re-created.'
+				);
 			}
 		}
 	}
@@ -217,22 +223,40 @@ class CanvasAPIviaLTI_Installer {
 	 *
 	 * @return AppMetadata
 	 **/
-	public static function initAppMetadata() {
+	public static function createAppMetadata() {
 		global $secrets;
 		global $sql;
 		global $metadata;
+		global $smarty;
 		
 		if (AppMetadata::prepareDatabase($sql)) {
-			self::appendMessage('App metadata database tables created.');
+			NotificationMessage::addMessage(
+				'App metadata database tables created',
+				'Database tables to store application metadata, which is used to build the
+				 <code>config.xml</code> file, have been created in your MySQL database.',
+				'good'
+			);
 		} else {
-			self::appendMessage('App metadata database tables already exist.');
+			NotificationMessage::addMessage(
+				'App metadata database tables exist',
+				'Database tables to store application metadata already exist and have not
+				 been re-created.'
+			);
 		}
 		
-		$metadata = new AppMetadata($sql, (string) $secrets->app->id);
+		$metadata = initAppMetadata();
 		$metadata['APP_PATH'] = preg_replace('/\/admin$/', '', __DIR__);
 		$metadata['APP_URL'] = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on' ? 'http://' : 'https://') . $_SERVER['SERVER_NAME'] . preg_replace("|^{$_SERVER['DOCUMENT_ROOT']}(.*)$|", '$1', $metadata['APP_PATH']);
-	
-		self::appendMessage('App metadata initialized.');
+		$metadata['APP_NAME'] = (string) $secrets->app->name;
+		$metadata['APP_ID'] = (string) $secrets->app->id;
+		$metadata['CANVAS_INSTANCE_URL_PLACEHOLDER'] = 'https://canvas.instructure.com';
+		$smarty->assign('metadata', $metadata);
+
+		NotificationMessage::addMessage(
+			'App metadata initialized',
+			'Basic application metadata has been updated, including APP_PATH and APP_URL',
+			'good'
+		);
 		
 		return $metadata;
 	}
@@ -248,6 +272,7 @@ class CanvasAPIviaLTI_Installer {
 	public static function acquireAPIToken($step = self::API_DECISION_NEEDED_STEP, $skip = false) {
 		global $secrets;
 		global $metadata;
+		global $smarty;
 		
 		if ($skip) {
 			if (isset($metadata['CANVAS_API_TOKEN']) || isset($metadata['CANVAS_API_USER'])) {
@@ -255,18 +280,24 @@ class CanvasAPIviaLTI_Installer {
 				$api->delete('token');
 				unset($metadata['CANVAS_API_TOKEN']);
 				unset($metadata['CANVAS_API_USER']);
-				self::appendMessage('Existing admin Canvas API token information expunged.');
+				NotificationMessage::addMessage(
+					'Existing admin Canvas API token information expunged',
+					'There was already an administrative access token stored in your
+					 application metadata, and it has now been expunged.'
+				);
 			} else {
-				self::appendMessage('No admin Canvas API token acquired.');
+				NotificationMessage::addMessage(
+					'No admin Canvas API token acquired',
+					'An administrative API token has not been acquired. Users will be asked to
+					 acquire their own API tokens on their first use of the LTI.'
+				);
 			}
 		} else {
 			switch ($step) {
 				case self::API_DECISION_NEEDED_STEP: {
-					echo '
-						<html>
-						<body>
+					$smarty->assign('content'. '
 						<form action="' . $metadata['APP_URL'] . '/admin/oauth.php" method="post">
-							<label for="url"> Canvas Instance URL <input type="text" name="url" id="url" placeholder="' . $metadata['CANVAS_INSTANCE_URL_PLACEHOLDER'] . '" value="' . $metadata['CANVAS_INSTANCE_URL'] . '" /></label>
+							<label for="url"> Canvas Instance URL <input type="text" name="url" id="url" placeholder="' . $metadata['CANVAS_INSTANCE_URL_PLACEHOLDER'] . '" value="' . (isset($metadata['CANVAS_INSTANCE_URL']) ? $metadata['CANVAS_INSTANCE_URL'] : '') . '" /></label>
 							<input type="hidden" name="skip" value="0" />
 							<input type="hidden" name="step" value="' . self::API_DECISION_ENTERED_STEP . '" />
 							<input type="submit" value="Request administrative token" />
@@ -277,9 +308,8 @@ class CanvasAPIviaLTI_Installer {
 							<input type="hidden" name="step" value="' . self::API_DECISION_ENTERED_STEP . '" />
 							<input type="submit" value="Require users to acquire individual tokens" />
 						</form>
-						</body>
-						</html>
-					';
+					');
+					$smarty->display();
 					exit;
 				}
 				case self::API_DECISION_ENTERED_STEP: {
@@ -289,7 +319,11 @@ class CanvasAPIviaLTI_Installer {
 						$metadata['CANVAS_API_TOKEN'] = $oauth->getToken();
 						$metadata['CANVAS_API_USER'] = $oauth->getUser();
 						
-						self::appendMessage('Admin Canvas API token acquired.');
+						NotificationMessage::addMessage(
+							'Admin Canvas API token acquired',
+							'An administrative API access token has been acquired and stored in your application metadata.',
+							'good'
+						);
 					}
 					
 					/* clear the processed step */
@@ -331,7 +365,11 @@ class CanvasAPIviaLTI_Installer_Exception extends CanvasAPIviaLTI_Exception {
 
 /* test if we already have a working install... */
 if ($ready && (!isset($_REQUEST['step']))) {
-	CanvasAPIviaLTI_Installer::appendMessage('App already installed.');
+	NotificationMessage::addMessage(
+		'App already installed',
+		'It appears that the application has already been installed and is ready for
+		 use.'
+	);
 	
 /* ...otherwise, let's start with the SECRETS_FILE */
 } else {
@@ -355,7 +393,7 @@ try {
 		CanvasAPIviaLTI_Installer::createAppDatabaseTables();
 		
 		/* ...and initialize the app metadata... */
-		$metadata = CanvasAPIviaLTI_Installer::initAppMetadata();
+		$metadata = CanvasAPIviaLTI_Installer::createAppMetadata();
 
 		/* ...optionally, acquire an API token for the app */
 		CanvasAPIviaLTI_Installer::acquireAPIToken(CanvasAPIviaLTI_Installer::API_DECISION_NEEDED_STEP);
@@ -365,9 +403,26 @@ try {
 		CanvasAPIviaLTI_Installer::acquireAPIToken($_REQUEST['step'], $skip);
 	}
 } catch (CanvasAPIviaLTI_Installer_Exception $e) {
-	CanvasAPIviaLTI_Installer::appendMessage($e->getMessage() . ' [Error ' . $e->getCode() . ']');
+	NotificationMessage::addMessage(
+		'Installer error',
+		$e->getMessage() . ' [Error ' . $e->getCode() . ']',
+		'error'
+	);
+	$smarty->display();
 	exit;
 }
-CanvasAPIviaLTI_Installer::appendMessage('Installation complete.');
+
+/* any additional app-specific install steps */
+require_once('install-app.inc.php');
+
+/* reset $metadata to get update any computed values */
+$metadata = initAppMetadata();
+
+$smarty->assign('content', '
+	<h1>Installation complete</h1>
+	<p>The application installation is complete. You may configure LTI Tool Consumer (TC) information by navigating to <a href="consumers.php">Consumers</a>.</p>'
+);
+
+$smarty->display();
 	
 ?>
