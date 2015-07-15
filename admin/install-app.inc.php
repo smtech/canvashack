@@ -21,7 +21,7 @@ $metadata['HOMEWORK_SUBMISSION'] = 'FALSE'; # /TRUE|FALSE/
 $metadata['RESOURCE_SELECTION'] = 'FALSE'; # /TRUE|FALSE/
 $metadata['USER_NAVIGATION'] = 'FALSE'; # /TRUE|FALSE/
 
-NotificationMessage::addMessage(
+$smarty->addMessage(
 	'App metadata updated',
 	'Application metadata has been updated to create confix.xml',
 	'good'

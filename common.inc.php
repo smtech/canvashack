@@ -50,15 +50,19 @@ function initMySql() {
 		$secrets = initSecrets();
 	}
 	
+	/* turn off warnings, since we're going to test the connection ourselves */
+	set_error_handler(function() {});
 	$sql = new mysqli(
 		(string) $secrets->mysql->host,
 		(string) $secrets->mysql->username,
 		(string) $secrets->mysql->password,
 		(string) $secrets->mysql->database
 	);
-	if (!$sql) {
+	restore_error_handler();
+	
+	if ($sql->connect_error) {
 		throw new CanvasAPIviaLTI_Exception(
-			"MySQL database connection failed.",
+			$sql->connect_error,
 			CanvasAPIviaLTI_Exception::MYSQL_CONNECTION
 		);
 	}
@@ -74,9 +78,17 @@ function initAppMetadata() {
 	return $metadata;
 }
 
+/*****************************************************************************
+ *                                                                           *
+ * The script begins here                                                    *
+ *                                                                           *
+ *****************************************************************************/
+ 
+/* assume everything's going to be fine... */
 $ready = true;
 
-$smarty = new StMarksSmarty();
+/* fire up the templating engine */
+$smarty = new CustomSmarty();
 
 try {
 

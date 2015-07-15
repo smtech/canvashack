@@ -59,8 +59,12 @@ body, p, div {
 }
 
 #messages li {
+	overflow: hidden;
+}
+
+#messages .message {
 	float: left;
-	margin: 1em;
+	margin: 0.5em;
 	padding: 0.5em;
 	font-size: smaller;
 	background: #feb;
@@ -69,7 +73,13 @@ body, p, div {
 	border-radius: 0.5em;
 }
 
-#messages li.error {
+#messages .message.good {
+	background:#cfd;
+	color: #465;
+	border-color: #465;
+}
+
+#messages .message.error {
 	background: #fee;
 	color: #a00;
 	border-color: #a00;

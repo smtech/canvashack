@@ -20,9 +20,11 @@
 <div id="messages">
 	<ul>
 		{foreach $messages as $message}
-			<li class="{$message['class']|default:"message"}">
-				<span class="title">{$message['title']}</span><br />
-				<span class="content">{$message['content']}</span>
+			<li>
+				<div class="message {$message->class|default:"message"}">
+					<span class="title">{$message->title}</span><br />
+					<span class="content">{$message->content}</span>
+				</div>
 			</li>
 		{/foreach}
 	</ul>

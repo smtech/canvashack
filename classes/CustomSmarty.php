@@ -1,6 +1,8 @@
 <?php
 
-class StMarksSmarty extends Smarty {
+class CustomSmarty extends Smarty {
+
+	private $messages = array();
 	
 	public function __construct() {
 		parent::__construct();
@@ -17,8 +19,12 @@ class StMarksSmarty extends Smarty {
 		$this->assign('metadata', $fake_metadata);
 	}
 	
+	public function addMessage($title, $content, $class = 'message') {
+		$this->messages[] = new NotificationMessage($title, $content, $class);
+	}
+	
 	public function display($template = 'page.tpl', $cache_id = null, $compile_id = null, $parent = null) {
-		$this->assign('messages', NotificationMessage::getMessages());
+		$this->assign('messages', $this->messages);
 		parent::display($template, $cache_id, $compile_id, $parent);
 	}
 }
