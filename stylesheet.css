@@ -8,20 +8,22 @@ body, p, div {
 
 #header {
 	width: 100%;
-	background: url('https://skunkworks.stmarksschool.org/canvas/css/header-background.jpg') repeat-x scroll left center transparent;
-	height: 72px;
+	background: #eee;
+	height: 2em;
 	position: relative;
 }
 
 #header #header-logo {
-	background: url('https://skunkworks.stmarksschool.org/canvas/css/header-account-logo.png') no-repeat;
-	height: 70px;
+	background: url('icon.png') no-repeat;
+	background-size: 1.5em 1.5em;
+	background-position: 0.25em 0.25em;
+	height: 2em;
 }
 
 #navigation-menu {
 	position: absolute;
-	left: 210px;
-	bottom: 1em;
+	left: 2em;
+	bottom: 0.5em;
 	list-style-type: none;
 	margin: auto;
 	padding: 0px;
@@ -29,18 +31,18 @@ body, p, div {
 
 #navigation-menu li {
 	float: left;
-	margin-right: 1em;
+	margin-right: 0.5em;
 }
 
 #navigation-menu a {
-	color: #fff;
-	padding: 1em;
+	color: #003359;
+	padding: 0.5em;
 	text-decoration: none;
 }
 
 #navigation-menu a:hover {
-	color: #003359;
-	background: #fff;
+	background: #003359;
+	color: #fff;
 	text-decoration: underline;
 }
 
@@ -112,11 +114,17 @@ input[type=radio], input[type=checkbox] {
 	display: inline;
 }
 
+address {
+	font-style: normal;
+}
+
 #footer {
 	position: absolute;
+	text-align: right;
+	font-size: 8pt;
 	bottom: 0;
 	background: #eee;
 	color: #999;
-	padding: 1em;
+	padding: 0.5em;
 	width: 100%;
 }
