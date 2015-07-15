@@ -3,7 +3,7 @@
 require_once('vendor/autoload.php');
 
 define('SECRETS_FILE', __DIR__ . '/secrets.xml');
-define('SCHEMA_FILE', __DIR__ . '/schema.sql');
+define('SCHEMA_FILE', __DIR__ . '/admin/schema-app.sql');
 define('MYSQL_PREFIX', '');
 
 session_start();

@@ -59,6 +59,6 @@
 	{/if}
 	<input type="button" value="Cancel" onclick="window.location.href='{$formAction}'" />
 	
-	<p>To install this LTI, users should choose configuration type <em>By URL</em> and provide their consumer key and secret above. They should point their installer at <code><a href="{$metadata['APP_URL']}/config.xml">{$metadata['APP_URL']}/config.xml</a></code>
+	<p>To install this LTI, users should choose configuration type <em>By URL</em> and provide their consumer key and secret above. They should point their installer at <code><a href="{$metadata['APP_CONFIG_URL']}">{$metadata['APP_CONFIG_URL']}</a></code>
 
 {/block}

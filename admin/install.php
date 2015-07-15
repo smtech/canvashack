@@ -39,9 +39,9 @@ class CanvasAPIviaLTI_Installer {
 						</section>
 						<section>
 							<h3>MySQL Connection</h3>
-							<label for="host">Host <input type="text" name="host" id="host" /></label>
+							<label for="host">Host <input type="text" name="host" id="host" value="localhost" /></label>
 							<label for="username">Username <input type="text" name="username" id="username" /></label>
-							<label for="password">Password <input type="password" name="password" id="password" /></label>
+							<label for="password">Password <input type="text" name="password" id="password" /></label>
 							<label for="database">Database <input type="text" name="database" id="database" /></label>
 						</section>
 						<section>
@@ -303,7 +303,7 @@ class CanvasAPIviaLTI_Installer {
 		} else {
 			switch ($step) {
 				case self::API_DECISION_NEEDED_STEP: {
-					$smarty->assign('content'. '
+					$smarty->assign('content', '
 						<form action="' . $metadata['APP_URL'] . '/admin/oauth.php" method="post">
 							<label for="url"> Canvas Instance URL <input type="text" name="url" id="url" placeholder="' . $metadata['CANVAS_INSTANCE_URL_PLACEHOLDER'] . '" value="' . (isset($metadata['CANVAS_INSTANCE_URL']) ? $metadata['CANVAS_INSTANCE_URL'] : '') . '" /></label>
 							<input type="hidden" name="skip" value="0" />
