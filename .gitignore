@@ -5,8 +5,10 @@ secrets.xml
 # dynamically-loaded and/or caches
 /logs/*.log
 /vendor/
-/smarty/cache/
-/smarty/templates_c/
+/smarty/cache/*
+!/smarty/cache/README.md
+/smarty/templates_c/*
+!/smarty/templates_c/README.md
 
 # file system
 .DS_*
