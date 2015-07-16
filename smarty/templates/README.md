@@ -1,0 +1,3 @@
+# smarty/templates/
+
+Smarty templates.
