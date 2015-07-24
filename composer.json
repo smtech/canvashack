@@ -1,6 +1,7 @@
 {
 	"name": "smtech/canvas-api-via-lti",
 	"description": "An LTI Tool Provider that also provides access to the Canvas API",
+	"license": "LGPL-3.0",
 	"repositories": [
 		{
 			"type": "package",
