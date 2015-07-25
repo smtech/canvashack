@@ -88,7 +88,7 @@ function initAppMetadata() {
 $ready = true;
 
 /* fire up the templating engine */
-$smarty = new CustomSmarty();
+$smarty = StMarksSmarty::getSmarty(__DIR__ . '/templates');
 
 try {
 

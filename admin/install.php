@@ -109,7 +109,7 @@ class CanvasAPIviaLTI_Installer {
 						"<code>secrets.xml</code> contains your authentication credentials and
 						 should be carefully protected. Be sure not to commit it to a public
 						 repository!",
-						'good'
+						NotificationMessage::GOOD
 					);
 				} else {
 					throw new CanvasAPIviaLTI_Installer_Exception(
@@ -165,7 +165,7 @@ class CanvasAPIviaLTI_Installer {
 				'LTI database tables created',
 				'Database tables to support the LTI Tool Provider (TP) have been created in
 				 your MySQL database.',
-				'good'
+				NotificationMessage::GOOD
 			);
 		} else {
 			throw new CanvasAPIviaLTI_Exception("$ltiSchema not found.");
@@ -214,7 +214,7 @@ class CanvasAPIviaLTI_Installer {
 					'App database tables created',
 					'Database tables to support the application have been created in your
 					 MySQL database.',
-					'good'
+					NotificationMessage::GOOD
 				);
 			} else {
 				$smarty->addMessage(
@@ -242,7 +242,7 @@ class CanvasAPIviaLTI_Installer {
 				'App metadata database tables created',
 				'Database tables to store application metadata, which is used to build the
 				 <code>config.xml</code> file, have been created in your MySQL database.',
-				'good'
+				NotificationMessage::GOOD
 			);
 		} else {
 			$smarty->addMessage(
@@ -263,7 +263,7 @@ class CanvasAPIviaLTI_Installer {
 		$smarty->addMessage(
 			'App metadata initialized',
 			'Basic application metadata has been updated, including APP_PATH and APP_URL',
-			'good'
+			NotificationMessage::GOOD
 		);
 		
 		return $metadata;
@@ -330,7 +330,7 @@ class CanvasAPIviaLTI_Installer {
 						$smarty->addMessage(
 							'Admin Canvas API token acquired',
 							'An administrative API access token has been acquired and stored in your application metadata.',
-							'good'
+							NotificationMessage::GOOD
 						);
 					}
 					
@@ -414,7 +414,7 @@ try {
 	$smarty->addMessage(
 		'Installer error',
 		$e->getMessage() . ' [Error ' . $e->getCode() . ']',
-		'error'
+		NotificationMessage::ERROR
 	);
 	$smarty->display();
 	exit;

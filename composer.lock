@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "80758845f8f2a050f4955ce23bd518d1",
+    "hash": "7fa74d1d29610d01e8e8982e165f4987",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -79,17 +79,125 @@
             "time": "2014-09-02 15:51:33"
         },
         {
+            "name": "pear/log",
+            "version": "1.12.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/Log.git",
+                "reference": "81b5109b6d3689c85118429c6e3ddd99ad90e9b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/Log/zipball/81b5109b6d3689c85118429c6e3ddd99ad90e9b0",
+                "reference": "81b5109b6d3689c85118429c6e3ddd99ad90e9b0",
+                "shasum": ""
+            },
+            "require": {
+                "pear/pear_exception": "1.0.0",
+                "php": ">5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "suggest": {
+                "pear/db": "Install optionally via your project's composer.json"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Log": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Parise",
+                    "email": "jon@php.net",
+                    "homepage": "http://www.indelible.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PEAR Logging Framework",
+            "homepage": "http://pear.github.io/Log/",
+            "keywords": [
+                "log",
+                "logging"
+            ],
+            "time": "2015-06-14 21:18:47"
+        },
+        {
+            "name": "pear/pear_exception",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/PEAR_Exception.git",
+                "reference": "8c18719fdae000b690e3912be401c76e406dd13b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/8c18719fdae000b690e3912be401c76e406dd13b",
+                "reference": "8c18719fdae000b690e3912be401c76e406dd13b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=4.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "class",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PEAR": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "."
+            ],
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Helgi Thormar",
+                    "email": "dufuz@php.net"
+                },
+                {
+                    "name": "Greg Beaver",
+                    "email": "cellog@php.net"
+                }
+            ],
+            "description": "The PEAR Exception base class.",
+            "homepage": "https://github.com/pear/PEAR_Exception",
+            "keywords": [
+                "exception"
+            ],
+            "time": "2015-02-10 20:07:52"
+        },
+        {
             "name": "smarty/smarty",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "61253c199980b88dff51e8f14dd3a2f409b9ae1b"
+                "reference": "f61084f70f979489fdc7306b452545511c53a453"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/61253c199980b88dff51e8f14dd3a2f409b9ae1b",
-                "reference": "61253c199980b88dff51e8f14dd3a2f409b9ae1b",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/f61084f70f979489fdc7306b452545511c53a453",
+                "reference": "f61084f70f979489fdc7306b452545511c53a453",
                 "shasum": ""
             },
             "require": {
@@ -131,7 +239,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-07-12 05:03:55"
+            "time": "2015-07-20 02:38:13"
         },
         {
             "name": "smtech/canvaspest",
@@ -139,12 +247,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "111fe228ba35292e90f790860ed93aa9a7c1a0b4"
+                "reference": "18c4ddb4b7b73d458668caf277f6ee51c9220759"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/111fe228ba35292e90f790860ed93aa9a7c1a0b4",
-                "reference": "111fe228ba35292e90f790860ed93aa9a7c1a0b4",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/18c4ddb4b7b73d458668caf277f6ee51c9220759",
+                "reference": "18c4ddb4b7b73d458668caf277f6ee51c9220759",
                 "shasum": ""
             },
             "require": {
@@ -164,20 +272,20 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2015-06-30 16:53:43"
+            "time": "2015-07-24 17:35:24"
         },
         {
             "name": "smtech/oauth-negotiator",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/oauth-negotiator.git",
-                "reference": "e061d4cabd0d109d4c02ba362fb9b76630cc6cc9"
+                "reference": "7e257beb72805f1a0a791ad76e26ccaeea693fae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/e061d4cabd0d109d4c02ba362fb9b76630cc6cc9",
-                "reference": "e061d4cabd0d109d4c02ba362fb9b76630cc6cc9",
+                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/7e257beb72805f1a0a791ad76e26ccaeea693fae",
+                "reference": "7e257beb72805f1a0a791ad76e26ccaeea693fae",
                 "shasum": ""
             },
             "require": {
@@ -192,7 +300,40 @@
                 }
             ],
             "description": "Negotiate an OAuth 2 authentication or API token",
-            "time": "2015-07-14 18:31:55"
+            "time": "2015-07-24 17:43:16"
+        },
+        {
+            "name": "smtech/stmarkssmarty",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/stmarkssmarty.git",
+                "reference": "a72afbaf693c23f0bd47f9e1816c43c8d8c21f2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/a72afbaf693c23f0bd47f9e1816c43c8d8c21f2c",
+                "reference": "a72afbaf693c23f0bd47f9e1816c43c8d8c21f2c",
+                "shasum": ""
+            },
+            "require": {
+                "smarty/smarty": "3.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "A standard Smarty install for St. Mark's projects",
+            "time": "2015-07-24 20:45:18"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
@@ -216,6 +357,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "smtech/stmarkssmarty": 20,
         "smtech/canvaspest": 20,
         "battis/appmetadata": 20
     },
