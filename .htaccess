@@ -1,11 +1,27 @@
-# hide files that we don't want folks browsing
-<FilesMatch "^(\.ht*|secrets\.xml|.*\.sql|.*\.inc\.php|logs|vendor|smarty|classes)$">
-  Order allow,deny
-  Deny from all
+# block access to all Apache config files
+<FilesMatch "^.ht*">
+	Order allow,deny
+	Deny from all
 </FilesMatch>
+
+# block access by file extension
+<FilesMatch "(\.sql|\.inc.php)$">
+	Order allow,deny
+	Deny from all
+</FilesMatch>
+
+# block verboten directories
+RedirectMatch 404 /classes(/|$)
+RedirectMatch 404 /logs(/|$)
+
+# block access to secrets.xml
+<Files secrets.xml>
+	Order allow,deny
+	Deny from all
+</Files>
 
 # make it look like config.xml is a real thing
 <Files config.xml>
-ForceType application/x-httpd-php
-SetHandler application/x-httpd-php
+	ForceType application/x-httpd-php
+	SetHandler application/x-httpd-php
 </Files>
