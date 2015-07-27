@@ -2,41 +2,40 @@
 {block name="content"}
 
 {if count($consumers) > 0}
-	<table>
-		<tr>
-		{foreach $fields as $field}
-			<th>{$field}</th>
+	<table id="lti-consumers">
+		{foreach $consumers as $consumer}
+			{if empty($requestKey) || (!empty($requestKey) && $requestKey != $consumer['consumer_key'])}
+				{assign var="closed" value=true}
+			{else}
+				{assign var="closed" value=false}
+			{/if}
+			<tr {if !$closed}class="open-record"{/if}>
+				<td>
+					<dl>
+					{foreach $fields as $field}
+						{if !empty($consumer[$field])}
+							<dt>{$field}</dt>
+								<dd>{$consumer[$field]}</dd>
+						{/if}
+					{/foreach}
+					</dl>
+				</td>
+				{if $closed}
+					<td>
+						<form action="{$formAction}" method="post">
+							<input type="hidden" name="consumer_key" value="{$consumer['consumer_key']}" />
+							<input type="hidden" name="action" value="select" />
+							<input type="submit" value="Edit" />
+						</form>
+						<form action="{$formAction}" method="post">
+							<input type="hidden" name="consumer_key" value="{$consumer['consumer_key']}" />
+							<input type="hidden" name="action" value="delete" />
+							<input type="submit" value="Delete" />
+						</form>
+					</td>
+				{/if}
+			</tr>
 		{/foreach}
-		</tr>
-	
-	{foreach $consumers as $consumer}
-		{if empty($requestKey) || (!empty($requestKey) && $requestKey != $consumer['consumer_key'])}
-			{assign var="closed" value=true}
-		{else}
-			{assign var="closed" value=false}
-		{/if}
-		<tr {if !$closed}class="open-record"{/if}>
-		{foreach $consumer as $field}
-			<td>{$field}</td>
-		{/foreach}
-		{if $closed}
-			<td>
-				<form action="{$formAction}" method="post">
-					<input type="hidden" name="consumer_key" value="{$consumer['consumer_key']}" />
-					<input type="hidden" name="action" value="select" />
-					<input type="submit" value="Edit" />
-				</form>
-			</td>
-			<td>
-				<form action="{$formAction}" method="post">
-					<input type="hidden" name="consumer_key" value="{$consumer['consumer_key']}" />
-					<input type="hidden" name="action" value="delete" />
-					<input type="submit" value="Delete" />
-				</form>
-			</td>
-		{/if}
-		</tr>
-	{/foreach}
 	</table>
 {else}
 	<p>No consumers</p>

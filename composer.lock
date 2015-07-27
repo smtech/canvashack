@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7fa74d1d29610d01e8e8982e165f4987",
+    "hash": "3d2c259e0a0ec30491919a8e907ad442",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "0788378921d4c35fac8bd354537f34c4fb2c8087"
+                "reference": "e602656eeb297a1c385ffff5d9b2fa45d51607e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/0788378921d4c35fac8bd354537f34c4fb2c8087",
-                "reference": "0788378921d4c35fac8bd354537f34c4fb2c8087",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/e602656eeb297a1c385ffff5d9b2fa45d51607e3",
+                "reference": "e602656eeb297a1c385ffff5d9b2fa45d51607e3",
                 "shasum": ""
             },
             "type": "library",
@@ -27,6 +27,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
             "authors": [
                 {
                     "name": "Seth Battis",
@@ -34,7 +37,7 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-07-01 01:04:01"
+            "time": "2015-07-25 03:37:43"
         },
         {
             "name": "educoder/pest",
@@ -192,12 +195,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "f61084f70f979489fdc7306b452545511c53a453"
+                "reference": "0436176739cd36e2673a9521b7871d93011a5704"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/f61084f70f979489fdc7306b452545511c53a453",
-                "reference": "f61084f70f979489fdc7306b452545511c53a453",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/0436176739cd36e2673a9521b7871d93011a5704",
+                "reference": "0436176739cd36e2673a9521b7871d93011a5704",
                 "shasum": ""
             },
             "require": {
@@ -239,7 +242,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-07-20 02:38:13"
+            "time": "2015-07-26 16:11:10"
         },
         {
             "name": "smtech/canvaspest",
@@ -247,12 +250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "18c4ddb4b7b73d458668caf277f6ee51c9220759"
+                "reference": "64d23800906f6a5f709066bd63f4ace544967870"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/18c4ddb4b7b73d458668caf277f6ee51c9220759",
-                "reference": "18c4ddb4b7b73d458668caf277f6ee51c9220759",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/64d23800906f6a5f709066bd63f4ace544967870",
+                "reference": "64d23800906f6a5f709066bd63f4ace544967870",
                 "shasum": ""
             },
             "require": {
@@ -265,6 +268,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
             "authors": [
                 {
                     "name": "Seth Battis",
@@ -272,7 +278,7 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2015-07-24 17:35:24"
+            "time": "2015-07-25 03:19:28"
         },
         {
             "name": "smtech/oauth-negotiator",
@@ -284,7 +290,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/7e257beb72805f1a0a791ad76e26ccaeea693fae",
+                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/e77d6cf8cb2392dd5f33a5ee9100a9d858999c16",
                 "reference": "7e257beb72805f1a0a791ad76e26ccaeea693fae",
                 "shasum": ""
             },
@@ -308,12 +314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "a72afbaf693c23f0bd47f9e1816c43c8d8c21f2c"
+                "reference": "74382efe00a60b20e1ef7c30d75900f659ab26b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/a72afbaf693c23f0bd47f9e1816c43c8d8c21f2c",
-                "reference": "a72afbaf693c23f0bd47f9e1816c43c8d8c21f2c",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/74382efe00a60b20e1ef7c30d75900f659ab26b9",
+                "reference": "74382efe00a60b20e1ef7c30d75900f659ab26b9",
                 "shasum": ""
             },
             "require": {
@@ -326,6 +332,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
             "authors": [
                 {
                     "name": "Seth Battis",
@@ -333,7 +342,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-07-24 20:45:18"
+            "time": "2015-07-27 18:22:48"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",

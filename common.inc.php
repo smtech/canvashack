@@ -88,7 +88,7 @@ function initAppMetadata() {
 $ready = true;
 
 /* fire up the templating engine */
-$smarty = StMarksSmarty::getSmarty(__DIR__ . '/templates');
+$smarty = StMarksSmarty::getSmarty(true, __DIR__ . '/templates');
 
 try {
 
@@ -96,7 +96,6 @@ try {
 	$secrets = initSecrets();
 	$sql = initMySql();
 	$metadata = initAppMetadata();
-	$smarty->assign('metadata', $metadata);
 
 	/* set up a Tool Provider (TP) object to process the LTI request */
 	$toolProvider = new CanvasAPIviaLTI(LTI_Data_Connector::getDataConnector($sql));
@@ -110,6 +109,8 @@ try {
 }
 
 if ($ready) {
+	$smarty->addStylesheet($metadata['APP_URL'] . '/stylesheets/canvas-api-via-lti.css', 'starter-canvas-api-via-lti');
+	$smarty->addStylesheet($metadata['APP_URL'] . '/stylesheets/app.css');
 	require_once('common-app.inc.php');
 }
 
