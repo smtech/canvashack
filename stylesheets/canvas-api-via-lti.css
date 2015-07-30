@@ -33,3 +33,18 @@
 #lti-consumers .open-record {
 	color: #ccc;
 }
+
+#header {
+	overflow: hidden;
+}
+
+#navigation-menu {
+	width: 100%;
+}
+
+#navigation-menu li.lti-user {
+	color: #999;
+	position: absolute;
+	right: 3em;
+	font-size: small;	
+}
