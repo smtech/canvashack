@@ -109,6 +109,7 @@ class CanvasAPIviaLTI_Exception extends Exception {
 	const MISSING_SECRETS_FILE = 1;
 	const INVALID_SECRETS_FILE = 2;
 	const MYSQL_CONNECTION = 3;
+	const LAUNCH_REQUEST = 4;
 }
 
 ?>

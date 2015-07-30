@@ -9,6 +9,17 @@ define('MYSQL_PREFIX', '');
 session_start();
 
 /**
+ * Test if the app is in the middle of launching
+ *
+ * Wait for $toolProvider to be fully initialized before starting the app logic.
+ *
+ * @return boolean
+ **/
+function midLaunch() {
+	return strpos($_SERVER['REQUEST_URI'], '/lti/launch.php') !== false;
+}
+
+/**
  * Initialize a SimpleXMLElement from the SECRETS_FILE
  *
  * @return SimpleXMLElement
@@ -96,7 +107,17 @@ try {
 	$secrets = initSecrets();
 	$sql = initMySql();
 	$metadata = initAppMetadata();
-	$toolProvider = $_SESSION['toolProvider'];
+		
+	if (isset($_SESSION['toolProvider'])) {
+		$toolProvider = $_SESSION['toolProvider'];
+	} else {
+		if (!midLaunch()) {
+			throw new CanvasAPIviaLTI_Exception(
+				'The LTI launch request is missing',
+				CanvasAPIviaLTI_Exception::LAUNCH_REQUEST
+			);
+		}
+	}
 	
 } catch (CanvasAPIviaLTI_Exception $e) {
 	$ready = false;
@@ -105,7 +126,11 @@ try {
 if ($ready) {
 	$smarty->addStylesheet($metadata['APP_URL'] . '/stylesheets/canvas-api-via-lti.css', 'starter-canvas-api-via-lti');
 	$smarty->addStylesheet($metadata['APP_URL'] . '/stylesheets/app.css');
-	require_once('common-app.inc.php');
+	
+	if (!midLaunch()) {
+		require_once('common-app.inc.php');
+		$smarty->assign('ltiUser', $toolProvider->user);
+	}
 }
 
 ?>
