@@ -96,14 +96,8 @@ try {
 	$secrets = initSecrets();
 	$sql = initMySql();
 	$metadata = initAppMetadata();
-
-	/* set up a Tool Provider (TP) object to process the LTI request */
-	$toolProvider = new CanvasAPIviaLTI(LTI_Data_Connector::getDataConnector($sql));
-	$toolProvider->setParameterConstraint('oauth_consumer_key', TRUE, 50);
-	$toolProvider->setParameterConstraint('resource_link_id', TRUE, 50, array('basic-lti-launch-request'));
-	$toolProvider->setParameterConstraint('user_id', TRUE, 50, array('basic-lti-launch-request'));
-	$toolProvider->setParameterConstraint('roles', TRUE, NULL, array('basic-lti-launch-request'));
-
+	$toolProvider = $_SESSION['toolProvider'];
+	
 } catch (CanvasAPIviaLTI_Exception $e) {
 	$ready = false;
 }
