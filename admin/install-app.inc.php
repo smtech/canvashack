@@ -24,7 +24,7 @@ $metadata['USER_NAVIGATION'] = 'FALSE'; # /TRUE|FALSE/
 
 $smarty->addMessage(
 	'App metadata updated',
-	'Application metadata has been updated to create confix.xml',
+	'Application metadata has been updated to create config.xml',
 	NotificationMessage::GOOD
 );
 
