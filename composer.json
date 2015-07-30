@@ -12,6 +12,7 @@
 					"url": "http://projects.oscelot.org/gf/download/frsrelease/924/5882/LTI_Tool_Provider-2.5.00.zip",
 					"type": "zip"
 				},
+				"license": "LGPL-3.0",
 				"authors": [
 					{
 						"name": "Stephen Vickers"
@@ -23,10 +24,10 @@
 	],
 	"require": {
 		"smtech/stmarkssmarty": "dev-master",
-		"smtech/canvaspest": "dev-master",
+		"smtech/canvaspest": "1.*",
 		"smtech/oauth-negotiator": "1.*",
-		"battis/appmetadata": "dev-master",
-		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.00",
+		"battis/appmetadata": "1.*",
+		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.*",
 		"pear/log": "1.12.*"
 	},
 	"autoload": {
