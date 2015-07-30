@@ -21,7 +21,7 @@ if (isset($_REQUEST['oauth'])) {
 		}
 		case 'process': {
 			$oauth = new OAuthNegotiator(
-				"{$metadata['CANVAS_INSTANCE_URL']}/login/oauth2",
+				'https://' . $toolProvider->user->getResourceLink()->settings['custom_canvas_api_domain'] . '/login/oauth2',
 				(string) $secrets->oauth->id,
 				(string) $secrets->oauth->key,
 				"{$_SERVER['PHP_SELF']}?oauth=complete",
