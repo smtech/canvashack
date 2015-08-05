@@ -325,7 +325,6 @@ class CanvasAPIviaLTI_Installer {
 					
 					if ($oauth->isAPIToken()) {
 						$metadata['CANVAS_API_TOKEN'] = $oauth->getToken();
-						$metadata['CANVAS_API_USER'] = $oauth->getUser();
 						
 						$smarty->addMessage(
 							'Admin Canvas API token acquired',
