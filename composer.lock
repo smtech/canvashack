@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3d2c259e0a0ec30491919a8e907ad442",
+    "hash": "5cd1cf4a6bf464c97f49758c08c976bb",
     "packages": [
         {
             "name": "battis/appmetadata",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
@@ -195,12 +195,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "0436176739cd36e2673a9521b7871d93011a5704"
+                "reference": "643e6784e8d07154e88eff1ea43b2cd66a6051ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/0436176739cd36e2673a9521b7871d93011a5704",
-                "reference": "0436176739cd36e2673a9521b7871d93011a5704",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/643e6784e8d07154e88eff1ea43b2cd66a6051ae",
+                "reference": "643e6784e8d07154e88eff1ea43b2cd66a6051ae",
                 "shasum": ""
             },
             "require": {
@@ -242,20 +242,20 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-07-26 16:11:10"
+            "time": "2015-08-06 19:42:20"
         },
         {
             "name": "smtech/canvaspest",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "64d23800906f6a5f709066bd63f4ace544967870"
+                "reference": "8c4bafbe50832fcadba87c3e53c3ae9675ce2db3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/64d23800906f6a5f709066bd63f4ace544967870",
-                "reference": "64d23800906f6a5f709066bd63f4ace544967870",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/8c4bafbe50832fcadba87c3e53c3ae9675ce2db3",
+                "reference": "8c4bafbe50832fcadba87c3e53c3ae9675ce2db3",
                 "shasum": ""
             },
             "require": {
@@ -278,27 +278,30 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2015-07-25 03:19:28"
+            "time": "2015-07-31 18:50:32"
         },
         {
             "name": "smtech/oauth-negotiator",
-            "version": "v1.0.2",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/oauth-negotiator.git",
-                "reference": "7e257beb72805f1a0a791ad76e26ccaeea693fae"
+                "reference": "fd30bc282254b605e3ff44f75f45546ef2c784c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/e77d6cf8cb2392dd5f33a5ee9100a9d858999c16",
-                "reference": "7e257beb72805f1a0a791ad76e26ccaeea693fae",
+                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/fd30bc282254b605e3ff44f75f45546ef2c784c3",
+                "reference": "fd30bc282254b605e3ff44f75f45546ef2c784c3",
                 "shasum": ""
             },
             "require": {
-                "smtech/canvaspest": "dev-master"
+                "educoder/pest": "dev-master"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
             "authors": [
                 {
                     "name": "Seth Battis",
@@ -306,7 +309,7 @@
                 }
             ],
             "description": "Negotiate an OAuth 2 authentication or API token",
-            "time": "2015-07-24 17:43:16"
+            "time": "2015-08-07 16:41:35"
         },
         {
             "name": "smtech/stmarkssmarty",
@@ -314,12 +317,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "74382efe00a60b20e1ef7c30d75900f659ab26b9"
+                "reference": "91923538389639654a140d32b5ee3aac5869bac1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/74382efe00a60b20e1ef7c30d75900f659ab26b9",
-                "reference": "74382efe00a60b20e1ef7c30d75900f659ab26b9",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/91923538389639654a140d32b5ee3aac5869bac1",
+                "reference": "91923538389639654a140d32b5ee3aac5869bac1",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +345,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-07-27 18:22:48"
+            "time": "2015-07-27 20:02:57"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
@@ -366,9 +369,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "smtech/stmarkssmarty": 20,
-        "smtech/canvaspest": 20,
-        "battis/appmetadata": 20
+        "smtech/stmarkssmarty": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
