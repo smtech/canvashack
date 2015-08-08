@@ -312,21 +312,55 @@
             "time": "2015-08-07 16:41:35"
         },
         {
+            "name": "smtech/stmarks-colors",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/stmarks-colors.git",
+                "reference": "978be1b0f711d0ab03f7ce15cfafddce60b12676"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/978be1b0f711d0ab03f7ce15cfafddce60b12676",
+                "reference": "978be1b0f711d0ab03f7ce15cfafddce60b12676",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "smtech\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "An object-ified, consistent set of hex colors for St. Mark’s projects",
+            "time": "2015-08-08 01:30:39"
+        },
+        {
             "name": "smtech/stmarkssmarty",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "91923538389639654a140d32b5ee3aac5869bac1"
+                "reference": "da58710978039498054117bcbd24734e2bda4b54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/91923538389639654a140d32b5ee3aac5869bac1",
-                "reference": "91923538389639654a140d32b5ee3aac5869bac1",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/da58710978039498054117bcbd24734e2bda4b54",
+                "reference": "da58710978039498054117bcbd24734e2bda4b54",
                 "shasum": ""
             },
             "require": {
-                "smarty/smarty": "3.1.*"
+                "smarty/smarty": "3.1.*",
+                "smtech/stmarks-colors": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -345,7 +379,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-07-27 20:02:57"
+            "time": "2015-08-08 01:47:07"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
