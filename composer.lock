@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5cd1cf4a6bf464c97f49758c08c976bb",
+    "hash": "1cd56482d2ae5e5c841dd09190c8abc0",
     "packages": [
         {
             "name": "battis/appmetadata",

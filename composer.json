@@ -24,11 +24,11 @@
 	],
 	"require": {
 		"smtech/stmarkssmarty": "dev-master",
-		"smtech/canvaspest": "1.*",
-		"smtech/oauth-negotiator": "1.*",
-		"battis/appmetadata": "1.*",
-		"spvsoftwareproducts/LTI_Tool_Provider": "2.5.*",
-		"pear/log": "1.12.*"
+		"smtech/canvaspest": "~1.0",
+		"smtech/oauth-negotiator": "~1.0",
+		"battis/appmetadata": "~1.0",
+		"spvsoftwareproducts/LTI_Tool_Provider": "~2.5",
+		"pear/log": "~1.12"
 	},
 	"autoload": {
 		"classmap": [""]
