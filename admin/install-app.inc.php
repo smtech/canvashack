@@ -1,13 +1,13 @@
 <?php
 
 /* some sample app metadata information -- review config.xml for a panoply of options */
-$metadata['ACCOUNT_NAVIGATION'] = 'FALSE'; # /TRUE|FALSE/
 $metadata['APP_DESCRIPTION'] = 'A starter app for building an LTI that makes use of the Canvas APIs.';
 $metadata['APP_DOMAIN'] = '';
 $metadata['APP_ICON_URL'] = '@APP_URL/lti/icon.png';
 $metadata['APP_LAUNCH_URL'] = '@APP_URL/lti/launch.php';
 $metadata['APP_PRIVACY_LEVEL'] = 'public'; # /public|name_only|anonymous/
 $metadata['APP_CONFIG_URL'] = '@APP_URL/lti/config.xml';
+$metadata['ACCOUNT_NAVIGATION'] = 'FALSE'; # /TRUE|FALSE/
 $metadata['COURSE_NAVIGATION'] = 'TRUE'; # /TRUE|FALSE/
 $metadata['COURSE_NAVIGATION_DEFAULT'] = 'enabled'; # /enabled|disabled/
 $metadata['COURSE_NAVIGATION_ENABLED'] = 'true'; # /true|false/
