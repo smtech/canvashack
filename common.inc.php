@@ -6,8 +6,6 @@ define('SECRETS_FILE', __DIR__ . '/secrets.xml');
 define('SCHEMA_FILE', __DIR__ . '/admin/schema-app.sql');
 define('MYSQL_PREFIX', '');
 
-session_start();
-
 /**
  * Test if the app is in the middle of launching
  *
@@ -94,43 +92,58 @@ function initAppMetadata() {
  * The script begins here                                                    *
  *                                                                           *
  *****************************************************************************/
- 
+
 /* assume everything's going to be fine... */
 $ready = true;
+$reason = null; // the reason we're _not_ ready
 
-/* fire up the templating engine */
-$smarty = StMarksSmarty::getSmarty(true, __DIR__ . '/templates');
+/* preliminary interactive only initialization */
+if (php_sapi_name() != 'cli') {
+	session_start(); 
 
+	/* fire up the templating engine for interactive scripts */
+	$smarty = StMarksSmarty::getSmarty(true, __DIR__ . '/templates');
+}
+
+/* initialization that needs to happen for interactive and CLI scripts */
 try {
-
 	/* initialize global variables */
 	$secrets = initSecrets();
 	$sql = initMySql();
 	$metadata = initAppMetadata();
-		
-	if (isset($_SESSION['toolProvider'])) {
-		$toolProvider = $_SESSION['toolProvider'];
-	} else {
-		if (!midLaunch()) {
-			throw new CanvasAPIviaLTI_Exception(
-				'The LTI launch request is missing',
-				CanvasAPIviaLTI_Exception::LAUNCH_REQUEST
-			);
-		}
-	}
-	
 } catch (CanvasAPIviaLTI_Exception $e) {
 	$ready = false;
+	$reason = $e;
 }
 
-if ($ready) {
-	$smarty->addStylesheet($metadata['APP_URL'] . '/stylesheets/canvas-api-via-lti.css', 'starter-canvas-api-via-lti');
-	$smarty->addStylesheet($metadata['APP_URL'] . '/stylesheets/app.css');
-	
-	if (!midLaunch()) {
-		require_once('common-app.inc.php');
-		$smarty->assign('ltiUser', $toolProvider->user);
+/* interactive initialization only */
+if ($ready && php_sapi_name() != 'cli') {
+	try {
+		if (isset($_SESSION['toolProvider'])) {
+			$toolProvider = $_SESSION['toolProvider'];
+		} else {
+			if (!midLaunch()) {
+				throw new CanvasAPIviaLTI_Exception(
+					'The LTI launch request is missing',
+					CanvasAPIviaLTI_Exception::LAUNCH_REQUEST
+				);
+			}
+		}
+		
+	} catch (CanvasAPIviaLTI_Exception $e) {
+		$ready = false;
+	}
+
+	if ($ready) {
+		$smarty->addStylesheet($metadata['APP_URL'] . '/stylesheets/canvas-api-via-lti.css', 'starter-canvas-api-via-lti');
+		$smarty->addStylesheet($metadata['APP_URL'] . '/stylesheets/app.css');
+		
+		if (!midLaunch()) {
+			require_once('common-app.inc.php');
+			$smarty->assign('ltiUser', $toolProvider->user);
+		}
 	}
 }
+
 
 ?>
