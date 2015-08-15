@@ -2,6 +2,8 @@
 
 /** CanvasAPIviaLTI_Installer and related classes */
 
+use Battis\AppMetadata as AppMetadata;
+
 /**
  * Manage the installation of the LTI application on a LAMP stack
  *

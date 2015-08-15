@@ -6,6 +6,8 @@ define('SECRETS_FILE', __DIR__ . '/secrets.xml');
 define('SCHEMA_FILE', __DIR__ . '/admin/schema-app.sql');
 define('MYSQL_PREFIX', '');
 
+use Battis\AppMetadata as AppMetadata;
+
 /**
  * Test if the app is in the middle of launching
  *

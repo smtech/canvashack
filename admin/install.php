@@ -2,6 +2,8 @@
 
 require_once('../common.inc.php');
 
+use Battis\AppMetadata as AppMetadata;
+
 /* test if we already have a working install... */
 if ($ready && (!isset($_REQUEST['step']))) {
 	$smarty->addMessage(
