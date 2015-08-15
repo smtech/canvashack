@@ -4,27 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1cd56482d2ae5e5c841dd09190c8abc0",
+    "hash": "45ee147b00c90d59d0df828665a96170",
     "packages": [
         {
             "name": "battis/appmetadata",
-            "version": "v1.0.1",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "e602656eeb297a1c385ffff5d9b2fa45d51607e3"
+                "reference": "3addd84607b7f2116e41e7516997b9775bf9e12b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/e602656eeb297a1c385ffff5d9b2fa45d51607e3",
-                "reference": "e602656eeb297a1c385ffff5d9b2fa45d51607e3",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/3addd84607b7f2116e41e7516997b9775bf9e12b",
+                "reference": "3addd84607b7f2116e41e7516997b9775bf9e12b",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    ""
-                ]
+                "psr-4": {
+                    "Battis\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -37,7 +37,7 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-07-25 03:37:43"
+            "time": "2015-08-14 21:23:39"
         },
         {
             "name": "educoder/pest",
