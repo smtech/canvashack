@@ -1,12 +1,5 @@
-<html>
-	<head>
-		<title>LTI Consumers</title>
-	</head>
-	<body>
-
 <?php
 
-require_once('../vendor/autoload.php');
 require_once('../common.inc.php');
 
 /* initialize consumer fields */
@@ -73,52 +66,22 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['key']) && isset($_REQUEST['secr
 
 /* display a list of consumers */
 $response = $sql->query("SELECT * FROM `" . LTI_Data_Connector::CONSUMER_TABLE_NAME . "` ORDER BY `name` ASC, `consumer_key` ASC");
-$consumer = $response->fetch_assoc();
-	
-if ($consumer) {
-	echo '<table><tr>';
-	foreach (array_keys($consumer) as $field) {
-		echo "<th>$field</th>";
-	}
-	echo '</tr>';
-	
-	do {
-		$closed = !isset($_REQUEST['consumer_key']) || (isset($_REQUEST['consumer_key']) && $_REQUEST['consumer_key'] != $consumer['consumer_key']);
-		echo '<tr' . ($closed ? '' : ' class="open-record"') . '>';
-		foreach ($consumer as $field) {
-			echo "<td>$field</td>";
-		}
-		if ($closed) {
-			echo '<td><form action="' . $_SERVER['PHP_SELF'] . '" method="post"><input type="hidden" name="consumer_key" value="' . $consumer['consumer_key'] . '" /><input type="hidden" name="action" value="select" /><input type="submit" value="Edit" /></form></td>';
-			echo '<td><form action="' . $_SERVER['PHP_SELF'] . '" method="post"><input type="hidden" name="consumer_key" value="' . $consumer['consumer_key'] . '" /><input type="hidden" name="action" value="delete" /><input type="submit" value="Delete" /></form></td>';
-		}
-		echo '</tr>';
-	} while ($consumer = $response->fetch_assoc());
-	echo '</table>';
-} else {
-	echo '<p>No consumers</p>';
+$consumers = array();
+while ($consumer = $response->fetch_assoc()) {
+	$consumers[] = $consumer;
 }
-	
-	/* edit/creation form for consumers */
-?>
+if (!empty($consumers)) {
+	$smarty->assign('fields', array_keys($consumers[0]));
+}
+$smarty->assign('consumers', $consumers);
 
-		<form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
-			<label for="name">Name <input type="text" name="name" id="name" value="<?= $name ?>"/></label>
-			<label for="key">Key <input type="text" name="key" id="key" value="<?= $key ?>" /></label>
-			<label for="secret">Secret <input type="text" name="secret" id="secret" value="<?= $secret ?>" /></label>
-			<label for="enabled">Enabled <input type="checkbox" name="enabled" id="enabled" value="1" <?= ($enabled ? 'checked' : '') ?> /></label>
-			<input type="hidden" name="action" value="<?= (!empty($name) ? 'update' : 'insert') ?>" />
-			<input type="submit" value="<?= (!empty($name) ? 'Update' : 'Add') ?> Consumer" />
-		</form>
-		<?php if (!empty($name)): ?>
-		<form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
-			<input type="hidden" name="consumer_key" value="<?= $key ?>" />
-			<input type="hidden" name="action" value="delete" />
-			<input type="submit" value="Delete" />
-		</form>
-		<?php endif; ?>
-		<input type="button" value="Cancel" onclick="window.location.href='<?= $_SERVER['PHP_SELF'] ?>';" />
-		
-		<p>To install this LTI, users should choose configuration type <em>By URL</em> and provide their consumer key and secret above. They should point their installer at <code><a href="<?= $metadata['APP_URL'] ?>/config.xml"><?= $metadata['APP_URL'] ?>/config.xml</a></code>
-	</body>
-</html>
+/* use current values */
+$smarty->assign('name', $name);
+$smarty->assign('key', $key);
+$smarty->assign('secret', $secret);
+$smarty->assign('enabled', $enabled);
+
+$smarty->assign('formAction', $_SERVER['PHP_SELF']);
+$smarty->assign('requestKey', (isset($_REQUEST['consumer_key']) ? $_REQUEST['consumer_key'] : null));
+	
+$smarty->display('lti-consumers.tpl');

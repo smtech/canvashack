@@ -4,29 +4,32 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3cab61578568dc29fb1899ab0a30ad01",
+    "hash": "45ee147b00c90d59d0df828665a96170",
     "packages": [
         {
             "name": "battis/appmetadata",
-            "version": "v1.0",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "773e1ed3233fa8d3deaf181e5ce548251d1d2a66"
+                "reference": "3addd84607b7f2116e41e7516997b9775bf9e12b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/4c03d21bf50f7aff7d922328d5d23bd5eb3f5906",
-                "reference": "773e1ed3233fa8d3deaf181e5ce548251d1d2a66",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/3addd84607b7f2116e41e7516997b9775bf9e12b",
+                "reference": "3addd84607b7f2116e41e7516997b9775bf9e12b",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    ""
-                ]
+                "psr-4": {
+                    "Battis\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
             "authors": [
                 {
                     "name": "Seth Battis",
@@ -34,7 +37,7 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-06-23 14:53:46"
+            "time": "2015-08-14 21:23:39"
         },
         {
             "name": "educoder/pest",
@@ -79,17 +82,180 @@
             "time": "2014-09-02 15:51:33"
         },
         {
-            "name": "smtech/canvaspest",
-            "version": "dev-master",
+            "name": "pear/log",
+            "version": "1.12.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "111fe228ba35292e90f790860ed93aa9a7c1a0b4"
+                "url": "https://github.com/pear/Log.git",
+                "reference": "81b5109b6d3689c85118429c6e3ddd99ad90e9b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/111fe228ba35292e90f790860ed93aa9a7c1a0b4",
-                "reference": "111fe228ba35292e90f790860ed93aa9a7c1a0b4",
+                "url": "https://api.github.com/repos/pear/Log/zipball/81b5109b6d3689c85118429c6e3ddd99ad90e9b0",
+                "reference": "81b5109b6d3689c85118429c6e3ddd99ad90e9b0",
+                "shasum": ""
+            },
+            "require": {
+                "pear/pear_exception": "1.0.0",
+                "php": ">5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "suggest": {
+                "pear/db": "Install optionally via your project's composer.json"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Log": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Parise",
+                    "email": "jon@php.net",
+                    "homepage": "http://www.indelible.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PEAR Logging Framework",
+            "homepage": "http://pear.github.io/Log/",
+            "keywords": [
+                "log",
+                "logging"
+            ],
+            "time": "2015-06-14 21:18:47"
+        },
+        {
+            "name": "pear/pear_exception",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/PEAR_Exception.git",
+                "reference": "8c18719fdae000b690e3912be401c76e406dd13b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/8c18719fdae000b690e3912be401c76e406dd13b",
+                "reference": "8c18719fdae000b690e3912be401c76e406dd13b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=4.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "class",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PEAR": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "."
+            ],
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Helgi Thormar",
+                    "email": "dufuz@php.net"
+                },
+                {
+                    "name": "Greg Beaver",
+                    "email": "cellog@php.net"
+                }
+            ],
+            "description": "The PEAR Exception base class.",
+            "homepage": "https://github.com/pear/PEAR_Exception",
+            "keywords": [
+                "exception"
+            ],
+            "time": "2015-02-10 20:07:52"
+        },
+        {
+            "name": "smarty/smarty",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smarty-php/smarty.git",
+                "reference": "643e6784e8d07154e88eff1ea43b2cd66a6051ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/643e6784e8d07154e88eff1ea43b2cd66a6051ae",
+                "reference": "643e6784e8d07154e88eff1ea43b2cd66a6051ae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "libs/Smarty.class.php",
+                    "libs/SmartyBC.class.php",
+                    "libs/sysplugins/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Monte Ohrt",
+                    "email": "monte@ohrt.com"
+                },
+                {
+                    "name": "Uwe Tews",
+                    "email": "uwe.tews@googlemail.com"
+                },
+                {
+                    "name": "Rodney Rehm",
+                    "email": "rodney.rehm@medialize.de"
+                }
+            ],
+            "description": "Smarty - the compiling PHP template engine",
+            "homepage": "http://www.smarty.net",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2015-08-06 19:42:20"
+        },
+        {
+            "name": "smtech/canvaspest",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvaspest.git",
+                "reference": "8c4bafbe50832fcadba87c3e53c3ae9675ce2db3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/8c4bafbe50832fcadba87c3e53c3ae9675ce2db3",
+                "reference": "8c4bafbe50832fcadba87c3e53c3ae9675ce2db3",
                 "shasum": ""
             },
             "require": {
@@ -102,6 +268,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
             "authors": [
                 {
                     "name": "Seth Battis",
@@ -109,27 +278,30 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2015-06-30 16:53:43"
+            "time": "2015-07-31 18:50:32"
         },
         {
             "name": "smtech/oauth-negotiator",
-            "version": "v1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/oauth-negotiator.git",
-                "reference": "c64150d7906d7b92859b6f8f69d85363fee9ef16"
+                "reference": "fd30bc282254b605e3ff44f75f45546ef2c784c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/c64150d7906d7b92859b6f8f69d85363fee9ef16",
-                "reference": "c64150d7906d7b92859b6f8f69d85363fee9ef16",
+                "url": "https://api.github.com/repos/smtech/oauth-negotiator/zipball/fd30bc282254b605e3ff44f75f45546ef2c784c3",
+                "reference": "fd30bc282254b605e3ff44f75f45546ef2c784c3",
                 "shasum": ""
             },
             "require": {
-                "smtech/canvaspest": "dev-master"
+                "educoder/pest": "dev-master"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
             "authors": [
                 {
                     "name": "Seth Battis",
@@ -137,7 +309,77 @@
                 }
             ],
             "description": "Negotiate an OAuth 2 authentication or API token",
-            "time": "2015-06-23 17:10:38"
+            "time": "2015-08-07 16:41:35"
+        },
+        {
+            "name": "smtech/stmarks-colors",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/stmarks-colors.git",
+                "reference": "978be1b0f711d0ab03f7ce15cfafddce60b12676"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/978be1b0f711d0ab03f7ce15cfafddce60b12676",
+                "reference": "978be1b0f711d0ab03f7ce15cfafddce60b12676",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "smtech\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "An object-ified, consistent set of hex colors for St. Mark’s projects",
+            "time": "2015-08-08 01:30:39"
+        },
+        {
+            "name": "smtech/stmarkssmarty",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/stmarkssmarty.git",
+                "reference": "da58710978039498054117bcbd24734e2bda4b54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/da58710978039498054117bcbd24734e2bda4b54",
+                "reference": "da58710978039498054117bcbd24734e2bda4b54",
+                "shasum": ""
+            },
+            "require": {
+                "smarty/smarty": "3.1.*",
+                "smtech/stmarks-colors": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "A standard Smarty install for St. Mark's projects",
+            "time": "2015-08-08 01:47:07"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
@@ -161,7 +403,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "smtech/canvaspest": 20
+        "smtech/stmarkssmarty": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
