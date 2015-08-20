@@ -1,6 +1,6 @@
 <?php
 
-require_once('vendor/autoload.php');
+require_once(__DIR__ . '/vendor/autoload.php');
 
 define('SECRETS_FILE', __DIR__ . '/secrets.xml');
 define('SCHEMA_FILE', __DIR__ . '/admin/schema-app.sql');
@@ -89,6 +89,12 @@ function initAppMetadata() {
 	return $metadata;
 }
 
+function html_var_dump($var) {
+	echo '<pre>';
+	var_dump($var);
+	echo '</pre>';
+}
+
 /*****************************************************************************
  *                                                                           *
  * The script begins here                                                    *
@@ -145,7 +151,7 @@ if ($ready && php_sapi_name() != 'cli') {
 		$smarty->addStylesheet($metadata['APP_URL'] . '/stylesheets/app.css');
 		
 		if (!midLaunch() || !defined('IGNORE_LTI')) {
-			require_once('common-app.inc.php');
+			require_once(__DIR__ . '/common-app.inc.php');
 			if (!defined('IGNORE_LTI')) {
 				$smarty->assign('ltiUser', $toolProvider->user);
 			}
