@@ -35,7 +35,7 @@
 		"canvashack/plugin-cache-and-show-rubrics" : "dev-master"
 	},
 	"autoload": {
-		"classmap": ["classes"]
+		"classmap": [""]
 	},
 	"authors": [
 		{
