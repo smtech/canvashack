@@ -19,9 +19,3 @@ RedirectMatch 404 /logs(/|$)
 	Order allow,deny
 	Deny from all
 </Files>
-
-# make it look like config.xml is a real thing
-<Files config.xml>
-	ForceType application/x-httpd-php
-	SetHandler application/x-httpd-php
-</Files>
