@@ -9,7 +9,8 @@ secrets.xml
 !/smarty/cache/README.md
 /smarty/templates_c/*
 !/smarty/templates_c/README.md
-/hacks/
+/hacks/*
+!/hacks/*.*
 
 # file system
 .DS_*
