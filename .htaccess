@@ -19,3 +19,15 @@ RedirectMatch 404 /logs(/|$)
 	Order allow,deny
 	Deny from all
 </Files>
+
+# force processing of canvashack.css as PHP
+<Files canvashack.css>
+	ForceType application/x-httpd-php
+	SetHandler application/x-httpd-php
+</Files>
+
+# force processing of canvashack.js as PHP
+<Files canvashack.js>
+	ForceType application/x-httpd-php
+	SetHandler application/x-httpd-php
+</Files>

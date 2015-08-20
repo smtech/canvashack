@@ -28,10 +28,14 @@
 		"smtech/oauth-negotiator": "~1.0",
 		"battis/appmetadata": "~1.0",
 		"spvsoftwareproducts/LTI_Tool_Provider": "~2.5",
-		"pear/log": "~1.12"
+		"pear/log": "~1.12",
+		"battis/autocrontabjob": "~1.0",
+		"smtech/canvashack-installer": "dev-master",
+		"canvashack/plugin-auto-open-feedback": "dev-master",
+		"canvashack/plugin-cache-and-show-rubrics" : "dev-master"
 	},
 	"autoload": {
-		"classmap": [""]
+		"classmap": ["classes"]
 	},
 	"authors": [
 		{
