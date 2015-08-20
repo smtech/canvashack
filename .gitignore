@@ -1,5 +1,5 @@
 # authentication credentials
-.ht*
+.htpasswd
 secrets.xml
 
 # dynamically-loaded and/or caches
