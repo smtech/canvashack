@@ -22,8 +22,8 @@ $metadata['HOMEWORK_SUBMISSION'] = false; # is_bool()
 $metadata['RESOURCE_SELECTION'] = false; # is_bool()
 $metadata['USER_NAVIGATION'] = false; # is_bool()
 
-$metadata['GLOBAL_JAVASCRIPT_URL'] = '@APP_URL/canvashacks.js.php';
-$metadata['GLOBAL_CSS_URL'] = '@APP_URL/canvashacks.css.php';
+$metadata['GLOBAL_JAVASCRIPT_URL'] = '@APP_URL/canvashacks.js';
+$metadata['GLOBAL_CSS_URL'] = '@APP_URL/canvashacks.css';
 
 $smarty->addMessage(
 	'App metadata updated',

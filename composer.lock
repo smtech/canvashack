@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9d47819f1d0879467e9b39770749d5d6",
+    "hash": "16dd6b5ea3a7cd7dd4cd608fd643f07a",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -157,12 +157,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-auto-open-feedback.git",
-                "reference": "9db6a6d549e1413566aea9012fd52bb4e4dbdebf"
+                "reference": "247cab8be35dc376de2482746d0c3b670de7cdd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/9db6a6d549e1413566aea9012fd52bb4e4dbdebf",
-                "reference": "9db6a6d549e1413566aea9012fd52bb4e4dbdebf",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/247cab8be35dc376de2482746d0c3b670de7cdd2",
+                "reference": "247cab8be35dc376de2482746d0c3b670de7cdd2",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -177,7 +177,7 @@
                 }
             ],
             "description": "A bandaid until SpeedGrader 2.0: autoopen SpeedGrader feedback and rubrics for students",
-            "time": "2015-08-18 04:04:11"
+            "time": "2015-08-20 13:46:58"
         },
         {
             "name": "canvashack/plugin-cache-and-show-rubrics",
@@ -185,12 +185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-cache-and-show-rubrics.git",
-                "reference": "ec157eab335831a76ef43c5b71b05c73fc2f164e"
+                "reference": "5ffc6304a84a10c4423286dd77bd632ad8bdb941"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/ec157eab335831a76ef43c5b71b05c73fc2f164e",
-                "reference": "ec157eab335831a76ef43c5b71b05c73fc2f164e",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/5ffc6304a84a10c4423286dd77bd632ad8bdb941",
+                "reference": "5ffc6304a84a10c4423286dd77bd632ad8bdb941",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 }
             ],
             "description": "Whenever an assignment with a rubric is visited, cache that rubric for later redisplay if the assignment changes to external tool submission",
-            "time": "2015-08-20 03:53:01"
+            "time": "2015-08-20 16:25:08"
         },
         {
             "name": "educoder/pest",
@@ -527,12 +527,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarks-colors.git",
-                "reference": "978be1b0f711d0ab03f7ce15cfafddce60b12676"
+                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/978be1b0f711d0ab03f7ce15cfafddce60b12676",
-                "reference": "978be1b0f711d0ab03f7ce15cfafddce60b12676",
+                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
+                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
                 "shasum": ""
             },
             "type": "library",
@@ -552,7 +552,7 @@
                 }
             ],
             "description": "An object-ified, consistent set of hex colors for St. Mark’s projects",
-            "time": "2015-08-08 01:30:39"
+            "time": "2015-08-20 20:17:08"
         },
         {
             "name": "smtech/stmarkssmarty",
@@ -560,12 +560,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "da58710978039498054117bcbd24734e2bda4b54"
+                "reference": "bcee426f8430559c52a3ccac322cc86db0f52e1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/da58710978039498054117bcbd24734e2bda4b54",
-                "reference": "da58710978039498054117bcbd24734e2bda4b54",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/bcee426f8430559c52a3ccac322cc86db0f52e1a",
+                "reference": "bcee426f8430559c52a3ccac322cc86db0f52e1a",
                 "shasum": ""
             },
             "require": {
@@ -589,7 +589,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-08-08 01:47:07"
+            "time": "2015-08-20 20:17:34"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
