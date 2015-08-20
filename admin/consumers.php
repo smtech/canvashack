@@ -11,7 +11,7 @@ $enabled = true;
 /* validate new consumer information and save it */
 if (isset($_REQUEST['name']) && isset($_REQUEST['key']) && isset($_REQUEST['secret'])) {
 	$valid = true;
-	$message = '<strong>Invalid consumer information.</strong> ';
+	$message = 'Invalid consumer information. ';
 	if (empty($_name = trim($_REQUEST['name']))) {
 		$valid = false;
 		$message .= 'Consumer name must not be empty. ';
@@ -37,7 +37,11 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['key']) && isset($_REQUEST['secr
 	}
 	
 	if (!$valid) {
-		echo "<p class=\"error\">$message</p>";
+		$smarty->addMessage(
+			'Required information missing',
+			$message,
+			NotificationMessage::ERROR
+		);
 	}
 
 /* look up consumer to edit, if requested */
