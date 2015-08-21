@@ -1,6 +1,6 @@
 <?php
 
-require_once('../common.inc.php');
+require_once('common.inc.php');
 
 /* this file handles the entire OAuth API token negotiation for a user token --
    update it to include a better explanation, pertinent to your app, for why the

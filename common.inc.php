@@ -16,7 +16,8 @@ use Battis\AppMetadata as AppMetadata;
  * @return boolean
  **/
 function midLaunch() {
-	return strpos($_SERVER['REQUEST_URI'], '/lti/launch.php') !== false;
+	global $metadata; // FIXME grown-ups don't program like this
+	return $metadata['APP_LAUNCH_URL'] === (($_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://') . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
 }
 
 /**
@@ -56,7 +57,7 @@ function initSecrets() {
  * @throws CanvasAPIviaLTI_Exception MYSQL_CONNECTION if a mysqli connection cannot be established
  **/
 function initMySql() {
-	global $secrets;	
+	global $secrets; // FIXME grown-ups don't program like this
 	if (!($secrets instanceof SimpleXMLElement)) {
 		$secrets = initSecrets();
 	}
@@ -80,15 +81,27 @@ function initMySql() {
 	return $sql;
 }
 
+/**
+ * Initialize AppMetadata
+ *
+ * @return \Battis\AppMetadata
+ **/
 function initAppMetadata() {
-	global $secrets;
-	global $sql;
+	global $secrets; // FIXME grown-ups don't program like this
+	global $sql; // FIXME grown-ups don't program like this
 	
 	$metadata = new AppMetadata($sql, (string) $secrets->app->id);
 	
 	return $metadata;
 }
 
+/**
+ * Preformat `var_dump()`
+ *
+ * @param mixed $var
+ *
+ * @return void
+ **/
 function html_var_dump($var) {
 	echo '<pre>';
 	var_dump($var);
@@ -120,15 +133,21 @@ try {
 	$sql = initMySql();
 	$metadata = initAppMetadata();
 } catch (CanvasAPIviaLTI_Exception $e) {
-	$ready = false;
-	$reason = $e;
+	$smarty->addMessage(
+		'Initialization Failure',
+		$e->getMessage(),
+		NotificationMessage::ERROR
+	);
+	$smarty->display();
+	exit;
 }
 
 /* interactive initialization only */
 if ($ready && php_sapi_name() != 'cli') {
-	
+		
 	/* allow web apps to use common.inc.php without LTI authentication */
 	if (!defined('IGNORE_LTI')) {
+				
 		try {
 			if (isset($_SESSION['toolProvider'])) {
 				$toolProvider = $_SESSION['toolProvider'];

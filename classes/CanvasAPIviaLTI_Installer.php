@@ -26,7 +26,7 @@ class CanvasAPIviaLTI_Installer {
 	 * @throws CanvasAPIviaLTI_Installer_Exception If $step is not a pre-defined *_STEP constant
 	 **/
 	public static function createSecretsFile($step = self::SECRETS_NEEDED_STEP) {
-		global $smarty;
+		global $smarty; // FIXME grown-ups don't program like this
 		
 		switch ($step) {
 			case self::SECRETS_NEEDED_STEP: {
@@ -143,8 +143,8 @@ class CanvasAPIviaLTI_Installer {
 	 * @throws CanvasAPIviaLTI_Installer_Exception If database tables are not created
 	 **/
 	public static function createLTIDatabaseTables() {
-		global $sql;
-		global $smarty;
+		global $sql; // FIXME grown-ups don't program like this
+		global $smarty; // FIXME grown-ups don't program like this
 		
 		$ltiSchema = realpath(__DIR__ . '/../vendor/spvsoftwareproducts/LTI_Tool_Provider/lti-tables-mysql.sql');
 		
@@ -181,8 +181,8 @@ class CanvasAPIviaLTI_Installer {
 	 * @throws CanvasAPIviaLTI_Installer_Exception If database tables are not created
 	 **/
 	public static function createAppDatabaseTables() {
-		global $sql;
-		global $smarty;
+		global $sql; // FIXME grown-ups don't program like this
+		global $smarty; // FIXME grown-ups don't program like this
 		
 		if (file_exists(SCHEMA_FILE)) {
 			$queries = explode(";", file_get_contents(SCHEMA_FILE));
@@ -235,10 +235,10 @@ class CanvasAPIviaLTI_Installer {
 	 * @return AppMetadata
 	 **/
 	public static function createAppMetadata() {
-		global $secrets;
-		global $sql;
-		global $metadata;
-		global $smarty;
+		global $secrets; // FIXME grown-ups don't program like this
+		global $sql; // FIXME grown-ups don't program like this
+		global $metadata; // FIXME grown-ups don't program like this
+		global $smarty; // FIXME grown-ups don't program like this
 		
 		if (AppMetadata::prepareDatabase($sql)) {
 			$smarty->addMessage(
@@ -281,9 +281,9 @@ class CanvasAPIviaLTI_Installer {
 	 * @throws CanvasAPIviaLTI_Installer_Exception If $step is not a pre-defined *_STEP constant
 	 **/
 	public static function acquireAPIToken($step = self::API_DECISION_NEEDED_STEP, $skip = false) {
-		global $secrets;
-		global $metadata;
-		global $smarty;
+		global $secrets; // FIXME grown-ups don't program like this
+		global $metadata; // FIXME grown-ups don't program like this
+		global $smarty; // FIXME grown-ups don't program like this
 		
 		if ($skip) {
 			if (isset($metadata['CANVAS_API_TOKEN']) || isset($metadata['CANVAS_API_USER'])) {

@@ -11,8 +11,8 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 	 * Handle launch requests, which start the application running
 	 **/
 	public function onLaunch() {
-		global $metadata;
-		global $sql;
+		global $metadata; // FIXME grown-ups don't program like this
+		global $sql; // FIXME grown-ups don't program like this
 				
 		/* is this user in a role that can use this app? */
 		if ($this->user->isLearner() || $this->user->isStaff()) {
@@ -67,7 +67,7 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 	 * Handle errors created while processing the LTI request
 	 **/
 	public function onError() {
-		global $metadata;
+		global $metadata; // FIXME grown-ups don't program like this
 		
 		$this->redirectURL = "{$metadata['APP_URL']}/app.php?lti-request=error&reason={$this->reason}";
 	}
@@ -76,7 +76,7 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 	 * Handle dashboard requests (coming in LTI v2.0, I guess)
 	 **/
 	public function onDashboard() {
-		global $metadata;
+		global $metadata; // FIXME grown-ups don't program like this
 		
 		$this->redirectURL = "{$metadata['APP_URL']}/app.php?lti-request=dashboard";
 	}
@@ -85,7 +85,7 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 	 * Handle configure requests (coming in LTI v2.0, I guess)
 	 **/
 	public function onConfigure() {
-		global $metadata;
+		global $metadata; // FIXME grown-ups don't program like this
 		
 		$this->redirectURL = "{$metadata['APP_URL']}/app.php?lti-request=configure";
 	}
@@ -94,7 +94,7 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 	 * Handle content-item requests (that is we're a tool provider that adds a button in the content editor)
 	 **/
 	public function onContentItem() {
-		global $metadata;
+		global $metadata; // FIXME grown-ups don't program like this
 		
 		$this->redirectURL = "{$metadata['APP_URL']}/app.php?lti-request=content-item";
 	}
