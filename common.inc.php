@@ -116,7 +116,6 @@ function html_var_dump($var) {
 
 /* assume everything's going to be fine... */
 $ready = true;
-$reason = null; // the reason we're _not_ ready
 
 /* preliminary interactive only initialization */
 if (php_sapi_name() != 'cli') {
@@ -147,17 +146,17 @@ if ($ready && php_sapi_name() != 'cli') {
 		
 	/* allow web apps to use common.inc.php without LTI authentication */
 	if (!defined('IGNORE_LTI')) {
-				
+		
 		try {
-			if (isset($_SESSION['toolProvider'])) {
+			if (midLaunch()) {
+				$ready = false;
+			} elseif (isset($_SESSION['toolProvider'])) {
 				$toolProvider = $_SESSION['toolProvider'];
 			} else {
-				if (!midLaunch()) {
-					throw new CanvasAPIviaLTI_Exception(
-						'The LTI launch request is missing',
-						CanvasAPIviaLTI_Exception::LAUNCH_REQUEST
-					);
-				}
+				throw new CanvasAPIviaLTI_Exception(
+					'The LTI launch request is missing',
+					CanvasAPIviaLTI_Exception::LAUNCH_REQUEST
+				);
 			}
 			
 		} catch (CanvasAPIviaLTI_Exception $e) {
@@ -171,9 +170,6 @@ if ($ready && php_sapi_name() != 'cli') {
 		
 		if (!midLaunch() || !defined('IGNORE_LTI')) {
 			require_once(__DIR__ . '/common-app.inc.php');
-			if (!defined('IGNORE_LTI')) {
-				$smarty->assign('ltiUser', $toolProvider->user);
-			}
 		}
 	}
 }

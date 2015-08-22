@@ -1,6 +1,6 @@
 <?php
 
-require_once('../common.inc.php');
+require_once('common.inc.php');
 
 /* save the URL we were given for the OAuth endpoint */
 if (isset($_REQUEST['url']) && !empty($_REQUEST['url'])) {
