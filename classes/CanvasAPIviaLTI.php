@@ -41,15 +41,16 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 					/* ...but if the user does have a token, rock on! */
 					$_SESSION['isUserToken'] = true;
 					$_SESSION['apiToken'] = $userToken->getToken();
-					$_SESSION['apiUrl'] = $this->user->getResourceLink()->settings['custom_canvas_api_domain'];
+					//$_SESSION['apiUrl'] = $userToken->getAPIUrl();
 				}
 			} else {
 				
 				/* ...if we have an admin API token, rock on! */
 				$_SESSION['isUserToken'] = false;
 				$_SESSION['apiToken'] = $metadata['CANVAS_API_TOKEN'];
-				$_SESSION['apiUrl'] = $metadata['CANVAS_API_URL'];
+				//$_SESSION['apiUrl'] = $metadata['CANVAS_API_URL'];
 			}
+			$_SESSION['apiUrl'] = 'https://' . $this->user->getResourceLink()->settings['custom_canvas_api_domain'] . '/api/v1';
 			
 	        /* pass control off to the app */
 	        if ($haveToken) {
