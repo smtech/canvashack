@@ -1,6 +1,6 @@
 <?php
 
-require_once('../common.inc.php');
+require_once('common.inc.php');
 
 /* clear any existing session data */
 if (session_status() === PHP_SESSION_NONE) {

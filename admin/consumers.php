@@ -1,6 +1,6 @@
 <?php
 
-require_once('../common.inc.php');
+require_once('common.inc.php');
 
 /* initialize consumer fields */
 $name = '';
