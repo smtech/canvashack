@@ -4,20 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "16dd6b5ea3a7cd7dd4cd608fd643f07a",
+    "hash": "9a808951bbc1129fb3f857f5caec96bc",
+    "content-hash": "7d2131e9059e3fc08ca6049489c0b75e",
     "packages": [
         {
             "name": "battis/appmetadata",
-            "version": "v1.1.1",
+            "version": "v1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "99d3cbd11d615e94355f409de88240752e906ee7"
+                "reference": "9326536ba3492660f22ba955c68643b26bceb057"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/99d3cbd11d615e94355f409de88240752e906ee7",
-                "reference": "99d3cbd11d615e94355f409de88240752e906ee7",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/9326536ba3492660f22ba955c68643b26bceb057",
+                "reference": "9326536ba3492660f22ba955c68643b26bceb057",
                 "shasum": ""
             },
             "type": "library",
@@ -37,7 +38,7 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-08-17 19:58:28"
+            "time": "2015-10-05 16:46:06"
         },
         {
             "name": "battis/autocrontabjob",
@@ -75,6 +76,39 @@
             ],
             "description": "An object-oriented approach to scheduling regular cron jobs automatically",
             "time": "2015-08-11 17:57:29"
+        },
+        {
+            "name": "battis/data-utilities",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/battis/data-utilities.git",
+                "reference": "14f3d457ebc7b661c4c42596d0567dc85bab9e2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/battis/data-utilities/zipball/14f3d457ebc7b661c4c42596d0567dc85bab9e2a",
+                "reference": "14f3d457ebc7b661c4c42596d0567dc85bab9e2a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Battis\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "A handful of useful helper functions to process data",
+            "time": "2015-08-27 20:31:48"
         },
         {
             "name": "battis/educoder-pest-fork",
@@ -120,16 +154,16 @@
         },
         {
             "name": "battis/simplecache",
-            "version": "v1.1",
+            "version": "v1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/simplecache.git",
-                "reference": "0cb75651240fe0d3037ad8557f6a4fbc35bc8e71"
+                "reference": "2116d33def68ebf3d2a2ad4afd2970077115d801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/simplecache/zipball/0cb75651240fe0d3037ad8557f6a4fbc35bc8e71",
-                "reference": "0cb75651240fe0d3037ad8557f6a4fbc35bc8e71",
+                "url": "https://api.github.com/repos/battis/simplecache/zipball/2116d33def68ebf3d2a2ad4afd2970077115d801",
+                "reference": "2116d33def68ebf3d2a2ad4afd2970077115d801",
                 "shasum": ""
             },
             "type": "library",
@@ -149,7 +183,7 @@
                 }
             ],
             "description": "Manage a simple cache backed by a MySQL database",
-            "time": "2015-08-13 19:32:36"
+            "time": "2015-10-05 15:13:09"
         },
         {
             "name": "canvashack/plugin-auto-open-feedback",
@@ -185,12 +219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-cache-and-show-rubrics.git",
-                "reference": "5ffc6304a84a10c4423286dd77bd632ad8bdb941"
+                "reference": "dfcf3503656e63a9f2d1bec53f39ffd1ffcee8dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/5ffc6304a84a10c4423286dd77bd632ad8bdb941",
-                "reference": "5ffc6304a84a10c4423286dd77bd632ad8bdb941",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/dfcf3503656e63a9f2d1bec53f39ffd1ffcee8dc",
+                "reference": "dfcf3503656e63a9f2d1bec53f39ffd1ffcee8dc",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +242,35 @@
                 }
             ],
             "description": "Whenever an assignment with a rubric is visited, cache that rubric for later redisplay if the assignment changes to external tool submission",
-            "time": "2015-08-20 16:25:08"
+            "time": "2015-08-24 12:48:59"
+        },
+        {
+            "name": "canvashack/plugin-enrollment-info-ui-tweaks",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-enrollment-info-ui-tweaks.git",
+                "reference": "af74465cb8206c2d6335119e48cc89d34d0a9855"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-enrollment-info-ui-tweaks/zipball/af74465cb8206c2d6335119e48cc89d34d0a9855",
+                "reference": "af74465cb8206c2d6335119e48cc89d34d0a9855",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Tweak some annoying default settings to better ones when looking at enrollment information",
+            "time": "2015-08-25 02:38:56"
         },
         {
             "name": "educoder/pest",
@@ -366,12 +428,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "643e6784e8d07154e88eff1ea43b2cd66a6051ae"
+                "reference": "64464e8fbe79e9e314cf9406299cc3c2c22233d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/643e6784e8d07154e88eff1ea43b2cd66a6051ae",
-                "reference": "643e6784e8d07154e88eff1ea43b2cd66a6051ae",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/64464e8fbe79e9e314cf9406299cc3c2c22233d9",
+                "reference": "64464e8fbe79e9e314cf9406299cc3c2c22233d9",
                 "shasum": ""
             },
             "require": {
@@ -413,7 +475,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-08-06 19:42:20"
+            "time": "2015-09-19 17:55:14"
         },
         {
             "name": "smtech/canvashack-installer",
@@ -456,16 +518,16 @@
         },
         {
             "name": "smtech/canvaspest",
-            "version": "v1.0.1",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "204e6a8fe3a1a21dcbe594dec5b342de48e2ed1e"
+                "reference": "fd29f4b62b500ee3016efe56f2324829f3cfd725"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/204e6a8fe3a1a21dcbe594dec5b342de48e2ed1e",
-                "reference": "204e6a8fe3a1a21dcbe594dec5b342de48e2ed1e",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/fd29f4b62b500ee3016efe56f2324829f3cfd725",
+                "reference": "fd29f4b62b500ee3016efe56f2324829f3cfd725",
                 "shasum": ""
             },
             "require": {
@@ -488,7 +550,7 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2015-08-17 16:44:57"
+            "time": "2015-08-22 01:41:57"
         },
         {
             "name": "smtech/oauth-negotiator",
@@ -560,17 +622,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "bcee426f8430559c52a3ccac322cc86db0f52e1a"
+                "reference": "71e3cc71a1f81c2b8bdb298b53bc183728c66af9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/bcee426f8430559c52a3ccac322cc86db0f52e1a",
-                "reference": "bcee426f8430559c52a3ccac322cc86db0f52e1a",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/71e3cc71a1f81c2b8bdb298b53bc183728c66af9",
+                "reference": "71e3cc71a1f81c2b8bdb298b53bc183728c66af9",
                 "shasum": ""
             },
             "require": {
+                "battis/data-utilities": "dev-master",
                 "smarty/smarty": "3.1.*",
                 "smtech/stmarks-colors": "dev-master"
+            },
+            "suggest": {
+                "battis/appmetadata": "MySQL-backed globals array for app metadata storage",
+                "eternicode/bootstrap-datepicker": "The full Bootstrap Datepicker package for local install"
             },
             "type": "library",
             "autoload": {
@@ -589,7 +656,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-08-20 20:17:34"
+            "time": "2015-08-26 19:31:34"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
@@ -659,7 +726,8 @@
         "smtech/stmarkssmarty": 20,
         "smtech/canvashack-installer": 20,
         "canvashack/plugin-auto-open-feedback": 20,
-        "canvashack/plugin-cache-and-show-rubrics": 20
+        "canvashack/plugin-cache-and-show-rubrics": 20,
+        "canvashack/plugin-enrollment-info-ui-tweaks": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

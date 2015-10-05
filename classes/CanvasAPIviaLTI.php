@@ -15,7 +15,7 @@ class CanvasAPIviaLTI extends LTI_Tool_Provider {
 		global $sql; // FIXME grown-ups don't program like this
 				
 		/* is this user in a role that can use this app? */
-		if ($this->user->isLearner() || $this->user->isStaff()) {
+		if ($this->user->isAdmin()) {
 			
 			/* set up any needed session variables */
 	        $_SESSION['consumer_key'] = $this->consumer->getKey();

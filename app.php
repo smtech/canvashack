@@ -2,22 +2,41 @@
 
 require_once('common.inc.php');
 
-/* replace the contents of this file with your own app logic */
+use \smtech\CanvasHack\CanvasHack;
+use \smtech\CanvasHack\CanvasHack_Exception;
 
-$api = new CanvasPest($_SESSION['apiUrl'], $_SESSION['apiToken']);
-$profile = $api->get('/users/self/profile');
+if (isset($_REQUEST)) {
+	while (list($id, $setting) = each($_REQUEST)) {
+		try{
+			$hack = new CanvasHack($sql, $id);
+			if ($setting === 'enable') {
+				$hack->enable();
+			} else {
+				$hack->disable();
+			}
+		} catch (CanvasHack_Exception $e) {
+			// do nothing
+		}
+	}
+}
 
-$smarty->assign('content', "
-	<h1>App</h1>
-	
-	<h2>{$_REQUEST['lti-request']} Request</h3>" .
-	(isset($_REQUEST['reason']) ?
-		"<p>{$_REQUEST['reason']}</p>" : ''
-	) . "
-	<h2>GET /users/self/profile</h3>		
-	<pre>" . print_r($profile, true) . '</pre>'
-);
+$hacksContents = scandir(realpath(__DIR__ . '/hacks'), SCANDIR_SORT_DESCENDING);
+$hacks = array();
+foreach($hacksContents as $item) {
+	if (is_dir($path = realpath(__DIR__ . "/hacks/$item")) && file_exists($manifest = "$path/manifest.xml")) {
+		try {
+			$hacks[$item] = new CanvasHack($sql, $path);
+		} catch (CanvasHack_Exception $e) {
+			$smarty->addMessage(
+				'CanvasHack Manifest Error ['. $e->getCode() . ']',
+				$e->getMessage(),
+				NotificationMessage::ERROR
+			);
+		}
+	}
+}
 
-$smarty->display();
+$smarty->assign('hacks', $hacks);
+$smarty->display('control-panel.tpl');
 
 ?>

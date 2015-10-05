@@ -2,6 +2,8 @@
 
 require_once('common.inc.php');
 
+use smtech\CanvasHack\CanvasHackScanner;
+
 $cron = new CanvasHackScanner(
 	$metadata['APP_ID'],
 	$metadata['CRON_SCRIPT'],

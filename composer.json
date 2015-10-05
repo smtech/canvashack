@@ -32,7 +32,8 @@
 		"battis/autocrontabjob": "~1.0",
 		"smtech/canvashack-installer": "dev-master",
 		"canvashack/plugin-auto-open-feedback": "dev-master",
-		"canvashack/plugin-cache-and-show-rubrics" : "dev-master"
+		"canvashack/plugin-cache-and-show-rubrics" : "dev-master",
+		"canvashack/plugin-enrollment-info-ui-tweaks": "dev-master"
 	},
 	"autoload": {
 		"classmap": [""]
