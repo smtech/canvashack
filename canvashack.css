@@ -1,6 +1,68 @@
 <?php
 
+define('IGNORE_LTI', true);
+require_once('common.inc.php');
+
+use \Battis\AppMetadata;
+
+function canonicalNamespaceId($id) {
+	return preg_replace('/[^a-z0-9]+/i', '_', $id);
+}
+
+function canvasHackNamespace($id, $javascript) {
+	return preg_replace('/^(\s*var\s+)?canvashack\s*=\s*{\n*(.*)};/is', canonicalNamespaceId($id) . ": {\n$2\n}", $javascript);
+}
+
 header("Content-Type: text/css");
 header("X-Content-Type-Options: nosniff"); // trying to settle IE's hash
+
+$canvashacks = array();
+$response = $sql->query("
+	SELECT p.*
+		FROM `pages` AS p
+		INNER JOIN `canvashacks` AS c
+			ON c.`id` = p.`canvashack`
+		WHERE
+			c.`enabled` = TRUE
+		ORDER BY
+			p.`include` DESC
+");
+while ($page = $response->fetch_assoc()) {
+	if (
+		(
+			!empty($page['url']) &&
+			$page['url'] == $_SERVER['HTTP_REFERER']
+		) || (
+			!empty($page['pattern']) &&
+			preg_match($page['pattern'], $_SERVER['HTTP_REFERER'])
+		)
+	) {
+		if ($page['include']) {
+			$canvashacks[$page['canvashack']] = true;
+		} else {
+			unset($canvashacks[$page['canvashack']]);
+		}
+	}
+}
+
+$css = array();
+if (($response = $sql->query("
+	SELECT *
+		FROM `css`
+		WHERE
+			`canvashack` = '" . implode("' OR `canvashack` = '", array_keys($canvashacks)) . "'
+")) == false) {
+	exit;
+}
+while ($entry = $response->fetch_assoc()) {
+	$css[$entry['canvashack']] = file_get_contents($entry['path']);
+}
+
+foreach ($css as $id => $stylesheet) {
+	$plugin = new AppMetadata($sql, $id);
+	echo "/* CanvasHack ID $id begin */\n";
+	echo $plugin->derivedValues($stylesheet);
+	echo "\n/* CanvasHack ID $id end */\n\n";
+}
 
 ?>

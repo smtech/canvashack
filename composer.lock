@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9a808951bbc1129fb3f857f5caec96bc",
-    "content-hash": "7d2131e9059e3fc08ca6049489c0b75e",
+    "hash": "accca44b28ab358c2c670267490a41cc",
+    "content-hash": "ffd75fce866c670d32eb45ee8f6235dc",
     "packages": [
         {
             "name": "battis/appmetadata",
-            "version": "v1.2",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "9326536ba3492660f22ba955c68643b26bceb057"
+                "reference": "a97bdc20627008ed165b638737b618a0d6f606c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/9326536ba3492660f22ba955c68643b26bceb057",
-                "reference": "9326536ba3492660f22ba955c68643b26bceb057",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/a97bdc20627008ed165b638737b618a0d6f606c2",
+                "reference": "a97bdc20627008ed165b638737b618a0d6f606c2",
                 "shasum": ""
             },
             "type": "library",
@@ -38,7 +38,7 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-10-05 16:46:06"
+            "time": "2015-10-22 20:25:29"
         },
         {
             "name": "battis/autocrontabjob",
@@ -191,12 +191,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-auto-open-feedback.git",
-                "reference": "247cab8be35dc376de2482746d0c3b670de7cdd2"
+                "reference": "cc0651560a2f31de778ea4355131bfc1a7637658"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/247cab8be35dc376de2482746d0c3b670de7cdd2",
-                "reference": "247cab8be35dc376de2482746d0c3b670de7cdd2",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/cc0651560a2f31de778ea4355131bfc1a7637658",
+                "reference": "cc0651560a2f31de778ea4355131bfc1a7637658",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -211,7 +211,7 @@
                 }
             ],
             "description": "A bandaid until SpeedGrader 2.0: autoopen SpeedGrader feedback and rubrics for students",
-            "time": "2015-08-20 13:46:58"
+            "time": "2015-10-22 02:24:51"
         },
         {
             "name": "canvashack/plugin-cache-and-show-rubrics",
@@ -271,6 +271,34 @@
             ],
             "description": "Tweak some annoying default settings to better ones when looking at enrollment information",
             "time": "2015-08-25 02:38:56"
+        },
+        {
+            "name": "canvashack/plugin-stmarks-branding",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-stmarks-branding.git",
+                "reference": "c232c9610b5203d81bfded7ae8b6eff98c7dd49c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/c232c9610b5203d81bfded7ae8b6eff98c7dd49c",
+                "reference": "c232c9610b5203d81bfded7ae8b6eff98c7dd49c",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "General branding settings for St. Mark's school within Canvas",
+            "time": "2015-10-22 20:42:28"
         },
         {
             "name": "educoder/pest",
@@ -727,7 +755,8 @@
         "smtech/canvashack-installer": 20,
         "canvashack/plugin-auto-open-feedback": 20,
         "canvashack/plugin-cache-and-show-rubrics": 20,
-        "canvashack/plugin-enrollment-info-ui-tweaks": 20
+        "canvashack/plugin-enrollment-info-ui-tweaks": 20,
+        "canvashack/plugin-stmarks-branding": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
