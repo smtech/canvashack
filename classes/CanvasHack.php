@@ -13,7 +13,11 @@ class CanvasHack {
 	
 	private $sql;
 	
+	private $path;
+	
 	private $table = 'canvashacks';
+	private $css = 'css';
+	private $javascript = 'javascript';
 	private $pages = 'pages';
 	private $dom = 'dom';
 	
@@ -34,6 +38,7 @@ class CanvasHack {
 		}
 
 		if (file_exists($path) && file_exists($manifest = realpath("$path/manifest.xml"))) {
+			$this->path = dirname($manifest);
 			$this->parseManifest($manifest);
 		} else {
 			if (isset($manifest)) {
@@ -42,14 +47,14 @@ class CanvasHack {
 					CanvasHack_Exception::MANIFEST
 				);
 			} else {
-				loadManifestEntry($path);
+				$this->loadManifestEntry($path);
 			}
 		}
 	}
 	
 	private function loadManifestEntry($id) {
 		$response = $this->sql->query("
-			SELECT * FROM `{$this->table}` WHERE `id` = '" . $this->sql->real_escape_string($path) . "'
+			SELECT * FROM `{$this->table}` WHERE `id` = '" . $this->sql->real_escape_string($id) . "'
 		");
 		$row = $response->fetch_assoc();
 		if ($row) {
@@ -63,7 +68,7 @@ class CanvasHack {
 			}
 		} else {
 			throw new CanvasHack_Exception(
-				"Manifest database entry missing for $path",
+				"Manifest database entry missing for $id",
 				CanvasHack_Exception::MANIFEST
 			);
 		}
@@ -79,7 +84,7 @@ class CanvasHack {
 		}
 		
 		$this->parseManifestMetadata($xml);
-		$this->parseManigestComponents($xml->components);
+		$this->parseManifestComponents($xml->components);
 	}
 	
 	private function parseManifestMetadata($xml) {
@@ -107,47 +112,108 @@ class CanvasHack {
 				$this->sql->real_escape_string($this->description) :
 				$this->sql->real_escape_string($this->abstract)
 		);
-		$result = $this->sql->query("
-			SELECT *
-				FROM `{$this->table}`
-				WHERE
-					`id` = '{$this->id}'
-				LIMIT 1
-		");
-		if($result->num_rows > 0) {
-			if (!$this->sql->query("
-				UPDATE `{$this->table}`
-					SET
-						`name` = '$_name',
-						`abstract` = '$_abstract',
-						`description` = '$_description'
-					WHERE
-						`id` = '{$this->id}'
-			")) {
-				throw new CanvasHack_Exception(
-					"Could not update CanvasHack manifest database for {$this->name}.",
-					CanvasHack_Exception::SQL
-				);
-			}
+		
+		$this->updateDb($this->table, $this->id, array('name' => $_name, 'abstract' => $_abstract, 'description' => $_description), 'id');
+	}
+	
+	private function parseManifestCSS($css) {
+		if (!empty($css)) {
+			$this->updateDb($this->css, $this->id, array('path' => realpath($this->path . '/' . $css)));
 		} else {
+			$this->clearDb($this->css, $this->id);
+		}
+	}
+	
+	private function parseManifestJavascript($javascript) {
+		if (!empty($javascript)) {
+			$this->updateDb($this->javascript, $this->id, array('path' => realpath($this->path) . '/' . $javascript));
+		} else {
+			$this->clearDb($this->javascript, $this->id);
+		}
+	}
+	
+	private function parseManifestCanvasPages($pages) {
+		$this->clearDb($this->pages, $this->id);
+		foreach($pages->include->children() as $page) {
 			if (!$this->sql->query("
-				INSERT INTO `{$this->table}`
+				INSERT INTO `{$this->pages}`
 				(
-					`id`, `name`, `abstract`, `description`
+					`canvashack`,
+					`url`,
+					`pattern`,
+					`include`
 				) VALUES (
-					'{$this->id}', '$_name', '$_abstract', '$_description'
+					'{$this->id}',
+					" . ($page->type == 'url' ? "'{$page->url}'" : 'NULL') . ",
+					" . ($page->type == 'regex' ? "'" . addslashes($page->pattern) . "'" : 'NULL') . ",
+					TRUE
 				)
 			")) {
 				throw new CanvasHack_Exception(
-					"Could not create CanvasHack manifest database entry for {$this->name}. " . $this->sql->error,
+					"Could not insert included page entry for {$this->id}: " . $page->asXml() . PHP_EOL . $this->sql->error,
+					CanvasHack_Exception::SQL
+				);
+			}
+		}
+		foreach($pages->exclude->children() as $page) {
+			if (!$this->sql->query("
+				INSERT INTO `{$this->pages}`
+				(
+					`canvashack`,
+					`url`,
+					`pattern`,
+					`include`
+				) VALUES (
+					'{$this->id}',
+					" . ($page->type == 'url' ? "'" . $this->sql->real_escape_string($page->url) . "'" : 'NULL') . ",
+					" . ($page->type == 'regex' ? "'" . $this->sql->real_escape_string($page->pattern) . "'" : 'NULL') . ",
+					FALSE
+				)
+			")) {
+				// TODO wording could be improved
+				throw new CanvasHack_Exception(
+					"Could not insert included page entry for {$this->id}: " . $page->asXml() . PHP_EOL . $this->sql->error,
 					CanvasHack_Exception::SQL
 				);
 			}
 		}
 	}
 	
-	private function paraseManifestComponents($components) {
-		
+	private function parseManifestCanvasDOM($dom) {
+		$this->clearDb($this->dom, $this->id);
+		foreach($dom->children() as $bundle) {
+			if (!$this->sql->query("
+				INSERT INTO `{$this->dom}`
+				(
+					`canvashack`,
+					`selector`,
+					`event`,
+					`action`
+				) VALUES (
+					'{$this->id}',
+					'" . $this->sql->real_escape_string($bundle->selector) . "',
+					'" . $this->sql->real_escape_string($bundle->event) . "',
+					'" . $this->sql->real_escape_string($bundle->action) . "'
+				)
+			")) {
+				// TODO wording could be improved
+				throw new CanvasHack_Exception(
+					"Could not insert DOM entry for {$this->id}: " . $dom->asXml() . PHP_EOL . $this->sql->error,
+					CanvasHack_Exception::SQL
+				);
+			}
+		}
+	}
+	
+	private function parseManifestCanvas($canvas) {
+		$this->parseManifestCanvasPages($canvas->pages);
+		$this->parseManifestCanvasDOM($canvas->dom);
+	}
+	
+	private function parseManifestComponents($components) {
+		$this->parseManifestCSS($components->css);
+		$this->parseManifestJavascript($components->javascript);
+		$this->parseManifestCanvas($components->canvas);
 	}
 	
 	private function required($field, $value) {
@@ -211,6 +277,69 @@ class CanvasHack {
 		$this->sql->query("
 			UPDATE `{$this->table}` SET `enabled` = '0' WHERE `id` = '{$this->id}'
 		");
+	}
+	
+	/**
+	 * Helper function to insert/update into a SQL table
+	 * 
+	 * @param string $table
+	 * @param string $id CanvasHack identifier
+	 * @param array $fields
+	 **/
+	private function updateDb($table, $id, $fields, $idKey = 'canvashack') {
+		$response = $this->sql->query("
+			SELECT *
+				FROM `$table`
+				WHERE
+					`$idKey` = '$id'
+				LIMIT 1
+		");
+		
+		$params = array();
+		foreach($fields as $field => $value) {
+			$params[] = "`$field` = '$value'";
+		}
+		
+		if ($response->num_rows > 0) {
+			if (!$this->sql->query("
+				UPDATE `$table`
+					SET " .
+					implode(', ', $params) .
+				"WHERE
+					`$idKey` = '$id'
+			")) {
+				throw new CanvasHack_Exception(
+					"Could not update `$table` with `$idKey` = '$id' and fields `$params'. " . $this->sql->error,
+					CanvasHack_Exception::SQL
+				);
+			}
+		} else {
+			$fields[$idKey] = $this->id;
+			if (!$this->sql->query("
+				INSERT INTO `$table`
+				(`" . implode('`, `', array_keys($fields)) . "`)
+				VALUES
+				('" . implode("', '", $fields) . "')
+			")) {
+				throw new CanvasHack_Exception(
+					"Could not insert a new row into `$table` with `$idkey` = '$id' and fields `$params'. " . $this->sql->error,
+					CanvasHack_Exception::SQL
+				);
+			}
+		}
+	}
+	
+	private function clearDb($table, $id, $idKey = 'canvashack') {
+		if (!$this->sql->query("
+			DELETE FROM `$table`
+				WHERE
+					`$idKey` = '$id'
+		")) {
+			throw new CanvasHack_Exception(
+				"Could not clear `$table` of `$idKey` = '$id' entries. " . $this->sql->error,
+				CanvasHack_Exception::SQL
+			);
+		}
 	}
 }
 
