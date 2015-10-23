@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "accca44b28ab358c2c670267490a41cc",
-    "content-hash": "ffd75fce866c670d32eb45ee8f6235dc",
+    "hash": "e35e4c9cc4acb90d496a3cebb2b98e79",
+    "content-hash": "845e4ae8ce920bb39158bdf00e58d1ea",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -243,6 +243,34 @@
             ],
             "description": "Whenever an assignment with a rubric is visited, cache that rubric for later redisplay if the assignment changes to external tool submission",
             "time": "2015-08-24 12:48:59"
+        },
+        {
+            "name": "canvashack/plugin-discussion-permalinks",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-discussion-permalinks.git",
+                "reference": "f68bfbd62aca9aba2e2f1cc08ff39cc1515096bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-discussion-permalinks/zipball/f68bfbd62aca9aba2e2f1cc08ff39cc1515096bf",
+                "reference": "f68bfbd62aca9aba2e2f1cc08ff39cc1515096bf",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Reveal discussion entry permalinks",
+            "time": "2015-10-23 02:08:12"
         },
         {
             "name": "canvashack/plugin-enrollment-info-ui-tweaks",
@@ -756,7 +784,8 @@
         "canvashack/plugin-auto-open-feedback": 20,
         "canvashack/plugin-cache-and-show-rubrics": 20,
         "canvashack/plugin-enrollment-info-ui-tweaks": 20,
-        "canvashack/plugin-stmarks-branding": 20
+        "canvashack/plugin-stmarks-branding": 20,
+        "canvashack/plugin-discussion-permalinks": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
