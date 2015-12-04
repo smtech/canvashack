@@ -239,22 +239,7 @@ class CanvasAPIviaLTI_Installer {
 		global $sql; // FIXME grown-ups don't program like this
 		global $metadata; // FIXME grown-ups don't program like this
 		global $smarty; // FIXME grown-ups don't program like this
-		
-		if (AppMetadata::prepareDatabase($sql)) {
-			$smarty->addMessage(
-				'App metadata database tables created',
-				'Database tables to store application metadata, which is used to build the
-				 <code>config.xml</code> file, have been created in your MySQL database.',
-				NotificationMessage::GOOD
-			);
-		} else {
-			$smarty->addMessage(
-				'App metadata database tables exist',
-				'Database tables to store application metadata already exist and have not
-				 been re-created.'
-			);
-		}
-		
+				
 		$metadata = initAppMetadata();
 		$metadata['APP_PATH'] = preg_replace('/\/classes$/', '', __DIR__);
 		$metadata['APP_URL'] = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on' ? 'http://' : 'https://') . $_SERVER['SERVER_NAME'] . preg_replace("|^{$_SERVER['DOCUMENT_ROOT']}(.*)$|", '$1', $metadata['APP_PATH']);
