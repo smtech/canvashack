@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e35e4c9cc4acb90d496a3cebb2b98e79",
-    "content-hash": "845e4ae8ce920bb39158bdf00e58d1ea",
+    "hash": "c51b4f22501bd20c6ffedd4072ecc381",
+    "content-hash": "7c6e8a2dae6ef171643c6528f69a9e56",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -301,6 +301,38 @@
             "time": "2015-08-25 02:38:56"
         },
         {
+            "name": "canvashack/plugin-global-navigation-menu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvas-navigation-menu.git",
+                "reference": "24f196c0ff1b2d381a3e435c633b7a29634a3564"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvas-navigation-menu/zipball/24f196c0ff1b2d381a3e435c633b7a29634a3564",
+                "reference": "24f196c0ff1b2d381a3e435c633b7a29634a3564",
+                "shasum": ""
+            },
+            "require": {
+                "battis/appmetadata": "~1.0",
+                "battis/simplecache": "~1.0"
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Add additional menus to the global navigation in Canvas",
+            "time": "2015-12-01 00:12:23"
+        },
+        {
             "name": "canvashack/plugin-stmarks-branding",
             "version": "dev-master",
             "source": {
@@ -484,12 +516,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "b26ba9ce522a054f9cd2f13b3ee651adf3240af4"
+                "reference": "e0fc310b6e52d2246cf07fd800ac4a70252bc6c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/b26ba9ce522a054f9cd2f13b3ee651adf3240af4",
-                "reference": "b26ba9ce522a054f9cd2f13b3ee651adf3240af4",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/e0fc310b6e52d2246cf07fd800ac4a70252bc6c3",
+                "reference": "e0fc310b6e52d2246cf07fd800ac4a70252bc6c3",
                 "shasum": ""
             },
             "require": {
@@ -531,7 +563,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-10-21 02:32:27"
+            "time": "2015-11-25 20:19:23"
         },
         {
             "name": "smtech/canvashack-installer",
@@ -785,7 +817,8 @@
         "canvashack/plugin-cache-and-show-rubrics": 20,
         "canvashack/plugin-enrollment-info-ui-tweaks": 20,
         "canvashack/plugin-stmarks-branding": 20,
-        "canvashack/plugin-discussion-permalinks": 20
+        "canvashack/plugin-discussion-permalinks": 20,
+        "canvashack/plugin-global-navigation-menu": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

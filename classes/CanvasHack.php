@@ -40,6 +40,9 @@ class CanvasHack {
 		if (file_exists($path) && file_exists($manifest = realpath("$path/manifest.xml"))) {
 			$this->path = dirname($manifest);
 			$this->parseManifest($manifest);
+			$pluginMetadata = new \Battis\AppMetadata($this->sql, $this->id);
+			$pluginMetadata['PLUGIN_PATH'] = $path;
+			$pluginMetadata['PLUGIN_URL'] = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on' ? 'http://' : 'https://') . $_SERVER['SERVER_NAME'] . preg_replace("|^{$_SERVER['DOCUMENT_ROOT']}(.*)$|", '$1', $pluginMetadata['PLUGIN_PATH']);
 		} else {
 			if (isset($manifest)) {
 				throw new CanvasHack_Exception(

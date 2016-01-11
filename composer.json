@@ -35,7 +35,8 @@
 		"canvashack/plugin-cache-and-show-rubrics" : "dev-master",
 		"canvashack/plugin-enrollment-info-ui-tweaks": "dev-master",
 		"canvashack/plugin-stmarks-branding": "dev-master",
-		"canvashack/plugin-discussion-permalinks": "dev-master"
+		"canvashack/plugin-discussion-permalinks": "dev-master",
+		"canvashack/plugin-global-navigation-menu": "dev-master"
 	},
 	"autoload": {
 		"classmap": [""]
