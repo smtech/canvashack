@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c51b4f22501bd20c6ffedd4072ecc381",
-    "content-hash": "7c6e8a2dae6ef171643c6528f69a9e56",
+    "hash": "63361f75fb52dc39b8fa774ea9a7a20e",
+    "content-hash": "414102ea9f534ad64d4010e94559ba78",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -154,16 +154,16 @@
         },
         {
             "name": "battis/simplecache",
-            "version": "v1.2",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/simplecache.git",
-                "reference": "2116d33def68ebf3d2a2ad4afd2970077115d801"
+                "reference": "5298aed74cd3911675b2bec147c346ed25261210"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/simplecache/zipball/2116d33def68ebf3d2a2ad4afd2970077115d801",
-                "reference": "2116d33def68ebf3d2a2ad4afd2970077115d801",
+                "url": "https://api.github.com/repos/battis/simplecache/zipball/5298aed74cd3911675b2bec147c346ed25261210",
+                "reference": "5298aed74cd3911675b2bec147c346ed25261210",
                 "shasum": ""
             },
             "type": "library",
@@ -183,7 +183,46 @@
                 }
             ],
             "description": "Manage a simple cache backed by a MySQL database",
-            "time": "2015-10-05 15:13:09"
+            "time": "2015-12-17 02:04:27"
+        },
+        {
+            "name": "canvashack/installer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-installer.git",
+                "reference": "ed08d1ffb71699e2e13b7e34dc6c35a165d55f2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-installer/zipball/ed08d1ffb71699e2e13b7e34dc6c35a165d55f2b",
+                "reference": "ed08d1ffb71699e2e13b7e34dc6c35a165d55f2b",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "~1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "smtech\\Composer\\CanvasHackInstallerPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "smtech\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Custom Composer installer for CanvasHack plugins",
+            "time": "2016-01-12 19:39:37"
         },
         {
             "name": "canvashack/plugin-auto-open-feedback",
@@ -191,12 +230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-auto-open-feedback.git",
-                "reference": "cc0651560a2f31de778ea4355131bfc1a7637658"
+                "reference": "592e3898ca4799218ab255f39b8f9160639dd689"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/cc0651560a2f31de778ea4355131bfc1a7637658",
-                "reference": "cc0651560a2f31de778ea4355131bfc1a7637658",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/592e3898ca4799218ab255f39b8f9160639dd689",
+                "reference": "592e3898ca4799218ab255f39b8f9160639dd689",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -211,7 +250,7 @@
                 }
             ],
             "description": "A bandaid until SpeedGrader 2.0: autoopen SpeedGrader feedback and rubrics for students",
-            "time": "2015-10-22 02:24:51"
+            "time": "2016-01-11 22:13:29"
         },
         {
             "name": "canvashack/plugin-cache-and-show-rubrics",
@@ -219,12 +258,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-cache-and-show-rubrics.git",
-                "reference": "dfcf3503656e63a9f2d1bec53f39ffd1ffcee8dc"
+                "reference": "8839bae3b92667004e4cef83664deb1de26bb3c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/dfcf3503656e63a9f2d1bec53f39ffd1ffcee8dc",
-                "reference": "dfcf3503656e63a9f2d1bec53f39ffd1ffcee8dc",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/8839bae3b92667004e4cef83664deb1de26bb3c1",
+                "reference": "8839bae3b92667004e4cef83664deb1de26bb3c1",
                 "shasum": ""
             },
             "require": {
@@ -242,7 +281,7 @@
                 }
             ],
             "description": "Whenever an assignment with a rubric is visited, cache that rubric for later redisplay if the assignment changes to external tool submission",
-            "time": "2015-08-24 12:48:59"
+            "time": "2015-10-22 02:25:03"
         },
         {
             "name": "canvashack/plugin-discussion-permalinks",
@@ -250,12 +289,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-discussion-permalinks.git",
-                "reference": "f68bfbd62aca9aba2e2f1cc08ff39cc1515096bf"
+                "reference": "4e6e431cbdc625d1a2f32f67c91ebf99de35c054"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-discussion-permalinks/zipball/f68bfbd62aca9aba2e2f1cc08ff39cc1515096bf",
-                "reference": "f68bfbd62aca9aba2e2f1cc08ff39cc1515096bf",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-discussion-permalinks/zipball/4e6e431cbdc625d1a2f32f67c91ebf99de35c054",
+                "reference": "4e6e431cbdc625d1a2f32f67c91ebf99de35c054",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -270,7 +309,7 @@
                 }
             ],
             "description": "Reveal discussion entry permalinks",
-            "time": "2015-10-23 02:08:12"
+            "time": "2015-12-01 00:23:57"
         },
         {
             "name": "canvashack/plugin-enrollment-info-ui-tweaks",
@@ -278,12 +317,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-enrollment-info-ui-tweaks.git",
-                "reference": "af74465cb8206c2d6335119e48cc89d34d0a9855"
+                "reference": "e9f332227def2cef7be8594bf741a3c78868b7fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-enrollment-info-ui-tweaks/zipball/af74465cb8206c2d6335119e48cc89d34d0a9855",
-                "reference": "af74465cb8206c2d6335119e48cc89d34d0a9855",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-enrollment-info-ui-tweaks/zipball/e9f332227def2cef7be8594bf741a3c78868b7fb",
+                "reference": "e9f332227def2cef7be8594bf741a3c78868b7fb",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -298,25 +337,26 @@
                 }
             ],
             "description": "Tweak some annoying default settings to better ones when looking at enrollment information",
-            "time": "2015-08-25 02:38:56"
+            "time": "2016-01-12 15:37:59"
         },
         {
             "name": "canvashack/plugin-global-navigation-menu",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/smtech/canvas-navigation-menu.git",
-                "reference": "24f196c0ff1b2d381a3e435c633b7a29634a3564"
+                "url": "https://github.com/smtech/canvashack-plugin-global-navigation-menu.git",
+                "reference": "a21088290128e35a20dff42254e14ddc9c0fe07c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvas-navigation-menu/zipball/24f196c0ff1b2d381a3e435c633b7a29634a3564",
-                "reference": "24f196c0ff1b2d381a3e435c633b7a29634a3564",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/a21088290128e35a20dff42254e14ddc9c0fe07c",
+                "reference": "a21088290128e35a20dff42254e14ddc9c0fe07c",
                 "shasum": ""
             },
             "require": {
                 "battis/appmetadata": "~1.0",
-                "battis/simplecache": "~1.0"
+                "battis/simplecache": "~1.0",
+                "smtech/canvashack-installer": "*"
             },
             "type": "canvashack-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -330,7 +370,7 @@
                 }
             ],
             "description": "Add additional menus to the global navigation in Canvas",
-            "time": "2015-12-01 00:12:23"
+            "time": "2016-01-12 19:26:52"
         },
         {
             "name": "canvashack/plugin-stmarks-branding",
@@ -359,6 +399,37 @@
             ],
             "description": "General branding settings for St. Mark's school within Canvas",
             "time": "2015-10-22 20:42:28"
+        },
+        {
+            "name": "canvashack/plugin-templates",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-templates.git",
+                "reference": "bc7d99a053ae453629f9c8b8f44c6e95ffd59f63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/bc7d99a053ae453629f9c8b8f44c6e95ffd59f63",
+                "reference": "bc7d99a053ae453629f9c8b8f44c6e95ffd59f63",
+                "shasum": ""
+            },
+            "require": {
+                "smtech/canvaspest": "~1.0"
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "SethBattis@stmarksschool.org"
+                }
+            ],
+            "description": "Templating for Canvas course objects",
+            "time": "2016-01-12 16:05:25"
         },
         {
             "name": "educoder/pest",
@@ -516,12 +587,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "e0fc310b6e52d2246cf07fd800ac4a70252bc6c3"
+                "reference": "dd0f4c7c36c349931684723323220889eca635a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/e0fc310b6e52d2246cf07fd800ac4a70252bc6c3",
-                "reference": "e0fc310b6e52d2246cf07fd800ac4a70252bc6c3",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/dd0f4c7c36c349931684723323220889eca635a3",
+                "reference": "dd0f4c7c36c349931684723323220889eca635a3",
                 "shasum": ""
             },
             "require": {
@@ -563,7 +634,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-11-25 20:19:23"
+            "time": "2016-01-02 16:58:58"
         },
         {
             "name": "smtech/canvashack-installer",
@@ -571,12 +642,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-installer.git",
-                "reference": "99be4c71a05c7bd41106a86729a60c0be0f940ca"
+                "reference": "65737d861b340db81a3d9cb08de9715c7bc1e016"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-installer/zipball/99be4c71a05c7bd41106a86729a60c0be0f940ca",
-                "reference": "99be4c71a05c7bd41106a86729a60c0be0f940ca",
+                "url": "https://api.github.com/repos/smtech/canvashack-installer/zipball/65737d861b340db81a3d9cb08de9715c7bc1e016",
+                "reference": "65737d861b340db81a3d9cb08de9715c7bc1e016",
                 "shasum": ""
             },
             "require": {
@@ -588,7 +659,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "smtech\\Composer\\": ""
+                    "smtech\\Composer\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -602,7 +673,7 @@
                 }
             ],
             "description": "Custom Composer installer for CanvasHack plugins",
-            "time": "2015-08-18 03:27:45"
+            "time": "2016-01-12 19:38:39"
         },
         {
             "name": "smtech/canvaspest",
@@ -710,12 +781,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "a61aaf87d94e1c2994deae56dbbf893b9b8b9694"
+                "reference": "2940435c1d5f28e13ff38bdda07e05a01b20291d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/a61aaf87d94e1c2994deae56dbbf893b9b8b9694",
-                "reference": "a61aaf87d94e1c2994deae56dbbf893b9b8b9694",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/2940435c1d5f28e13ff38bdda07e05a01b20291d",
+                "reference": "2940435c1d5f28e13ff38bdda07e05a01b20291d",
                 "shasum": ""
             },
             "require": {
@@ -744,7 +815,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-10-21 15:51:54"
+            "time": "2015-12-04 02:16:30"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
@@ -812,13 +883,13 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "smtech/stmarkssmarty": 20,
-        "smtech/canvashack-installer": 20,
         "canvashack/plugin-auto-open-feedback": 20,
         "canvashack/plugin-cache-and-show-rubrics": 20,
         "canvashack/plugin-enrollment-info-ui-tweaks": 20,
         "canvashack/plugin-stmarks-branding": 20,
         "canvashack/plugin-discussion-permalinks": 20,
-        "canvashack/plugin-global-navigation-menu": 20
+        "canvashack/plugin-global-navigation-menu": 20,
+        "canvashack/plugin-templates": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -30,13 +30,14 @@
 		"spvsoftwareproducts/LTI_Tool_Provider": "~2.5",
 		"pear/log": "~1.12",
 		"battis/autocrontabjob": "~1.0",
-		"smtech/canvashack-installer": "dev-master",
+		"canvashack/installer": "*",
 		"canvashack/plugin-auto-open-feedback": "dev-master",
 		"canvashack/plugin-cache-and-show-rubrics" : "dev-master",
 		"canvashack/plugin-enrollment-info-ui-tweaks": "dev-master",
 		"canvashack/plugin-stmarks-branding": "dev-master",
 		"canvashack/plugin-discussion-permalinks": "dev-master",
-		"canvashack/plugin-global-navigation-menu": "dev-master"
+		"canvashack/plugin-global-navigation-menu": "dev-master",
+		"canvashack/plugin-templates": "dev-master"
 	},
 	"autoload": {
 		"classmap": [""]
