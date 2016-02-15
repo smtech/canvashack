@@ -5,10 +5,11 @@ require_once('common.inc.php');
 use \smtech\CanvasHack\CanvasHack;
 use \smtech\CanvasHack\CanvasHack_Exception;
 
-if (isset($_REQUEST)) {
+if (isset($_REQUEST['hack'])) {
 	while (list($id, $setting) = each($_REQUEST['hack'])) {
 		try{
-			$hack = new CanvasHack($sql, $id);
+			
+			$hack = CanvasHack::getCanvasHackById($sql, $id);
 			if ($setting === 'enable') {
 				$hack->enable();
 			} else {
@@ -20,7 +21,7 @@ if (isset($_REQUEST)) {
 	}
 }
 
-$hacksContents = scandir(realpath(__DIR__ . '/hacks'), SCANDIR_SORT_DESCENDING);
+$hacksContents = scandir(realpath(__DIR__ . '/hacks'), SCANDIR_SORT_ASCENDING);
 $hacks = array();
 foreach($hacksContents as $item) {
 	if (is_dir($path = realpath(__DIR__ . "/hacks/$item")) && file_exists($manifest = "$path/manifest.xml")) {

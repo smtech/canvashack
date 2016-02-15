@@ -55,6 +55,27 @@ class CanvasHack {
 		}
 	}
 	
+	public static function getCanvasHackById($sql, $id) {
+		if (!($sql instanceof \mysqli)) {
+			throw new CanvasHack_Exception(
+				'Expected mysqli object, received ' . get_class($sql),
+				CanvasHack_Exception::MYSQL
+			);
+		}
+		
+		$_id = $sql->real_escape_string($id);
+		$result = $sql->query("SELECT * FROM `canvashacks` WHERE `id` = '$_id'");
+		if ($result->num_rows === 0) {
+			throw new CanvasHack_Exception(
+				"No existing CanvasHacks matching ID `$id`",
+				CanvasHack_Exception::ID
+			);
+		} else {
+			$row = $result->fetch_assoc();
+			return new CanvasHack($sql, $row['path']);
+		}
+	}
+	
 	private function loadManifestEntry($id) {
 		$response = $this->sql->query("
 			SELECT * FROM `{$this->table}` WHERE `id` = '" . $this->sql->real_escape_string($id) . "'
@@ -115,8 +136,9 @@ class CanvasHack {
 				$this->sql->real_escape_string($this->description) :
 				$this->sql->real_escape_string($this->abstract)
 		);
+		$_path = $this->sql->real_escape_string($this->path);
 		
-		$this->updateDb($this->table, $this->id, array('name' => $_name, 'abstract' => $_abstract, 'description' => $_description), 'id');
+		$this->updateDb($this->table, $this->id, array('name' => $_name, 'path' => $_path, 'abstract' => $_abstract, 'description' => $_description), 'id');
 	}
 	
 	private function parseManifestCSS($css) {
@@ -137,73 +159,79 @@ class CanvasHack {
 	
 	private function parseManifestCanvasPages($pages) {
 		$this->clearDb($this->pages, $this->id);
-		foreach($pages->include->children() as $page) {
-			if (!$this->sql->query("
-				INSERT INTO `{$this->pages}`
-				(
-					`canvashack`,
-					`url`,
-					`pattern`,
-					`include`
-				) VALUES (
-					'{$this->id}',
-					" . ($page->type == 'url' ? "'{$page->url}'" : 'NULL') . ",
-					" . ($page->type == 'regex' ? "'" . addslashes($page->pattern) . "'" : 'NULL') . ",
-					TRUE
-				)
-			")) {
-				throw new CanvasHack_Exception(
-					"Could not insert included page entry for {$this->id}: " . $page->asXml() . PHP_EOL . $this->sql->error,
-					CanvasHack_Exception::SQL
-				);
+		if (!empty($pages->include)) {
+			foreach($pages->include->children() as $page) {
+				if (!$this->sql->query("
+					INSERT INTO `{$this->pages}`
+					(
+						`canvashack`,
+						`url`,
+						`pattern`,
+						`include`
+					) VALUES (
+						'{$this->id}',
+						" . ($page->type == 'url' ? "'{$page->url}'" : 'NULL') . ",
+						" . ($page->type == 'regex' ? "'" . addslashes($page->pattern) . "'" : 'NULL') . ",
+						TRUE
+					)
+				")) {
+					throw new CanvasHack_Exception(
+						"Could not insert included page entry for {$this->id}: " . $page->asXml() . PHP_EOL . $this->sql->error,
+						CanvasHack_Exception::SQL
+					);
+				}
 			}
 		}
-		foreach($pages->exclude->children() as $page) {
-			if (!$this->sql->query("
-				INSERT INTO `{$this->pages}`
-				(
-					`canvashack`,
-					`url`,
-					`pattern`,
-					`include`
-				) VALUES (
-					'{$this->id}',
-					" . ($page->type == 'url' ? "'" . $this->sql->real_escape_string($page->url) . "'" : 'NULL') . ",
-					" . ($page->type == 'regex' ? "'" . $this->sql->real_escape_string($page->pattern) . "'" : 'NULL') . ",
-					FALSE
-				)
-			")) {
-				// TODO wording could be improved
-				throw new CanvasHack_Exception(
-					"Could not insert included page entry for {$this->id}: " . $page->asXml() . PHP_EOL . $this->sql->error,
-					CanvasHack_Exception::SQL
-				);
+		if (!empty($pages->exclude)) {
+			foreach($pages->exclude->children() as $page) {
+				if (!$this->sql->query("
+					INSERT INTO `{$this->pages}`
+					(
+						`canvashack`,
+						`url`,
+						`pattern`,
+						`include`
+					) VALUES (
+						'{$this->id}',
+						" . ($page->type == 'url' ? "'" . $this->sql->real_escape_string($page->url) . "'" : 'NULL') . ",
+						" . ($page->type == 'regex' ? "'" . $this->sql->real_escape_string($page->pattern) . "'" : 'NULL') . ",
+						FALSE
+					)
+				")) {
+					// TODO wording could be improved
+					throw new CanvasHack_Exception(
+						"Could not insert included page entry for {$this->id}: " . $page->asXml() . PHP_EOL . $this->sql->error,
+						CanvasHack_Exception::SQL
+					);
+				}
 			}
 		}
 	}
 	
 	private function parseManifestCanvasDOM($dom) {
 		$this->clearDb($this->dom, $this->id);
-		foreach($dom->children() as $bundle) {
-			if (!$this->sql->query("
-				INSERT INTO `{$this->dom}`
-				(
-					`canvashack`,
-					`selector`,
-					`event`,
-					`action`
-				) VALUES (
-					'{$this->id}',
-					'" . $this->sql->real_escape_string($bundle->selector) . "',
-					'" . $this->sql->real_escape_string($bundle->event) . "',
-					'" . $this->sql->real_escape_string($bundle->action) . "'
-				)
-			")) {
-				// TODO wording could be improved
-				throw new CanvasHack_Exception(
-					"Could not insert DOM entry for {$this->id}: " . $dom->asXml() . PHP_EOL . $this->sql->error,
-					CanvasHack_Exception::SQL
-				);
+		if (!empty($dom)) {
+			foreach($dom->children() as $bundle) {
+				if (!$this->sql->query("
+					INSERT INTO `{$this->dom}`
+					(
+						`canvashack`,
+						`selector`,
+						`event`,
+						`action`
+					) VALUES (
+						'{$this->id}',
+						'" . $this->sql->real_escape_string($bundle->selector) . "',
+						'" . $this->sql->real_escape_string($bundle->event) . "',
+						'" . $this->sql->real_escape_string($bundle->action) . "'
+					)
+				")) {
+					// TODO wording could be improved
+					throw new CanvasHack_Exception(
+						"Could not insert DOM entry for {$this->id}: " . $dom->asXml() . PHP_EOL . $this->sql->error,
+						CanvasHack_Exception::SQL
+					);
+				}
 			}
 		}
 	}
@@ -355,6 +383,7 @@ class CanvasHack_Exception extends \Exception {
 	const MANIFEST = 1;
 	const SQL = 2;
 	const REQUIRED = 3;
+	const ID = 4;
 }
 	
 ?>
