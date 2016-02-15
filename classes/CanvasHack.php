@@ -46,7 +46,7 @@ class CanvasHack {
 		} else {
 			if (isset($manifest)) {
 				throw new CanvasHack_Exception(
-					"Manifest file missing, expected $manifest",
+					"Manifest file missing, expected <code>$path/manifest.xml</code>",
 					CanvasHack_Exception::MANIFEST
 				);
 			} else {

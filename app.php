@@ -6,7 +6,7 @@ use \smtech\CanvasHack\CanvasHack;
 use \smtech\CanvasHack\CanvasHack_Exception;
 
 if (isset($_REQUEST)) {
-	while (list($id, $setting) = each($_REQUEST)) {
+	while (list($id, $setting) = each($_REQUEST['hack'])) {
 		try{
 			$hack = new CanvasHack($sql, $id);
 			if ($setting === 'enable') {
@@ -15,7 +15,7 @@ if (isset($_REQUEST)) {
 				$hack->disable();
 			}
 		} catch (CanvasHack_Exception $e) {
-			// do nothing
+			$smarty->addMessage('Exception ' . $e->getCode(), $e->getMessage(), NotificationMessage::ERROR);
 		}
 	}
 }

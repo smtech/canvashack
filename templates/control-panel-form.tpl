@@ -9,11 +9,11 @@
 			<div class="col-sm-{12 - $formLabelWidth}">
 				<div class="radio">
 					<label>
-						<input type="radio" name="{$hack->getId()}" value="enable" onchange="this.form.submit();" {if $hack->isEnabled()}checked{/if} />
+						<input type="radio" name="hack[{$hack->getId()}]" value="enable" onchange="this.form.submit();" {if $hack->isEnabled()}checked{/if} />
 						Enable
 					</label>
 					<label>
-						<input type="radio" name="{$hack->getId()}" value="disable" onchange="this.form.submit();" {if !$hack->isEnabled()}checked{/if} />
+						<input type="radio" name="hack[{$hack->getId()}]" value="disable" onchange="this.form.submit();" {if !$hack->isEnabled()}checked{/if} />
 						Disable
 					</label>
 				</div>
