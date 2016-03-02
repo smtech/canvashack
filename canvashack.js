@@ -71,7 +71,7 @@ if (($response = $sql->query("
 	exit;
 }
 while ($entry = $response->fetch_assoc()) {
-	$javascript[$entry['canvashack']] = canvasHackNamespace($entry['canvashack'], file_get_contents($entry['path']));
+	$javascript[$entry['canvashack']] = canvasHackNamespace($entry['canvashack'], shell_exec("php {$entry['path']}"));
 }
 
 ?>

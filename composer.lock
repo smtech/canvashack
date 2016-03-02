@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "63361f75fb52dc39b8fa774ea9a7a20e",
-    "content-hash": "414102ea9f534ad64d4010e94559ba78",
+    "hash": "9e7d7e21720dee84e6509539100e6c6b",
+    "content-hash": "da53d1440fc2928cf7c3b325e94cc319",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -258,12 +258,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-cache-and-show-rubrics.git",
-                "reference": "8839bae3b92667004e4cef83664deb1de26bb3c1"
+                "reference": "71e0acd3f2eff9d6ad89fae4ebc7362971481b0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/8839bae3b92667004e4cef83664deb1de26bb3c1",
-                "reference": "8839bae3b92667004e4cef83664deb1de26bb3c1",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/71e0acd3f2eff9d6ad89fae4ebc7362971481b0d",
+                "reference": "71e0acd3f2eff9d6ad89fae4ebc7362971481b0d",
                 "shasum": ""
             },
             "require": {
@@ -281,7 +281,38 @@
                 }
             ],
             "description": "Whenever an assignment with a rubric is visited, cache that rubric for later redisplay if the assignment changes to external tool submission",
-            "time": "2015-10-22 02:25:03"
+            "time": "2016-02-16 04:39:34"
+        },
+        {
+            "name": "canvashack/plugin-color-schedule",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-color-schedule.git",
+                "reference": "bc81622d5cb46bda55c27f1c2f642701d9b117f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-color-schedule/zipball/bc81622d5cb46bda55c27f1c2f642701d9b117f8",
+                "reference": "bc81622d5cb46bda55c27f1c2f642701d9b117f8",
+                "shasum": ""
+            },
+            "require": {
+                "smtech/stmarks-colors": "dev-master"
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Color the color blocks in the color schedule in the calendar",
+            "time": "2016-03-01 16:08:17"
         },
         {
             "name": "canvashack/plugin-discussion-permalinks",
@@ -345,12 +376,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-global-navigation-menu.git",
-                "reference": "d46cc10e281558f5437e9551012cfe98bca6653d"
+                "reference": "10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/d46cc10e281558f5437e9551012cfe98bca6653d",
-                "reference": "d46cc10e281558f5437e9551012cfe98bca6653d",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea",
+                "reference": "10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea",
                 "shasum": ""
             },
             "require": {
@@ -369,7 +400,7 @@
                 }
             ],
             "description": "Add additional menus to the global navigation in Canvas",
-            "time": "2016-02-15 20:12:48"
+            "time": "2016-02-23 19:56:54"
         },
         {
             "name": "canvashack/plugin-stmarks-branding",
@@ -405,12 +436,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-templates.git",
-                "reference": "96ca27fa07b60202cc4206488c109f448841fa47"
+                "reference": "76e959da49300a75a5f7a05c10d0e90689ea99cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/96ca27fa07b60202cc4206488c109f448841fa47",
-                "reference": "96ca27fa07b60202cc4206488c109f448841fa47",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/76e959da49300a75a5f7a05c10d0e90689ea99cd",
+                "reference": "76e959da49300a75a5f7a05c10d0e90689ea99cd",
                 "shasum": ""
             },
             "require": {
@@ -428,7 +459,7 @@
                 }
             ],
             "description": "Templating for Canvas course objects",
-            "time": "2016-02-15 20:38:02"
+            "time": "2016-02-15 20:47:47"
         },
         {
             "name": "pear/log",
@@ -544,12 +575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "0735ff9605fbe540f88c90a0b3fbc27a9b15d5ad"
+                "reference": "b99bc7b8da39cf58ac6f7537df398a10c67e9c61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/0735ff9605fbe540f88c90a0b3fbc27a9b15d5ad",
-                "reference": "0735ff9605fbe540f88c90a0b3fbc27a9b15d5ad",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/b99bc7b8da39cf58ac6f7537df398a10c67e9c61",
+                "reference": "b99bc7b8da39cf58ac6f7537df398a10c67e9c61",
                 "shasum": ""
             },
             "require": {
@@ -591,7 +622,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-02-14 19:57:21"
+            "time": "2016-02-29 23:55:28"
         },
         {
             "name": "smtech/canvaspest",
@@ -807,7 +838,8 @@
         "canvashack/plugin-stmarks-branding": 20,
         "canvashack/plugin-discussion-permalinks": 20,
         "canvashack/plugin-global-navigation-menu": 20,
-        "canvashack/plugin-templates": 20
+        "canvashack/plugin-templates": 20,
+        "canvashack/plugin-color-schedule": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

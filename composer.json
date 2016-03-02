@@ -37,7 +37,8 @@
 		"canvashack/plugin-stmarks-branding": "dev-master",
 		"canvashack/plugin-discussion-permalinks": "dev-master",
 		"canvashack/plugin-global-navigation-menu": "dev-master",
-		"canvashack/plugin-templates": "dev-master"
+		"canvashack/plugin-templates": "dev-master",
+		"canvashack/plugin-color-schedule": "dev-master"
 	},
 	"autoload": {
 		"classmap": [""]

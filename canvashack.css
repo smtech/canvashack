@@ -58,7 +58,7 @@ if (($response = $sql->query("
 	exit;
 }
 while ($entry = $response->fetch_assoc()) {
-	$css[$entry['canvashack']] = file_get_contents($entry['path']);
+	$css[$entry['canvashack']] = shell_exec("php {$entry['path']}");
 }
 
 foreach ($css as $id => $stylesheet) {
