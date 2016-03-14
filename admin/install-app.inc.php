@@ -1,5 +1,7 @@
 <?php
 
+use Battis\BootstrapSmarty\NotificationMessage;
+
 /* some sample app metadata information -- review config.xml for a panoply of options */
 $metadata['APP_DESCRIPTION'] = 'A suite of Canvas administrative tools to make life easier';
 $metadata['APP_DOMAIN'] = '';
