@@ -424,12 +424,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "5ced8fea4d771491d74408637cd263e6a1dacf63"
+                "reference": "c666c7a958d4765ff5d7130ca4a3d0982728321f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/5ced8fea4d771491d74408637cd263e6a1dacf63",
-                "reference": "5ced8fea4d771491d74408637cd263e6a1dacf63",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/c666c7a958d4765ff5d7130ca4a3d0982728321f",
+                "reference": "c666c7a958d4765ff5d7130ca4a3d0982728321f",
                 "shasum": ""
             },
             "require": {
@@ -456,7 +456,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2016-03-14 18:54:34"
+            "time": "2016-03-14 19:56:16"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
