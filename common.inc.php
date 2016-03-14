@@ -6,7 +6,8 @@ define('SECRETS_FILE', __DIR__ . '/secrets.xml');
 define('SCHEMA_FILE', __DIR__ . '/admin/schema-app.sql');
 define('MYSQL_PREFIX', '');
 
-use Battis\AppMetadata as AppMetadata;
+use Battis\AppMetadata;
+use smtech\StMarksSmarty\StMarksSmarty;
 
 /**
  * Test if the app is in the middle of launching
@@ -122,7 +123,9 @@ if (php_sapi_name() != 'cli') {
 	session_start(); 
 
 	/* fire up the templating engine for interactive scripts */
-	$smarty = StMarksSmarty::getSmarty(true, __DIR__ . '/templates');
+	$smarty = StMarksSmarty::getSmarty();
+	$smarty->addTemplateDir(__DIR__ . '/templates', 'starter-canvas-api-via-lti');
+	$smarty->setFramed(true);
 }
 
 /* initialization that needs to happen for interactive and CLI scripts */
