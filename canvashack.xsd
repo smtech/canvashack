@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2009/XMLSchema/XMLSchema.xsd" vc:minVersion="1.1" elementFormDefault="qualified">
+	<xs:element name="canvashack">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The human-readable name of the CanvasHack plugin.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="id">
+					<xs:annotation>
+						<xs:documentation>A globally unique token to identify this CanvasHack plugin.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:pattern value="([a-zA-Z0-9]+-?)+"/>
+							<xs:minLength value="8"/>
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="abstract" minOccurs="0"/>
+				<xs:element name="description" minOccurs="0"/>
+				<xs:element name="authors" type="authorSet">
+				</xs:element>
+				<xs:element name="components">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="javascript"/>
+							<xs:element name="css"/>
+							<xs:element name="canvas">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="pages">
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="include" type="pageSet"/>
+													<xs:element name="exclude" type="pageSet" minOccurs="0"/>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="dom">
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="node" type="domTrigger">
+													</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+			<!--<xs:assert test="abstract or description"/>-->
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="emailAddress">
+		<xs:restriction base="xs:string">
+			<!-- there are probably bettern patterns for email addresses out there in the world -->
+			<xs:pattern value="[^@]+@[^\.]+\..+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="authorSet">
+		<xs:all>
+			<xs:element name="author">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="name"/>
+						<xs:element name="email" type="emailAddress" minOccurs="0"/>
+						<xs:element name="url" type="xs:anyURI" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="pageSet">
+		<xs:all>
+			<xs:element name="page">
+				<xs:complexType>
+					<xs:attribute name="type" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="regex"/>
+								<xs:enumeration value="url"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="pattern" type="xs:string"/>
+					<xs:attribute name="url" type="xs:anyURI"/>
+					<!--<xs:assert test="(@type = 'regex' and @pattern and not(@url)) or (@type='url' and @url and not(@pattern))"/>-->
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="domTrigger">
+		<xs:attribute name="selector" type="xs:string" use="required"/>
+		<xs:attribute name="event" type="xs:string" use="required"/>
+		<xs:attribute name="method" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>

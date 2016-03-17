@@ -1,0 +1,58 @@
+<!ELEMENT canvashack (title, id, authors, abstract?, description?, metadata?, components, config?)>
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT authors (author+)>
+<!ELEMENT author (name, email*, url*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+
+<!ELEMENT abstract (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+
+<!ELEMENT metadata (tag*, keyword*, category*)>
+<!ELEMENT tag (#PCDATA)>
+<!ELEMENT keyword (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+
+<!ELEMENT components (javascript+,css+,canvas)>
+
+<!ELEMENT javascript (#PCDATA)>
+<!ATTLIST javascript
+file CDATA #REQUIRED
+ id ID #IMPLIED>
+
+<!ELEMENT css (#PCDATA)>
+<!ATTLIST css
+file CDATA #REQUIRED
+ id ID #IMPLIED>
+
+<!ELEMENT canvas (pages?,dom?)>
+<!ELEMENT pages (include?,exclude?)>
+<!ELEMENT include (page+)>
+<!ELEMENT exclude (page+)>
+
+<!ELEMENT page EMPTY>
+<!ATTLIST page
+type (regex|url) #REQUIRED
+ id IDREF #IMPLIED
+ pattern CDATA #IMPLIED
+ url CDATA #IMPLIED>
+
+<!ELEMENT dom (node+)>
+<!ELEMENT node EMPTY>
+<!ATTLIST node
+selector CDATA #REQUIRED
+event CDATA #REQUIRED
+action CDATA #REQUIRED
+id IDREF #IMPLIED>
+
+<!ELEMENT config (option+)>
+<!ELEMENT option EMPTY>
+<!ATTLIST option
+name CDATA #REQUIRED
+ description CDATA #IMPLIED
+  type CDATA #IMPLIED
+  validate CDATA #IMPLIED>
