@@ -38,7 +38,10 @@
 		"canvashack/plugin-discussion-permalinks": "dev-master",
 		"canvashack/plugin-global-navigation-menu": "dev-master",
 		"canvashack/plugin-templates": "dev-master",
-		"canvashack/plugin-color-schedule": "dev-master"
+		"canvashack/plugin-stmarks-color-schedule": "dev-master",
+		"canvashack/plugin-organize-user-enrollments": "dev-master",
+		"canvashack/plugin-faculty-journal": "dev-master",
+		"canvashack/plugin-embedded-documentation": "dev-master"
 	},
 	"autoload": {
 		"classmap": [""]

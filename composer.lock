@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9e7d7e21720dee84e6509539100e6c6b",
-    "content-hash": "da53d1440fc2928cf7c3b325e94cc319",
+    "hash": "6d086f93f440289287110f43046098f0",
+    "content-hash": "33a25b484292c87ae5d01dd6e0547681",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -78,23 +78,63 @@
             "time": "2015-08-11 17:57:29"
         },
         {
+            "name": "battis/bootstrapsmarty",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/battis/bootstrapsmarty.git",
+                "reference": "ffa31df71a65f597261c4d8cd4e5e56f4c8eb080"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/battis/bootstrapsmarty/zipball/ffa31df71a65f597261c4d8cd4e5e56f4c8eb080",
+                "reference": "ffa31df71a65f597261c4d8cd4e5e56f4c8eb080",
+                "shasum": ""
+            },
+            "require": {
+                "battis/data-utilities": "dev-master",
+                "smarty/smarty": "3.1.*"
+            },
+            "suggest": {
+                "eternicode/bootstrap-datepicker": "The full Bootstrap Datepicker package for local install"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Battis\\BootstrapSmarty\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "seth@battis.net"
+                }
+            ],
+            "description": "A wrapper for Smarty to set (and maintain) defaults within a Bootstrap UI environment",
+            "time": "2016-03-17 15:18:32"
+        },
+        {
             "name": "battis/data-utilities",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/data-utilities.git",
-                "reference": "2675320d7b9099c0689a6db9e2262ea70d40742f"
+                "reference": "6b98088af200389f394e40e5667987d4b8751d98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/data-utilities/zipball/2675320d7b9099c0689a6db9e2262ea70d40742f",
-                "reference": "2675320d7b9099c0689a6db9e2262ea70d40742f",
+                "url": "https://api.github.com/repos/battis/data-utilities/zipball/6b98088af200389f394e40e5667987d4b8751d98",
+                "reference": "6b98088af200389f394e40e5667987d4b8751d98",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Battis\\": ""
+                    "Battis\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -108,7 +148,7 @@
                 }
             ],
             "description": "A handful of useful helper functions to process data",
-            "time": "2015-10-11 14:54:59"
+            "time": "2016-03-16 14:17:11"
         },
         {
             "name": "battis/educoder-pest-fork",
@@ -284,37 +324,6 @@
             "time": "2016-02-16 04:39:34"
         },
         {
-            "name": "canvashack/plugin-color-schedule",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/smtech/canvashack-plugin-color-schedule.git",
-                "reference": "bc81622d5cb46bda55c27f1c2f642701d9b117f8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-color-schedule/zipball/bc81622d5cb46bda55c27f1c2f642701d9b117f8",
-                "reference": "bc81622d5cb46bda55c27f1c2f642701d9b117f8",
-                "shasum": ""
-            },
-            "require": {
-                "smtech/stmarks-colors": "dev-master"
-            },
-            "type": "canvashack-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Seth Battis",
-                    "email": "sethbattis@stmarksschool.org"
-                }
-            ],
-            "description": "Color the color blocks in the color schedule in the calendar",
-            "time": "2016-03-01 16:08:17"
-        },
-        {
             "name": "canvashack/plugin-discussion-permalinks",
             "version": "dev-master",
             "source": {
@@ -343,6 +352,34 @@
             "time": "2015-12-01 00:23:57"
         },
         {
+            "name": "canvashack/plugin-embedded-documentation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-embedded-documentation.git",
+                "reference": "b84310e4ef396f71930c18eb8c36064f445d1e1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-embedded-documentation/zipball/b84310e4ef396f71930c18eb8c36064f445d1e1c",
+                "reference": "b84310e4ef396f71930c18eb8c36064f445d1e1c",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Embed documentation specific to your institution in the Canvas UI",
+            "time": "2016-03-17 15:46:14"
+        },
+        {
             "name": "canvashack/plugin-enrollment-info-ui-tweaks",
             "version": "dev-master",
             "source": {
@@ -369,6 +406,37 @@
             ],
             "description": "Tweak some annoying default settings to better ones when looking at enrollment information",
             "time": "2016-01-12 15:37:59"
+        },
+        {
+            "name": "canvashack/plugin-faculty-journal",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-faculty-journal.git",
+                "reference": "38be3a36c84965aa8c614191919a29bcf44587fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/38be3a36c84965aa8c614191919a29bcf44587fa",
+                "reference": "38be3a36c84965aa8c614191919a29bcf44587fa",
+                "shasum": ""
+            },
+            "require": {
+                "smtech/canvaspest": "^1.1"
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Allow teachers to browse the faculty journal by class",
+            "time": "2016-03-17 15:40:49"
         },
         {
             "name": "canvashack/plugin-global-navigation-menu",
@@ -403,6 +471,34 @@
             "time": "2016-02-23 19:56:54"
         },
         {
+            "name": "canvashack/plugin-organize-user-enrollments",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-organize-user-enrollments.git",
+                "reference": "f2e20093c535e33c8c1876ba2e83c84b726dffe7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-organize-user-enrollments/zipball/f2e20093c535e33c8c1876ba2e83c84b726dffe7",
+                "reference": "f2e20093c535e33c8c1876ba2e83c84b726dffe7",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Provide a more organized (and readable) listing of users' enrollments",
+            "time": "2016-03-04 03:56:20"
+        },
+        {
             "name": "canvashack/plugin-stmarks-branding",
             "version": "dev-master",
             "source": {
@@ -429,6 +525,37 @@
             ],
             "description": "General branding settings for St. Mark's school within Canvas",
             "time": "2015-10-22 20:42:28"
+        },
+        {
+            "name": "canvashack/plugin-stmarks-color-schedule",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-stmarks-color-schedule.git",
+                "reference": "55a4441a1da72751879052015e9ec9fb1ad8261d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-color-schedule/zipball/55a4441a1da72751879052015e9ec9fb1ad8261d",
+                "reference": "55a4441a1da72751879052015e9ec9fb1ad8261d",
+                "shasum": ""
+            },
+            "require": {
+                "smtech/stmarks-colors": "dev-master"
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Color the color blocks in the color schedule in the calendar",
+            "time": "2016-03-10 04:12:32"
         },
         {
             "name": "canvashack/plugin-templates",
@@ -575,12 +702,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "b99bc7b8da39cf58ac6f7537df398a10c67e9c61"
+                "reference": "ff6a8521bb588187eefa2695c3959fe101d22c18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/b99bc7b8da39cf58ac6f7537df398a10c67e9c61",
-                "reference": "b99bc7b8da39cf58ac6f7537df398a10c67e9c61",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/ff6a8521bb588187eefa2695c3959fe101d22c18",
+                "reference": "ff6a8521bb588187eefa2695c3959fe101d22c18",
                 "shasum": ""
             },
             "require": {
@@ -622,20 +749,20 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-02-29 23:55:28"
+            "time": "2016-03-11 02:36:43"
         },
         {
             "name": "smtech/canvaspest",
-            "version": "v1.1.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "7a27a0cd228d1c1e7b4e2b8ca4855ff2c160c399"
+                "reference": "3493f08235360e7807735fadbadc12c416648064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/7a27a0cd228d1c1e7b4e2b8ca4855ff2c160c399",
-                "reference": "7a27a0cd228d1c1e7b4e2b8ca4855ff2c160c399",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/3493f08235360e7807735fadbadc12c416648064",
+                "reference": "3493f08235360e7807735fadbadc12c416648064",
                 "shasum": ""
             },
             "require": {
@@ -658,7 +785,7 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2016-02-15 20:29:40"
+            "time": "2016-03-16 15:01:54"
         },
         {
             "name": "smtech/oauth-negotiator",
@@ -697,18 +824,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarks-colors.git",
-                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a"
+                "reference": "4e36a4f9e76c00d894487dac18a9d85ebcc54c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
-                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
+                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/4e36a4f9e76c00d894487dac18a9d85ebcc54c39",
+                "reference": "4e36a4f9e76c00d894487dac18a9d85ebcc54c39",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "smtech\\": ""
+                    "smtech\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -722,7 +849,7 @@
                 }
             ],
             "description": "An object-ified, consistent set of hex colors for St. Mark’s projects",
-            "time": "2015-08-20 20:17:08"
+            "time": "2016-03-17 15:26:18"
         },
         {
             "name": "smtech/stmarkssmarty",
@@ -730,28 +857,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "2940435c1d5f28e13ff38bdda07e05a01b20291d"
+                "reference": "c666c7a958d4765ff5d7130ca4a3d0982728321f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/2940435c1d5f28e13ff38bdda07e05a01b20291d",
-                "reference": "2940435c1d5f28e13ff38bdda07e05a01b20291d",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/c666c7a958d4765ff5d7130ca4a3d0982728321f",
+                "reference": "c666c7a958d4765ff5d7130ca4a3d0982728321f",
                 "shasum": ""
             },
             "require": {
-                "battis/data-utilities": "dev-master",
-                "smarty/smarty": "3.1.*",
+                "battis/bootstrapsmarty": "dev-develop",
                 "smtech/stmarks-colors": "dev-master"
             },
             "suggest": {
-                "battis/appmetadata": "MySQL-backed globals array for app metadata storage",
-                "eternicode/bootstrap-datepicker": "The full Bootstrap Datepicker package for local install"
+                "battis/appmetadata": "MySQL-backed globals array for app metadata storage"
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    ""
-                ]
+                "psr-4": {
+                    "smtech\\StMarksSmarty\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -764,7 +889,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-12-04 02:16:30"
+            "time": "2016-03-14 19:56:16"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
@@ -839,7 +964,10 @@
         "canvashack/plugin-discussion-permalinks": 20,
         "canvashack/plugin-global-navigation-menu": 20,
         "canvashack/plugin-templates": 20,
-        "canvashack/plugin-color-schedule": 20
+        "canvashack/plugin-stmarks-color-schedule": 20,
+        "canvashack/plugin-organize-user-enrollments": 20,
+        "canvashack/plugin-faculty-journal": 20,
+        "canvashack/plugin-embedded-documentation": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
