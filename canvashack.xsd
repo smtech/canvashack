@@ -1,104 +1,276 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2009/XMLSchema/XMLSchema.xsd" vc:minVersion="1.1" elementFormDefault="qualified">
-	<xs:element name="canvashack">
-		<xs:complexType>
-			<xs:all>
-				<xs:element name="name" type="xs:string">
-					<xs:annotation>
-						<xs:documentation>The human-readable name of the CanvasHack plugin.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element name="id">
-					<xs:annotation>
-						<xs:documentation>A globally unique token to identify this CanvasHack plugin.</xs:documentation>
-					</xs:annotation>
-					<xs:simpleType>
-						<xs:restriction base="xs:token">
-							<xs:pattern value="([a-zA-Z0-9]+-?)+"/>
-							<xs:minLength value="8"/>
-							<xs:maxLength value="255"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="abstract" minOccurs="0"/>
-				<xs:element name="description" minOccurs="0"/>
-				<xs:element name="authors" type="authorSet">
-				</xs:element>
-				<xs:element name="components">
-					<xs:complexType>
-						<xs:all>
-							<xs:element name="javascript"/>
-							<xs:element name="css"/>
-							<xs:element name="canvas">
-								<xs:complexType>
-									<xs:all>
-										<xs:element name="pages">
-											<xs:complexType>
-												<xs:all>
-													<xs:element name="include" type="pageSet"/>
-													<xs:element name="exclude" type="pageSet" minOccurs="0"/>
-												</xs:all>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="dom">
-											<xs:complexType>
-												<xs:all>
-													<xs:element name="node" type="domTrigger">
-													</xs:element>
-												</xs:all>
-											</xs:complexType>
-										</xs:element>
-									</xs:all>
-								</xs:complexType>
-							</xs:element>
-						</xs:all>
-					</xs:complexType>
-				</xs:element>
-			</xs:all>
-			<!--<xs:assert test="abstract or description"/>-->
-		</xs:complexType>
-	</xs:element>
-	<xs:simpleType name="emailAddress">
-		<xs:restriction base="xs:string">
-			<!-- there are probably bettern patterns for email addresses out there in the world -->
-			<xs:pattern value="[^@]+@[^\.]+\..+"/>
+<xs:schema xmlns:canvashack="https://smtech.stmarksschool.org/canvashack" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2009/XMLSchema/XMLSchema.xsd" vc:minVersion="1.1" elementFormDefault="qualified">
+	<xs:element name="canvashack" type="canvashackElement"/>
+	<xs:complexType name="canvashackElement">
+		<xs:all>
+			<xs:element name="title" type="xs:token">
+				<xs:annotation>
+					<xs:documentation>A descriptive title for this CanvasHack (in 255 characters or less) with no formatting.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="id" type="xs:Name">
+				<xs:annotation>
+					<xs:documentation>A globally unique identifier for this CanvasHack (used internally; collisions result in both hacks being disabled). IDs are restricted to XML element-naming conventions (alphanumeric, no spaces).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="abstract" type="xs:token" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A brief (less than 255 characters) description of the CanvasHack. Used preferentially as a subheading in lists of CanvasHacks if a description is also available. This is unformatted.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A full-fledged, detailed description of the CanvasHack, presented on details and configuration pages. This may be formatted with HTML or Markdown.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="authors" type="authorsList" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A list of CanvasHack authors.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="metadata" type="metadataElement" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Metadata for categorizing and searching CanvasHacks.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="components" type="componentsElement">
+				<xs:annotation>
+					<xs:documentation>The actual components of the CanvasHack — scripts, stylesheets and DOM elements.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="config" type="configurationElement" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Options for configuring the CanvasHack within the GUI.</xs:documentation>
+				</xs:annotation>
+				<xs:unique name="option-name">
+					<xs:selector xpath="option"/>
+					<xs:field xpath="@name"/>
+				</xs:unique>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="authorsList">
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="author" type="authorElement">
+				<xs:annotation>
+					<xs:documentation>Identifying information about a particular author of this CanvasHack.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="authorElement">
+		<xs:attribute name="name" type="xs:token" use="required"/>
+		<xs:attribute name="email" type="email" use="optional"/>
+		<xs:attribute name="url" type="xs:anyURI" use="optional"/>
+	</xs:complexType>
+	<xs:simpleType name="email">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="authorSet">
+	<xs:complexType name="metadataElement">
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="category" type="xs:token">
+				<xs:annotation>
+					<xs:documentation>The category of CanvasHack (e.g. branding, functionality, extension, etc.).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="keyword" type="xs:token">
+				<xs:annotation>
+					<xs:documentation>A particular keyword related to this CanvasHack (e.g. "discussions" or "faculty journal").</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="componentsElement">
 		<xs:all>
-			<xs:element name="author">
-				<xs:complexType>
-					<xs:all>
-						<xs:element name="name"/>
-						<xs:element name="email" type="emailAddress" minOccurs="0"/>
-						<xs:element name="url" type="xs:anyURI" minOccurs="0"/>
-					</xs:all>
-				</xs:complexType>
+			<xs:element name="scripts" type="filesElement" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A list of scripts to be loaded for this CanvasHack.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stylesheets" type="filesElement" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A list of stylesheets to be loaded for this CanvasHack.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="canvas" type="selectionElement" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Specifications for which parts of Canvas are affected by this CanvasHack.</xs:documentation>
+				</xs:annotation>
 			</xs:element>
 		</xs:all>
 	</xs:complexType>
-	<xs:complexType name="pageSet">
-		<xs:all>
-			<xs:element name="page">
-				<xs:complexType>
-					<xs:attribute name="type" use="required">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:enumeration value="regex"/>
-								<xs:enumeration value="url"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:attribute>
-					<xs:attribute name="pattern" type="xs:string"/>
-					<xs:attribute name="url" type="xs:anyURI"/>
-					<!--<xs:assert test="(@type = 'regex' and @pattern and not(@url)) or (@type='url' and @url and not(@pattern))"/>-->
-				</xs:complexType>
+	<xs:complexType name="filesElement">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="file" type="fileElement">
+				<xs:annotation>
+					<xs:documentation>A file loaded for this CanvasHack.</xs:documentation>
+				</xs:annotation>
 			</xs:element>
-		</xs:all>
+		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="domTrigger">
-		<xs:attribute name="selector" type="xs:string" use="required"/>
-		<xs:attribute name="event" type="xs:string" use="required"/>
-		<xs:attribute name="method" type="xs:string" use="required"/>
+	<xs:complexType name="fileElement">
+		<xs:attribute name="path" type="xs:anyURI" use="required">
+			<xs:annotation>
+				<xs:documentation>A path relative to the manifest.xml file.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="id" type="xs:IDREF" use="optional">
+			<xs:annotation>
+				<xs:documentation>An optional identifier referring to a unique page ID. If provided, this file will only be loaded if the specific page ID is matched.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="selectionElement">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="pages" type="inclusionElement">
+					<xs:unique name="page-id">
+						<xs:selector xpath="*/page"/>
+						<xs:field xpath="@id"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="dom" type="domList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A list of DOM nodes affected by this CanvasHack.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="dom" type="domList">
+					<xs:annotation>
+						<xs:documentation>A list of DOM nodes affected by this CanvasHack.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="pages" type="inclusionElement" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A list of pages (defined by specific URL or by regular expression patterns) that are affected by this CanvasHack.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="inclusionElement">
+		<xs:choice>
+			<xs:sequence maxOccurs="1">
+				<xs:element name="include" type="pagesList">
+					<xs:annotation>
+						<xs:documentation>All of the pages to be included in this CanvasHack (excluded pages will be withdrawn from this set).</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="exclude" type="pagesList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Pages to be excluded from the inclusion set of pages for this CanvasHack.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:sequence maxOccurs="1">
+				<xs:element name="exclude" type="pagesList">
+					<xs:annotation>
+						<xs:documentation>Pages to be excluded from the inclusion set of pages for this CanvasHack.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="include" type="pagesList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>All of the pages to be included in this CanvasHack (excluded pages will be withdrawn from this set).</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="pagesList">
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="page" type="pageElement">
+				<xs:annotation>
+					<xs:documentation>A particular page selection, defined by URL or regular expression.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="pageElement">
+		<xs:attribute name="type" default="url">
+			<xs:annotation>
+				<xs:documentation>Type of page selection. Defaults to URL.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="regex"/>
+					<xs:enumeration value="url"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="match" type="xs:token" use="required">
+			<xs:annotation>
+				<xs:documentation>The matching criteria for this page (a URL if the type is "url" or a delimited regular expression if the type is "regex").</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="id" type="xs:ID" use="optional">
+			<xs:annotation>
+				<xs:documentation>An optional unique identifier for this page selection. Included files may specifically refer to this identifier and will only be included if this page is matched.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="domList">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="node" type="nodeElement">
+				<xs:annotation>
+					<xs:documentation>A particular DOM node that must be present for this CanvasHack to take effect (and to act on).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="nodeElement">
+		<xs:attribute name="selector" type="xs:token" use="required">
+			<xs:annotation>
+				<xs:documentation>CSS selector for a particular DOM node.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="event" type="xs:Name" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optionally register the specified method to handle a particular event on this node.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="method" type="xs:token" use="required">
+			<xs:annotation>
+				<xs:documentation>A script method (defined in an included script file) to be called on this node.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="id" type="xs:IDREF" use="optional">
+			<xs:annotation>
+				<xs:documentation>An optional identifier referring to a page ID. This node will only be affected if that page ID is matched.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="configurationElement">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="option" type="optionElement">
+				<xs:annotation>
+					<xs:documentation>A configurable option for this CanvasHack, which may be accessed via the GUI configuration panel.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="optionElement">
+		<xs:attribute name="name" type="xs:token" use="required">
+			<xs:annotation>
+				<xs:documentation>The name of this configuration option (used internally, must be uniquely named).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="type" type="xs:token" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optionally specify a PHP type for this option.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="validation" type="xs:token" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optionally specify a validation function for this option.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="description" type="xs:token" use="required">
+			<xs:annotation>
+				<xs:documentation>A human-readable description of this option (unformatted).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 </xs:schema>
