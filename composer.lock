@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45ee147b00c90d59d0df828665a96170",
-    "content-hash": "4d608d45c9949544be2e4cf258370c76",
+    "hash": "38f93d7a920de8162dfaa61694ba77a6",
+    "content-hash": "f0d258e93847395f4fe92b10d71c9761",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -42,24 +42,25 @@
         },
         {
             "name": "battis/bootstrapsmarty",
-            "version": "dev-develop",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/bootstrapsmarty.git",
-                "reference": "154e80cfac8f0aae07d47998a13f2669424d59b9"
+                "reference": "4f5d8088c0950588dcea68247c9996da3776af67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/bootstrapsmarty/zipball/154e80cfac8f0aae07d47998a13f2669424d59b9",
-                "reference": "154e80cfac8f0aae07d47998a13f2669424d59b9",
+                "url": "https://api.github.com/repos/battis/bootstrapsmarty/zipball/4f5d8088c0950588dcea68247c9996da3776af67",
+                "reference": "4f5d8088c0950588dcea68247c9996da3776af67",
                 "shasum": ""
             },
             "require": {
                 "battis/data-utilities": "dev-master",
+                "bower-asset/bootstrap-datepicker": "dev-master",
+                "bower-asset/bootstrap-sortable": "dev-master",
+                "bower-asset/xaguilars-bootstrap-colorpicker": "dev-master",
+                "fxp/composer-asset-plugin": "^1.1",
                 "smarty/smarty": "3.1.*"
-            },
-            "suggest": {
-                "eternicode/bootstrap-datepicker": "The full Bootstrap Datepicker package for local install"
             },
             "type": "library",
             "autoload": {
@@ -78,7 +79,7 @@
                 }
             ],
             "description": "A wrapper for Smarty to set (and maintain) defaults within a Bootstrap UI environment",
-            "time": "2016-03-14 19:27:42"
+            "time": "2016-03-17 19:04:07"
         },
         {
             "name": "battis/data-utilities",
@@ -86,18 +87,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/data-utilities.git",
-                "reference": "2675320d7b9099c0689a6db9e2262ea70d40742f"
+                "reference": "6b98088af200389f394e40e5667987d4b8751d98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/data-utilities/zipball/2675320d7b9099c0689a6db9e2262ea70d40742f",
-                "reference": "2675320d7b9099c0689a6db9e2262ea70d40742f",
+                "url": "https://api.github.com/repos/battis/data-utilities/zipball/6b98088af200389f394e40e5667987d4b8751d98",
+                "reference": "6b98088af200389f394e40e5667987d4b8751d98",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Battis\\": ""
+                    "Battis\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -111,7 +112,7 @@
                 }
             ],
             "description": "A handful of useful helper functions to process data",
-            "time": "2015-10-11 14:54:59"
+            "time": "2016-03-16 14:17:11"
         },
         {
             "name": "battis/educoder-pest-fork",
@@ -119,12 +120,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/pest.git",
-                "reference": "b12e9056465e2894bd698eede139a03b91723545"
+                "reference": "ee99df2b7e276195d3ab06738f2af3f44f3ed054"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/pest/zipball/b12e9056465e2894bd698eede139a03b91723545",
-                "reference": "b12e9056465e2894bd698eede139a03b91723545",
+                "url": "https://api.github.com/repos/battis/pest/zipball/ee99df2b7e276195d3ab06738f2af3f44f3ed054",
+                "reference": "ee99df2b7e276195d3ab06738f2af3f44f3ed054",
                 "shasum": ""
             },
             "require": {
@@ -153,7 +154,285 @@
             ],
             "description": "A proper REST client for PHP.",
             "homepage": "https://github.com/educoder/pest",
-            "time": "2016-02-15 19:52:14"
+            "time": "2016-03-23 15:38:23"
+        },
+        {
+            "name": "bower-asset/bootstrap",
+            "version": "v3.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "16b48259a62f576e52c903c476bd42b90ab22482"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/16b48259a62f576e52c903c476bd42b90ab22482",
+                "reference": "16b48259a62f576e52c903c476bd42b90ab22482",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "less/bootstrap.less",
+                    "dist/js/bootstrap.js"
+                ],
+                "bower-asset-ignore": [
+                    "/.*",
+                    "_config.yml",
+                    "CNAME",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "docs",
+                    "js/tests",
+                    "test-infra"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "js",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ]
+        },
+        {
+            "name": "bower-asset/bootstrap-datepicker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eternicode/bootstrap-datepicker.git",
+                "reference": "67a348a3bc51b34b1500186bc3a6ec0b18b54b47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/67a348a3bc51b34b1500186bc3a6ec0b18b54b47",
+                "reference": "67a348a3bc51b34b1500186bc3a6ec0b18b54b47",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/css/bootstrap-datepicker3.css",
+                    "dist/js/bootstrap-datepicker.min.js"
+                ],
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "Apache-2.0"
+            ]
+        },
+        {
+            "name": "bower-asset/bootstrap-sortable",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drvic10k/bootstrap-sortable.git",
+                "reference": "29454e4bd762570502c215dbacdaff58018ff62b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drvic10k/bootstrap-sortable/zipball/29454e4bd762570502c215dbacdaff58018ff62b",
+                "reference": "29454e4bd762570502c215dbacdaff58018ff62b",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.0",
+                "bower-asset/moment": ">=2.3.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "Scripts/bootstrap-sortable.js",
+                "bower-asset-ignore": [
+                    "Scripts/moment.min.js"
+                ],
+                "branch-alias": {
+                    "dev-master": "2.0.0-dev"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Adding sorting ability to HTML tables",
+            "keywords": [
+                "bootstrap sortable",
+                "bootstrap-sortable",
+                "sort table",
+                "sortable",
+                "sortable table"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery/jquery-dist.git",
+                "reference": "086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd",
+                "reference": "086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/jquery.js",
+                "bower-asset-ignore": [
+                    "package.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "keywords": [
+                "browser",
+                "javascript",
+                "jquery",
+                "library"
+            ]
+        },
+        {
+            "name": "bower-asset/moment",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "b135bf1a6d58ff94287f0a21455bfa6a1ddc7226"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/b135bf1a6d58ff94287f0a21455bfa6a1ddc7226",
+                "reference": "b135bf1a6d58ff94287f0a21455bfa6a1ddc7226",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "moment.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "benchmarks",
+                    "bower_components",
+                    "meteor",
+                    "node_modules",
+                    "scripts",
+                    "tasks",
+                    "test",
+                    "component.json",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "ender.js",
+                    "Gruntfile.js",
+                    "Moment.js.nuspec",
+                    "package.js",
+                    "package.json"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/xaguilars-bootstrap-colorpicker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mjolnic/bootstrap-colorpicker.git",
+                "reference": "642c84bf4a84aaa54dd10079bf441385be8d5e69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mjolnic/bootstrap-colorpicker/zipball/642c84bf4a84aaa54dd10079bf441385be8d5e69",
+                "reference": "642c84bf4a84aaa54dd10079bf441385be8d5e69",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": ">=2",
+                "bower-asset/jquery": ">=1.10"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/css/bootstrap-colorpicker.css",
+                    "dist/js/bootstrap-colorpicker.js"
+                ],
+                "bower-asset-ignore": [
+                    "\\.*",
+                    "/index.html",
+                    "/package.json",
+                    "/composer.json",
+                    "/Gruntfile.js"
+                ],
+                "branch-alias": {
+                    "dev-master": "2.3.0-dev"
+                }
+            }
+        },
+        {
+            "name": "fxp/composer-asset-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/francoispluchino/composer-asset-plugin.git",
+                "reference": "bae7a15712e9339a2439aeca3b7c5ecf65b087d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/bae7a15712e9339a2439aeca3b7c5ecf65b087d1",
+                "reference": "bae7a15712e9339a2439aeca3b7c5ecf65b087d1",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0@dev"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Fxp\\Composer\\AssetPlugin\\FxpAssetPlugin",
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fxp\\Composer\\AssetPlugin\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Pluchino",
+                    "email": "francois.pluchino@gmail.com"
+                }
+            ],
+            "description": "NPM/Bower Dependency Manager for Composer",
+            "homepage": "https://github.com/francoispluchino/composer-asset-plugin",
+            "keywords": [
+                "asset",
+                "bower",
+                "composer",
+                "dependency manager",
+                "nodejs",
+                "npm",
+                "package"
+            ],
+            "time": "2016-02-25 16:35:08"
         },
         {
             "name": "pear/log",
@@ -320,16 +599,16 @@
         },
         {
             "name": "smtech/canvaspest",
-            "version": "v1.1.1",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "7a27a0cd228d1c1e7b4e2b8ca4855ff2c160c399"
+                "reference": "388949ed7bf3b6acb915024add0d6916c009feeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/7a27a0cd228d1c1e7b4e2b8ca4855ff2c160c399",
-                "reference": "7a27a0cd228d1c1e7b4e2b8ca4855ff2c160c399",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/388949ed7bf3b6acb915024add0d6916c009feeb",
+                "reference": "388949ed7bf3b6acb915024add0d6916c009feeb",
                 "shasum": ""
             },
             "require": {
@@ -337,9 +616,9 @@
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    ""
-                ]
+                "psr-4": {
+                    "smtech\\CanvasPest\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -352,7 +631,7 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2016-02-15 20:29:40"
+            "time": "2016-03-18 02:21:36"
         },
         {
             "name": "smtech/oauth-negotiator",
@@ -391,18 +670,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarks-colors.git",
-                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a"
+                "reference": "4e36a4f9e76c00d894487dac18a9d85ebcc54c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
-                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
+                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/4e36a4f9e76c00d894487dac18a9d85ebcc54c39",
+                "reference": "4e36a4f9e76c00d894487dac18a9d85ebcc54c39",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "smtech\\": ""
+                    "smtech\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -416,7 +695,7 @@
                 }
             ],
             "description": "An object-ified, consistent set of hex colors for St. Mark’s projects",
-            "time": "2015-08-20 20:17:08"
+            "time": "2016-03-17 15:26:18"
         },
         {
             "name": "smtech/stmarkssmarty",
@@ -424,16 +703,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "c666c7a958d4765ff5d7130ca4a3d0982728321f"
+                "reference": "ddb27fba830765e3f663b693c7eb79746d97a8d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/c666c7a958d4765ff5d7130ca4a3d0982728321f",
-                "reference": "c666c7a958d4765ff5d7130ca4a3d0982728321f",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/ddb27fba830765e3f663b693c7eb79746d97a8d4",
+                "reference": "ddb27fba830765e3f663b693c7eb79746d97a8d4",
                 "shasum": ""
             },
             "require": {
-                "battis/bootstrapsmarty": "dev-develop",
+                "battis/bootstrapsmarty": "^1.1",
                 "smtech/stmarks-colors": "dev-master"
             },
             "suggest": {
@@ -456,18 +735,21 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2016-03-14 19:56:16"
+            "time": "2016-03-17 20:07:04"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
-            "version": "2.5.00",
+            "version": "2.5.01",
             "dist": {
                 "type": "zip",
-                "url": "http://projects.oscelot.org/gf/download/frsrelease/924/5882/LTI_Tool_Provider-2.5.00.zip",
+                "url": "http://projects.oscelot.org/gf/download/frsrelease/956/6025/LTI_Tool_Provider-2.5.01.zip",
                 "reference": null,
                 "shasum": null
             },
             "type": "library",
+            "license": [
+                "LGPL-3.0"
+            ],
             "authors": [
                 {
                     "name": "Stephen Vickers"
