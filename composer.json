@@ -29,7 +29,7 @@
 		"battis/appmetadata": "~1.0",
 		"spvsoftwareproducts/LTI_Tool_Provider": "~2.5",
 		"pear/log": "~1.12",
-		"battis/autocrontabjob": "~1.0",
+		"battis/configxml": "~1.0",
 		"canvashack/installer": "*",
 		"canvashack/plugin-auto-open-feedback": "dev-master",
 		"canvashack/plugin-cache-and-show-rubrics" : "dev-master",
@@ -41,7 +41,8 @@
 		"canvashack/plugin-stmarks-color-schedule": "dev-master",
 		"canvashack/plugin-organize-user-enrollments": "dev-master",
 		"canvashack/plugin-faculty-journal": "dev-master",
-		"canvashack/plugin-embedded-documentation": "dev-master"
+		"canvashack/plugin-embedded-documentation": "dev-master",
+		"canvashack/plugin-lock-notifications": "dev-master"
 	},
 	"autoload": {
 		"classmap": [""]

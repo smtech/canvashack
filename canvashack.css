@@ -30,6 +30,8 @@ $response = $sql->query("
 		ORDER BY
 			p.`include` DESC
 ");
+
+// FIXME HTTP_REFERER does not seem to be being reliably generated
 while ($page = $response->fetch_assoc()) {
 	if (
 		(
