@@ -2,14 +2,17 @@
 	"name": "smtech/canvas-api-via-lti",
 	"description": "An LTI Tool Provider that also provides access to the Canvas API",
 	"license": "LGPL-3.0",
+	"config": {
+		"secure-http": false
+	},
 	"repositories": [
 		{
 			"type": "package",
 			"package": {
 				"name": "spvsoftwareproducts/LTI_Tool_Provider",
-				"version": "2.5.00",
+				"version": "2.5.01",
 				"dist": {
-					"url": "http://projects.oscelot.org/gf/download/frsrelease/924/5882/LTI_Tool_Provider-2.5.00.zip",
+					"url": "http://projects.oscelot.org/gf/download/frsrelease/956/6025/LTI_Tool_Provider-2.5.01.zip",
 					"type": "zip"
 				},
 				"license": "LGPL-3.0",

@@ -2,12 +2,12 @@
 
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use smtech\StMarksSmarty\StMarksSmarty;
-use Battis\AppMetadata;
-
 define('SECRETS_FILE', __DIR__ . '/secrets.xml');
 define('SCHEMA_FILE', __DIR__ . '/admin/schema-app.sql');
 define('MYSQL_PREFIX', '');
+
+use Battis\AppMetadata;
+use smtech\StMarksSmarty\StMarksSmarty;
 
 /**
  * Test if the app is in the middle of launching
@@ -124,8 +124,8 @@ if (php_sapi_name() != 'cli') {
 
 	/* fire up the templating engine for interactive scripts */
 	$smarty = StMarksSmarty::getSmarty();
-	$smarty->setFramed(true);
 	$smarty->addTemplateDir(__DIR__ . '/templates', 'starter-canvas-api-via-lti');
+	$smarty->setFramed(true);
 }
 
 /* initialization that needs to happen for interactive and CLI scripts */
