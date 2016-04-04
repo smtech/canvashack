@@ -4,6 +4,7 @@ require_once('common.inc.php');
 
 use smtech\CanvasHack\CanvasHack;
 use smtech\CanvasHack\CanvasHack_Exception;
+use Battis\BootstrapSmarty\NotificationMessage;
 
 if (isset($_REQUEST['hack'])) {
 	while (list($id, $setting) = each($_REQUEST['hack'])) {

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9a4dfe589e69ae0475f4da8cb9d9319e",
-    "content-hash": "76da41365605d2f86ba486f6a8b3b760",
+    "hash": "399e47e7b12ecfe19ec57bf27a8e6127",
+    "content-hash": "1f3172335126bdeb1816a72b2fbb6f5a",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -816,12 +816,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-templates.git",
-                "reference": "76e959da49300a75a5f7a05c10d0e90689ea99cd"
+                "reference": "a7767bbf34c67544edd48d763665fe1ba591d402"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/76e959da49300a75a5f7a05c10d0e90689ea99cd",
-                "reference": "76e959da49300a75a5f7a05c10d0e90689ea99cd",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/a7767bbf34c67544edd48d763665fe1ba591d402",
+                "reference": "a7767bbf34c67544edd48d763665fe1ba591d402",
                 "shasum": ""
             },
             "require": {
@@ -839,7 +839,7 @@
                 }
             ],
             "description": "Templating for Canvas course objects",
-            "time": "2016-02-15 20:47:47"
+            "time": "2016-04-04 13:26:22"
         },
         {
             "name": "fxp/composer-asset-plugin",
@@ -1202,10 +1202,10 @@
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
-            "version": "2.5.00",
+            "version": "2.5.01",
             "dist": {
                 "type": "zip",
-                "url": "http://projects.oscelot.org/gf/download/frsrelease/924/5882/LTI_Tool_Provider-2.5.00.zip",
+                "url": "http://projects.oscelot.org/gf/download/frsrelease/956/6025/LTI_Tool_Provider-2.5.01.zip",
                 "reference": null,
                 "shasum": null
             },
