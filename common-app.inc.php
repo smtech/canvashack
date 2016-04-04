@@ -1,5 +1,7 @@
 <?php
 
+use smtech\CanvasPest\CanvasPest;
+
 if (defined('IGNORE_LTI')) {
 	$_SESSION['canvasInstanceUrl'] = 'https://' . parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
 } else {
