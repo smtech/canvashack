@@ -847,12 +847,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/francoispluchino/composer-asset-plugin.git",
-                "reference": "bae7a15712e9339a2439aeca3b7c5ecf65b087d1"
+                "reference": "62d2cdc302de2534f3985a1a2f5d4a783de4a5eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/bae7a15712e9339a2439aeca3b7c5ecf65b087d1",
-                "reference": "bae7a15712e9339a2439aeca3b7c5ecf65b087d1",
+                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/62d2cdc302de2534f3985a1a2f5d4a783de4a5eb",
+                "reference": "62d2cdc302de2534f3985a1a2f5d4a783de4a5eb",
                 "shasum": ""
             },
             "require": {
@@ -895,20 +895,20 @@
                 "npm",
                 "package"
             ],
-            "time": "2016-02-25 16:35:08"
+            "time": "2016-04-01 15:27:16"
         },
         {
             "name": "pear/log",
-            "version": "1.12.9",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Log.git",
-                "reference": "81b5109b6d3689c85118429c6e3ddd99ad90e9b0"
+                "reference": "f20d1c0b60b88a0a1a75f89e653da60074bdd6ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Log/zipball/81b5109b6d3689c85118429c6e3ddd99ad90e9b0",
-                "reference": "81b5109b6d3689c85118429c6e3ddd99ad90e9b0",
+                "url": "https://api.github.com/repos/pear/Log/zipball/f20d1c0b60b88a0a1a75f89e653da60074bdd6ff",
+                "reference": "f20d1c0b60b88a0a1a75f89e653da60074bdd6ff",
                 "shasum": ""
             },
             "require": {
@@ -948,7 +948,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2015-06-14 21:18:47"
+            "time": "2016-04-03 03:28:52"
         },
         {
             "name": "pear/pear_exception",
