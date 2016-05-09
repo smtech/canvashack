@@ -3,12 +3,7 @@
 {block name="subcontent"}
 
 	<div class="container">
-		<dl>
-			<dt>Global JavaScript URL</dt>
-				<dd><code><a href="{$metadata['GLOBAL_JAVASCRIPT_URL']}">{$metadata['GLOBAL_JAVASCRIPT_URL']}</a></code></dd>
-			<dt>Global CSS URL</dt>
-				<dd><code><a href="{$metadata['GLOBAL_CSS_URL']}">{$metadata['GLOBAL_CSS_URL']}</a></code></dd>
-		</dl>
+		<p>You will need to use the Canvas Theme Editor to upload <a href="upload.js.php">this JavaScript file</a> which will act as a loader for the rest of CanvasHack.</p>
 	</div>
 
 	{include file="control-panel-form.tpl"}

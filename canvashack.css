@@ -19,46 +19,16 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
-$canvashacks = array();
 $response = $sql->query("
-	SELECT p.*
-		FROM `pages` AS p
+	SELECT css.*
+		FROM `css` AS css
 		INNER JOIN `canvashacks` AS c
-			ON c.`id` = p.`canvashack`
+			ON c.`id` = css.`canvashack`
 		WHERE
 			c.`enabled` = TRUE
-		ORDER BY
-			p.`include` DESC
 ");
 
-// FIXME HTTP_REFERER does not seem to be being reliably generated
-while ($page = $response->fetch_assoc()) {
-	if (
-		(
-			!empty($page['url']) &&
-			$page['url'] == $_SERVER['HTTP_REFERER']
-		) || (
-			!empty($page['pattern']) &&
-			preg_match($page['pattern'], $_SERVER['HTTP_REFERER'])
-		)
-	) {
-		if ($page['include']) {
-			$canvashacks[$page['canvashack']] = true;
-		} else {
-			unset($canvashacks[$page['canvashack']]);
-		}
-	}
-}
-
 $css = array();
-if (($response = $sql->query("
-	SELECT *
-		FROM `css`
-		WHERE
-			`canvashack` = '" . implode("' OR `canvashack` = '", array_keys($canvashacks)) . "'
-")) == false) {
-	exit;
-}
 while ($entry = $response->fetch_assoc()) {
 	$css[$entry['canvashack']] = shell_exec("php {$entry['path']}");
 }
