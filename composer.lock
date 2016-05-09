@@ -42,23 +42,23 @@
         },
         {
             "name": "battis/bootstrapsmarty",
-            "version": "v1.1.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/bootstrapsmarty.git",
-                "reference": "56e99f92619ad057c9fa956df39fb22e6e825266"
+                "reference": "097ff9d3931aedbc38677d207b5c4540b4de812c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/bootstrapsmarty/zipball/56e99f92619ad057c9fa956df39fb22e6e825266",
-                "reference": "56e99f92619ad057c9fa956df39fb22e6e825266",
+                "url": "https://api.github.com/repos/battis/bootstrapsmarty/zipball/097ff9d3931aedbc38677d207b5c4540b4de812c",
+                "reference": "097ff9d3931aedbc38677d207b5c4540b4de812c",
                 "shasum": ""
             },
             "require": {
                 "battis/data-utilities": "dev-master",
+                "bower-asset/bootstrap-colorpicker": "dev-master",
                 "bower-asset/bootstrap-datepicker": "dev-master",
                 "bower-asset/bootstrap-sortable": "dev-master",
-                "bower-asset/xaguilars-bootstrap-colorpicker": "dev-master",
                 "fxp/composer-asset-plugin": "^1.1",
                 "smarty/smarty": "3.1.*"
             },
@@ -82,21 +82,24 @@
                 }
             ],
             "description": "A wrapper for Smarty to set (and maintain) defaults within a Bootstrap UI environment",
-            "time": "2016-03-31 01:34:39"
+            "time": "2016-04-14 02:09:19"
         },
         {
             "name": "battis/configxml",
-            "version": "v1.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/configxml.git",
-                "reference": "431ba4bbbfb6068b9d20df5b8f30cf2a16ab12c1"
+                "reference": "b68daa917e052bd8f53c3be0378b23d33526f961"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/configxml/zipball/431ba4bbbfb6068b9d20df5b8f30cf2a16ab12c1",
-                "reference": "431ba4bbbfb6068b9d20df5b8f30cf2a16ab12c1",
+                "url": "https://api.github.com/repos/battis/configxml/zipball/b68daa917e052bd8f53c3be0378b23d33526f961",
+                "reference": "b68daa917e052bd8f53c3be0378b23d33526f961",
                 "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0"
             },
             "type": "library",
             "autoload": {
@@ -115,7 +118,7 @@
                 }
             ],
             "description": "Load a configuration XML file for quick use",
-            "time": "2016-03-30 04:22:53"
+            "time": "2016-05-09 19:47:21"
         },
         {
             "name": "battis/data-utilities",
@@ -278,6 +281,42 @@
             ]
         },
         {
+            "name": "bower-asset/bootstrap-colorpicker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mjolnic/bootstrap-colorpicker.git",
+                "reference": "7847a84ab7ec3b17474fb16b7e68fc02838efe52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mjolnic/bootstrap-colorpicker/zipball/7847a84ab7ec3b17474fb16b7e68fc02838efe52",
+                "reference": "7847a84ab7ec3b17474fb16b7e68fc02838efe52",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": ">=2",
+                "bower-asset/jquery": ">=1.10"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/css/bootstrap-colorpicker.css",
+                    "dist/js/bootstrap-colorpicker.js"
+                ],
+                "bower-asset-ignore": [
+                    "\\.*",
+                    "/index.html",
+                    "/package.json",
+                    "/composer.json",
+                    "/Gruntfile.js",
+                    "/.travis.yml",
+                    "/travis.sh",
+                    "/server.js"
+                ]
+            }
+        },
+        {
             "name": "bower-asset/bootstrap-datepicker",
             "version": "dev-master",
             "source": {
@@ -412,42 +451,6 @@
                     "package.js",
                     "package.json"
                 ]
-            }
-        },
-        {
-            "name": "bower-asset/xaguilars-bootstrap-colorpicker",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mjolnic/bootstrap-colorpicker.git",
-                "reference": "642c84bf4a84aaa54dd10079bf441385be8d5e69"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mjolnic/bootstrap-colorpicker/zipball/642c84bf4a84aaa54dd10079bf441385be8d5e69",
-                "reference": "642c84bf4a84aaa54dd10079bf441385be8d5e69",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/bootstrap": ">=2",
-                "bower-asset/jquery": ">=1.10"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "dist/css/bootstrap-colorpicker.css",
-                    "dist/js/bootstrap-colorpicker.js"
-                ],
-                "bower-asset-ignore": [
-                    "\\.*",
-                    "/index.html",
-                    "/package.json",
-                    "/composer.json",
-                    "/Gruntfile.js"
-                ],
-                "branch-alias": {
-                    "dev-master": "2.3.0-dev"
-                }
             }
         },
         {
@@ -701,12 +704,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-lock-notifications.git",
-                "reference": "1974621060ba3486f1f545bc25b31907a1e2d179"
+                "reference": "e34a4dced96f8038266f6470928cfe3f67122c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-lock-notifications/zipball/1974621060ba3486f1f545bc25b31907a1e2d179",
-                "reference": "1974621060ba3486f1f545bc25b31907a1e2d179",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-lock-notifications/zipball/e34a4dced96f8038266f6470928cfe3f67122c82",
+                "reference": "e34a4dced96f8038266f6470928cfe3f67122c82",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -721,7 +724,7 @@
                 }
             ],
             "description": "Lock specific notification settings to (to their current state)",
-            "time": "2016-04-01 13:15:50"
+            "time": "2016-04-04 13:45:48"
         },
         {
             "name": "canvashack/plugin-organize-user-enrollments",
@@ -847,12 +850,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/francoispluchino/composer-asset-plugin.git",
-                "reference": "62d2cdc302de2534f3985a1a2f5d4a783de4a5eb"
+                "reference": "97a9a94a8b1f6add76a427daf06270d47e0c1b6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/62d2cdc302de2534f3985a1a2f5d4a783de4a5eb",
-                "reference": "62d2cdc302de2534f3985a1a2f5d4a783de4a5eb",
+                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/97a9a94a8b1f6add76a427daf06270d47e0c1b6b",
+                "reference": "97a9a94a8b1f6add76a427daf06270d47e0c1b6b",
                 "shasum": ""
             },
             "require": {
@@ -860,13 +863,13 @@
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "composer/composer": "~1.0@dev"
+                "composer/composer": "^1.0.0"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "Fxp\\Composer\\AssetPlugin\\FxpAssetPlugin",
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -895,20 +898,20 @@
                 "npm",
                 "package"
             ],
-            "time": "2016-04-01 15:27:16"
+            "time": "2016-05-04 08:21:07"
         },
         {
             "name": "pear/log",
-            "version": "1.13.0",
+            "version": "1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Log.git",
-                "reference": "f20d1c0b60b88a0a1a75f89e653da60074bdd6ff"
+                "reference": "c4be9ded2353c7c231d4c35cc3da75b209453803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Log/zipball/f20d1c0b60b88a0a1a75f89e653da60074bdd6ff",
-                "reference": "f20d1c0b60b88a0a1a75f89e653da60074bdd6ff",
+                "url": "https://api.github.com/repos/pear/Log/zipball/c4be9ded2353c7c231d4c35cc3da75b209453803",
+                "reference": "c4be9ded2353c7c231d4c35cc3da75b209453803",
                 "shasum": ""
             },
             "require": {
@@ -948,7 +951,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2016-04-03 03:28:52"
+            "time": "2016-04-16 00:49:33"
         },
         {
             "name": "pear/pear_exception",
@@ -1011,12 +1014,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "a36d9bc8092a359d9d753cf1aae42122f0fa9a7f"
+                "reference": "608064e5f234b5b5884adf03901dc015462a86bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/a36d9bc8092a359d9d753cf1aae42122f0fa9a7f",
-                "reference": "a36d9bc8092a359d9d753cf1aae42122f0fa9a7f",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/608064e5f234b5b5884adf03901dc015462a86bc",
+                "reference": "608064e5f234b5b5884adf03901dc015462a86bc",
                 "shasum": ""
             },
             "require": {
@@ -1058,7 +1061,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-03-27 16:53:53"
+            "time": "2016-05-07 11:46:37"
         },
         {
             "name": "smtech/canvaspest",
