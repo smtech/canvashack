@@ -136,13 +136,18 @@ try {
 	$sql = initMySql();
 	$metadata = initAppMetadata();
 } catch (CanvasAPIviaLTI_Exception $e) {
-	$smarty->addMessage(
-		'Initialization Failure',
-		$e->getMessage(),
-		NotificationMessage::ERROR
-	);
-	$smarty->display();
-	exit;
+	if (php_sapi_name() == 'cli') {
+		echo 'Initialization Failure [' . $e->getCode() . ']' . PHP_EOL . $e->getMessage() . PHP_EOL;
+		exit;
+	} else {
+		$smarty->addMessage(
+			'Initialization Failure [' . $e->getCode() . ']',
+			$e->getMessage(),
+			NotificationMessage::ERROR
+		);
+		$smarty->display();
+		exit;
+	}
 }
 
 /* interactive initialization only */
@@ -176,6 +181,8 @@ if ($ready && php_sapi_name() != 'cli') {
 			require_once(__DIR__ . '/common-app.inc.php');
 		}
 	}
+} elseif (php_sapi_name() == 'cli') {
+	require_once(__DIR__ . '/common-app.inc.php');
 }
 
 
