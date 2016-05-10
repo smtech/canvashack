@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "63361f75fb52dc39b8fa774ea9a7a20e",
-    "content-hash": "414102ea9f534ad64d4010e94559ba78",
+    "hash": "399e47e7b12ecfe19ec57bf27a8e6127",
+    "content-hash": "1f3172335126bdeb1816a72b2fbb6f5a",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -41,27 +41,34 @@
             "time": "2015-10-22 20:25:29"
         },
         {
-            "name": "battis/autocrontabjob",
-            "version": "v1.0",
+            "name": "battis/bootstrapsmarty",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/battis/autocrontabjob.git",
-                "reference": "911e3f3bcb522ad36d7707bf7cd4f1d74d6cc242"
+                "url": "https://github.com/battis/bootstrapsmarty.git",
+                "reference": "097ff9d3931aedbc38677d207b5c4540b4de812c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/autocrontabjob/zipball/911e3f3bcb522ad36d7707bf7cd4f1d74d6cc242",
-                "reference": "911e3f3bcb522ad36d7707bf7cd4f1d74d6cc242",
+                "url": "https://api.github.com/repos/battis/bootstrapsmarty/zipball/097ff9d3931aedbc38677d207b5c4540b4de812c",
+                "reference": "097ff9d3931aedbc38677d207b5c4540b4de812c",
                 "shasum": ""
             },
             "require": {
-                "pear/log": "~1.0",
-                "tiben/crontab-manager": "~1.0"
+                "battis/data-utilities": "dev-master",
+                "bower-asset/bootstrap-colorpicker": "dev-master",
+                "bower-asset/bootstrap-datepicker": "dev-master",
+                "bower-asset/bootstrap-sortable": "dev-master",
+                "fxp/composer-asset-plugin": "^1.1",
+                "smarty/smarty": "3.1.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Battis\\": ""
+                    "Battis\\BootstrapSmarty\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -74,8 +81,44 @@
                     "email": "seth@battis.net"
                 }
             ],
-            "description": "An object-oriented approach to scheduling regular cron jobs automatically",
-            "time": "2015-08-11 17:57:29"
+            "description": "A wrapper for Smarty to set (and maintain) defaults within a Bootstrap UI environment",
+            "time": "2016-04-14 02:09:19"
+        },
+        {
+            "name": "battis/configxml",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/battis/configxml.git",
+                "reference": "b68daa917e052bd8f53c3be0378b23d33526f961"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/battis/configxml/zipball/b68daa917e052bd8f53c3be0378b23d33526f961",
+                "reference": "b68daa917e052bd8f53c3be0378b23d33526f961",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Battis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "seth@battis.net"
+                }
+            ],
+            "description": "Load a configuration XML file for quick use",
+            "time": "2016-05-09 19:47:21"
         },
         {
             "name": "battis/data-utilities",
@@ -83,18 +126,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/data-utilities.git",
-                "reference": "2675320d7b9099c0689a6db9e2262ea70d40742f"
+                "reference": "1de361ebe4e180a17d36a59b199f0abd02503c9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/data-utilities/zipball/2675320d7b9099c0689a6db9e2262ea70d40742f",
-                "reference": "2675320d7b9099c0689a6db9e2262ea70d40742f",
+                "url": "https://api.github.com/repos/battis/data-utilities/zipball/1de361ebe4e180a17d36a59b199f0abd02503c9f",
+                "reference": "1de361ebe4e180a17d36a59b199f0abd02503c9f",
                 "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Battis\\": ""
+                    "Battis\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -108,7 +154,7 @@
                 }
             ],
             "description": "A handful of useful helper functions to process data",
-            "time": "2015-10-11 14:54:59"
+            "time": "2016-03-31 01:33:03"
         },
         {
             "name": "battis/educoder-pest-fork",
@@ -116,12 +162,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/pest.git",
-                "reference": "b12e9056465e2894bd698eede139a03b91723545"
+                "reference": "ee99df2b7e276195d3ab06738f2af3f44f3ed054"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/pest/zipball/b12e9056465e2894bd698eede139a03b91723545",
-                "reference": "b12e9056465e2894bd698eede139a03b91723545",
+                "url": "https://api.github.com/repos/battis/pest/zipball/ee99df2b7e276195d3ab06738f2af3f44f3ed054",
+                "reference": "ee99df2b7e276195d3ab06738f2af3f44f3ed054",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +196,7 @@
             ],
             "description": "A proper REST client for PHP.",
             "homepage": "https://github.com/educoder/pest",
-            "time": "2016-02-15 19:52:14"
+            "time": "2016-03-23 15:38:23"
         },
         {
             "name": "battis/simplecache",
@@ -184,6 +230,228 @@
             ],
             "description": "Manage a simple cache backed by a MySQL database",
             "time": "2015-12-17 02:04:27"
+        },
+        {
+            "name": "bower-asset/bootstrap",
+            "version": "v3.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "16b48259a62f576e52c903c476bd42b90ab22482"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/16b48259a62f576e52c903c476bd42b90ab22482",
+                "reference": "16b48259a62f576e52c903c476bd42b90ab22482",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "less/bootstrap.less",
+                    "dist/js/bootstrap.js"
+                ],
+                "bower-asset-ignore": [
+                    "/.*",
+                    "_config.yml",
+                    "CNAME",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "docs",
+                    "js/tests",
+                    "test-infra"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "js",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ]
+        },
+        {
+            "name": "bower-asset/bootstrap-colorpicker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mjolnic/bootstrap-colorpicker.git",
+                "reference": "7847a84ab7ec3b17474fb16b7e68fc02838efe52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mjolnic/bootstrap-colorpicker/zipball/7847a84ab7ec3b17474fb16b7e68fc02838efe52",
+                "reference": "7847a84ab7ec3b17474fb16b7e68fc02838efe52",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": ">=2",
+                "bower-asset/jquery": ">=1.10"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/css/bootstrap-colorpicker.css",
+                    "dist/js/bootstrap-colorpicker.js"
+                ],
+                "bower-asset-ignore": [
+                    "\\.*",
+                    "/index.html",
+                    "/package.json",
+                    "/composer.json",
+                    "/Gruntfile.js",
+                    "/.travis.yml",
+                    "/travis.sh",
+                    "/server.js"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/bootstrap-datepicker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eternicode/bootstrap-datepicker.git",
+                "reference": "67a348a3bc51b34b1500186bc3a6ec0b18b54b47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/67a348a3bc51b34b1500186bc3a6ec0b18b54b47",
+                "reference": "67a348a3bc51b34b1500186bc3a6ec0b18b54b47",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/css/bootstrap-datepicker3.css",
+                    "dist/js/bootstrap-datepicker.min.js"
+                ],
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "Apache-2.0"
+            ]
+        },
+        {
+            "name": "bower-asset/bootstrap-sortable",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drvic10k/bootstrap-sortable.git",
+                "reference": "29454e4bd762570502c215dbacdaff58018ff62b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drvic10k/bootstrap-sortable/zipball/29454e4bd762570502c215dbacdaff58018ff62b",
+                "reference": "29454e4bd762570502c215dbacdaff58018ff62b",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.0",
+                "bower-asset/moment": ">=2.3.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "Scripts/bootstrap-sortable.js",
+                "bower-asset-ignore": [
+                    "Scripts/moment.min.js"
+                ],
+                "branch-alias": {
+                    "dev-master": "2.0.0-dev"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Adding sorting ability to HTML tables",
+            "keywords": [
+                "bootstrap sortable",
+                "bootstrap-sortable",
+                "sort table",
+                "sortable",
+                "sortable table"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery/jquery-dist.git",
+                "reference": "086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd",
+                "reference": "086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/jquery.js",
+                "bower-asset-ignore": [
+                    "package.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "keywords": [
+                "browser",
+                "javascript",
+                "jquery",
+                "library"
+            ]
+        },
+        {
+            "name": "bower-asset/moment",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "b135bf1a6d58ff94287f0a21455bfa6a1ddc7226"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/b135bf1a6d58ff94287f0a21455bfa6a1ddc7226",
+                "reference": "b135bf1a6d58ff94287f0a21455bfa6a1ddc7226",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "moment.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "benchmarks",
+                    "bower_components",
+                    "meteor",
+                    "node_modules",
+                    "scripts",
+                    "tasks",
+                    "test",
+                    "component.json",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "ender.js",
+                    "Gruntfile.js",
+                    "Moment.js.nuspec",
+                    "package.js",
+                    "package.json"
+                ]
+            }
         },
         {
             "name": "canvashack/installer",
@@ -258,12 +526,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-cache-and-show-rubrics.git",
-                "reference": "8839bae3b92667004e4cef83664deb1de26bb3c1"
+                "reference": "71e0acd3f2eff9d6ad89fae4ebc7362971481b0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/8839bae3b92667004e4cef83664deb1de26bb3c1",
-                "reference": "8839bae3b92667004e4cef83664deb1de26bb3c1",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/71e0acd3f2eff9d6ad89fae4ebc7362971481b0d",
+                "reference": "71e0acd3f2eff9d6ad89fae4ebc7362971481b0d",
                 "shasum": ""
             },
             "require": {
@@ -281,7 +549,7 @@
                 }
             ],
             "description": "Whenever an assignment with a rubric is visited, cache that rubric for later redisplay if the assignment changes to external tool submission",
-            "time": "2015-10-22 02:25:03"
+            "time": "2016-02-16 04:39:34"
         },
         {
             "name": "canvashack/plugin-discussion-permalinks",
@@ -312,6 +580,34 @@
             "time": "2015-12-01 00:23:57"
         },
         {
+            "name": "canvashack/plugin-embedded-documentation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-embedded-documentation.git",
+                "reference": "b84310e4ef396f71930c18eb8c36064f445d1e1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-embedded-documentation/zipball/b84310e4ef396f71930c18eb8c36064f445d1e1c",
+                "reference": "b84310e4ef396f71930c18eb8c36064f445d1e1c",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Embed documentation specific to your institution in the Canvas UI",
+            "time": "2016-03-17 15:46:14"
+        },
+        {
             "name": "canvashack/plugin-enrollment-info-ui-tweaks",
             "version": "dev-master",
             "source": {
@@ -340,17 +636,48 @@
             "time": "2016-01-12 15:37:59"
         },
         {
+            "name": "canvashack/plugin-faculty-journal",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-faculty-journal.git",
+                "reference": "38be3a36c84965aa8c614191919a29bcf44587fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/38be3a36c84965aa8c614191919a29bcf44587fa",
+                "reference": "38be3a36c84965aa8c614191919a29bcf44587fa",
+                "shasum": ""
+            },
+            "require": {
+                "smtech/canvaspest": "^1.1"
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Allow teachers to browse the faculty journal by class",
+            "time": "2016-03-17 15:40:49"
+        },
+        {
             "name": "canvashack/plugin-global-navigation-menu",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-global-navigation-menu.git",
-                "reference": "d46cc10e281558f5437e9551012cfe98bca6653d"
+                "reference": "10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/d46cc10e281558f5437e9551012cfe98bca6653d",
-                "reference": "d46cc10e281558f5437e9551012cfe98bca6653d",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea",
+                "reference": "10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea",
                 "shasum": ""
             },
             "require": {
@@ -369,7 +696,63 @@
                 }
             ],
             "description": "Add additional menus to the global navigation in Canvas",
-            "time": "2016-02-15 20:12:48"
+            "time": "2016-02-23 19:56:54"
+        },
+        {
+            "name": "canvashack/plugin-lock-notifications",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-lock-notifications.git",
+                "reference": "e34a4dced96f8038266f6470928cfe3f67122c82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-lock-notifications/zipball/e34a4dced96f8038266f6470928cfe3f67122c82",
+                "reference": "e34a4dced96f8038266f6470928cfe3f67122c82",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Lock specific notification settings to (to their current state)",
+            "time": "2016-04-04 13:45:48"
+        },
+        {
+            "name": "canvashack/plugin-organize-user-enrollments",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-organize-user-enrollments.git",
+                "reference": "f2e20093c535e33c8c1876ba2e83c84b726dffe7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-organize-user-enrollments/zipball/f2e20093c535e33c8c1876ba2e83c84b726dffe7",
+                "reference": "f2e20093c535e33c8c1876ba2e83c84b726dffe7",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Provide a more organized (and readable) listing of users' enrollments",
+            "time": "2016-03-04 03:56:20"
         },
         {
             "name": "canvashack/plugin-stmarks-branding",
@@ -400,17 +783,48 @@
             "time": "2015-10-22 20:42:28"
         },
         {
+            "name": "canvashack/plugin-stmarks-color-schedule",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-stmarks-color-schedule.git",
+                "reference": "728f1c1e1f926e560e89689f0a2df1c2d566375e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-color-schedule/zipball/728f1c1e1f926e560e89689f0a2df1c2d566375e",
+                "reference": "728f1c1e1f926e560e89689f0a2df1c2d566375e",
+                "shasum": ""
+            },
+            "require": {
+                "smtech/stmarks-colors": "dev-master"
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Color the color blocks in the color schedule in the calendar",
+            "time": "2016-03-31 19:39:52"
+        },
+        {
             "name": "canvashack/plugin-templates",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-templates.git",
-                "reference": "96ca27fa07b60202cc4206488c109f448841fa47"
+                "reference": "a7767bbf34c67544edd48d763665fe1ba591d402"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/96ca27fa07b60202cc4206488c109f448841fa47",
-                "reference": "96ca27fa07b60202cc4206488c109f448841fa47",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/a7767bbf34c67544edd48d763665fe1ba591d402",
+                "reference": "a7767bbf34c67544edd48d763665fe1ba591d402",
                 "shasum": ""
             },
             "require": {
@@ -428,20 +842,76 @@
                 }
             ],
             "description": "Templating for Canvas course objects",
-            "time": "2016-02-15 20:38:02"
+            "time": "2016-04-04 13:26:22"
         },
         {
-            "name": "pear/log",
-            "version": "1.12.9",
+            "name": "fxp/composer-asset-plugin",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/pear/Log.git",
-                "reference": "81b5109b6d3689c85118429c6e3ddd99ad90e9b0"
+                "url": "https://github.com/francoispluchino/composer-asset-plugin.git",
+                "reference": "97a9a94a8b1f6add76a427daf06270d47e0c1b6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Log/zipball/81b5109b6d3689c85118429c6e3ddd99ad90e9b0",
-                "reference": "81b5109b6d3689c85118429c6e3ddd99ad90e9b0",
+                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/97a9a94a8b1f6add76a427daf06270d47e0c1b6b",
+                "reference": "97a9a94a8b1f6add76a427daf06270d47e0c1b6b",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Fxp\\Composer\\AssetPlugin\\FxpAssetPlugin",
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fxp\\Composer\\AssetPlugin\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Pluchino",
+                    "email": "francois.pluchino@gmail.com"
+                }
+            ],
+            "description": "NPM/Bower Dependency Manager for Composer",
+            "homepage": "https://github.com/francoispluchino/composer-asset-plugin",
+            "keywords": [
+                "asset",
+                "bower",
+                "composer",
+                "dependency manager",
+                "nodejs",
+                "npm",
+                "package"
+            ],
+            "time": "2016-05-04 08:21:07"
+        },
+        {
+            "name": "pear/log",
+            "version": "1.13.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/Log.git",
+                "reference": "c4be9ded2353c7c231d4c35cc3da75b209453803"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/Log/zipball/c4be9ded2353c7c231d4c35cc3da75b209453803",
+                "reference": "c4be9ded2353c7c231d4c35cc3da75b209453803",
                 "shasum": ""
             },
             "require": {
@@ -481,7 +951,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2015-06-14 21:18:47"
+            "time": "2016-04-16 00:49:33"
         },
         {
             "name": "pear/pear_exception",
@@ -544,12 +1014,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "0735ff9605fbe540f88c90a0b3fbc27a9b15d5ad"
+                "reference": "608064e5f234b5b5884adf03901dc015462a86bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/0735ff9605fbe540f88c90a0b3fbc27a9b15d5ad",
-                "reference": "0735ff9605fbe540f88c90a0b3fbc27a9b15d5ad",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/608064e5f234b5b5884adf03901dc015462a86bc",
+                "reference": "608064e5f234b5b5884adf03901dc015462a86bc",
                 "shasum": ""
             },
             "require": {
@@ -591,20 +1061,20 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-02-14 19:57:21"
+            "time": "2016-05-07 11:46:37"
         },
         {
             "name": "smtech/canvaspest",
-            "version": "v1.1.1",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "7a27a0cd228d1c1e7b4e2b8ca4855ff2c160c399"
+                "reference": "388949ed7bf3b6acb915024add0d6916c009feeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/7a27a0cd228d1c1e7b4e2b8ca4855ff2c160c399",
-                "reference": "7a27a0cd228d1c1e7b4e2b8ca4855ff2c160c399",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/388949ed7bf3b6acb915024add0d6916c009feeb",
+                "reference": "388949ed7bf3b6acb915024add0d6916c009feeb",
                 "shasum": ""
             },
             "require": {
@@ -612,9 +1082,9 @@
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    ""
-                ]
+                "psr-4": {
+                    "smtech\\CanvasPest\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -627,7 +1097,7 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2016-02-15 20:29:40"
+            "time": "2016-03-18 02:21:36"
         },
         {
             "name": "smtech/oauth-negotiator",
@@ -666,18 +1136,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarks-colors.git",
-                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a"
+                "reference": "4e36a4f9e76c00d894487dac18a9d85ebcc54c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
-                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
+                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/4e36a4f9e76c00d894487dac18a9d85ebcc54c39",
+                "reference": "4e36a4f9e76c00d894487dac18a9d85ebcc54c39",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "smtech\\": ""
+                    "smtech\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -691,7 +1161,7 @@
                 }
             ],
             "description": "An object-ified, consistent set of hex colors for St. Mark’s projects",
-            "time": "2015-08-20 20:17:08"
+            "time": "2016-03-17 15:26:18"
         },
         {
             "name": "smtech/stmarkssmarty",
@@ -699,28 +1169,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "2940435c1d5f28e13ff38bdda07e05a01b20291d"
+                "reference": "ddb27fba830765e3f663b693c7eb79746d97a8d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/2940435c1d5f28e13ff38bdda07e05a01b20291d",
-                "reference": "2940435c1d5f28e13ff38bdda07e05a01b20291d",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/ddb27fba830765e3f663b693c7eb79746d97a8d4",
+                "reference": "ddb27fba830765e3f663b693c7eb79746d97a8d4",
                 "shasum": ""
             },
             "require": {
-                "battis/data-utilities": "dev-master",
-                "smarty/smarty": "3.1.*",
+                "battis/bootstrapsmarty": "^1.1",
                 "smtech/stmarks-colors": "dev-master"
             },
             "suggest": {
-                "battis/appmetadata": "MySQL-backed globals array for app metadata storage",
-                "eternicode/bootstrap-datepicker": "The full Bootstrap Datepicker package for local install"
+                "battis/appmetadata": "MySQL-backed globals array for app metadata storage"
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    ""
-                ]
+                "psr-4": {
+                    "smtech\\StMarksSmarty\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -733,14 +1201,14 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-12-04 02:16:30"
+            "time": "2016-03-17 20:07:04"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
-            "version": "2.5.00",
+            "version": "2.5.01",
             "dist": {
                 "type": "zip",
-                "url": "http://projects.oscelot.org/gf/download/frsrelease/924/5882/LTI_Tool_Provider-2.5.00.zip",
+                "url": "http://projects.oscelot.org/gf/download/frsrelease/956/6025/LTI_Tool_Provider-2.5.01.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -754,46 +1222,6 @@
                 }
             ],
             "homepage": "http://spvsoftwareproducts.com/php/lti_tool_provider/"
-        },
-        {
-            "name": "tiben/crontab-manager",
-            "version": "v1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TiBeN/CrontabManager.git",
-                "reference": "e0e12c94e8b065ed07811b65f00d3fb00eab003e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TiBeN/CrontabManager/zipball/e0e12c94e8b065ed07811b65f00d3fb00eab003e",
-                "reference": "e0e12c94e8b065ed07811b65f00d3fb00eab003e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">= 5.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "TiBeN\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Legendre",
-                    "email": "legendre.benjamin@gmail.com"
-                }
-            ],
-            "description": "A library for managing linux cron jobs.",
-            "keywords": [
-                "crontab",
-                "scheduling"
-            ],
-            "time": "2014-05-17 15:12:24"
         }
     ],
     "packages-dev": [],
@@ -807,7 +1235,12 @@
         "canvashack/plugin-stmarks-branding": 20,
         "canvashack/plugin-discussion-permalinks": 20,
         "canvashack/plugin-global-navigation-menu": 20,
-        "canvashack/plugin-templates": 20
+        "canvashack/plugin-templates": 20,
+        "canvashack/plugin-stmarks-color-schedule": 20,
+        "canvashack/plugin-organize-user-enrollments": 20,
+        "canvashack/plugin-faculty-journal": 20,
+        "canvashack/plugin-embedded-documentation": 20,
+        "canvashack/plugin-lock-notifications": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

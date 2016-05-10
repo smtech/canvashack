@@ -6,7 +6,9 @@ define('SECRETS_FILE', __DIR__ . '/secrets.xml');
 define('SCHEMA_FILE', __DIR__ . '/admin/schema-app.sql');
 define('MYSQL_PREFIX', '');
 
-use Battis\AppMetadata as AppMetadata;
+use Battis\AppMetadata;
+use smtech\StMarksSmarty\StMarksSmarty;
+use Battis\BootstrapSmarty\NotificationMessage;
 
 /**
  * Test if the app is in the middle of launching
@@ -61,7 +63,7 @@ function initMySql() {
 	if (!($secrets instanceof SimpleXMLElement)) {
 		$secrets = initSecrets();
 	}
-	
+
 	/* turn off warnings, since we're going to test the connection ourselves */
 	set_error_handler(function() {});
 	$sql = new mysqli(
@@ -71,7 +73,7 @@ function initMySql() {
 		(string) $secrets->mysql->database
 	);
 	restore_error_handler();
-	
+
 	if ($sql->connect_error) {
 		throw new CanvasAPIviaLTI_Exception(
 			$sql->connect_error,
@@ -89,9 +91,9 @@ function initMySql() {
 function initAppMetadata() {
 	global $secrets; // FIXME grown-ups don't program like this
 	global $sql; // FIXME grown-ups don't program like this
-	
+
 	$metadata = new AppMetadata($sql, (string) $secrets->app->id);
-	
+
 	return $metadata;
 }
 
@@ -119,10 +121,12 @@ $ready = true;
 
 /* preliminary interactive only initialization */
 if (php_sapi_name() != 'cli') {
-	session_start(); 
+	session_start();
 
 	/* fire up the templating engine for interactive scripts */
-	$smarty = StMarksSmarty::getSmarty(true, __DIR__ . '/templates');
+	$smarty = StMarksSmarty::getSmarty();
+	$smarty->addTemplateDir(__DIR__ . '/templates', 'starter-canvas-api-via-lti');
+	$smarty->setFramed(true);
 }
 
 /* initialization that needs to happen for interactive and CLI scripts */
@@ -132,21 +136,26 @@ try {
 	$sql = initMySql();
 	$metadata = initAppMetadata();
 } catch (CanvasAPIviaLTI_Exception $e) {
-	$smarty->addMessage(
-		'Initialization Failure',
-		$e->getMessage(),
-		NotificationMessage::ERROR
-	);
-	$smarty->display();
-	exit;
+	if (php_sapi_name() == 'cli') {
+		echo 'Initialization Failure [' . $e->getCode() . ']' . PHP_EOL . $e->getMessage() . PHP_EOL;
+		exit;
+	} else {
+		$smarty->addMessage(
+			'Initialization Failure [' . $e->getCode() . ']',
+			$e->getMessage(),
+			NotificationMessage::ERROR
+		);
+		$smarty->display();
+		exit;
+	}
 }
 
 /* interactive initialization only */
 if ($ready && php_sapi_name() != 'cli') {
-		
+
 	/* allow web apps to use common.inc.php without LTI authentication */
 	if (!defined('IGNORE_LTI')) {
-		
+
 		try {
 			if (midLaunch()) {
 				$ready = false;
@@ -158,7 +167,7 @@ if ($ready && php_sapi_name() != 'cli') {
 					CanvasAPIviaLTI_Exception::LAUNCH_REQUEST
 				);
 			}
-			
+
 		} catch (CanvasAPIviaLTI_Exception $e) {
 			$ready = false;
 		}
@@ -167,11 +176,13 @@ if ($ready && php_sapi_name() != 'cli') {
 	if ($ready) {
 		$smarty->addStylesheet($metadata['APP_URL'] . '/css/canvas-api-via-lti.css', 'starter-canvas-api-via-lti');
 		$smarty->addStylesheet($metadata['APP_URL'] . '/css/app.css');
-		
+
 		if (!midLaunch() || !defined('IGNORE_LTI')) {
 			require_once(__DIR__ . '/common-app.inc.php');
 		}
 	}
+} elseif (php_sapi_name() == 'cli') {
+	require_once(__DIR__ . '/common-app.inc.php');
 }
 
 
