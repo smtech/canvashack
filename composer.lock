@@ -672,12 +672,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-global-navigation-menu.git",
-                "reference": "10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea"
+                "reference": "59e3ba2a5e616c480ed5ad6416c4d7fd7f36cd71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea",
-                "reference": "10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/59e3ba2a5e616c480ed5ad6416c4d7fd7f36cd71",
+                "reference": "59e3ba2a5e616c480ed5ad6416c4d7fd7f36cd71",
                 "shasum": ""
             },
             "require": {
@@ -696,7 +696,7 @@
                 }
             ],
             "description": "Add additional menus to the global navigation in Canvas",
-            "time": "2016-02-23 19:56:54"
+            "time": "2016-05-10 19:10:09"
         },
         {
             "name": "canvashack/plugin-lock-notifications",
@@ -704,13 +704,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-lock-notifications.git",
-                "reference": "e34a4dced96f8038266f6470928cfe3f67122c82"
+                "reference": "71f2e5cbf60277c8f917ea7846107aa384b72a95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-lock-notifications/zipball/e34a4dced96f8038266f6470928cfe3f67122c82",
-                "reference": "e34a4dced96f8038266f6470928cfe3f67122c82",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-lock-notifications/zipball/71f2e5cbf60277c8f917ea7846107aa384b72a95",
+                "reference": "71f2e5cbf60277c8f917ea7846107aa384b72a95",
                 "shasum": ""
+            },
+            "require": {
+                "battis/simplecache": "~1.0"
             },
             "type": "canvashack-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -724,7 +727,7 @@
                 }
             ],
             "description": "Lock specific notification settings to (to their current state)",
-            "time": "2016-04-04 13:45:48"
+            "time": "2016-05-09 20:23:10"
         },
         {
             "name": "canvashack/plugin-organize-user-enrollments",
@@ -819,12 +822,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-templates.git",
-                "reference": "a7767bbf34c67544edd48d763665fe1ba591d402"
+                "reference": "e8a7110bfb4febd0c2aff2f081c9936590937705"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/a7767bbf34c67544edd48d763665fe1ba591d402",
-                "reference": "a7767bbf34c67544edd48d763665fe1ba591d402",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/e8a7110bfb4febd0c2aff2f081c9936590937705",
+                "reference": "e8a7110bfb4febd0c2aff2f081c9936590937705",
                 "shasum": ""
             },
             "require": {
@@ -842,7 +845,7 @@
                 }
             ],
             "description": "Templating for Canvas course objects",
-            "time": "2016-04-04 13:26:22"
+            "time": "2016-05-10 19:11:33"
         },
         {
             "name": "fxp/composer-asset-plugin",
@@ -1014,12 +1017,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "608064e5f234b5b5884adf03901dc015462a86bc"
+                "reference": "1fbf16afed5a62964119df937eb27fa98c8ec186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/608064e5f234b5b5884adf03901dc015462a86bc",
-                "reference": "608064e5f234b5b5884adf03901dc015462a86bc",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/1fbf16afed5a62964119df937eb27fa98c8ec186",
+                "reference": "1fbf16afed5a62964119df937eb27fa98c8ec186",
                 "shasum": ""
             },
             "require": {
@@ -1061,7 +1064,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-05-07 11:46:37"
+            "time": "2016-05-10 01:54:56"
         },
         {
             "name": "smtech/canvaspest",
