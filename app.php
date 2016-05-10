@@ -38,7 +38,7 @@ foreach($hacksContents as $item) {
 	}
 }
 
-$smarty->assign('upload', shell_exec("php upload.js.php"));
+$smarty->assign('appURL', $metadata['APP_URL']);
 $smarty->assign('hacks', $hacks);
 $smarty->display('control-panel.tpl');
 
