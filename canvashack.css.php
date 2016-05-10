@@ -14,13 +14,14 @@ function canvasHackNamespace($id, $javascript) {
 }
 
 header("Content-Type: text/css");
-header("X-Content-Type-Options: nosniff"); // trying to settle IE's hash
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
+
+/* don't cache me! */
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
+header("Pragma: no-cache"); // HTTP 1.0
+header("Expires: 0"); // Proxies
 
 $canvashacks = array();
-$response = $sql->query("
+$enabledPages = $sql->query("
 	SELECT p.*
 		FROM `pages` AS p
 		INNER JOIN `canvashacks` AS c
@@ -31,16 +32,10 @@ $response = $sql->query("
 			p.`include` DESC
 ");
 
-// FIXME HTTP_REFERER does not seem to be being reliably generated
-while ($page = $response->fetch_assoc()) {
+while ($page = $enabledPages->fetch_assoc()) {
 	if (
-		(
-			!empty($page['url']) &&
-			$page['url'] == $_SERVER['HTTP_REFERER']
-		) || (
-			!empty($page['pattern']) &&
-			preg_match($page['pattern'], $_SERVER['HTTP_REFERER'])
-		)
+		(!empty($page['url']) && $page['url'] == $_REQUEST['location']) ||
+		(!empty($page['pattern']) && preg_match($page['pattern'], $_REQUEST['location']))
 	) {
 		if ($page['include']) {
 			$canvashacks[$page['canvashack']] = true;
@@ -51,7 +46,7 @@ while ($page = $response->fetch_assoc()) {
 }
 
 $css = array();
-if (($response = $sql->query("
+if (($applicableCSS = $sql->query("
 	SELECT *
 		FROM `css`
 		WHERE
@@ -59,8 +54,8 @@ if (($response = $sql->query("
 ")) == false) {
 	exit;
 }
-while ($entry = $response->fetch_assoc()) {
-	$css[$entry['canvashack']] = shell_exec("php {$entry['path']}");
+while ($entry = $applicableCSS->fetch_assoc()) {
+	$css[$entry['canvashack']] = shell_exec("php {$entry['path']} {$_REQUEST['location']} 2>&1");
 }
 
 foreach ($css as $id => $stylesheet) {
@@ -69,5 +64,3 @@ foreach ($css as $id => $stylesheet) {
 	echo $plugin->derivedValues($stylesheet);
 	echo "\n/* CanvasHack ID $id end */\n\n";
 }
-
-?>

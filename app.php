@@ -9,7 +9,7 @@ use Battis\BootstrapSmarty\NotificationMessage;
 if (isset($_REQUEST['hack'])) {
 	while (list($id, $setting) = each($_REQUEST['hack'])) {
 		try{
-			
+
 			$hack = CanvasHack::getCanvasHackById($sql, $id);
 			if ($setting === 'enable') {
 				$hack->enable();
@@ -38,6 +38,7 @@ foreach($hacksContents as $item) {
 	}
 }
 
+$smarty->assign('appURL', $metadata['APP_URL']);
 $smarty->assign('hacks', $hacks);
 $smarty->display('control-panel.tpl');
 
