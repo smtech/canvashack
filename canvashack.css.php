@@ -5,6 +5,8 @@ require_once('common.inc.php');
 
 use \Battis\AppMetadata;
 
+$location = (!empty($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : $_REQUEST['location']);
+
 function canonicalNamespaceId($id) {
 	return preg_replace('/[^a-z0-9]+/i', '_', $id);
 }
@@ -34,8 +36,8 @@ $enabledPages = $sql->query("
 
 while ($page = $enabledPages->fetch_assoc()) {
 	if (
-		(!empty($page['url']) && $page['url'] == $_REQUEST['location']) ||
-		(!empty($page['pattern']) && preg_match($page['pattern'], $_REQUEST['location']))
+		(!empty($page['url']) && $page['url'] == $location) ||
+		(!empty($page['pattern']) && preg_match($page['pattern'], $location))
 	) {
 		if ($page['include']) {
 			$canvashacks[$page['canvashack']] = true;
@@ -55,7 +57,7 @@ if (($applicableCSS = $sql->query("
 	exit;
 }
 while ($entry = $applicableCSS->fetch_assoc()) {
-	$css[$entry['canvashack']] = shell_exec("php {$entry['path']} {$_REQUEST['location']} 2>&1");
+	$css[$entry['canvashack']] = shell_exec("php {$entry['path']} {$location} 2>&1");
 }
 
 foreach ($css as $id => $stylesheet) {
