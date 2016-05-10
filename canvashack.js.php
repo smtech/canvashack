@@ -12,10 +12,9 @@ function canvasHackNamespace($id, $javascript) {
 }
 
 header('Content-Type: application/javascript');
-header("X-Content-Type-Options: nosniff"); // Oh, IE, you dog...
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
 
 $canvashacks = array();
 $response = $sql->query("
@@ -75,9 +74,11 @@ while ($entry = $response->fetch_assoc()) {
 }
 
 ?>
+/* generated for <?= $_REQUEST['location'] ?> */
+
 "use strict";
 var canvashack = {
-	
+
 <?= implode(",\n\n", $javascript) ?>
 
 
