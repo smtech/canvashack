@@ -4,7 +4,7 @@ require_once('common.inc.php');
 
 header('Content-Type: application/javascript');
 
-if ($_REQUEST['download']) {
+if (!empty($_REQUEST['download'])) {
     header("Content-Disposition: attachment; filename=canvashack-loader.js");
 }
 

@@ -641,15 +641,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-faculty-journal.git",
-                "reference": "38be3a36c84965aa8c614191919a29bcf44587fa"
+                "reference": "f09c96d69020c9ec438440c6867a6521a3a6cde9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/38be3a36c84965aa8c614191919a29bcf44587fa",
-                "reference": "38be3a36c84965aa8c614191919a29bcf44587fa",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/f09c96d69020c9ec438440c6867a6521a3a6cde9",
+                "reference": "f09c96d69020c9ec438440c6867a6521a3a6cde9",
                 "shasum": ""
             },
             "require": {
+                "battis/appmetadata": "^1.0",
+                "battis/bootstrapsmarty": "^1.0",
+                "battis/configxml": "^1.0",
+                "battis/simplecache": "^1.0",
                 "smtech/canvaspest": "^1.1"
             },
             "type": "canvashack-plugin",
@@ -664,7 +668,7 @@
                 }
             ],
             "description": "Allow teachers to browse the faculty journal by class",
-            "time": "2016-03-17 15:40:49"
+            "time": "2016-05-24 02:14:30"
         },
         {
             "name": "canvashack/plugin-global-navigation-menu",
@@ -822,12 +826,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-templates.git",
-                "reference": "e8a7110bfb4febd0c2aff2f081c9936590937705"
+                "reference": "8e7a39e53753283df38cbe854f1f3460279da60a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/e8a7110bfb4febd0c2aff2f081c9936590937705",
-                "reference": "e8a7110bfb4febd0c2aff2f081c9936590937705",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/8e7a39e53753283df38cbe854f1f3460279da60a",
+                "reference": "8e7a39e53753283df38cbe854f1f3460279da60a",
                 "shasum": ""
             },
             "require": {
@@ -845,7 +849,7 @@
                 }
             ],
             "description": "Templating for Canvas course objects",
-            "time": "2016-05-10 19:11:33"
+            "time": "2016-05-24 01:47:23"
         },
         {
             "name": "fxp/composer-asset-plugin",
@@ -853,12 +857,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/francoispluchino/composer-asset-plugin.git",
-                "reference": "97a9a94a8b1f6add76a427daf06270d47e0c1b6b"
+                "reference": "f10cfad0e9748aeb50c7e8befd4ee0011d6a2ba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/97a9a94a8b1f6add76a427daf06270d47e0c1b6b",
-                "reference": "97a9a94a8b1f6add76a427daf06270d47e0c1b6b",
+                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/f10cfad0e9748aeb50c7e8befd4ee0011d6a2ba0",
+                "reference": "f10cfad0e9748aeb50c7e8befd4ee0011d6a2ba0",
                 "shasum": ""
             },
             "require": {
@@ -901,7 +905,7 @@
                 "npm",
                 "package"
             ],
-            "time": "2016-05-04 08:21:07"
+            "time": "2016-05-11 07:45:42"
         },
         {
             "name": "pear/log",
@@ -1017,12 +1021,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "1fbf16afed5a62964119df937eb27fa98c8ec186"
+                "reference": "dccfc6c2f5f519ff2db1b24de2ccb0283554b8c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/1fbf16afed5a62964119df937eb27fa98c8ec186",
-                "reference": "1fbf16afed5a62964119df937eb27fa98c8ec186",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/dccfc6c2f5f519ff2db1b24de2ccb0283554b8c7",
+                "reference": "dccfc6c2f5f519ff2db1b24de2ccb0283554b8c7",
                 "shasum": ""
             },
             "require": {
@@ -1064,7 +1068,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-05-10 01:54:56"
+            "time": "2016-05-16 16:17:58"
         },
         {
             "name": "smtech/canvaspest",

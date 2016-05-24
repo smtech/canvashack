@@ -68,7 +68,7 @@ if (($response = $sql->query("
 	exit;
 }
 while ($entry = $response->fetch_assoc()) {
-	$javascript[$entry['canvashack']] = canvasHackNamespace($entry['canvashack'], shell_exec("php {$entry['path']} {$_REQUEST['location']} 2>&1"));
+	$javascript[$entry['canvashack']] = canvasHackNamespace($entry['canvashack'], shell_exec("php \"{$entry['path']}\" \"{$_REQUEST['location']}\" 2>&1"));
 }
 
 ?>

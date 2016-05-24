@@ -57,7 +57,7 @@ if (($applicableCSS = $sql->query("
 	exit;
 }
 while ($entry = $applicableCSS->fetch_assoc()) {
-	$css[$entry['canvashack']] = shell_exec("php {$entry['path']} {$location} 2>&1");
+	$css[$entry['canvashack']] = shell_exec("php \"{$entry['path']}\" \"{$location}\" 2>&1");
 }
 
 foreach ($css as $id => $stylesheet) {
