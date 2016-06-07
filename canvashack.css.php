@@ -1,7 +1,18 @@
 <?php
 
+header("Content-Type: text/css");
+
+/* don't cache me! */
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
+header("Pragma: no-cache"); // HTTP 1.0
+header("Expires: 0"); // Proxies
+
 define('IGNORE_LTI', true);
 require_once('common.inc.php');
+
+if (!empty($_REQUEST['location']) && preg_match('%^https://stmarksschool\.beta\.instructure\.com%', $_REQUEST['location'])) {
+	exit;
+}
 
 use \Battis\AppMetadata;
 
@@ -14,13 +25,6 @@ function canonicalNamespaceId($id) {
 function canvasHackNamespace($id, $javascript) {
 	return preg_replace('/^(\s*var\s+)?canvashack\s*=\s*{\n*(.*)};/is', canonicalNamespaceId($id) . ": {\n$2\n}", $javascript);
 }
-
-header("Content-Type: text/css");
-
-/* don't cache me! */
-header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
-header("Pragma: no-cache"); // HTTP 1.0
-header("Expires: 0"); // Proxies
 
 $canvashacks = array();
 $enabledPages = $sql->query("
