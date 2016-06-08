@@ -233,20 +233,20 @@
         },
         {
             "name": "bower-asset/bootstrap",
-            "version": "v3.3.5",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "16b48259a62f576e52c903c476bd42b90ab22482"
+                "reference": "7c86bc9664ddc3a1965fe91d7a0db97eb9348448"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/16b48259a62f576e52c903c476bd42b90ab22482",
-                "reference": "16b48259a62f576e52c903c476bd42b90ab22482",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/7c86bc9664ddc3a1965fe91d7a0db97eb9348448",
+                "reference": "7c86bc9664ddc3a1965fe91d7a0db97eb9348448",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/jquery": ">=1.9.1"
+                "bower-asset/jquery": ">=1.9.1,<3.0"
             },
             "type": "bower-asset-library",
             "extra": {
@@ -387,16 +387,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "dev-master",
+            "version": "1.12.1-patch1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd"
+                "reference": "e409311a9966092cd40b6a1c4a64ad0b105e364c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd",
-                "reference": "086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/e409311a9966092cd40b6a1c4a64ad0b105e364c",
+                "reference": "e409311a9966092cd40b6a1c4a64ad0b105e364c",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -498,12 +498,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-auto-open-feedback.git",
-                "reference": "592e3898ca4799218ab255f39b8f9160639dd689"
+                "reference": "221c0c7999aa3b7175bbe82604dab4d03a547b63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/592e3898ca4799218ab255f39b8f9160639dd689",
-                "reference": "592e3898ca4799218ab255f39b8f9160639dd689",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/221c0c7999aa3b7175bbe82604dab4d03a547b63",
+                "reference": "221c0c7999aa3b7175bbe82604dab4d03a547b63",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -518,7 +518,7 @@
                 }
             ],
             "description": "A bandaid until SpeedGrader 2.0: autoopen SpeedGrader feedback and rubrics for students",
-            "time": "2016-01-11 22:13:29"
+            "time": "2016-05-24 11:41:26"
         },
         {
             "name": "canvashack/plugin-cache-and-show-rubrics",
@@ -526,12 +526,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-cache-and-show-rubrics.git",
-                "reference": "71e0acd3f2eff9d6ad89fae4ebc7362971481b0d"
+                "reference": "eb6e790c4e7531d752e6abf228681d0ab18645b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/71e0acd3f2eff9d6ad89fae4ebc7362971481b0d",
-                "reference": "71e0acd3f2eff9d6ad89fae4ebc7362971481b0d",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/eb6e790c4e7531d752e6abf228681d0ab18645b3",
+                "reference": "eb6e790c4e7531d752e6abf228681d0ab18645b3",
                 "shasum": ""
             },
             "require": {
@@ -549,7 +549,7 @@
                 }
             ],
             "description": "Whenever an assignment with a rubric is visited, cache that rubric for later redisplay if the assignment changes to external tool submission",
-            "time": "2016-02-16 04:39:34"
+            "time": "2016-06-08 19:38:01"
         },
         {
             "name": "canvashack/plugin-discussion-permalinks",
@@ -557,12 +557,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-discussion-permalinks.git",
-                "reference": "4e6e431cbdc625d1a2f32f67c91ebf99de35c054"
+                "reference": "95ef30df218b60b721479c73cbb51be76600c425"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-discussion-permalinks/zipball/4e6e431cbdc625d1a2f32f67c91ebf99de35c054",
-                "reference": "4e6e431cbdc625d1a2f32f67c91ebf99de35c054",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-discussion-permalinks/zipball/95ef30df218b60b721479c73cbb51be76600c425",
+                "reference": "95ef30df218b60b721479c73cbb51be76600c425",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -577,7 +577,7 @@
                 }
             ],
             "description": "Reveal discussion entry permalinks",
-            "time": "2015-12-01 00:23:57"
+            "time": "2016-05-24 11:41:39"
         },
         {
             "name": "canvashack/plugin-embedded-documentation",
@@ -613,12 +613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-enrollment-info-ui-tweaks.git",
-                "reference": "e9f332227def2cef7be8594bf741a3c78868b7fb"
+                "reference": "3b1e4876f9eb17b3876d8246f3861f8a4ae66c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-enrollment-info-ui-tweaks/zipball/e9f332227def2cef7be8594bf741a3c78868b7fb",
-                "reference": "e9f332227def2cef7be8594bf741a3c78868b7fb",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-enrollment-info-ui-tweaks/zipball/3b1e4876f9eb17b3876d8246f3861f8a4ae66c72",
+                "reference": "3b1e4876f9eb17b3876d8246f3861f8a4ae66c72",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -633,7 +633,7 @@
                 }
             ],
             "description": "Tweak some annoying default settings to better ones when looking at enrollment information",
-            "time": "2016-01-12 15:37:59"
+            "time": "2016-05-24 11:41:49"
         },
         {
             "name": "canvashack/plugin-faculty-journal",
@@ -641,15 +641,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-faculty-journal.git",
-                "reference": "38be3a36c84965aa8c614191919a29bcf44587fa"
+                "reference": "f9f9490ea0b3d616b695a2328f1763924379de1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/38be3a36c84965aa8c614191919a29bcf44587fa",
-                "reference": "38be3a36c84965aa8c614191919a29bcf44587fa",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/f9f9490ea0b3d616b695a2328f1763924379de1a",
+                "reference": "f9f9490ea0b3d616b695a2328f1763924379de1a",
                 "shasum": ""
             },
             "require": {
+                "battis/appmetadata": "^1.0",
+                "battis/bootstrapsmarty": "^1.0",
+                "battis/configxml": "^1.0",
+                "battis/simplecache": "^1.0",
                 "smtech/canvaspest": "^1.1"
             },
             "type": "canvashack-plugin",
@@ -664,7 +668,7 @@
                 }
             ],
             "description": "Allow teachers to browse the faculty journal by class",
-            "time": "2016-03-17 15:40:49"
+            "time": "2016-06-08 19:38:53"
         },
         {
             "name": "canvashack/plugin-global-navigation-menu",
@@ -672,12 +676,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-global-navigation-menu.git",
-                "reference": "10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea"
+                "reference": "5c08db9b8aa53d386328fc082e2ec60dad0602c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea",
-                "reference": "10ef5b1efefa0fa2bfaad5ba4737aecb8c8d0bea",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/5c08db9b8aa53d386328fc082e2ec60dad0602c7",
+                "reference": "5c08db9b8aa53d386328fc082e2ec60dad0602c7",
                 "shasum": ""
             },
             "require": {
@@ -696,7 +700,7 @@
                 }
             ],
             "description": "Add additional menus to the global navigation in Canvas",
-            "time": "2016-02-23 19:56:54"
+            "time": "2016-06-08 19:40:17"
         },
         {
             "name": "canvashack/plugin-lock-notifications",
@@ -704,13 +708,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-lock-notifications.git",
-                "reference": "e34a4dced96f8038266f6470928cfe3f67122c82"
+                "reference": "970b3f8f419f78668ee3f788a13e3ff9ad86fd57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-lock-notifications/zipball/e34a4dced96f8038266f6470928cfe3f67122c82",
-                "reference": "e34a4dced96f8038266f6470928cfe3f67122c82",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-lock-notifications/zipball/970b3f8f419f78668ee3f788a13e3ff9ad86fd57",
+                "reference": "970b3f8f419f78668ee3f788a13e3ff9ad86fd57",
                 "shasum": ""
+            },
+            "require": {
+                "battis/simplecache": "~1.0"
             },
             "type": "canvashack-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -724,7 +731,7 @@
                 }
             ],
             "description": "Lock specific notification settings to (to their current state)",
-            "time": "2016-04-04 13:45:48"
+            "time": "2016-05-24 11:40:55"
         },
         {
             "name": "canvashack/plugin-organize-user-enrollments",
@@ -732,12 +739,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-organize-user-enrollments.git",
-                "reference": "f2e20093c535e33c8c1876ba2e83c84b726dffe7"
+                "reference": "da0186d87ec4318e7231a6d775ee41a065317c61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-organize-user-enrollments/zipball/f2e20093c535e33c8c1876ba2e83c84b726dffe7",
-                "reference": "f2e20093c535e33c8c1876ba2e83c84b726dffe7",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-organize-user-enrollments/zipball/da0186d87ec4318e7231a6d775ee41a065317c61",
+                "reference": "da0186d87ec4318e7231a6d775ee41a065317c61",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -752,7 +759,7 @@
                 }
             ],
             "description": "Provide a more organized (and readable) listing of users' enrollments",
-            "time": "2016-03-04 03:56:20"
+            "time": "2016-05-24 11:41:12"
         },
         {
             "name": "canvashack/plugin-stmarks-branding",
@@ -819,12 +826,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-templates.git",
-                "reference": "a7767bbf34c67544edd48d763665fe1ba591d402"
+                "reference": "0f103c4ff1d64810c0ca83d9bf8cbe3532d8b1be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/a7767bbf34c67544edd48d763665fe1ba591d402",
-                "reference": "a7767bbf34c67544edd48d763665fe1ba591d402",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/0f103c4ff1d64810c0ca83d9bf8cbe3532d8b1be",
+                "reference": "0f103c4ff1d64810c0ca83d9bf8cbe3532d8b1be",
                 "shasum": ""
             },
             "require": {
@@ -842,7 +849,7 @@
                 }
             ],
             "description": "Templating for Canvas course objects",
-            "time": "2016-04-04 13:26:22"
+            "time": "2016-06-08 19:41:44"
         },
         {
             "name": "fxp/composer-asset-plugin",
@@ -850,12 +857,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/francoispluchino/composer-asset-plugin.git",
-                "reference": "97a9a94a8b1f6add76a427daf06270d47e0c1b6b"
+                "reference": "7f3338b433ca21ae8e8f56d4b5a82f0146242dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/97a9a94a8b1f6add76a427daf06270d47e0c1b6b",
-                "reference": "97a9a94a8b1f6add76a427daf06270d47e0c1b6b",
+                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/7f3338b433ca21ae8e8f56d4b5a82f0146242dce",
+                "reference": "7f3338b433ca21ae8e8f56d4b5a82f0146242dce",
                 "shasum": ""
             },
             "require": {
@@ -898,7 +905,7 @@
                 "npm",
                 "package"
             ],
-            "time": "2016-05-04 08:21:07"
+            "time": "2016-05-28 15:47:37"
         },
         {
             "name": "pear/log",
@@ -1014,12 +1021,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "608064e5f234b5b5884adf03901dc015462a86bc"
+                "reference": "b46a9a8dbd610323cb04c4a567405147d12dc570"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/608064e5f234b5b5884adf03901dc015462a86bc",
-                "reference": "608064e5f234b5b5884adf03901dc015462a86bc",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/b46a9a8dbd610323cb04c4a567405147d12dc570",
+                "reference": "b46a9a8dbd610323cb04c4a567405147d12dc570",
                 "shasum": ""
             },
             "require": {
@@ -1061,7 +1068,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-05-07 11:46:37"
+            "time": "2016-05-28 01:33:32"
         },
         {
             "name": "smtech/canvaspest",
