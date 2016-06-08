@@ -8,11 +8,8 @@ header("Pragma: no-cache"); // HTTP 1.0
 header("Expires: 0"); // Proxies
 
 define('IGNORE_LTI', true);
-require_once('common.inc.php');
 
-if (!empty($_REQUEST['location']) && preg_match('%^https://stmarksschool\.beta\.instructure\.com%', $_REQUEST['location'])) {
-	exit;
-}
+require_once('common.inc.php');
 
 use \Battis\AppMetadata;
 
