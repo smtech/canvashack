@@ -27,6 +27,7 @@ $toolbox->smarty_assign([
  $api =& $toolbox->getAPI();
  $sql =& $toolbox->getMySQL();
  $smarty =& $toolbox->getSmarty();
+ $customPrefs =& $toolbox->getCustomPrefs();
 
 /* set the Tool Consumer's instance URL, if present */
 if (empty($_SESSION[CANVAS_INSTANCE_URL]) &&
