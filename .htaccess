@@ -1,21 +1,10 @@
-# block access to all Apache config files
-<FilesMatch "^.ht*">
-	Order allow,deny
-	Deny from all
-</FilesMatch>
-
-# block access by file extension
-<FilesMatch "(\.sql|\.inc.php)$">
-	Order allow,deny
-	Deny from all
-</FilesMatch>
+# Block access to things that should stay private
+<Files ~ "(.xml|.sql|.inc.php|.git*|.log|.tpl)">
+    Order allow,deny
+    Deny from all
+</Files>
 
 # block verboten directories
-RedirectMatch 404 /classes(/|$)
+# RedirectMatch 404 /consumers.php
+RedirectMatch 404 /src(/|$)
 RedirectMatch 404 /logs(/|$)
-
-# block access to secrets.xml
-<Files secrets.xml>
-	Order allow,deny
-	Deny from all
-</Files>

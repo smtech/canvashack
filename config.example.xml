@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+
+    <!-- Information about the tool provider (used to generate config.xml for the tool!)-->
+    <tool>
+        <name>CanvasHack</name>
+        <description>Modular Javascript and CSS hacks to the Canvas UI with access to MySQL database storage and the Canvas API</description>
+        <id>smtech-canvashack</id>
+        <authenticate>index.php</authenticate>
+
+        <!-- handler paths are relative to this configuration XML file -->
+        <handlers>
+            <base>control-panel.php</base>
+        </handlers>
+
+        <!-- Where is the log file for the tool provider? (path relative to this XML file) -->
+        <log>logs/canvashack.log</log>
+    </tool>
+
+    <!-- Credentials for MySQL database -->
+    <mysql>
+        <host>localhost</host>
+        <username>canvashack</username>
+        <password>ibd`f6jL$ySE589</password>
+        <database>canvashack</database>
+        <customprefs>
+            <host>localhost</host>
+            <username>canvas-cust-pref</username>
+            <password>S2uPUmWHwoGq0ei</password>
+            <database>canvas-custom-prefs</database>
+        </customprefs>
+</mysql>
+
+    <!-- Credentials for Canvas API (either <url> and <token> OR <key> and <secret> for OAuth token request) -->
+    <canvas>
+        <key>160000000000012</key>
+        <secret>m4EHehkSO0aaXGO8v7rNm6w4EG4UyMbcHFic9uForeBkxlRIYAXiKPVOb2E3Bf4E</secret>
+    </canvas>
+</config>

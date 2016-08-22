@@ -1,18 +1,7 @@
-# authentication credentials
-.htpasswd
-secrets.xml
-
-# dynamically-loaded and/or caches
-/logs/*.log
 /vendor/
-/smarty/cache/*
-!/smarty/cache/README.md
-/smarty/templates_c/*
-!/smarty/templates_c/README.md
-/admin/.htaccess
+/phpdoc/
+coverage.clover
+config.xml
+
 /hacks/*
 !/hacks/*.*
-
-# file system
-.DS_*
-node_modules

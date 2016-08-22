@@ -1,19 +1,8 @@
-/* the table to store user tokens (admin tokens are stored in the AppMetadata table) */
-CREATE TABLE IF NOT EXISTS `user_tokens` (
-  `consumer_key` varchar(255) NOT NULL DEFAULT '',
-  `id` varchar(255) NOT NULL DEFAULT '',
-  `token` varchar(255) DEFAULT '',
-  `api_url` text,
-  `modified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/* add any other tables to support the application logic here */
 
 # Dump of table canvashacks
 # ------------------------------------------------------------
 
-CREATE TABLE `canvashacks` (
+CREATE TABLE IF NOT EXISTS `canvashacks` (
   `id` varchar(255) NOT NULL DEFAULT '',
   `name` text NOT NULL,
   `abstract` varchar(512) DEFAULT NULL,
@@ -30,7 +19,7 @@ CREATE TABLE `canvashacks` (
 # Dump of table css
 # ------------------------------------------------------------
 
-CREATE TABLE `css` (
+CREATE TABLE IF NOT EXISTS `css` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `canvashack` varchar(255) NOT NULL DEFAULT '',
   `path` text NOT NULL,
@@ -43,7 +32,7 @@ CREATE TABLE `css` (
 # Dump of table dom
 # ------------------------------------------------------------
 
-CREATE TABLE `dom` (
+CREATE TABLE IF NOT EXISTS `dom` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `canvashack` varchar(255) NOT NULL DEFAULT '',
   `page` varchar(32) DEFAULT '',
@@ -61,7 +50,7 @@ CREATE TABLE `dom` (
 # Dump of table javascript
 # ------------------------------------------------------------
 
-CREATE TABLE `javascript` (
+CREATE TABLE IF NOT EXISTS `javascript` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `canvashack` varchar(255) NOT NULL DEFAULT '',
   `path` text NOT NULL,

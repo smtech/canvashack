@@ -1,59 +1,58 @@
 {
-	"name": "smtech/canvas-api-via-lti",
-	"description": "An LTI Tool Provider that also provides access to the Canvas API",
-	"license": "LGPL-3.0",
-	"config": {
-		"secure-http": false
-	},
-	"repositories": [
-		{
-			"type": "package",
-			"package": {
-				"name": "spvsoftwareproducts/LTI_Tool_Provider",
-				"version": "2.5.01",
-				"dist": {
-					"url": "http://projects.oscelot.org/gf/download/frsrelease/956/6025/LTI_Tool_Provider-2.5.01.zip",
-					"type": "zip"
-				},
-				"license": "LGPL-3.0",
-				"authors": [
-					{
-						"name": "Stephen Vickers"
-					}   
-				],
-				"homepage": "http://spvsoftwareproducts.com/php/lti_tool_provider/"
-			}
-		}
-	],
-	"require": {
-		"smtech/stmarkssmarty": "dev-master",
-		"smtech/canvaspest": "~1.0",
-		"smtech/oauth-negotiator": "~1.0",
-		"battis/appmetadata": "~1.0",
-		"spvsoftwareproducts/LTI_Tool_Provider": "~2.5",
-		"pear/log": "~1.12",
-		"battis/configxml": "~1.0",
-		"canvashack/installer": "*",
-		"canvashack/plugin-auto-open-feedback": "dev-master",
-		"canvashack/plugin-cache-and-show-rubrics" : "dev-master",
-		"canvashack/plugin-enrollment-info-ui-tweaks": "dev-master",
-		"canvashack/plugin-discussion-permalinks": "dev-master",
-		"canvashack/plugin-global-navigation-menu": "dev-master",
-		"canvashack/plugin-templates": "dev-master",
-		"canvashack/plugin-stmarks-color-schedule": "dev-master",
-		"canvashack/plugin-organize-user-enrollments": "dev-master",
-		"canvashack/plugin-faculty-journal": "dev-master",
-		"canvashack/plugin-embedded-documentation": "dev-master",
-		"canvashack/plugin-lock-notifications": "dev-master"
-	},
-	"autoload": {
-		"classmap": [""]
-	},
-	"authors": [
-		{
-			"name": "Seth Battis",
-			"email": "sethbattis@stmarksschool.org"
-		}
-	],
-	"minimum-stability": "dev"
+    "name": "smtech/canvashack",
+    "description": "Modular Javascript and CSS hacks to the Canvas UI with access to MySQL database storage and the Canvas API",
+    "authors": [
+        {
+            "name": "Seth Battis",
+            "email": "sethbattis@stmarksschool.org"
+        }
+    ],
+    "license": "LGPL-3.0",
+    "require": {
+        "smtech/stmarks-reflexive-canvas-lti": "~0.2",
+        "battis/mysql-schema-loader": "dev-master",
+        "canvashack/installer": "~1.0",
+        "canvashack/plugin-auto-open-feedback": "dev-master",
+        "canvashack/plugin-cache-and-show-rubrics" : "dev-master",
+        "canvashack/plugin-enrollment-info-ui-tweaks": "dev-master",
+        "canvashack/plugin-discussion-permalinks": "dev-master",
+        "canvashack/plugin-global-navigation-menu": "dev-master",
+        "canvashack/plugin-templates": "dev-master",
+        "canvashack/plugin-stmarks-color-schedule": "dev-master",
+        "canvashack/plugin-organize-user-enrollments": "dev-master",
+        "canvashack/plugin-faculty-journal": "dev-master",
+        "canvashack/plugin-embedded-documentation": "dev-master",
+        "canvashack/plugin-lock-notifications": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "smtech\\CanvasHack\\": "src"
+        }
+    },
+    "config": {
+        "secure-http": false
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "spvsoftwareproducts/LTI_Tool_Provider",
+                "version": "2.5.01",
+                "dist": {
+                    "url": "http://projects.oscelot.org/gf/download/frsrelease/956/6025/LTI_Tool_Provider-2.5.01.zip",
+                    "type": "zip"
+                },
+                "license": "LGPL-3.0",
+                "authors": [
+                    {
+                        "name": "Stephen Vickers"
+                    }
+                ],
+                "homepage": "http://spvsoftwareproducts.com/php/lti_tool_provider/",
+                "autoload": {
+                    "classmap": ["./"]
+                }
+            }
+        }
+    ]
 }

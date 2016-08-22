@@ -1,5 +1,8 @@
 # CanvasHack
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/smtech/canvashack/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/smtech/canvashack/?branch=master)
+
+
 This is a "reflexive LTI add-on" for Canvas that allows for a minor ecosystem of smaller, modular CSS and JavaScript tweaks to the Canvas UI. The "reflexive" nature of this structure allows the plug-ins to access the Canvas API to make more complex modifications and additions to the UI (e.g. per-course assignment templates or additional global navigation menus).
 
 ### Pre-Release Warning

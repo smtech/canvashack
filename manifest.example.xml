@@ -1,35 +1,35 @@
 <?xml version="1.0"?>
 <canvashack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="./canvashack.xsd">
-	<title>Global Navigation Menus</title>
-	<id>global-navigation-menus</id>
-	<abstract>Add custom global navigation menus to the Canvas UI</abstract>
-	<description>This plugin adds configurable, custom, drop-down menus to the global navigation bar in Canvas. The basic styling is provided by JQuery, with some (minor) customization performed by the `navbar.css` file. The menus optionally provide click-tracking analytics to allow for optimal organization.</description>
-	<authors>
-		<author name="Seth Battis" email="SethBattis@stmarksschool.org" url="https://github.com/smtech"/>
-	</authors>
-	<components>
-		<scripts>
-			<file path="menu-loader.js"/>
-		</scripts>
-		<stylesheets>
-			<file path="navbar.css"/>
-		</stylesheets>
-		<canvas>
-			<pages>
-				<include>
-					<page type="regex" match="/.*/"/>
-				</include>
-			</pages>
-			<dom>
-				<node selector="#menu" method="loadMenus()"/>
-			</dom>
-		</canvas>
-	</components>
-	<config>
-		<option name="menu-db-host" description="MySQL host for the menu database (defaults to the CanvasHack database host)."/>
-		<option name="menu-db-user" description="MySQL user for the menu database (defaults to the CanvasHack database user)"/>
-		<option name="menu-db-password" description="MySQL password for the menu database (defaults to the CnavasHack database password)"/>
-		<option name="menu-db-database" description="MySQL database for the menu database (defaults to the CanvasHack database)"/>
-		<option name="analytics" type="bool" description="Whether or not to track user click analytics on menu items"/>
-	</config>
+    <title>Global Navigation Menus</title>
+    <id>global-navigation-menus</id>
+    <abstract>Add custom global navigation menus to the Canvas UI</abstract>
+    <description>This plugin adds configurable, custom, drop-down menus to the global navigation bar in Canvas. The basic styling is provided by JQuery, with some (minor) customization performed by the `navbar.css` file. The menus optionally provide click-tracking analytics to allow for optimal organization.</description>
+    <authors>
+        <author name="Seth Battis" email="SethBattis@stmarksschool.org" url="https://github.com/smtech"/>
+    </authors>
+    <components>
+        <scripts>
+            <file path="menu-loader.js"/>
+        </scripts>
+        <stylesheets>
+            <file path="navbar.css"/>
+        </stylesheets>
+        <canvas>
+            <pages>
+                <include>
+                    <page type="regex" match="/.*/"/>
+                </include>
+            </pages>
+            <dom>
+                <node selector="#menu" method="loadMenus()"/>
+            </dom>
+        </canvas>
+    </components>
+    <config>
+        <option name="menu-db-host" description="MySQL host for the menu database (defaults to the CanvasHack database host)."/>
+        <option name="menu-db-user" description="MySQL user for the menu database (defaults to the CanvasHack database user)"/>
+        <option name="menu-db-password" description="MySQL password for the menu database (defaults to the CnavasHack database password)"/>
+        <option name="menu-db-database" description="MySQL database for the menu database (defaults to the CanvasHack database)"/>
+        <option name="analytics" type="bool" description="Whether or not to track user click analytics on menu items"/>
+    </config>
 </canvashack>

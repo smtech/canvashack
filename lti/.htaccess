@@ -1,6 +1,0 @@
-# force processing of config.xml as PHP
-<Files config.xml>
-	ForceType application/x-httpd-php
-	SetHandler application/x-httpd-php
-</Files>
-
