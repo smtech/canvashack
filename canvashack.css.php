@@ -30,7 +30,7 @@ function canvasHackNamespace($id, $javascript)
 }
 
 $canvashacks = array();
-$enabledPages = $sql->query("
+$enabledPages = $toolbox->sql_query("
     SELECT p.*
         FROM `pages` AS p
         INNER JOIN `canvashacks` AS c
@@ -53,7 +53,7 @@ while ($page = $enabledPages->fetch_assoc()) {
 }
 
 $css = array();
-if (($applicableCSS = $sql->query("
+if (($applicableCSS = $toolbox->sql_query("
     SELECT *
         FROM `css`
         WHERE
@@ -66,7 +66,7 @@ while ($entry = $applicableCSS->fetch_assoc()) {
 }
 
 foreach ($css as $id => $stylesheet) {
-    $plugin = new AppMetadata($sql, $id);
+    $plugin = new AppMetadata($toolbox->getMySQL(), $id);
     echo "/* CanvasHack ID $id begin */\n";
     echo $plugin->derivedValues($stylesheet);
     echo "\n/* CanvasHack ID $id end */\n\n";

@@ -9,7 +9,7 @@ use Battis\BootstrapSmarty\NotificationMessage;
 if (isset($_REQUEST['hack'])) {
     while (list($id, $setting) = each($_REQUEST['hack'])) {
         try {
-            $hack = CanvasHack::getCanvasHackById($sql, $id);
+            $hack = CanvasHack::getCanvasHackById($toolbox->getMySQL(), $id);
             if ($setting === 'enable') {
                 $hack->enable();
             } else {
@@ -26,7 +26,7 @@ $hacks = array();
 foreach ($hacksContents as $item) {
     if (is_dir($path = realpath(__DIR__ . "/hacks/$item")) && file_exists($manifest = "$path/manifest.xml")) {
         try {
-            $hacks[$item] = new CanvasHack($sql, $path);
+            $hacks[$item] = new CanvasHack($toolbox->getMySQL(), $path);
         } catch (CanvasHack_Exception $e) {
             $smarty->addMessage(
                 'CanvasHack Manifest Error ['. $e->getCode() . ']',
@@ -38,7 +38,7 @@ foreach ($hacksContents as $item) {
 }
 
 $smarty->assign([
-    'appURL' => $metadata['APP_URL'],
+    'appURL' => $toolbox->config('APP_URL'),
     'hacks' => $hacks
 ]);
 $smarty->display('control-panel.tpl');

@@ -10,9 +10,9 @@ if (!empty($_REQUEST['download'])) {
 
 ?>
 var args = {
-	current_user: ENV.current_user,
-	current_user_roles: ENV.current_user_roles,
-	location: window.location.href
+  current_user: ENV.current_user,
+  current_user_roles: ENV.current_user_roles,
+  location: window.location.href
 };
-$('head').append('<link id="canvashack-dynamic-css" rel="stylesheet" href="<?= $metadata['APP_URL'] ?>/canvashack.css.php?' + $.param(args) + '" />');
-$.getScript('<?= $metadata['APP_URL'] ?>/canvashack.js.php?' + $.param(args));
+$('head').append('<link id="canvashack-dynamic-css" rel="stylesheet" href="<?= $toolbox->config('APP_URL') ?>/canvashack.css.php?' + $.param(args) + '" />');
+$.getScript('<?= $toolbox-config('APP_URL') ?>/canvashack.js.php?' + $.param(args));

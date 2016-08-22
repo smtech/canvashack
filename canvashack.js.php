@@ -25,7 +25,7 @@ header("Pragma: no-cache"); // HTTP 1.0
 header("Expires: 0"); // Proxies
 
 $canvashacks = array();
-$enabledPages = $sql->query("
+$enabledPages = $toolbox->sql_query("
     SELECT p.*
         FROM `pages` AS p
         INNER JOIN `canvashacks` AS c
@@ -47,7 +47,7 @@ while ($page = $enabledPages->fetch_assoc()) {
 }
 
 $dom = array();
-if (($applicableDOM = $sql->query("
+if (($applicableDOM = $toolbox->sql_query("
     SELECT *
         FROM `dom`
         WHERE
@@ -66,7 +66,7 @@ $javascript = array('go' => 'go: function() {
     ' . implode(PHP_EOL . "\t", $dom) . '
 }');
 
-if (($response = $sql->query("
+if (($response = $toolbox->sql_query("
     SELECT *
         FROM `javascript`
         WHERE
