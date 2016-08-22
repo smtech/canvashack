@@ -1,6 +1,5 @@
 <?php
 
-define('IGNORE_LTI', true);
 require_once 'common.inc.php';
 
 function canonicalNamespaceId($id)
@@ -25,7 +24,7 @@ header("Pragma: no-cache"); // HTTP 1.0
 header("Expires: 0"); // Proxies
 
 $canvashacks = array();
-$enabledPages = $toolbox->sql_query("
+$enabledPages = $toolbox->mysql_query("
     SELECT p.*
         FROM `pages` AS p
         INNER JOIN `canvashacks` AS c
@@ -47,7 +46,7 @@ while ($page = $enabledPages->fetch_assoc()) {
 }
 
 $dom = array();
-if (($applicableDOM = $toolbox->sql_query("
+if (($applicableDOM = $toolbox->mysql_query("
     SELECT *
         FROM `dom`
         WHERE
@@ -66,7 +65,7 @@ $javascript = array('go' => 'go: function() {
     ' . implode(PHP_EOL . "\t", $dom) . '
 }');
 
-if (($response = $toolbox->sql_query("
+if (($response = $toolbox->mysql_query("
     SELECT *
         FROM `javascript`
         WHERE

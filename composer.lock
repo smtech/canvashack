@@ -706,12 +706,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-global-navigation-menu.git",
-                "reference": "54d1df17b1de3314228e36c6418650be0b4366d6"
+                "reference": "7e8992c63356fb8c4d073f4094fc49b040ab27fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/54d1df17b1de3314228e36c6418650be0b4366d6",
-                "reference": "54d1df17b1de3314228e36c6418650be0b4366d6",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/7e8992c63356fb8c4d073f4094fc49b040ab27fe",
+                "reference": "7e8992c63356fb8c4d073f4094fc49b040ab27fe",
                 "shasum": ""
             },
             "require": {
@@ -735,7 +735,7 @@
                 }
             ],
             "description": "Add additional menus to the global navigation in Canvas",
-            "time": "2016-08-22 03:35:49"
+            "time": "2016-08-22 20:04:40"
         },
         {
             "name": "canvashack/plugin-lock-notifications",
@@ -802,12 +802,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-stmarks-branding.git",
-                "reference": "0d343a98dca3c92464e269a7a575a82e58ef958a"
+                "reference": "4d8dcbf1d936067c1e300da09dc1bca45518d108"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/0d343a98dca3c92464e269a7a575a82e58ef958a",
-                "reference": "0d343a98dca3c92464e269a7a575a82e58ef958a",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/4d8dcbf1d936067c1e300da09dc1bca45518d108",
+                "reference": "4d8dcbf1d936067c1e300da09dc1bca45518d108",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -822,7 +822,7 @@
                 }
             ],
             "description": "General branding settings for St. Mark's school within Canvas",
-            "time": "2016-08-22 03:46:41"
+            "time": "2016-08-22 20:13:04"
         },
         {
             "name": "canvashack/plugin-stmarks-color-schedule",

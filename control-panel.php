@@ -39,6 +39,8 @@ foreach ($hacksContents as $item) {
 
 $smarty->assign([
     'appURL' => $toolbox->config('APP_URL'),
-    'hacks' => $hacks
+    'hacks' => $hacks,
+    'name' => 'CanvasHack',
+    'category' => 'Control Panel'
 ]);
 $smarty->display('control-panel.tpl');

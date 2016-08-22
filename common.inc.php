@@ -16,19 +16,20 @@ if (empty($_SESSION[Toolbox::class])) {
     $_SESSION[Toolbox::class] =& Toolbox::fromConfiguration(CONFIG_FILE);
 }
 $toolbox =& $_SESSION[Toolbox::class];
-echo '<pre>'; var_dump($toolbox); exit;
-$toolbox->smarty_prependTemplateDir(__DIR__ . '/templates', basename(__DIR__));
-$toolbox->smarty_assign([
-    'category' => DataUtilities::titleCase(preg_replace('/[\-_]+/', ' ', basename(__DIR__)))
-]);
+if (php_sapi_name() !== 'cli') {
+    $toolbox->smarty_prependTemplateDir(__DIR__ . '/templates', basename(__DIR__));
+    $toolbox->smarty_assign([
+        'category' => DataUtilities::titleCase(preg_replace('/[\-_]+/', ' ', basename(__DIR__)))
+    ]);
+     $smarty =& $toolbox->getSmarty(); // FIXME
+}
 
 /*
  * FIXME convience variables until plugins are all updated
  */
- $api =& $toolbox->getAPI();
- $sql =& $toolbox->getMySQL();
- $smarty =& $toolbox->getSmarty();
- $customPrefs =& $toolbox->getCustomPrefs();
+$api =& $toolbox->getAPI();
+$sql =& $toolbox->getMySQL();
+$customPrefs =& $toolbox->getCustomPrefs();
 
 /* set the Tool Consumer's instance URL, if present */
 if (empty($_SESSION[CANVAS_INSTANCE_URL]) &&

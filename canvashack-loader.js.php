@@ -15,4 +15,4 @@ var args = {
   location: window.location.href
 };
 $('head').append('<link id="canvashack-dynamic-css" rel="stylesheet" href="<?= $toolbox->config('APP_URL') ?>/canvashack.css.php?' + $.param(args) + '" />');
-$.getScript('<?= $toolbox-config('APP_URL') ?>/canvashack.js.php?' + $.param(args));
+$.getScript('<?= $toolbox->config('APP_URL') ?>/canvashack.js.php?' + $.param(args));
