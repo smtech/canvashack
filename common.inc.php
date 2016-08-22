@@ -16,6 +16,7 @@ if (empty($_SESSION[Toolbox::class])) {
     $_SESSION[Toolbox::class] =& Toolbox::fromConfiguration(CONFIG_FILE);
 }
 $toolbox =& $_SESSION[Toolbox::class];
+echo '<pre>'; var_dump($toolbox); exit;
 $toolbox->smarty_prependTemplateDir(__DIR__ . '/templates', basename(__DIR__));
 $toolbox->smarty_assign([
     'category' => DataUtilities::titleCase(preg_replace('/[\-_]+/', ' ', basename(__DIR__)))

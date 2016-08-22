@@ -1,6 +1,6 @@
 <?php
 
-require_once('common.inc.php');
+require_once 'common.inc.php';
 
 use smtech\CanvasHack\CanvasHack;
 use smtech\CanvasHack\CanvasHack_Exception;
@@ -37,6 +37,8 @@ foreach ($hacksContents as $item) {
     }
 }
 
-$smarty->assign('appURL', $metadata['APP_URL']);
-$smarty->assign('hacks', $hacks);
+$smarty->assign([
+    'appURL' => $metadata['APP_URL'],
+    'hacks' => $hacks
+]);
 $smarty->display('control-panel.tpl');

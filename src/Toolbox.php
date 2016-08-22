@@ -4,6 +4,7 @@ namespace smtech\CanvasHack;
 
 use mysqli;
 use Battis\ConfigXML;
+use smtech\LTI\Configuration\Option;
 
 class Toolbox extends \smtech\StMarksReflexiveCanvasLTI\Toolbox
 {
@@ -23,7 +24,7 @@ class Toolbox extends \smtech\StMarksReflexiveCanvasLTI\Toolbox
         parent::getGenerator();
 
         $this->generator->setOptionProperty(
-            Option::COURSE_NAVIGATION(),
+            Option::ACCOUNT_NAVIGATION(),
             'visibility',
             'admins'
         );
@@ -47,7 +48,7 @@ class Toolbox extends \smtech\StMarksReflexiveCanvasLTI\Toolbox
         $config = new ConfigXML($configFilePath);
 
         /* configure database connections */
-        $this->setCustomPrefs($config->newInstanceOf(mysqli::class, '/config/mysql/customprefs'));
+        $this->setCustomPrefs($config->newInstanceOf(mysqli::class, '/config/customprefs'));
     }
 
     /**

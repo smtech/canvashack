@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ffa6ec3c7260216580c2fe093c7657a5",
-    "content-hash": "8078ac85731182962e760cb5e83eebee",
+    "hash": "f05d897ff28da3d71b575aace96bb74b",
+    "content-hash": "ef9d2cdcf270016d06ecaf8a43204fd1",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -795,6 +795,34 @@
             ],
             "description": "Provide a more organized (and readable) listing of users' enrollments",
             "time": "2016-05-24 11:41:12"
+        },
+        {
+            "name": "canvashack/plugin-stmarks-branding",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-stmarks-branding.git",
+                "reference": "0d343a98dca3c92464e269a7a575a82e58ef958a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/0d343a98dca3c92464e269a7a575a82e58ef958a",
+                "reference": "0d343a98dca3c92464e269a7a575a82e58ef958a",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "General branding settings for St. Mark's school within Canvas",
+            "time": "2016-08-22 03:46:41"
         },
         {
             "name": "canvashack/plugin-stmarks-color-schedule",
@@ -1805,7 +1833,8 @@
         "canvashack/plugin-organize-user-enrollments": 20,
         "canvashack/plugin-faculty-journal": 20,
         "canvashack/plugin-embedded-documentation": 20,
-        "canvashack/plugin-lock-notifications": 20
+        "canvashack/plugin-lock-notifications": 20,
+        "canvashack/plugin-stmarks-branding": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

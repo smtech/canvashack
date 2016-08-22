@@ -23,7 +23,8 @@
         "canvashack/plugin-organize-user-enrollments": "dev-master",
         "canvashack/plugin-faculty-journal": "dev-master",
         "canvashack/plugin-embedded-documentation": "dev-master",
-        "canvashack/plugin-lock-notifications": "dev-master"
+        "canvashack/plugin-lock-notifications": "dev-master",
+        "canvashack/plugin-stmarks-branding": "dev-master"
     },
     "autoload": {
         "psr-4": {
