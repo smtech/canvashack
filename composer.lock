@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cc0f020088f574bc4fe8ed32d22ce9ea",
-    "content-hash": "f244c9e6c1b8ed985a849a4a8c36c498",
+    "hash": "93601e5895af7328e3d5695123c91d1b",
+    "content-hash": "91d226eb6461d6142343da7261a55a16",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -582,6 +582,34 @@
             "time": "2016-06-08 19:38:01"
         },
         {
+            "name": "canvashack/plugin-customprefs-hidden-calendars",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-customprefs-hidden-calendars.git",
+                "reference": "5e85c12d29bd6d2eea421f4a22f95b17ea217a2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-customprefs-hidden-calendars/zipball/5e85c12d29bd6d2eea421f4a22f95b17ea217a2d",
+                "reference": "5e85c12d29bd6d2eea421f4a22f95b17ea217a2d",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "[Requires CustomPrefs module] Hide \"hidden\" calendars",
+            "time": "2016-08-24 02:05:16"
+        },
+        {
             "name": "canvashack/plugin-discussion-permalinks",
             "version": "dev-master",
             "source": {
@@ -706,12 +734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-full-size-assignments.git",
-                "reference": "5c6fbbe63362ac0266f5a33475b1735eebc2e391"
+                "reference": "ddc5435e8a426a37e08a07feee5437426e646f15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-full-size-assignments/zipball/5c6fbbe63362ac0266f5a33475b1735eebc2e391",
-                "reference": "5c6fbbe63362ac0266f5a33475b1735eebc2e391",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-full-size-assignments/zipball/ddc5435e8a426a37e08a07feee5437426e646f15",
+                "reference": "ddc5435e8a426a37e08a07feee5437426e646f15",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -726,7 +754,7 @@
                 }
             ],
             "description": "Show assignments in a full-height pane, rather than a squinched-up, itty-bitty view",
-            "time": "2016-08-24 01:03:09"
+            "time": "2016-08-24 01:46:00"
         },
         {
             "name": "canvashack/plugin-global-navigation-menu",
@@ -830,12 +858,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-stmarks-branding.git",
-                "reference": "124906f71ee37df9a7c9a21de0d42990d22c27a2"
+                "reference": "23b6f5e59d955f5ec83c47a2f3a09150728a373b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/124906f71ee37df9a7c9a21de0d42990d22c27a2",
-                "reference": "124906f71ee37df9a7c9a21de0d42990d22c27a2",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/23b6f5e59d955f5ec83c47a2f3a09150728a373b",
+                "reference": "23b6f5e59d955f5ec83c47a2f3a09150728a373b",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -850,7 +878,7 @@
                 }
             ],
             "description": "General branding settings for St. Mark's school within Canvas",
-            "time": "2016-08-24 00:54:02"
+            "time": "2016-08-24 01:46:14"
         },
         {
             "name": "canvashack/plugin-stmarks-color-schedule",
@@ -1862,6 +1890,7 @@
         "canvashack/plugin-lock-notifications": 20,
         "canvashack/plugin-organize-user-enrollments": 20,
         "canvashack/plugin-templates": 20,
+        "canvashack/plugin-customprefs-hidden-calendars": 20,
         "canvashack/plugin-stmarks-branding": 20,
         "canvashack/plugin-stmarks-color-schedule": 20
     },

@@ -24,6 +24,7 @@
         "canvashack/plugin-lock-notifications": "dev-master",
         "canvashack/plugin-organize-user-enrollments": "dev-master",
         "canvashack/plugin-templates": "dev-master",
+        "canvashack/plugin-customprefs-hidden-calendars": "dev-master",
         "canvashack/plugin-stmarks-branding": "dev-master",
         "canvashack/plugin-stmarks-color-schedule": "dev-master"
     },
