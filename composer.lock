@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0f0f848e228ed9578ce8f9b564d9fd92",
-    "content-hash": "a4a09729687d8f85b9d2ccb7f72b8642",
+    "hash": "2ed9bc77e8f5a7738aa7a8b5c1169371",
+    "content-hash": "cef40b04021ae13455ed3c3063826ff1",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -582,6 +582,36 @@
             "time": "2016-06-08 19:38:01"
         },
         {
+            "name": "canvashack/plugin-canvabadges",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-canvabadges.git",
+                "reference": "a001b43a7d1ec9ef7e4dac0bcb4bd7cb24789b6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-canvabadges/zipball/a001b43a7d1ec9ef7e4dac0bcb4bd7cb24789b6c",
+                "reference": "a001b43a7d1ec9ef7e4dac0bcb4bd7cb24789b6c",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Brian Whitmer",
+                    "role": "CanvaBadges Author"
+                },
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org",
+                    "role": "CanvasHack Plugin"
+                }
+            ],
+            "description": "Install the CanvaBadges snippet to allow users to share their badges on their user profile",
+            "time": "2016-08-24 20:41:22"
+        },
+        {
             "name": "canvashack/plugin-customprefs-hidden-calendars",
             "version": "dev-master",
             "source": {
@@ -858,12 +888,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-small-navigation-icons.git",
-                "reference": "7e757de499a9218d264a4bd58240d74d68913eca"
+                "reference": "d910003f7ced1ef2afdc25413e9923e44ec3f65e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-small-navigation-icons/zipball/7e757de499a9218d264a4bd58240d74d68913eca",
-                "reference": "7e757de499a9218d264a4bd58240d74d68913eca",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-small-navigation-icons/zipball/d910003f7ced1ef2afdc25413e9923e44ec3f65e",
+                "reference": "d910003f7ced1ef2afdc25413e9923e44ec3f65e",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -878,7 +908,7 @@
                 }
             ],
             "description": "Show global navigation icons at a smaller size",
-            "time": "2016-08-24 20:01:33"
+            "time": "2016-08-24 20:34:33"
         },
         {
             "name": "canvashack/plugin-stmarks-branding",
@@ -1908,6 +1938,7 @@
     "stability-flags": {
         "battis/mysql-schema-loader": 20,
         "canvashack/plugin-auto-open-feedback": 20,
+        "canvashack/plugin-canvabadges": 20,
         "canvashack/plugin-cache-and-show-rubrics": 20,
         "canvashack/plugin-discussion-permalinks": 20,
         "canvashack/plugin-embedded-documentation": 20,
