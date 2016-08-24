@@ -32,8 +32,10 @@ $sql =& $toolbox->getMySQL();
 $customPrefs =& $toolbox->getCustomPrefs();
 
 /* set the Tool Consumer's instance URL, if present */
-if (empty($_SESSION[CANVAS_INSTANCE_URL]) &&
-    !empty($_SESSION[ToolProvider::class]['canvas']['api_domain'])
-) {
-    $_SESSION[CANVAS_INSTANCE_URL] = 'https://' . $_SESSION[ToolProvider::class]['canvas']['api_domain'];
+if (empty($_SESSION[CANVAS_INSTANCE_URL])) {
+    if (!empty($_SESSION[ToolProvider::class]['canvas']['api_domain'])) {
+        $_SESSION[CANVAS_INSTANCE_URL] = 'https://' . $_SESSION[ToolProvider::class]['canvas']['api_domain'];
+    } else {
+        $_SESSION[CANVAS_INSTANCE_URL] = $toolbox->config('TOOL_CANVAS_API')['url'];
+    }
 }
