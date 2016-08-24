@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f05d897ff28da3d71b575aace96bb74b",
-    "content-hash": "ef9d2cdcf270016d06ecaf8a43204fd1",
+    "hash": "cc0f020088f574bc4fe8ed32d22ce9ea",
+    "content-hash": "f244c9e6c1b8ed985a849a4a8c36c498",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -701,6 +701,34 @@
             "time": "2016-08-04 20:52:50"
         },
         {
+            "name": "canvashack/plugin-full-size-assignments",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-full-size-assignments.git",
+                "reference": "5c6fbbe63362ac0266f5a33475b1735eebc2e391"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-full-size-assignments/zipball/5c6fbbe63362ac0266f5a33475b1735eebc2e391",
+                "reference": "5c6fbbe63362ac0266f5a33475b1735eebc2e391",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Show assignments in a full-height pane, rather than a squinched-up, itty-bitty view",
+            "time": "2016-08-24 01:03:09"
+        },
+        {
             "name": "canvashack/plugin-global-navigation-menu",
             "version": "dev-master",
             "source": {
@@ -802,12 +830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-stmarks-branding.git",
-                "reference": "4d8dcbf1d936067c1e300da09dc1bca45518d108"
+                "reference": "124906f71ee37df9a7c9a21de0d42990d22c27a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/4d8dcbf1d936067c1e300da09dc1bca45518d108",
-                "reference": "4d8dcbf1d936067c1e300da09dc1bca45518d108",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/124906f71ee37df9a7c9a21de0d42990d22c27a2",
+                "reference": "124906f71ee37df9a7c9a21de0d42990d22c27a2",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -822,7 +850,7 @@
                 }
             ],
             "description": "General branding settings for St. Mark's school within Canvas",
-            "time": "2016-08-22 20:13:04"
+            "time": "2016-08-24 00:54:02"
         },
         {
             "name": "canvashack/plugin-stmarks-color-schedule",
@@ -1825,16 +1853,17 @@
         "battis/mysql-schema-loader": 20,
         "canvashack/plugin-auto-open-feedback": 20,
         "canvashack/plugin-cache-and-show-rubrics": 20,
-        "canvashack/plugin-enrollment-info-ui-tweaks": 20,
         "canvashack/plugin-discussion-permalinks": 20,
-        "canvashack/plugin-global-navigation-menu": 20,
-        "canvashack/plugin-templates": 20,
-        "canvashack/plugin-stmarks-color-schedule": 20,
-        "canvashack/plugin-organize-user-enrollments": 20,
-        "canvashack/plugin-faculty-journal": 20,
         "canvashack/plugin-embedded-documentation": 20,
+        "canvashack/plugin-enrollment-info-ui-tweaks": 20,
+        "canvashack/plugin-faculty-journal": 20,
+        "canvashack/plugin-full-size-assignments": 20,
+        "canvashack/plugin-global-navigation-menu": 20,
         "canvashack/plugin-lock-notifications": 20,
-        "canvashack/plugin-stmarks-branding": 20
+        "canvashack/plugin-organize-user-enrollments": 20,
+        "canvashack/plugin-templates": 20,
+        "canvashack/plugin-stmarks-branding": 20,
+        "canvashack/plugin-stmarks-color-schedule": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
