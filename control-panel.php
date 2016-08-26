@@ -29,7 +29,7 @@ foreach ($hacksContents as $item) {
             $hacks[$item] = new CanvasHack($toolbox->getMySQL(), $path);
         } catch (CanvasHack_Exception $e) {
             $smarty->addMessage(
-                'CanvasHack Manifest Error ['. $e->getCode() . ']',
+                'CanvasHack Manifest Error [' . $e->getCode() . ']',
                 $e->getMessage(),
                 NotificationMessage::ERROR
             );
