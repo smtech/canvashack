@@ -792,12 +792,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-global-navigation-menu.git",
-                "reference": "7e8992c63356fb8c4d073f4094fc49b040ab27fe"
+                "reference": "ab7ba9cb332bbceaf5256ed6ecbb9c4a8316dc67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/7e8992c63356fb8c4d073f4094fc49b040ab27fe",
-                "reference": "7e8992c63356fb8c4d073f4094fc49b040ab27fe",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/ab7ba9cb332bbceaf5256ed6ecbb9c4a8316dc67",
+                "reference": "ab7ba9cb332bbceaf5256ed6ecbb9c4a8316dc67",
                 "shasum": ""
             },
             "require": {
@@ -821,7 +821,7 @@
                 }
             ],
             "description": "Add additional menus to the global navigation in Canvas",
-            "time": "2016-08-22 20:04:40"
+            "time": "2016-09-01 20:49:46"
         },
         {
             "name": "canvashack/plugin-lock-notifications",

@@ -5,3 +5,5 @@ config.xml
 
 /hacks/*
 !/hacks/*.*
+
+/templates_c/
