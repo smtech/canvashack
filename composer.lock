@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2ed9bc77e8f5a7738aa7a8b5c1169371",
-    "content-hash": "cef40b04021ae13455ed3c3063826ff1",
+    "hash": "1feb38031e4222f039d8ab7f54da38ac",
+    "content-hash": "e89c09a5474c6b1a69bd43a35a1c5bca",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -119,16 +119,16 @@
         },
         {
             "name": "battis/data-utilities",
-            "version": "v0.1",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/data-utilities.git",
-                "reference": "9efc9d29ad23d8a3a4d0803408eefbc7f681b012"
+                "reference": "da441f33ea687283cc741e47c4b3dfb6c85804a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/data-utilities/zipball/9efc9d29ad23d8a3a4d0803408eefbc7f681b012",
-                "reference": "9efc9d29ad23d8a3a4d0803408eefbc7f681b012",
+                "url": "https://api.github.com/repos/battis/data-utilities/zipball/da441f33ea687283cc741e47c4b3dfb6c85804a1",
+                "reference": "da441f33ea687283cc741e47c4b3dfb6c85804a1",
                 "shasum": ""
             },
             "require-dev": {
@@ -151,7 +151,7 @@
                 }
             ],
             "description": "A handful of useful helper functions to process data",
-            "time": "2016-07-12 14:40:23"
+            "time": "2016-09-02 02:00:58"
         },
         {
             "name": "battis/educoder-pest-fork",
@@ -315,16 +315,16 @@
         },
         {
             "name": "bower-asset/bootstrap-colorpicker-2.x",
-            "version": "2.3.3",
+            "version": "2.3.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mjolnic/bootstrap-colorpicker.git",
-                "reference": "59f06437c86b7c0e074aee8a699819fd1c07a173"
+                "url": "https://github.com/itsjaviaguilar/bootstrap-colorpicker.git",
+                "reference": "57f0614ac5144b506ca4a966049014de2a54f68c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mjolnic/bootstrap-colorpicker/zipball/59f06437c86b7c0e074aee8a699819fd1c07a173",
-                "reference": "59f06437c86b7c0e074aee8a699819fd1c07a173",
+                "url": "https://api.github.com/repos/itsjaviaguilar/bootstrap-colorpicker/zipball/57f0614ac5144b506ca4a966049014de2a54f68c",
+                "reference": "57f0614ac5144b506ca4a966049014de2a54f68c",
                 "shasum": ""
             },
             "require": {
@@ -417,16 +417,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "6f02bc382c0529d3b4f68f6b2ad21876642dbbfe"
+                "reference": "1b30f3ad466ebf2714d47eda34dbd7fdf6849fe3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/6f02bc382c0529d3b4f68f6b2ad21876642dbbfe",
-                "reference": "6f02bc382c0529d3b4f68f6b2ad21876642dbbfe",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/1b30f3ad466ebf2714d47eda34dbd7fdf6849fe3",
+                "reference": "1b30f3ad466ebf2714d47eda34dbd7fdf6849fe3",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -448,16 +448,16 @@
         },
         {
             "name": "bower-asset/moment",
-            "version": "2.14.1",
+            "version": "2.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moment/moment.git",
-                "reference": "227746b29044a4c2160ae7c597c7f24aacac2635"
+                "reference": "986dba9497b7c173760d1d7bc85606c574ed2c44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/227746b29044a4c2160ae7c597c7f24aacac2635",
-                "reference": "227746b29044a4c2160ae7c597c7f24aacac2635",
+                "url": "https://api.github.com/repos/moment/moment/zipball/986dba9497b7c173760d1d7bc85606c574ed2c44",
+                "reference": "986dba9497b7c173760d1d7bc85606c574ed2c44",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -481,7 +481,10 @@
                     "package.js",
                     "package.json"
                 ]
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "canvashack/installer",
@@ -610,6 +613,34 @@
             ],
             "description": "Install the CanvaBadges snippet to allow users to share their badges on their user profile",
             "time": "2016-08-24 20:41:22"
+        },
+        {
+            "name": "canvashack/plugin-custom-global-navigation-flyout-items",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-custom-global-navigation-flyout-items.git",
+                "reference": "65f3322d99f6d9033b36ff6a804981d32605b523"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-custom-global-navigation-flyout-items/zipball/65f3322d99f6d9033b36ff6a804981d32605b523",
+                "reference": "65f3322d99f6d9033b36ff6a804981d32605b523",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "SethBattis@stmarksschool.org"
+                }
+            ],
+            "description": "Insert custom items into the global navigation fly-out menus",
+            "time": "2016-09-26 00:02:55"
         },
         {
             "name": "canvashack/plugin-customprefs-hidden-calendars",
@@ -1229,30 +1260,31 @@
         },
         {
             "name": "ircmaxell/random-lib",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ircmaxell/RandomLib.git",
-                "reference": "13efa4368bb2ac88bb3b1459b487d907de4dbf7c"
+                "reference": "e9e0204f40e49fa4419946c677eccd3fa25b8cf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ircmaxell/RandomLib/zipball/13efa4368bb2ac88bb3b1459b487d907de4dbf7c",
-                "reference": "13efa4368bb2ac88bb3b1459b487d907de4dbf7c",
+                "url": "https://api.github.com/repos/ircmaxell/RandomLib/zipball/e9e0204f40e49fa4419946c677eccd3fa25b8cf4",
+                "reference": "e9e0204f40e49fa4419946c677eccd3fa25b8cf4",
                 "shasum": ""
             },
             "require": {
-                "ircmaxell/security-lib": "1.0.*@dev",
+                "ircmaxell/security-lib": "^1.1",
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "mikey179/vfsstream": "1.1.*",
-                "phpunit/phpunit": "3.7.*"
+                "friendsofphp/php-cs-fixer": "^1.11",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^4.8|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -1279,20 +1311,20 @@
                 "random-numbers",
                 "random-strings"
             ],
-            "time": "2015-01-15 16:31:45"
+            "time": "2016-09-07 15:52:06"
         },
         {
             "name": "ircmaxell/security-lib",
-            "version": "1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ircmaxell/SecurityLib.git",
-                "reference": "80934de3c482dcafb46b5756e59ebece082b6dc7"
+                "reference": "f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ircmaxell/SecurityLib/zipball/80934de3c482dcafb46b5756e59ebece082b6dc7",
-                "reference": "80934de3c482dcafb46b5756e59ebece082b6dc7",
+                "url": "https://api.github.com/repos/ircmaxell/SecurityLib/zipball/f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5",
+                "reference": "f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5",
                 "shasum": ""
             },
             "require": {
@@ -1302,6 +1334,11 @@
                 "mikey179/vfsstream": "1.1.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "SecurityLib": "lib"
@@ -1319,8 +1356,8 @@
                 }
             ],
             "description": "A Base Security Library",
-            "homepage": "https://github.com/ircmaxell/PHP-SecurityLib",
-            "time": "2013-04-30 18:00:34"
+            "homepage": "https://github.com/ircmaxell/SecurityLib",
+            "time": "2015-03-20 14:31:23"
         },
         {
             "name": "league/oauth2-client",
@@ -1940,6 +1977,7 @@
         "canvashack/plugin-auto-open-feedback": 20,
         "canvashack/plugin-canvabadges": 20,
         "canvashack/plugin-cache-and-show-rubrics": 20,
+        "canvashack/plugin-custom-global-navigation-flyout-items": 20,
         "canvashack/plugin-discussion-permalinks": 20,
         "canvashack/plugin-embedded-documentation": 20,
         "canvashack/plugin-enrollment-info-ui-tweaks": 20,
