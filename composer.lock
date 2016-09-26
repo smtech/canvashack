@@ -620,12 +620,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-custom-global-navigation-flyout-items.git",
-                "reference": "65f3322d99f6d9033b36ff6a804981d32605b523"
+                "reference": "c51eb9c429246387a402050a569f66eba88b8048"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-custom-global-navigation-flyout-items/zipball/65f3322d99f6d9033b36ff6a804981d32605b523",
-                "reference": "65f3322d99f6d9033b36ff6a804981d32605b523",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-custom-global-navigation-flyout-items/zipball/c51eb9c429246387a402050a569f66eba88b8048",
+                "reference": "c51eb9c429246387a402050a569f66eba88b8048",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -640,7 +640,7 @@
                 }
             ],
             "description": "Insert custom items into the global navigation fly-out menus",
-            "time": "2016-09-26 00:02:55"
+            "time": "2016-09-26 00:20:49"
         },
         {
             "name": "canvashack/plugin-customprefs-hidden-calendars",
