@@ -590,12 +590,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-canvabadges.git",
-                "reference": "a001b43a7d1ec9ef7e4dac0bcb4bd7cb24789b6c"
+                "reference": "5c8c9366ac849b145d9aab673ca1a60b53a974f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-canvabadges/zipball/a001b43a7d1ec9ef7e4dac0bcb4bd7cb24789b6c",
-                "reference": "a001b43a7d1ec9ef7e4dac0bcb4bd7cb24789b6c",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-canvabadges/zipball/5c8c9366ac849b145d9aab673ca1a60b53a974f7",
+                "reference": "5c8c9366ac849b145d9aab673ca1a60b53a974f7",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -612,7 +612,7 @@
                 }
             ],
             "description": "Install the CanvaBadges snippet to allow users to share their badges on their user profile",
-            "time": "2016-08-24 20:41:22"
+            "time": "2016-10-08 13:29:27"
         },
         {
             "name": "canvashack/plugin-custom-global-navigation-flyout-items",
