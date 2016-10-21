@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1feb38031e4222f039d8ab7f54da38ac",
-    "content-hash": "e89c09a5474c6b1a69bd43a35a1c5bca",
+    "hash": "e26d2c57813639a1a29ea8f68e1d77b4",
+    "content-hash": "1dd78df2f006fdf290ee285e1a5e87ea",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -531,12 +531,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-auto-open-feedback.git",
-                "reference": "221c0c7999aa3b7175bbe82604dab4d03a547b63"
+                "reference": "dee2bc21880d474a5c2e6c9163b5ebfd11281be9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/221c0c7999aa3b7175bbe82604dab4d03a547b63",
-                "reference": "221c0c7999aa3b7175bbe82604dab4d03a547b63",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/dee2bc21880d474a5c2e6c9163b5ebfd11281be9",
+                "reference": "dee2bc21880d474a5c2e6c9163b5ebfd11281be9",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -551,7 +551,7 @@
                 }
             ],
             "description": "A bandaid until SpeedGrader 2.0: autoopen SpeedGrader feedback and rubrics for students",
-            "time": "2016-05-24 11:41:26"
+            "time": "2016-10-21 20:18:13"
         },
         {
             "name": "canvashack/plugin-cache-and-show-rubrics",
@@ -669,6 +669,37 @@
             ],
             "description": "[Requires CustomPrefs module] Hide \"hidden\" calendars",
             "time": "2016-08-24 02:05:16"
+        },
+        {
+            "name": "canvashack/plugin-detect-iframe-fail",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-detect-iframe-fail.git",
+                "reference": "02f787a9247220977e022d5769585d198e7c9c34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-detect-iframe-fail/zipball/02f787a9247220977e022d5769585d198e7c9c34",
+                "reference": "02f787a9247220977e022d5769585d198e7c9c34",
+                "shasum": ""
+            },
+            "require": {
+                "battis/appmetadata": "*"
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Rather than allowing embedded iframes to fail invisibly, provide helpful guidance.",
+            "time": "2016-10-21 23:03:01"
         },
         {
             "name": "canvashack/plugin-discussion-permalinks",
@@ -1978,6 +2009,7 @@
         "canvashack/plugin-canvabadges": 20,
         "canvashack/plugin-cache-and-show-rubrics": 20,
         "canvashack/plugin-custom-global-navigation-flyout-items": 20,
+        "canvashack/plugin-detect-iframe-fail": 20,
         "canvashack/plugin-discussion-permalinks": 20,
         "canvashack/plugin-embedded-documentation": 20,
         "canvashack/plugin-enrollment-info-ui-tweaks": 20,

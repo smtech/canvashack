@@ -17,6 +17,7 @@
         "canvashack/plugin-canvabadges": "dev-master",
         "canvashack/plugin-cache-and-show-rubrics": "dev-master",
 	"canvashack/plugin-custom-global-navigation-flyout-items": "dev-master",
+        "canvashack/plugin-detect-iframe-fail": "dev-master",
         "canvashack/plugin-discussion-permalinks": "dev-master",
         "canvashack/plugin-embedded-documentation": "dev-master",
         "canvashack/plugin-enrollment-info-ui-tweaks": "dev-master",
