@@ -21,7 +21,7 @@ if (php_sapi_name() !== 'cli') {
     $toolbox->smarty_assign([
         'category' => DataUtilities::titleCase(preg_replace('/[\-_]+/', ' ', basename(__DIR__)))
     ]);
-     $smarty =& $toolbox->getSmarty(); // FIXME
+    $smarty =& $toolbox->getSmarty();
 }
 
 /*

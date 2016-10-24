@@ -559,16 +559,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-cache-and-show-rubrics.git",
-                "reference": "eb6e790c4e7531d752e6abf228681d0ab18645b3"
+                "reference": "c6b2450e20680b217c65127c89e4a4dcd8eb9c7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/eb6e790c4e7531d752e6abf228681d0ab18645b3",
-                "reference": "eb6e790c4e7531d752e6abf228681d0ab18645b3",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-cache-and-show-rubrics/zipball/c6b2450e20680b217c65127c89e4a4dcd8eb9c7f",
+                "reference": "c6b2450e20680b217c65127c89e4a4dcd8eb9c7f",
                 "shasum": ""
             },
             "require": {
-                "battis/simplecache": "~1.0"
+                "battis/appmetadata": "*",
+                "battis/simplecache": "*"
             },
             "type": "canvashack-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -582,7 +583,7 @@
                 }
             ],
             "description": "Whenever an assignment with a rubric is visited, cache that rubric for later redisplay if the assignment changes to external tool submission",
-            "time": "2016-06-08 19:38:01"
+            "time": "2016-10-24 18:46:39"
         },
         {
             "name": "canvashack/plugin-canvabadges",
