@@ -531,12 +531,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-auto-open-feedback.git",
-                "reference": "dee2bc21880d474a5c2e6c9163b5ebfd11281be9"
+                "reference": "236d4a12173961a2e091e2bb34c461b0e5884a61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/dee2bc21880d474a5c2e6c9163b5ebfd11281be9",
-                "reference": "dee2bc21880d474a5c2e6c9163b5ebfd11281be9",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-auto-open-feedback/zipball/236d4a12173961a2e091e2bb34c461b0e5884a61",
+                "reference": "236d4a12173961a2e091e2bb34c461b0e5884a61",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -551,7 +551,7 @@
                 }
             ],
             "description": "A bandaid until SpeedGrader 2.0: autoopen SpeedGrader feedback and rubrics for students",
-            "time": "2016-10-21 20:18:13"
+            "time": "2016-10-24 17:49:58"
         },
         {
             "name": "canvashack/plugin-cache-and-show-rubrics",
