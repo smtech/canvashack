@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e26d2c57813639a1a29ea8f68e1d77b4",
-    "content-hash": "1dd78df2f006fdf290ee285e1a5e87ea",
+    "hash": "0cc3ad36ab1e8b35523eca1dbbf9a8c0",
+    "content-hash": "d1ac6bd27a9571ac8c7d0557bb721956",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -885,6 +885,25 @@
             ],
             "description": "Add additional menus to the global navigation in Canvas",
             "time": "2016-09-01 20:49:46"
+        },
+        {
+            "name": "canvashack/plugin-jamesjonesmath-canvancement-dashboard-dashcard_sorter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-jamesjonesmath-canvancement-dashboard-dashcard_sorter.git",
+                "reference": "1b8e1bda3386e7e6d42abe0348fbd8546f1ff33f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-jamesjonesmath-canvancement-dashboard-dashcard_sorter/zipball/1b8e1bda3386e7e6d42abe0348fbd8546f1ff33f",
+                "reference": "1b8e1bda3386e7e6d42abe0348fbd8546f1ff33f",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "This is a user script that will allow the user to drag and drop the course cards on the dashboard into a new position.",
+            "time": "2016-11-04 18:46:31"
         },
         {
             "name": "canvashack/plugin-lock-notifications",
@@ -2017,6 +2036,7 @@
         "canvashack/plugin-faculty-journal": 20,
         "canvashack/plugin-full-size-assignments": 20,
         "canvashack/plugin-global-navigation-menu": 20,
+        "canvashack/plugin-jamesjonesmath-canvancement-dashboard-dashcard_sorter": 20,
         "canvashack/plugin-lock-notifications": 20,
         "canvashack/plugin-organize-user-enrollments": 20,
         "canvashack/plugin-small-navigation-icons": 20,
