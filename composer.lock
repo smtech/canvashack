@@ -573,12 +573,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-custom-global-navigation-flyout-items.git",
-                "reference": "b5d920b58b304fecfc0a561d5dbb36b07805590a"
+                "reference": "5814824cf09857d43387dc6e349efdcf87a36eb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-custom-global-navigation-flyout-items/zipball/b5d920b58b304fecfc0a561d5dbb36b07805590a",
-                "reference": "b5d920b58b304fecfc0a561d5dbb36b07805590a",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-custom-global-navigation-flyout-items/zipball/5814824cf09857d43387dc6e349efdcf87a36eb4",
+                "reference": "5814824cf09857d43387dc6e349efdcf87a36eb4",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -593,7 +593,7 @@
                 }
             ],
             "description": "Insert custom items into the global navigation fly-out menus",
-            "time": "2017-01-02 15:17:00"
+            "time": "2017-01-02 16:27:53"
         },
         {
             "name": "canvashack/plugin-customprefs-hidden-calendars",
@@ -629,12 +629,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-detect-iframe-fail.git",
-                "reference": "7813a353282cf8b6de331e2c4576736bfa0fb216"
+                "reference": "0cd8ff6c3ebb3824a7adcfbaa106ad7014704db8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-detect-iframe-fail/zipball/7813a353282cf8b6de331e2c4576736bfa0fb216",
-                "reference": "7813a353282cf8b6de331e2c4576736bfa0fb216",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-detect-iframe-fail/zipball/0cd8ff6c3ebb3824a7adcfbaa106ad7014704db8",
+                "reference": "0cd8ff6c3ebb3824a7adcfbaa106ad7014704db8",
                 "shasum": ""
             },
             "require": {
@@ -652,7 +652,7 @@
                 }
             ],
             "description": "Rather than allowing embedded iframes to fail invisibly, provide helpful guidance.",
-            "time": "2016-10-22 12:45:30"
+            "time": "2017-01-02 16:25:45"
         },
         {
             "name": "canvashack/plugin-discussion-permalinks",
@@ -744,12 +744,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-faculty-journal.git",
-                "reference": "33a2f38259e301600e562c4dfdcb0687b9a30103"
+                "reference": "6e0331adb01ac7deb95ea3c0a9b4f3334bb254e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/33a2f38259e301600e562c4dfdcb0687b9a30103",
-                "reference": "33a2f38259e301600e562c4dfdcb0687b9a30103",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/6e0331adb01ac7deb95ea3c0a9b4f3334bb254e0",
+                "reference": "6e0331adb01ac7deb95ea3c0a9b4f3334bb254e0",
                 "shasum": ""
             },
             "require": {
@@ -770,8 +770,8 @@
                     "email": "sethbattis@stmarksschool.org"
                 }
             ],
-            "description": "Allow teachers to browse the faculty journal by class",
-            "time": "2016-08-04 20:52:50"
+            "description": "Allow teachers to browse the faculty journal by course and section",
+            "time": "2017-01-02 16:32:34"
         },
         {
             "name": "canvashack/plugin-full-size-assignments",
