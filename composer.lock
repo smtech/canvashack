@@ -119,16 +119,16 @@
         },
         {
             "name": "battis/data-utilities",
-            "version": "v0.1.1",
+            "version": "v0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/data-utilities.git",
-                "reference": "da441f33ea687283cc741e47c4b3dfb6c85804a1"
+                "reference": "fe6efd42bec6e6a30e2345d5b71ab57f107fb922"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/data-utilities/zipball/da441f33ea687283cc741e47c4b3dfb6c85804a1",
-                "reference": "da441f33ea687283cc741e47c4b3dfb6c85804a1",
+                "url": "https://api.github.com/repos/battis/data-utilities/zipball/fe6efd42bec6e6a30e2345d5b71ab57f107fb922",
+                "reference": "fe6efd42bec6e6a30e2345d5b71ab57f107fb922",
                 "shasum": ""
             },
             "require-dev": {
@@ -151,7 +151,7 @@
                 }
             ],
             "description": "A handful of useful helper functions to process data",
-            "time": "2016-09-02 02:00:58"
+            "time": "2016-10-09 18:59:38"
         },
         {
             "name": "battis/educoder-pest-fork",
@@ -265,70 +265,20 @@
             "time": "2015-12-17 02:04:27"
         },
         {
-            "name": "bower-asset/bootstrap",
-            "version": "v3.3.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/0b9c4a4007c44201dce9a6cc1a38407005c26c86",
-                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.9.1,<4.0"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "less/bootstrap.less",
-                    "dist/js/bootstrap.js"
-                ],
-                "bower-asset-ignore": [
-                    "/.*",
-                    "_config.yml",
-                    "CNAME",
-                    "composer.json",
-                    "CONTRIBUTING.md",
-                    "docs",
-                    "js/tests",
-                    "test-infra"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-            "keywords": [
-                "css",
-                "framework",
-                "front-end",
-                "js",
-                "less",
-                "mobile-first",
-                "responsive",
-                "web"
-            ]
-        },
-        {
             "name": "bower-asset/bootstrap-colorpicker-2.x",
-            "version": "2.3.5",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/itsjaviaguilar/bootstrap-colorpicker.git",
-                "reference": "57f0614ac5144b506ca4a966049014de2a54f68c"
+                "url": "https://github.com/itsjavi/bootstrap-colorpicker.git",
+                "reference": "605826ad44acd267332f1e7a10dddd17964f3f5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsjaviaguilar/bootstrap-colorpicker/zipball/57f0614ac5144b506ca4a966049014de2a54f68c",
-                "reference": "57f0614ac5144b506ca4a966049014de2a54f68c",
+                "url": "https://api.github.com/repos/itsjavi/bootstrap-colorpicker/zipball/605826ad44acd267332f1e7a10dddd17964f3f5c",
+                "reference": "605826ad44acd267332f1e7a10dddd17964f3f5c",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/bootstrap": ">=2",
                 "bower-asset/jquery": ">=1.10"
             },
             "type": "bower-asset-library",
@@ -380,16 +330,16 @@
         },
         {
             "name": "bower-asset/bootstrap-sortable-2.x",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drvic10k/bootstrap-sortable.git",
-                "reference": "29454e4bd762570502c215dbacdaff58018ff62b"
+                "reference": "90a15de789662d4c3161b60baf43d16b2b401a69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drvic10k/bootstrap-sortable/zipball/29454e4bd762570502c215dbacdaff58018ff62b",
-                "reference": "29454e4bd762570502c215dbacdaff58018ff62b",
+                "url": "https://api.github.com/repos/drvic10k/bootstrap-sortable/zipball/90a15de789662d4c3161b60baf43d16b2b401a69",
+                "reference": "90a15de789662d4c3161b60baf43d16b2b401a69",
                 "shasum": ""
             },
             "require": {
@@ -448,16 +398,16 @@
         },
         {
             "name": "bower-asset/moment",
-            "version": "2.15.1",
+            "version": "2.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moment/moment.git",
-                "reference": "986dba9497b7c173760d1d7bc85606c574ed2c44"
+                "reference": "b8a297c1f99b3918f44dd9e3d7bd59379a876ba6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/986dba9497b7c173760d1d7bc85606c574ed2c44",
-                "reference": "986dba9497b7c173760d1d7bc85606c574ed2c44",
+                "url": "https://api.github.com/repos/moment/moment/zipball/b8a297c1f99b3918f44dd9e3d7bd59379a876ba6",
+                "reference": "b8a297c1f99b3918f44dd9e3d7bd59379a876ba6",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -479,7 +429,9 @@
                     "Gruntfile.js",
                     "Moment.js.nuspec",
                     "package.js",
-                    "package.json"
+                    "package.json",
+                    "ISSUE_TEMPLATE.md",
+                    "typing-tests"
                 ]
             },
             "license": [
@@ -621,12 +573,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-custom-global-navigation-flyout-items.git",
-                "reference": "c51eb9c429246387a402050a569f66eba88b8048"
+                "reference": "b5d920b58b304fecfc0a561d5dbb36b07805590a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-custom-global-navigation-flyout-items/zipball/c51eb9c429246387a402050a569f66eba88b8048",
-                "reference": "c51eb9c429246387a402050a569f66eba88b8048",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-custom-global-navigation-flyout-items/zipball/b5d920b58b304fecfc0a561d5dbb36b07805590a",
+                "reference": "b5d920b58b304fecfc0a561d5dbb36b07805590a",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -641,7 +593,7 @@
                 }
             ],
             "description": "Insert custom items into the global navigation fly-out menus",
-            "time": "2016-09-26 00:20:49"
+            "time": "2017-01-02 15:17:00"
         },
         {
             "name": "canvashack/plugin-customprefs-hidden-calendars",
@@ -677,12 +629,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-detect-iframe-fail.git",
-                "reference": "02f787a9247220977e022d5769585d198e7c9c34"
+                "reference": "7813a353282cf8b6de331e2c4576736bfa0fb216"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-detect-iframe-fail/zipball/02f787a9247220977e022d5769585d198e7c9c34",
-                "reference": "02f787a9247220977e022d5769585d198e7c9c34",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-detect-iframe-fail/zipball/7813a353282cf8b6de331e2c4576736bfa0fb216",
+                "reference": "7813a353282cf8b6de331e2c4576736bfa0fb216",
                 "shasum": ""
             },
             "require": {
@@ -700,7 +652,7 @@
                 }
             ],
             "description": "Rather than allowing embedded iframes to fail invisibly, provide helpful guidance.",
-            "time": "2016-10-21 23:03:01"
+            "time": "2016-10-22 12:45:30"
         },
         {
             "name": "canvashack/plugin-discussion-permalinks",
@@ -998,12 +950,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-stmarks-branding.git",
-                "reference": "23b6f5e59d955f5ec83c47a2f3a09150728a373b"
+                "reference": "827f577ff530139217ff51c3f2a1809beb4217f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/23b6f5e59d955f5ec83c47a2f3a09150728a373b",
-                "reference": "23b6f5e59d955f5ec83c47a2f3a09150728a373b",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-branding/zipball/827f577ff530139217ff51c3f2a1809beb4217f8",
+                "reference": "827f577ff530139217ff51c3f2a1809beb4217f8",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -1018,7 +970,7 @@
                 }
             ],
             "description": "General branding settings for St. Mark's school within Canvas",
-            "time": "2016-08-24 01:46:14"
+            "time": "2017-01-02 15:11:18"
         },
         {
             "name": "canvashack/plugin-stmarks-color-schedule",
@@ -1084,16 +1036,16 @@
         },
         {
             "name": "fxp/composer-asset-plugin",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fxpio/composer-asset-plugin.git",
-                "reference": "d7d189e8ffac26a2e39e26a9c75e1fc5c2e2b98d"
+                "reference": "60bc94db574103dfc73acb907fa79c6dfc86c96e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fxpio/composer-asset-plugin/zipball/d7d189e8ffac26a2e39e26a9c75e1fc5c2e2b98d",
-                "reference": "d7d189e8ffac26a2e39e26a9c75e1fc5c2e2b98d",
+                "url": "https://api.github.com/repos/fxpio/composer-asset-plugin/zipball/60bc94db574103dfc73acb907fa79c6dfc86c96e",
+                "reference": "60bc94db574103dfc73acb907fa79c6dfc86c96e",
                 "shasum": ""
             },
             "require": {
@@ -1136,20 +1088,20 @@
                 "npm",
                 "package"
             ],
-            "time": "2016-08-03 07:44:07"
+            "time": "2016-10-12 08:03:45"
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.2.1",
+            "version": "6.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "3f808fba627f2c5b69e2501217bf31af349c1427"
+                "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/3f808fba627f2c5b69e2501217bf31af349c1427",
-                "reference": "3f808fba627f2c5b69e2501217bf31af349c1427",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
+                "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
                 "shasum": ""
             },
             "require": {
@@ -1198,32 +1150,32 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-07-15 17:22:37"
+            "time": "2016-10-08 15:01:37"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.2.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579"
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/c10d860e2a9595f8883527fa0021c7da9e65f579",
-                "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "^4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -1249,7 +1201,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-05-18 16:56:05"
+            "time": "2016-12-20 10:07:11"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -1475,16 +1427,16 @@
         },
         {
             "name": "myclabs/php-enum",
-            "version": "1.4.2",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/php-enum.git",
-                "reference": "e83e992a5b5a0858ef7adbc9239a749d71fb6979"
+                "reference": "e42fa9d2ae5dd660dbd0fb573d94c61e5a0dbb02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/e83e992a5b5a0858ef7adbc9239a749d71fb6979",
-                "reference": "e83e992a5b5a0858ef7adbc9239a749d71fb6979",
+                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/e42fa9d2ae5dd660dbd0fb573d94c61e5a0dbb02",
+                "reference": "e42fa9d2ae5dd660dbd0fb573d94c61e5a0dbb02",
                 "shasum": ""
             },
             "require": {
@@ -1515,7 +1467,7 @@
             "keywords": [
                 "enum"
             ],
-            "time": "2016-08-01 15:48:47"
+            "time": "2016-10-09 21:43:05"
         },
         {
             "name": "pear/log",
@@ -1677,16 +1629,16 @@
         },
         {
             "name": "smarty/smarty",
-            "version": "v3.1.30",
+            "version": "v3.1.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "ed2b7f1146cfda13df1eea8a5f707a1b771b6e7e"
+                "reference": "c7d42e4a327c402897dd587871434888fde1e7a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/ed2b7f1146cfda13df1eea8a5f707a1b771b6e7e",
-                "reference": "ed2b7f1146cfda13df1eea8a5f707a1b771b6e7e",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/c7d42e4a327c402897dd587871434888fde1e7a9",
+                "reference": "c7d42e4a327c402897dd587871434888fde1e7a9",
                 "shasum": ""
             },
             "require": {
@@ -1699,10 +1651,8 @@
                 }
             },
             "autoload": {
-                "classmap": [
-                    "libs/Smarty.class.php",
-                    "libs/SmartyBC.class.php",
-                    "libs/sysplugins/"
+                "files": [
+                    "libs/bootstrap.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1728,7 +1678,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-08-07 18:46:49"
+            "time": "2016-12-14 21:57:25"
         },
         {
             "name": "smtech/canvaspest",
