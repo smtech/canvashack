@@ -744,12 +744,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-faculty-journal.git",
-                "reference": "6e0331adb01ac7deb95ea3c0a9b4f3334bb254e0"
+                "reference": "3d97204a4ccc1538c90d36341be06490e804ba3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/6e0331adb01ac7deb95ea3c0a9b4f3334bb254e0",
-                "reference": "6e0331adb01ac7deb95ea3c0a9b4f3334bb254e0",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-faculty-journal/zipball/3d97204a4ccc1538c90d36341be06490e804ba3a",
+                "reference": "3d97204a4ccc1538c90d36341be06490e804ba3a",
                 "shasum": ""
             },
             "require": {
@@ -771,7 +771,7 @@
                 }
             ],
             "description": "Allow teachers to browse the faculty journal by course and section",
-            "time": "2017-01-02 16:32:34"
+            "time": "2017-01-16 15:49:38"
         },
         {
             "name": "canvashack/plugin-full-size-assignments",
