@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0cc3ad36ab1e8b35523eca1dbbf9a8c0",
-    "content-hash": "d1ac6bd27a9571ac8c7d0557bb721956",
+    "hash": "a8fd084b114baace9ca813c0934eb765",
+    "content-hash": "0d71593a75ea41303f0dedf4ff865a11",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -266,16 +266,16 @@
         },
         {
             "name": "bower-asset/bootstrap-colorpicker-2.x",
-            "version": "2.4.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsjavi/bootstrap-colorpicker.git",
-                "reference": "605826ad44acd267332f1e7a10dddd17964f3f5c"
+                "reference": "db978b4d8c3436cdaed6e3a1a065f9f47bb686b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsjavi/bootstrap-colorpicker/zipball/605826ad44acd267332f1e7a10dddd17964f3f5c",
-                "reference": "605826ad44acd267332f1e7a10dddd17964f3f5c",
+                "url": "https://api.github.com/repos/itsjavi/bootstrap-colorpicker/zipball/db978b4d8c3436cdaed6e3a1a065f9f47bb686b1",
+                "reference": "db978b4d8c3436cdaed6e3a1a065f9f47bb686b1",
                 "shasum": ""
             },
             "require": {
@@ -573,12 +573,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-custom-global-navigation-flyout-items.git",
-                "reference": "5814824cf09857d43387dc6e349efdcf87a36eb4"
+                "reference": "5efba125581ab3bcf7623b59d662deb4380b5af5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-custom-global-navigation-flyout-items/zipball/5814824cf09857d43387dc6e349efdcf87a36eb4",
-                "reference": "5814824cf09857d43387dc6e349efdcf87a36eb4",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-custom-global-navigation-flyout-items/zipball/5efba125581ab3bcf7623b59d662deb4380b5af5",
+                "reference": "5efba125581ab3bcf7623b59d662deb4380b5af5",
                 "shasum": ""
             },
             "type": "canvashack-plugin",
@@ -593,7 +593,7 @@
                 }
             ],
             "description": "Insert custom items into the global navigation fly-out menus",
-            "time": "2017-01-02 16:27:53"
+            "time": "2017-01-02 16:43:20"
         },
         {
             "name": "canvashack/plugin-customprefs-hidden-calendars",
@@ -622,6 +622,34 @@
             ],
             "description": "[Requires CustomPrefs module] Hide \"hidden\" calendars",
             "time": "2016-08-24 02:05:16"
+        },
+        {
+            "name": "canvashack/plugin-dashboard-badge-color",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-dashboard-badge-color.git",
+                "reference": "9a8b7a246d236758411595258f3a3660598bed48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-dashboard-badge-color/zipball/9a8b7a246d236758411595258f3a3660598bed48",
+                "reference": "9a8b7a246d236758411595258f3a3660598bed48",
+                "shasum": ""
+            },
+            "type": "canvashack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "Make the dashboard badges stand out more.",
+            "time": "2017-02-07 23:13:46"
         },
         {
             "name": "canvashack/plugin-detect-iframe-fail",
@@ -807,17 +835,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-global-navigation-menu.git",
-                "reference": "ab7ba9cb332bbceaf5256ed6ecbb9c4a8316dc67"
+                "reference": "51ae270655af461d18499c998c1c71e5637a3686"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/ab7ba9cb332bbceaf5256ed6ecbb9c4a8316dc67",
-                "reference": "ab7ba9cb332bbceaf5256ed6ecbb9c4a8316dc67",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-global-navigation-menu/zipball/51ae270655af461d18499c998c1c71e5637a3686",
+                "reference": "51ae270655af461d18499c998c1c71e5637a3686",
                 "shasum": ""
             },
             "require": {
                 "battis/appmetadata": "*",
-                "battis/simplecache": "*"
+                "battis/simplecache": "*",
+                "smarty/smarty": "*"
             },
             "type": "canvashack-plugin",
             "autoload": {
@@ -836,7 +865,7 @@
                 }
             ],
             "description": "Add additional menus to the global navigation in Canvas",
-            "time": "2016-09-01 20:49:46"
+            "time": "2017-02-07 13:38:26"
         },
         {
             "name": "canvashack/plugin-jamesjonesmath-canvancement-dashboard-dashcard_sorter",
@@ -978,12 +1007,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-stmarks-color-schedule.git",
-                "reference": "628e9798cf4118ad2d053bb590bdbc7e62c2767e"
+                "reference": "67b572e80bd381a16f646924137b0af5b230b865"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-color-schedule/zipball/628e9798cf4118ad2d053bb590bdbc7e62c2767e",
-                "reference": "628e9798cf4118ad2d053bb590bdbc7e62c2767e",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-stmarks-color-schedule/zipball/67b572e80bd381a16f646924137b0af5b230b865",
+                "reference": "67b572e80bd381a16f646924137b0af5b230b865",
                 "shasum": ""
             },
             "require": {
@@ -1001,7 +1030,7 @@
                 }
             ],
             "description": "Color the color blocks in the color schedule in the calendar",
-            "time": "2016-08-04 21:00:48"
+            "time": "2017-01-03 17:35:00"
         },
         {
             "name": "canvashack/plugin-templates",
@@ -1979,6 +2008,7 @@
         "canvashack/plugin-canvabadges": 20,
         "canvashack/plugin-cache-and-show-rubrics": 20,
         "canvashack/plugin-custom-global-navigation-flyout-items": 20,
+        "canvashack/plugin-dashboard-badge-color": 20,
         "canvashack/plugin-detect-iframe-fail": 20,
         "canvashack/plugin-discussion-permalinks": 20,
         "canvashack/plugin-embedded-documentation": 20,
