@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad043ddca7c860eaf9de1681a37ee107",
+    "content-hash": "13c9998ab4077af5b5a3f0fbf4823b8a",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -193,42 +193,6 @@
             "description": "A proper REST client for PHP.",
             "homepage": "https://github.com/educoder/pest",
             "time": "2016-03-23T15:38:23+00:00"
-        },
-        {
-            "name": "battis/mysql-schema-loader",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/battis/mysql-schema-loader.git",
-                "reference": "1721508fc109cb36a741b5d2d5ffdcf31e204f37"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/battis/mysql-schema-loader/zipball/1721508fc109cb36a741b5d2d5ffdcf31e204f37",
-                "reference": "1721508fc109cb36a741b5d2d5ffdcf31e204f37",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Battis\\MySQLSchemaLoader\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Seth Battis",
-                    "email": "seth@battis.net"
-                }
-            ],
-            "description": "A schema loader for MySQL applications",
-            "time": "2016-08-22T16:50:26+00:00"
         },
         {
             "name": "battis/simplecache",
@@ -1857,16 +1821,16 @@
         },
         {
             "name": "smtech/reflexive-canvas-lti",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/reflexive-canvas-lti.git",
-                "reference": "8a39ee228f003602ed42a1f7216f7feead1930f2"
+                "reference": "fa5b6df3542843d9e990ea78ba1585afc02016fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/reflexive-canvas-lti/zipball/8a39ee228f003602ed42a1f7216f7feead1930f2",
-                "reference": "8a39ee228f003602ed42a1f7216f7feead1930f2",
+                "url": "https://api.github.com/repos/smtech/reflexive-canvas-lti/zipball/fa5b6df3542843d9e990ea78ba1585afc02016fa",
+                "reference": "fa5b6df3542843d9e990ea78ba1585afc02016fa",
                 "shasum": ""
             },
             "require": {
@@ -1897,7 +1861,7 @@
                 }
             ],
             "description": "LTI tool provider class that includes the \"reflexive\" reach back into Canvas via the API",
-            "time": "2017-03-16T14:54:01+00:00"
+            "time": "2017-05-17T11:58:22+00:00"
         },
         {
             "name": "smtech/stmarks-colors",
@@ -2040,7 +2004,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "battis/mysql-schema-loader": 20,
         "canvashack/plugin-auto-open-feedback": 20,
         "canvashack/plugin-canvabadges": 20,
         "canvashack/plugin-cache-and-show-rubrics": 20,

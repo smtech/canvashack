@@ -11,7 +11,6 @@
     "require": {
         "smtech/stmarks-reflexive-canvas-lti": "~0.2",
         "battis/configxml": "~1.0",
-        "battis/mysql-schema-loader": "dev-master",
         "canvashack/installer": "~1.0",
         "canvashack/plugin-auto-open-feedback": "dev-master",
         "canvashack/plugin-canvabadges": "dev-master",

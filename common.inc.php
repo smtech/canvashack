@@ -1,5 +1,9 @@
 <?php
 
+$httpReferer = (empty($_SERVER['HTTP_REFERER']) ? false : 'https://' . parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST));
+$requestApiDomain = (empty($_REQUEST['custom_canvas_api_domain']) ? false : $_REQUEST['custom_canvas_api_domain']);
+
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 use smtech\CanvasHack\Toolbox;
@@ -24,18 +28,24 @@ if (php_sapi_name() !== 'cli') {
     $smarty =& $toolbox->getSmarty();
 }
 
+/* set the Tool Consumer's instance URL, if present */
+if (empty($_SESSION[CANVAS_INSTANCE_URL])) {
+    if (!empty($requestApiDomain)) {
+        $_SESSION[CANVAS_INSTANCE_URL] = "https://{$requestApiDomain}";
+    } elseif (!empty($_SESSION[ToolProvider::class]['canvas']['api_domain'])) {
+        $_SESSION[CANVAS_INSTANCE_URL] = 'https://' . $_SESSION[ToolProvider::class]['canvas']['api_domain'];
+    } else {
+        $_SESSION[CANVAS_INSTANCE_URL] = $httpReferer;
+
+        /* FIXME hack to trick the Toolbox into using the right API domain */
+        $_SESSION[ToolProvider::class]['canvas']['api_domain'] = parse_url($httpReferer, PHP_URL_HOST);
+    }
+}
+
 /*
- * FIXME convience variables until plugins are all updated
+ * FIXME convience variables until plugins are all updated (must come after the
+ * instance URL detection, so that the API URL is set correctly)
  */
 $api =& $toolbox->getAPI();
 $sql =& $toolbox->getMySQL();
 $customPrefs =& $toolbox->getCustomPrefs();
-
-/* set the Tool Consumer's instance URL, if present */
-if (empty($_SESSION[CANVAS_INSTANCE_URL])) {
-    if (!empty($_SESSION[ToolProvider::class]['canvas']['api_domain'])) {
-        $_SESSION[CANVAS_INSTANCE_URL] = 'https://' . $_SESSION[ToolProvider::class]['canvas']['api_domain'];
-    } else {
-        $_SESSION[CANVAS_INSTANCE_URL] = $toolbox->config('TOOL_CANVAS_API')['url'];
-    }
-}

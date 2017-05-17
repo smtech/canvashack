@@ -23,17 +23,17 @@
         <username>canvashack</username>
         <password>ibd`f6jL$ySE589</password>
         <database>canvashack</database>
-        <customprefs>
-            <host>localhost</host>
-            <username>canvas-cust-pref</username>
-            <password>S2uPUmWHwoGq0ei</password>
-            <database>canvas-custom-prefs</database>
-        </customprefs>
-</mysql>
+    </mysql>
+    <customprefs>
+        <host>localhost</host>
+        <username>canvas-cust-pref</username>
+        <password>S2uPUmWHwoGq0ei</password>
+        <database>canvas-custom-prefs</database>
+    </customprefs>
 
     <!-- Credentials for Canvas API (either <url> and <token> OR <key> and <secret> for OAuth token request) -->
     <canvas>
-        <key>160000000000012</key>
-        <secret>m4EHehkSO0aaXGO8v7rNm6w4EG4UyMbcHFic9uForeBkxlRIYAXiKPVOb2E3Bf4E</secret>
+        <url>https://canvas.instructure.com/api/v1</url>
+        <token>m4EHehkSG4UyMbcHFic9uForeBkxlRIYAXiKPVOb2E3Bf4E</token>
     </canvas>
 </config>
