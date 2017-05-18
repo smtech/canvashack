@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "13c9998ab4077af5b5a3f0fbf4823b8a",
+    "content-hash": "86bc0eb7643535e1b8daa0880380dfd5",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -1821,16 +1821,16 @@
         },
         {
             "name": "smtech/reflexive-canvas-lti",
-            "version": "v1.0.6",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/reflexive-canvas-lti.git",
-                "reference": "fa5b6df3542843d9e990ea78ba1585afc02016fa"
+                "reference": "8a39ee228f003602ed42a1f7216f7feead1930f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/reflexive-canvas-lti/zipball/fa5b6df3542843d9e990ea78ba1585afc02016fa",
-                "reference": "fa5b6df3542843d9e990ea78ba1585afc02016fa",
+                "url": "https://api.github.com/repos/smtech/reflexive-canvas-lti/zipball/8a39ee228f003602ed42a1f7216f7feead1930f2",
+                "reference": "8a39ee228f003602ed42a1f7216f7feead1930f2",
                 "shasum": ""
             },
             "require": {
@@ -1861,7 +1861,7 @@
                 }
             ],
             "description": "LTI tool provider class that includes the \"reflexive\" reach back into Canvas via the API",
-            "time": "2017-05-17T11:58:22+00:00"
+            "time": "2017-03-16T14:54:01+00:00"
         },
         {
             "name": "smtech/stmarks-colors",
