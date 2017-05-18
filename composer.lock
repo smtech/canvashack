@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "86bc0eb7643535e1b8daa0880380dfd5",
+    "content-hash": "7df03cd6f0a0b87e3cc3eb059bc3e992",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -963,6 +963,34 @@
             ],
             "description": "Show global navigation icons at a smaller size",
             "time": "2016-08-24T20:34:33+00:00"
+        },
+        {
+            "name": "canvashack/plugin-sort-rubric-import-contexts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smtech/canvashack-plugin-sort-rubric-import-contexts.git",
+                "reference": "a6147c46c83c100fdabe26aa0d53baa0b82a19f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-sort-rubric-import-contexts/zipball/a6147c46c83c100fdabe26aa0d53baa0b82a19f7",
+                "reference": "a6147c46c83c100fdabe26aa0d53baa0b82a19f7",
+                "shasum": ""
+            },
+            "type": "canvasshack-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "SethBattis@stmarksschool.org"
+                }
+            ],
+            "description": "Since Canvas hasn't come up with a design for organizing the rubric import course list, this is it",
+            "time": "2017-05-18 18:39:25"
         },
         {
             "name": "canvashack/plugin-stmarks-branding",
@@ -2021,6 +2049,7 @@
         "canvashack/plugin-organize-user-enrollments": 20,
         "canvashack/plugin-reverse-syllabus": 20,
         "canvashack/plugin-small-navigation-icons": 20,
+        "canvashack/plugin-sort-rubric-import-contexts": 20,
         "canvashack/plugin-templates": 20,
         "canvashack/plugin-customprefs-hidden-calendars": 20,
         "canvashack/plugin-stmarks-branding": 20,
