@@ -41,16 +41,16 @@
         },
         {
             "name": "battis/bootstrapsmarty",
-            "version": "v2.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/bootstrapsmarty.git",
-                "reference": "c95297336ca37a48f3bcbc655275996ebbd0a2f9"
+                "reference": "e0a71cce1dd285ad11a64fd70495f802ff75ae00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/bootstrapsmarty/zipball/c95297336ca37a48f3bcbc655275996ebbd0a2f9",
-                "reference": "c95297336ca37a48f3bcbc655275996ebbd0a2f9",
+                "url": "https://api.github.com/repos/battis/bootstrapsmarty/zipball/e0a71cce1dd285ad11a64fd70495f802ff75ae00",
+                "reference": "e0a71cce1dd285ad11a64fd70495f802ff75ae00",
                 "shasum": ""
             },
             "require": {
@@ -78,7 +78,7 @@
                 }
             ],
             "description": "A wrapper for Smarty to set (and maintain) defaults within a Bootstrap UI environment",
-            "time": "2016-08-01T13:10:10+00:00"
+            "time": "2017-05-24T17:21:18+00:00"
         },
         {
             "name": "battis/configxml",
@@ -118,16 +118,16 @@
         },
         {
             "name": "battis/data-utilities",
-            "version": "v0.1.2",
+            "version": "v0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/data-utilities.git",
-                "reference": "fe6efd42bec6e6a30e2345d5b71ab57f107fb922"
+                "reference": "81e9771db3f3cfa1a757179ad447ee40703c55a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/data-utilities/zipball/fe6efd42bec6e6a30e2345d5b71ab57f107fb922",
-                "reference": "fe6efd42bec6e6a30e2345d5b71ab57f107fb922",
+                "url": "https://api.github.com/repos/battis/data-utilities/zipball/81e9771db3f3cfa1a757179ad447ee40703c55a3",
+                "reference": "81e9771db3f3cfa1a757179ad447ee40703c55a3",
                 "shasum": ""
             },
             "require-dev": {
@@ -150,7 +150,7 @@
                 }
             ],
             "description": "A handful of useful helper functions to process data",
-            "time": "2016-10-09T18:59:38+00:00"
+            "time": "2017-05-29T18:41:18+00:00"
         },
         {
             "name": "battis/educoder-pest-fork",
@@ -267,12 +267,12 @@
             "version": "v1.6.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/eternicode/bootstrap-datepicker.git",
+                "url": "https://github.com/uxsolutions/bootstrap-datepicker.git",
                 "reference": "42940960ffaf6c727c9f2d64a6175be87516986e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/42940960ffaf6c727c9f2d64a6175be87516986e",
+                "url": "https://api.github.com/repos/uxsolutions/bootstrap-datepicker/zipball/42940960ffaf6c727c9f2d64a6175be87516986e",
                 "reference": "42940960ffaf6c727c9f2d64a6175be87516986e",
                 "shasum": ""
             },
@@ -403,16 +403,16 @@
         },
         {
             "name": "canvashack/installer",
-            "version": "v1.1",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-installer.git",
-                "reference": "ed08d1ffb71699e2e13b7e34dc6c35a165d55f2b"
+                "reference": "e9b1f8dfd09d73e96855f38eda84e783a76a8109"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-installer/zipball/ed08d1ffb71699e2e13b7e34dc6c35a165d55f2b",
-                "reference": "ed08d1ffb71699e2e13b7e34dc6c35a165d55f2b",
+                "url": "https://api.github.com/repos/smtech/canvashack-installer/zipball/e9b1f8dfd09d73e96855f38eda84e783a76a8109",
+                "reference": "e9b1f8dfd09d73e96855f38eda84e783a76a8109",
                 "shasum": ""
             },
             "require": {
@@ -438,7 +438,7 @@
                 }
             ],
             "description": "Custom Composer installer for CanvasHack plugins",
-            "time": "2016-01-12T19:39:37+00:00"
+            "time": "2017-05-24T18:17:07+00:00"
         },
         {
             "name": "canvashack/plugin-auto-open-feedback",
@@ -466,7 +466,7 @@
                 }
             ],
             "description": "A bandaid until SpeedGrader 2.0: autoopen SpeedGrader feedback and rubrics for students",
-            "time": "2016-10-24T17:49:58+00:00"
+            "time": "2016-10-24 17:49:58"
         },
         {
             "name": "canvashack/plugin-cache-and-show-rubrics",
@@ -498,7 +498,7 @@
                 }
             ],
             "description": "Whenever an assignment with a rubric is visited, cache that rubric for later redisplay if the assignment changes to external tool submission",
-            "time": "2016-10-24T18:46:39+00:00"
+            "time": "2016-10-24 18:46:39"
         },
         {
             "name": "canvashack/plugin-canvabadges",
@@ -528,7 +528,7 @@
                 }
             ],
             "description": "Install the CanvaBadges snippet to allow users to share their badges on their user profile",
-            "time": "2016-10-08T13:29:27+00:00"
+            "time": "2016-10-08 13:29:27"
         },
         {
             "name": "canvashack/plugin-custom-global-navigation-flyout-items",
@@ -552,11 +552,11 @@
             "authors": [
                 {
                     "name": "Seth Battis",
-                    "email": "SethBattis@stmarksschool.org"
+                    "email": "sethbattis@stmarksschool.org"
                 }
             ],
             "description": "Insert custom items into the global navigation fly-out menus",
-            "time": "2017-01-02T16:43:20+00:00"
+            "time": "2017-01-02 16:43:20"
         },
         {
             "name": "canvashack/plugin-customprefs-hidden-calendars",
@@ -584,7 +584,7 @@
                 }
             ],
             "description": "[Requires CustomPrefs module] Hide \"hidden\" calendars",
-            "time": "2016-08-24T02:05:16+00:00"
+            "time": "2016-08-24 02:05:16"
         },
         {
             "name": "canvashack/plugin-dashboard-badge-color",
@@ -612,7 +612,7 @@
                 }
             ],
             "description": "Make the dashboard badges stand out more.",
-            "time": "2017-02-07T23:13:46+00:00"
+            "time": "2017-02-07 23:13:46"
         },
         {
             "name": "canvashack/plugin-detect-iframe-fail",
@@ -643,7 +643,7 @@
                 }
             ],
             "description": "Rather than allowing embedded iframes to fail invisibly, provide helpful guidance.",
-            "time": "2017-01-02T16:25:45+00:00"
+            "time": "2017-01-02 16:25:45"
         },
         {
             "name": "canvashack/plugin-discussion-permalinks",
@@ -671,7 +671,7 @@
                 }
             ],
             "description": "Reveal discussion entry permalinks",
-            "time": "2016-05-24T11:41:39+00:00"
+            "time": "2016-05-24 11:41:39"
         },
         {
             "name": "canvashack/plugin-embedded-documentation",
@@ -699,7 +699,7 @@
                 }
             ],
             "description": "Embed documentation specific to your institution in the Canvas UI",
-            "time": "2016-03-17T15:46:14+00:00"
+            "time": "2016-03-17 15:46:14"
         },
         {
             "name": "canvashack/plugin-enrollment-info-ui-tweaks",
@@ -727,7 +727,7 @@
                 }
             ],
             "description": "Tweak some annoying default settings to better ones when looking at enrollment information",
-            "time": "2016-05-24T11:41:49+00:00"
+            "time": "2016-05-24 11:41:49"
         },
         {
             "name": "canvashack/plugin-faculty-journal",
@@ -758,11 +758,11 @@
             "authors": [
                 {
                     "name": "Seth Battis",
-                    "email": "sethbattis@stmarksschool.org"
+                    "email": "SethBattis@stmarksschool.org"
                 }
             ],
             "description": "Allow teachers to browse the faculty journal by course and section",
-            "time": "2017-01-16T15:49:38+00:00"
+            "time": "2017-01-16 15:49:38"
         },
         {
             "name": "canvashack/plugin-full-size-assignments",
@@ -790,7 +790,7 @@
                 }
             ],
             "description": "Show assignments in a full-height pane, rather than a squinched-up, itty-bitty view",
-            "time": "2016-08-24T01:46:00+00:00"
+            "time": "2016-08-24 01:46:00"
         },
         {
             "name": "canvashack/plugin-global-navigation-menu",
@@ -828,7 +828,7 @@
                 }
             ],
             "description": "Add additional menus to the global navigation in Canvas",
-            "time": "2017-02-07T13:38:26+00:00"
+            "time": "2017-02-07 13:38:26"
         },
         {
             "name": "canvashack/plugin-jamesjonesmath-canvancement-dashboard-dashcard_sorter",
@@ -847,7 +847,7 @@
             "type": "canvashack-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "description": "This is a user script that will allow the user to drag and drop the course cards on the dashboard into a new position.",
-            "time": "2016-11-04T18:46:31+00:00"
+            "time": "2016-11-04 18:46:31"
         },
         {
             "name": "canvashack/plugin-lock-notifications",
@@ -878,7 +878,7 @@
                 }
             ],
             "description": "Lock specific notification settings to (to their current state)",
-            "time": "2016-05-24T11:40:55+00:00"
+            "time": "2016-05-24 11:40:55"
         },
         {
             "name": "canvashack/plugin-organize-user-enrollments",
@@ -906,7 +906,7 @@
                 }
             ],
             "description": "Provide a more organized (and readable) listing of users' enrollments",
-            "time": "2016-05-24T11:41:12+00:00"
+            "time": "2016-05-24 11:41:12"
         },
         {
             "name": "canvashack/plugin-reverse-syllabus",
@@ -962,7 +962,7 @@
                 }
             ],
             "description": "Show global navigation icons at a smaller size",
-            "time": "2016-08-24T20:34:33+00:00"
+            "time": "2016-08-24 20:34:33"
         },
         {
             "name": "canvashack/plugin-sort-rubric-import-contexts",
@@ -970,15 +970,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-sort-rubric-import-contexts.git",
-                "reference": "a6147c46c83c100fdabe26aa0d53baa0b82a19f7"
+                "reference": "795e08af8604fdaae8e619d077a5fad0657008ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-sort-rubric-import-contexts/zipball/a6147c46c83c100fdabe26aa0d53baa0b82a19f7",
-                "reference": "a6147c46c83c100fdabe26aa0d53baa0b82a19f7",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-sort-rubric-import-contexts/zipball/795e08af8604fdaae8e619d077a5fad0657008ab",
+                "reference": "795e08af8604fdaae8e619d077a5fad0657008ab",
                 "shasum": ""
             },
-            "type": "canvasshack-plugin",
+            "type": "canvashack-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-3.0"
@@ -990,7 +990,7 @@
                 }
             ],
             "description": "Since Canvas hasn't come up with a design for organizing the rubric import course list, this is it",
-            "time": "2017-05-18 18:39:25"
+            "time": "2017-05-19 14:27:15"
         },
         {
             "name": "canvashack/plugin-stmarks-branding",
@@ -1018,7 +1018,7 @@
                 }
             ],
             "description": "General branding settings for St. Mark's school within Canvas",
-            "time": "2017-01-02T15:11:18+00:00"
+            "time": "2017-01-02 15:11:18"
         },
         {
             "name": "canvashack/plugin-stmarks-color-schedule",
@@ -1049,7 +1049,7 @@
                 }
             ],
             "description": "Color the color blocks in the color schedule in the calendar",
-            "time": "2017-01-03T17:35:00+00:00"
+            "time": "2017-01-03 17:35:00"
         },
         {
             "name": "canvashack/plugin-templates",
@@ -1057,12 +1057,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvashack-plugin-templates.git",
-                "reference": "07fa3ef39680bcea7de63e32293197a6eee97e96"
+                "reference": "2a03a7120b49fd02d25fdbca8fafd0076816a302"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/07fa3ef39680bcea7de63e32293197a6eee97e96",
-                "reference": "07fa3ef39680bcea7de63e32293197a6eee97e96",
+                "url": "https://api.github.com/repos/smtech/canvashack-plugin-templates/zipball/2a03a7120b49fd02d25fdbca8fafd0076816a302",
+                "reference": "2a03a7120b49fd02d25fdbca8fafd0076816a302",
                 "shasum": ""
             },
             "require": {
@@ -1076,11 +1076,11 @@
             "authors": [
                 {
                     "name": "Seth Battis",
-                    "email": "sethbattis@stmarksschool.org"
+                    "email": "SethBattis@stmarksschool.org"
                 }
             ],
             "description": "Templating for Canvas course objects",
-            "time": "2017-03-31 13:04:36"
+            "time": "2017-05-30 18:47:27"
         },
         {
             "name": "fxp/composer-asset-plugin",
@@ -1740,16 +1740,16 @@
         },
         {
             "name": "smtech/canvaspest",
-            "version": "v1.1.6",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "b06ab320228873a0278272888a63e29edcd53ce0"
+                "reference": "bc2b20da27fa568025fbd0296ce56705abccc2f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/b06ab320228873a0278272888a63e29edcd53ce0",
-                "reference": "b06ab320228873a0278272888a63e29edcd53ce0",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/bc2b20da27fa568025fbd0296ce56705abccc2f8",
+                "reference": "bc2b20da27fa568025fbd0296ce56705abccc2f8",
                 "shasum": ""
             },
             "require": {
@@ -1772,7 +1772,7 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2017-04-04T12:32:46+00:00"
+            "time": "2017-05-24T17:47:24+00:00"
         },
         {
             "name": "smtech/lti-configuration-xml",
@@ -1926,16 +1926,16 @@
         },
         {
             "name": "smtech/stmarks-reflexive-canvas-lti",
-            "version": "v0.2.2",
+            "version": "v0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarks-reflexive-canvas-lti.git",
-                "reference": "d0e50e1fa145a1fab6b699725853c54b6b781ba1"
+                "reference": "2a91ca4c969beaacdf2d010946aa1e4279e5e4aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarks-reflexive-canvas-lti/zipball/d0e50e1fa145a1fab6b699725853c54b6b781ba1",
-                "reference": "d0e50e1fa145a1fab6b699725853c54b6b781ba1",
+                "url": "https://api.github.com/repos/smtech/stmarks-reflexive-canvas-lti/zipball/2a91ca4c969beaacdf2d010946aa1e4279e5e4aa",
+                "reference": "2a91ca4c969beaacdf2d010946aa1e4279e5e4aa",
                 "shasum": ""
             },
             "require": {
@@ -1962,20 +1962,20 @@
                 }
             ],
             "description": "A toolbox for managing LTI authentication and tool provider development (with St. Mark's templating)",
-            "time": "2016-08-18T13:03:48+00:00"
+            "time": "2017-05-24T17:41:02+00:00"
         },
         {
             "name": "smtech/stmarkssmarty",
-            "version": "v1.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarks-bootstrapsmarty.git",
-                "reference": "e481110eed523a1c6dc3e1a8d152785ab909cfc9"
+                "reference": "74d1c97ddbb0c9722d98aeee6ca4448c06c4c035"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarks-bootstrapsmarty/zipball/e481110eed523a1c6dc3e1a8d152785ab909cfc9",
-                "reference": "e481110eed523a1c6dc3e1a8d152785ab909cfc9",
+                "url": "https://api.github.com/repos/smtech/stmarks-bootstrapsmarty/zipball/74d1c97ddbb0c9722d98aeee6ca4448c06c4c035",
+                "reference": "74d1c97ddbb0c9722d98aeee6ca4448c06c4c035",
                 "shasum": ""
             },
             "require": {
@@ -2000,7 +2000,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2016-08-01T13:20:55+00:00"
+            "time": "2017-05-24T17:44:22+00:00"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
