@@ -5,6 +5,6 @@
 </Files>
 
 # block verboten directories
-# RedirectMatch 404 /consumers.php
+RedirectMatch 404 /consumers.php
 RedirectMatch 404 /src(/|$)
 RedirectMatch 404 /logs(/|$)

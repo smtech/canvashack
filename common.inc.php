@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use smtech\CanvasPest\CanvasPest;
 use smtech\CanvasHack\Toolbox;
 use smtech\ReflexiveCanvasLTI\LTI\ToolProvider;
 use Battis\DataUtilities;
