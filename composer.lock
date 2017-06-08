@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7df03cd6f0a0b87e3cc3eb059bc3e992",
+    "content-hash": "4e1aece5d8025930b2cf56f7cf0c3ae8",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -1740,16 +1740,16 @@
         },
         {
             "name": "smtech/canvaspest",
-            "version": "v1.1.7",
+            "version": "v1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "bc2b20da27fa568025fbd0296ce56705abccc2f8"
+                "reference": "9217c1741af90b2c769554f3cd61d1dfac7b6f75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/bc2b20da27fa568025fbd0296ce56705abccc2f8",
-                "reference": "bc2b20da27fa568025fbd0296ce56705abccc2f8",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/9217c1741af90b2c769554f3cd61d1dfac7b6f75",
+                "reference": "9217c1741af90b2c769554f3cd61d1dfac7b6f75",
                 "shasum": ""
             },
             "require": {
@@ -1772,7 +1772,7 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2017-05-24T17:47:24+00:00"
+            "time": "2017-05-31T18:44:02+00:00"
         },
         {
             "name": "smtech/lti-configuration-xml",
@@ -1849,22 +1849,22 @@
         },
         {
             "name": "smtech/reflexive-canvas-lti",
-            "version": "v1.0.5",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/reflexive-canvas-lti.git",
-                "reference": "8a39ee228f003602ed42a1f7216f7feead1930f2"
+                "reference": "4a76c272aad302bc089628dcec742efbfe6967c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/reflexive-canvas-lti/zipball/8a39ee228f003602ed42a1f7216f7feead1930f2",
-                "reference": "8a39ee228f003602ed42a1f7216f7feead1930f2",
+                "url": "https://api.github.com/repos/smtech/reflexive-canvas-lti/zipball/4a76c272aad302bc089628dcec742efbfe6967c9",
+                "reference": "4a76c272aad302bc089628dcec742efbfe6967c9",
                 "shasum": ""
             },
             "require": {
                 "battis/appmetadata": "~1.0",
                 "battis/configxml": "~1.0",
-                "battis/data-utilities": "~0.1",
+                "battis/data-utilities": "~0.1.3",
                 "myclabs/php-enum": "~1.0",
                 "pear/log": "~1.0",
                 "php": ">=5.6",
@@ -1889,7 +1889,7 @@
                 }
             ],
             "description": "LTI tool provider class that includes the \"reflexive\" reach back into Canvas via the API",
-            "time": "2017-03-16T14:54:01+00:00"
+            "time": "2017-06-05T17:05:18+00:00"
         },
         {
             "name": "smtech/stmarks-colors",

@@ -9,7 +9,7 @@
     ],
     "license": "LGPL-3.0",
     "require": {
-        "smtech/reflexive-canvas-lti": "1.0.5",
+        "smtech/reflexive-canvas-lti": "~1.0",
         "smtech/stmarks-reflexive-canvas-lti": "~0.2",
         "battis/configxml": "~1.0",
         "canvashack/installer": "~1.0",
