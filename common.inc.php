@@ -23,10 +23,11 @@ if (empty($_SESSION[CANVAS_INSTANCE_URL])) {
     if (!empty($_SESSION[ToolProvider::class]['canvas']['api_domain'])) {
         $_SESSION[CANVAS_INSTANCE_URL] =
             'https://' . $_SESSION[ToolProvider::class]['canvas']['api_domain'];
-    } elseif (!empty($_SERVER['HTTP_REFERER'])) {
-        $_SESSION[CANVAS_INSTANCE_URL] =
-            'https://' . parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
     } else {
+        /*
+         * due the way that canvashack.css and canvashack.js are loaded, we
+         * need to fall back to the configuration file
+         */
         $_SESSION[CANVAS_INSTANCE_URL] =
             'https://' . parse_url($toolbox->config(Toolbox::TOOL_CANVAS_API)['url'], PHP_URL_HOST);
     }
